@@ -3,13 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!fields.length) return;
 
   fields.forEach(field => {
-    const bubbles = Array.from(field.querySelectorAll('.bubble')).map(el => {
+    const bubbles = Array.from(field.querySelectorAll('.bubble')).map((el, index) => {
       const amp = parseFloat(el.dataset.amp) || (12 + Math.random() * 18);
       const speed = parseFloat(el.dataset.speed) || (0.4 + Math.random() * 0.8);
       const parallax = parseFloat(el.dataset.parallax) || (5 + Math.random() * 10);
+      // Začneme s náhodným offsetem, aby se bublinky hned pohybovaly
       const phaseX = Math.random() * Math.PI * 2;
       const phaseY = Math.random() * Math.PI * 2;
       el.style.willChange = 'transform';
+      el.style.opacity = '1'; // Ujistíme se, že jsou viditelné
       return { el, amp, speed, parallax, phaseX, phaseY };
     });
 
@@ -36,8 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', onResize);
 
     let t0 = performance.now();
+    let isFirstFrame = true;
+    
     function loop(now) {
-      const dt = (now - t0) / 1000;
+      const dt = isFirstFrame ? 0.016 : (now - t0) / 1000; // První frame = ~16ms
+      isFirstFrame = false;
       t0 = now;
 
       // plynulé přiblížení k cílové pozici myši

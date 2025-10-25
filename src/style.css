@@ -277,7 +277,18 @@
     /* ===== CARDS (SHARED) ===== */
     .news-card,
     .category-card {
-      @apply bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col w-[361px] h-[456px];
+      @apply bg-white rounded-2xl shadow-md overflow-hidden flex flex-col w-[361px] h-[456px] cursor-pointer;
+      transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .news-card:hover,
+    .category-card:hover {
+      @apply shadow-xl;
+      transform: translateY(-12px);
+      text-decoration: none;
     }
 
     .news-img,
@@ -374,16 +385,34 @@
       /* 20px od pravého okraje */
     }
 
-    .swiper-button-prev,
-    .news-prev,
-    .category-prev {
+    .swiper-button-prev {
       left: 125px !important;
     }
 
-    .swiper-button-next,
-    .news-next,
+    .swiper-button-next {
+      right: 125px !important;
+    }
+
+    /* Samostatné pozice pro news šipky */
+    .news-prev {
+      left: 125px !important;
+      top: 360px !important;
+    }
+
+    .news-next {
+      right: 125px !important;
+      top: 360px !important;
+    }
+
+    /* Samostatné pozice pro category šipky */
+    .category-prev {
+      left: 125px !important;
+      top: 320px !important;
+    }
+
     .category-next {
       right: 125px !important;
+      top: 320px !important;
     }
 
     .category-prev::after,
@@ -413,6 +442,7 @@
     /* Swiper kontejner pro news sekci */
     .mySwiper {
       @apply mx-auto overflow-hidden;
+      padding-top: 10px;
     }
 
     .mySwiper .swiper-wrapper {
@@ -556,7 +586,9 @@
     /* ===== SWIPER CONTAINERS ===== */
     .myCategorySwiper {
       @apply relative mx-auto mb-20;
-      height: 460px !important;
+      height: 480px !important;
+      padding-top: 20px;
+      padding-bottom: 40px;
     }
 
 
@@ -923,8 +955,9 @@
       }
 
       .myCategorySwiper {
-        @apply w-full overflow-hidden px-4;
+        @apply w-full px-4;
         touch-action: pan-x !important;
+        padding-bottom: 40px;
       }
 
 

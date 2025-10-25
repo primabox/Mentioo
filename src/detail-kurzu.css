@@ -14,6 +14,15 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== BUBBLES ===== */
+.bubble-field {
+  @apply absolute inset-0 pointer-events-none z-10;
+}
+
+.bubble {
+  @apply absolute rounded-full bg-[#00E8E8];
+}
+
 /* ===== HEADER ===== */
 .header {
   @apply bg-white shadow fixed top-0 left-0 right-0 z-[9999];
@@ -126,7 +135,7 @@ body {
 }
 
 .back-link {
-  @apply inline-flex items-center gap-2 text-slate-600 no-underline text-sm  hover:text-cyan-500 my-[40px];
+  @apply inline-flex items-center gap-2 text-[#1C1C1C] no-underline text-sm  hover:text-cyan-500 my-[40px] font-[500] transition;
 }
 
 .content-layout {
@@ -243,11 +252,33 @@ body {
 }
 
 .course-meta-item {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col gap-1;
+  padding-right: 32px;
+  flex: 1;
+  position: relative;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+}
+
+.course-meta-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 80px;
+  background-color: #E8E8E8;
+}
+
+.course-meta-item:last-child {
+  padding-right: 0;
 }
 
 .meta-number {
-  @apply text-[18px] font-semibold text-[#1C1C1C];
+  @apply text-[16px] font-semibold text-[#1C1C1C];
+  white-space: nowrap;
 }
 
 .meta-rating {
@@ -255,7 +286,7 @@ body {
 }
 
 .rating-number {
-  @apply text-[16px] font-semibold text-[#1C1C1C];
+  @apply text-[16px] font-bold text-[#1C1C1C];
 }
 
 .rating-stars {
@@ -263,7 +294,7 @@ body {
 }
 
 .meta-description {
-  @apply text-[14px] text-[#4D4D4D] leading-relaxed;
+  @apply text-[14px] text-[#4D4D4D] leading-relaxed font-[400];
 }
 
 /* ===== CONTENT CARD ===== */
@@ -1416,6 +1447,13 @@ body {
   align-items: center;
   width: 100%;
   max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.instructor-course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .course-card-img {
@@ -1463,9 +1501,9 @@ body {
 }
 
 .rating-number {
-  font-weight: 500;
+  font-weight: 600;
   color: #1C1C1C;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .rating-stars {
@@ -1496,6 +1534,19 @@ body {
   position: absolute;
   left: 4px;
   color: #4D4D4D;
+}
+
+.course-meta-text {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.course-meta-divider {
+  color: #4D4D4D;
+  font-size: 14px;
+  margin: 0 8px;
 }
 
 .course-card-price-wrapper {
