@@ -106,7 +106,7 @@
             Discover advanced design strategies & so much more!
           </p>
           <div class="lesson-status">
-            <i class="far fa-heart text-[#0069B2]"></i>
+            <img src="img/favorite icon.png" alt="">
             Přidat lekci do oblíbených
           </div>
         </div>
@@ -592,52 +592,61 @@
               <!-- Back Button -->
               <button class="diskuze-back-btn" onclick="closeDiskuzeDetail()">
                 <i class="fas fa-arrow-left"></i>
-                Zpět na přehled
+                Zpět na otázky
               </button>
 
               <!-- Discussion Thread -->
               <div class="diskuze-thread">
+                <!-- Title Section -->
+                <h3 class="diskuze-op-title">Cvičení 1: Jak vyřešit problém s constrainty?</h3>
+
+                <span class="diskuze-op-stat">
+                      <i class="far fa-eye"></i> 126
+                       <i class="far fa-comment"></i> 126
+                       <span class="text-[#717171]">před hodinou</span>
+                    </span>
+                    
+                
+                <div class="diskuze-title-divider"></div>
+
+                
+                
+                    
                 <!-- Original Post -->
                 <div class="diskuze-original-post">
                   <div class="diskuze-op-header">
                     <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-op-avatar">
                     <div class="diskuze-op-meta">
                       <span class="diskuze-op-author">Alexandra Václavíková</span>
-                      <span class="diskuze-op-tag">Lektor</span>
                     </div>
                   </div>
-                  <span class="diskuze-op-topic">Téma</span>
-                  <h3 class="diskuze-op-title">Cvičení 1: Jak vyřešit problém s constrainty?</h3>
-                  <p class="diskuze-op-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-                    libero et velit interdum, ac aliquet odio mattis. Sed a lacus nec magna blandit rutrum vitae
-                    lobortis vitam. Nisi dignissim - metus nec fringilla accumsan, risus sem sollicitudin lacus, ut
-                    interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum
-                    ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque,
-                    auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+                  
+                  <p class="diskuze-op-text">Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus. Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.</p>
+                  
                   <div class="diskuze-op-stats">
-                    <button class="diskuze-like-btn">
-                      <i class="far fa-thumbs-up"></i> 45
+                    <button class="diskuze-comment-like">
+                      <img src="img/thumb_up.png" alt=""> 126
                     </button>
-                    <span class="diskuze-op-stat">
-                      <i class="far fa-eye"></i> 126
-                    </span>
-                    <span class="diskuze-op-stat">
-                      <i class="far fa-comment"></i> 126
-                    </span>
-                    <span class="diskuze-op-time">před hodinou</span>
+                    <button class="diskuze-comment-reply">
+                          <i class="fas fa-reply"></i> Odpovědět
+                        </button>
+                    
+                    
                   </div>
                 </div>
 
                
 
-                <!-- Seřadit podle dropdown -->
-                <div class="diskuze-detail-sort">
-                  <span class="diskuze-sort-label">Seřadit podle</span>
-                  <select class="diskuze-sort-select">
-                    <option>Nejoblíbenější</option>
-                    <option>Nejnovější</option>
-                  </select>
+            <!-- Count and Filter Row -->
+                <div class="diskuze-count-filter-row">
+                  <div class="diskuze-count">126 odpovědí</div>
+                  <div class="diskuze-filter-wrapper">
+                    <select class="diskuze-filter">
+                      <option>Seřadit podle: Nejoblíbenější</option>
+                      <option>Nejnovější</option>
+                      <option>Nejstarší</option>
+                    </select>
+                  </div>
                 </div>
 
                 <!-- Comments -->
@@ -655,7 +664,7 @@
                         libero et velit interdum, ac aliquet odio mattis.</p>
                       <div class="diskuze-comment-actions">
                         <button class="diskuze-comment-like">
-                          <i class="far fa-thumbs-up"></i> 1
+                          <img src="img/thumb_up.png" alt=""> 1
                         </button>
                         <button class="diskuze-comment-reply">
                           <i class="fas fa-reply"></i> Odpovědět
@@ -675,7 +684,7 @@
                             Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                           <div class="diskuze-comment-actions">
                             <button class="diskuze-comment-like">
-                              <i class="far fa-thumbs-up"></i> 1
+                              <img src="img/thumb_up.png" alt=""> 1
                             </button>
                             <button class="diskuze-comment-reply">
                               <i class="fas fa-reply"></i> Odpovědět
@@ -699,7 +708,7 @@
                         libero et velit interdum, ac aliquet odio mattis.</p>
                       <div class="diskuze-comment-actions">
                         <button class="diskuze-comment-like">
-                          <i class="far fa-thumbs-up"></i> 1
+                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
                         <button class="diskuze-comment-reply">
                           <i class="fas fa-reply"></i> Odpovědět
@@ -721,7 +730,7 @@
                         libero et velit interdum, ac aliquet odio mattis.</p>
                       <div class="diskuze-comment-actions">
                         <button class="diskuze-comment-like">
-                          <i class="far fa-thumbs-up"></i> 1
+                          <img src="img/thumb_up.png" alt=""> 1
                         </button>
                         <button class="diskuze-comment-reply">
                           <i class="fas fa-reply"></i> Odpovědět
@@ -730,25 +739,13 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Reply Form -->
-                <div class="diskuze-reply-form">
-                  <label class="diskuze-reply-label">Napište vaši odpověď</label>
-                  <textarea class="diskuze-reply-input" placeholder="Napište vaši odpověď..."></textarea>
-                  <div class="diskuze-reply-actions">
-                    <button class="diskuze-reply-submit">Zveřejnit odpověď</button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-<<<<<<< Updated upstream
-=======
       <!-- Sidebar -->
->>>>>>> Stashed changes
       <aside class="sidebar">
         <div class="progress-card">
           <div class="progress-header">

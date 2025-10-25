@@ -255,11 +255,11 @@
 
     /* ===== NEWS SECTION ===== */
     .news-section {
-      @apply relative w-full flex justify-center px-4 sm:px-6 lg:px-12 overflow-hidden;
+      @apply relative w-full flex justify-center px-4 sm:px-6 lg:px-12 overflow-hidden pb-12;
     }
 
     .news-wrapper {
-      @apply w-full max-w-[1525px] flex flex-col items-center;
+      @apply w-full max-w-[1525px] flex flex-col items-center overflow-hidden pb-8;
     }
 
     .news-header {
@@ -343,7 +343,7 @@
     }
 
     .news-button-wrapper {
-      @apply flex justify-center md:justify-end w-full max-w-[1525px] my-6 ml-5;
+      @apply flex justify-center md:justify-end w-full max-w-[1525px] mt-12 mb-6 mr-5;
     }
 
     /* ===== SWIPER NAVIGATION (VLASTNÍ ŠIPKY) ===== */
@@ -408,6 +408,22 @@
       height: 456px !important;
       position: relative;
       transition-property: transform, opacity;
+    }
+
+    /* Swiper kontejner pro news sekci */
+    .mySwiper {
+      @apply mx-auto overflow-hidden;
+    }
+
+    .mySwiper .swiper-wrapper {
+      @apply items-stretch;
+    }
+
+    /* Swiper slide pro news sekci - přepsání width */
+    .mySwiper .swiper-slide {
+      width: auto !important;
+      height: auto !important;
+      min-height: 500px;
     }
 
     /* Skryj defaultní Swiper šipky */

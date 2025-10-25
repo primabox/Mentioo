@@ -40,13 +40,99 @@ function submitMainReply(button) {
 
 function submitReply(button) {
     const form = button.closest('.diskuze-reply-form');
-    const textarea = form.querySelector('.diskuze-reply-textarea');
+    const textarea = form.querySelector('.diskuze-reply-input');
 
     if (textarea && textarea.value.trim()) {
-        alert('Odpověď byla úspěšně odeslána!');
+        const replyText = textarea.value.trim();
+        
+        // Check if replying to original post
+        const isReplyingToOP = form.previousElementSibling && form.previousElementSibling.classList.contains('diskuze-op-stats');
+        
+        if (isReplyingToOP) {
+            // Create new top-level comment for replies to original post
+            const newComment = document.createElement('div');
+            newComment.className = 'diskuze-comment';
+            newComment.innerHTML = `
+                <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-comment-avatar">
+                <div class="diskuze-comment-content">
+                    <span class="diskuze-comment-author">Bob</span>
+                    <p class="diskuze-comment-text">${replyText}</p>
+                    <div class="diskuze-comment-actions">
+                        <button class="diskuze-comment-like">
+                            <img src="img/thumb_up.png" alt=""> 0
+                        </button>
+                        <button class="diskuze-comment-reply">
+                            <i class="fas fa-reply"></i> Odpovědět
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add the new comment to the comments section
+            const commentsSection = document.querySelector('.diskuze-comments');
+            commentsSection.insertBefore(newComment, commentsSection.firstChild);
+            
+            // Remove the form
+            form.remove();
+            
+            // Add event listeners to the new comment buttons
+            const newLikeBtn = newComment.querySelector('.diskuze-comment-like');
+            const newReplyBtn = newComment.querySelector('.diskuze-comment-reply');
+            
+            newLikeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+            });
+            
+            newReplyBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                showReplyForm(this);
+            });
+            
+        } else {
+            // Create nested reply for replies to comments
+            const newReply = document.createElement('div');
+            newReply.className = 'diskuze-reply';
+            newReply.innerHTML = `
+                <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-comment-avatar">
+                <div class="diskuze-comment-content">
+                    <span class="diskuze-comment-author">Bob</span>
+                    <p class="diskuze-comment-text">${replyText}</p>
+                    <div class="diskuze-comment-actions">
+                        <button class="diskuze-comment-like">
+                            <img src="img/thumb_up.png" alt=""> 0
+                        </button>
+                        <button class="diskuze-comment-reply">
+                            <i class="fas fa-reply"></i> Odpovědět
+                        </button>
+                    </div>
+                </div>
+            `;
 
-        // Hide the form
-        form.remove();
+            // Find the parent comment content and insert the reply
+            const commentContent = form.closest('.diskuze-comment-content');
+            
+            // Remove the form
+            form.remove();
+            
+            // Append the new reply to the comment content
+            commentContent.appendChild(newReply);
+
+            // Add event listeners to the new reply buttons
+            const newLikeBtn = newReply.querySelector('.diskuze-comment-like');
+            const newReplyBtn = newReply.querySelector('.diskuze-comment-reply');
+            
+            newLikeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+            });
+            
+            newReplyBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                showReplyForm(this);
+            });
+        }
+        
     } else {
         alert('Prosím, napište nějaký text.');
     }
@@ -57,29 +143,40 @@ function showReplyForm(button) {
     const existingForms = document.querySelectorAll('.diskuze-reply-form');
     existingForms.forEach(form => form.remove());
 
-    const comment = button.closest('.diskuze-comment');
-
+    // Check if this is the original post or a regular comment
+    const isOriginalPost = button.closest('.diskuze-original-post');
+    
     // Create reply form
     const replyForm = document.createElement('div');
     replyForm.className = 'diskuze-reply-form';
-    replyForm.style.marginTop = '16px';
     replyForm.innerHTML = `
-        <h4 class="diskuze-reply-form-title">Napište vaši odpověď</h4>
-        <textarea class="diskuze-reply-textarea" placeholder="Napište vaši odpověď..." rows="5"></textarea>
-        <div style="display: flex; gap: 12px;">
-            <button class="diskuze-submit-btn" onclick="submitReply(this)">
+        <label class="diskuze-reply-label">Napište vaši odpověď</label>
+        <textarea class="diskuze-reply-input" placeholder="Napište vaši odpověď..." rows="5"></textarea>
+        <div class="diskuze-reply-actions">
+            <button class="diskuze-reply-submit" onclick="submitReply(this)">
                 Zveřejnit odpověď
             </button>
-            <button class="diskuze-cancel-btn" onclick="this.closest('.diskuze-reply-form').remove()">
+            <button class="diskuze-reply-cancel" onclick="this.closest('.diskuze-reply-form').remove()">
                 Zrušit
             </button>
         </div>
     `;
 
-    comment.appendChild(replyForm);
+    if (isOriginalPost) {
+        // For original post, insert after diskuze-op-stats
+        const opStats = button.closest('.diskuze-op-stats');
+        opStats.insertAdjacentElement('afterend', replyForm);
+    } else {
+        // For regular comments, find the comment content and insert after comment actions
+        const commentContent = button.closest('.diskuze-comment-content');
+        if (!commentContent) return;
+        
+        const commentActions = button.closest('.diskuze-comment-actions');
+        commentActions.insertAdjacentElement('afterend', replyForm);
+    }
 
     // Focus on textarea
-    const textarea = replyForm.querySelector('.diskuze-reply-textarea');
+    const textarea = replyForm.querySelector('.diskuze-reply-input');
     textarea.focus();
 }
 
