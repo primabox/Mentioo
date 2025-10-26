@@ -413,7 +413,7 @@ body {
 }
 
 .tab {
-  @apply py-3.5 border-0 bg-transparent text-[#717171] text-[14] font-medium cursor-pointer transition-all;
+  @apply py-3.5 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all;
   position: relative;
 }
 
