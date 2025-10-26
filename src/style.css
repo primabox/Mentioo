@@ -430,30 +430,55 @@
       display: none !important;
     }
 
-
+    /* ===== SWIPER SLIDES ===== */
     .swiper-slide {
-      width: 100% !important;
-      /* Ujisti se, že každý slide má správnou šířku */
-      height: 456px !important;
+      @apply flex-shrink-0;
+      width: 361px !important;
+      height: auto !important;
       position: relative;
       transition-property: transform, opacity;
     }
 
     /* Swiper kontejner pro news sekci */
     .mySwiper {
-      @apply mx-auto overflow-hidden;
+      @apply mx-auto;
+      width: 1518px !important;
+      max-width: 100%;
       padding-top: 10px;
+      padding-bottom: 10px;
+      overflow: hidden !important;
     }
 
     .mySwiper .swiper-wrapper {
       @apply items-stretch;
+      gap: 24px !important;
     }
 
-    /* Swiper slide pro news sekci - přepsání width */
     .mySwiper .swiper-slide {
-      width: auto !important;
+      width: 361px !important;
       height: auto !important;
-      min-height: 500px;
+      margin-right: 0 !important;
+    }
+
+    /* Swiper kontejner pro category sekci */
+    .myCategorySwiper {
+      @apply relative mx-auto mb-20;
+      width: 1518px !important;
+      max-width: 100%;
+      height: auto !important;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      overflow: hidden !important;
+    }
+
+    .myCategorySwiper .swiper-wrapper {
+      gap: 24px !important;
+    }
+
+    .myCategorySwiper .swiper-slide {
+      width: 361px !important;
+      height: auto !important;
+      margin-right: 0 !important;
     }
 
     /* Skryj defaultní Swiper šipky */
@@ -474,6 +499,53 @@
       .category-prev,
       .category-next {
         display: none !important;
+      }
+
+      /* Mobilní swipery */
+      .mySwiper,
+      .myCategorySwiper,
+      .myReviewSwiper {
+        width: 100% !important;
+        padding-left: calc((100vw - 361px) / 2) !important;
+        padding-right: calc((100vw - 361px) / 2) !important;
+        overflow: visible !important;
+      }
+
+      .mySwiper .swiper-wrapper,
+      .myCategorySwiper .swiper-wrapper,
+      .myReviewSwiper .swiper-wrapper {
+        gap: 16px !important;
+      }
+
+      .mySwiper .swiper-slide,
+      .myCategorySwiper .swiper-slide {
+        width: 361px !important;
+        flex-shrink: 0 !important;
+      }
+
+      .myReviewSwiper .swiper-slide {
+        width: 490px !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* Category gradient má vlastní padding, musíme ho vynulovat */
+      .category-gradient {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      /* Pro malé obrazovky kde se 361px nevejde */
+      @media (max-width: 400px) {
+        .mySwiper,
+        .myCategorySwiper {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        .mySwiper .swiper-slide,
+        .myCategorySwiper .swiper-slide {
+          width: calc(100vw - 32px) !important;
+        }
       }
     }
 
@@ -583,26 +655,6 @@
       @apply border border-[#0069B2] text-[#0069B2] px-6 py-3 rounded-full font-medium hover:bg-[#0069B2] hover:text-white transition cursor-pointer;
     }
 
-    /* ===== SWIPER CONTAINERS ===== */
-    .myCategorySwiper {
-      @apply relative mx-auto mb-20;
-      height: 480px !important;
-      padding-top: 20px;
-      padding-bottom: 40px;
-    }
-
-
-
-
-    .swiper-slide {
-      flex-shrink: 0;
-      width: 361px !important;
-      height: 456px !important;
-      position: relative;
-      transition-property: transform, opacity;
-    }
-
-
     /* ===== REVIEWS SECTION ===== */
     .reviews-section {
       @apply py-16 px-4 sm:px-6 lg:px-12;
@@ -620,11 +672,23 @@
       @apply mt-3 mb-16 text-[#4D4D4D] text-[16px] font-[400];
     }
 
-    
+    /* Review Swiper */
+    .myReviewSwiper {
+      width: 1518px !important;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow: hidden !important;
+    }
 
+    .myReviewSwiper .swiper-wrapper {
+      gap: 24px !important;
+    }
 
-    .swiper-slide {
-      @apply w-auto h-full flex justify-center;
+    .myReviewSwiper .swiper-slide {
+      @apply flex justify-center;
+      width: 490px !important;
+      height: auto !important;
+      margin-right: 0 !important;
     }
 
     /* Review Card Styling */
@@ -727,9 +791,6 @@
       height: 48px !important;
       z-index: 100 !important;
     }
-
-
-    op
 
     /* ===== FOOTER ===== */
     .footer {

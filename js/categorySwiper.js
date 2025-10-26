@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1️⃣ Inicializace Swiperu
   const categorySwiper = new Swiper(swiperEl, {
     slidesPerView: 1,
-    spaceBetween: 24,
+    slidesPerGroup: 1,
+    spaceBetween: 16,
     loop: false,
     speed: 600,
     resistanceRatio: 0,
@@ -19,22 +20,51 @@ document.addEventListener("DOMContentLoaded", () => {
     touchRatio: 1,
     threshold: 5,
     centeredSlides: false,
+    watchSlidesProgress: true,
     navigation: {
       nextEl: ".category-next",
       prevEl: ".category-prev",
     },
     breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        allowTouchMove: true,
+        touchRatio: 1,
+        centeredSlides: false,
+      },
       640: {
         slidesPerView: 1,
-        spaceBetween: 16
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        allowTouchMove: true,
+        touchRatio: 1,
+        centeredSlides: false,
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 20,
+        allowTouchMove: true,
+        touchRatio: 1,
+        centeredSlides: false,
       },
       1024: {
-        slidesPerView: 2,
-        spaceBetween: 20
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 20,
+        allowTouchMove: false,
+        touchRatio: 0,
+        centeredSlides: false,
       },
       1280: {
         slidesPerView: 4,
-        spaceBetween: 24
+        slidesPerGroup: 4,
+        spaceBetween: 24,
+        allowTouchMove: false,
+        touchRatio: 0,
+        centeredSlides: false,
       },
     },
     on: {
