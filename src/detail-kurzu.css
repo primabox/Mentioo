@@ -136,7 +136,7 @@ body {
 
 /* ===== BREADCRUMB NAVIGATION ===== */
 .breadcrumb-nav {
-  @apply flex items-center gap-2 my-[40px] text-[16px];
+  @apply flex items-center gap-2 my-[30px] text-[16px];
 }
 
 .breadcrumb-item {
@@ -174,7 +174,7 @@ body {
 /* ===== HERO SECTION ===== */
 .hero-gradient {
   @apply relative rounded-[48px] overflow-visible;
-  padding: 40px 12rem 80px 0px;
+  padding: 40px 12rem 125px 0px;
   margin-right: -28rem;
   z-index: 1;
   margin-bottom: 80px;
@@ -196,11 +196,11 @@ body {
 }
 
 .hero-title {
-  @apply text-[56px] text-[#1C1C1C] max-w-[1040px] font-semibold leading-[100%] mb-4;
+  @apply text-[56px] text-[#1C1C1C] max-w-[1040px] font-semibold leading-[100%] mb-4 mt-2;
 }
 
 .hero-description {
-  @apply text-[20px] text-[#1C1C1C] mb-4 max-w-[786px] max-h-[60px] font-[400] leading-relaxed;
+  @apply text-[20px] text-[#1C1C1C] my-6 max-w-[786px] max-h-[60px] font-[400] leading-relaxed;
 }
 
 /* Instructor Info in Hero */
@@ -213,7 +213,7 @@ body {
 }
 
 .instructor-avatar {
-  @apply w-12 h-12 rounded-full object-cover;
+  @apply w-8 h-8 rounded-full object-cover;
 }
 
 .instructor-details {
@@ -221,15 +221,15 @@ body {
 }
 
 .instructor-label {
-  @apply text-[16px] text-[#333333] font-semibold;
+  @apply text-[16px] text-[#333333] font-semibold mt-2 ;
 }
 
 .instructor-name {
-  @apply text-[16px] text-[#1C1C1C] underline;
+  @apply text-[16px] text-[#1C1C1C] underline mt-2;
 }
 
 .instructor-badges {
-  @apply flex items-center gap-2;
+  @apply flex items-center gap-2 mt-4;
 }
 
 .badge {
@@ -413,7 +413,7 @@ body {
 }
 
 .tab {
-  @apply py-3.5 border-0 bg-transparent text-slate-600 text-[0.8125rem] font-medium cursor-pointer transition-all;
+  @apply py-3.5 border-0 bg-transparent text-[#717171] text-[14] font-medium cursor-pointer transition-all;
   position: relative;
 }
 
@@ -687,9 +687,10 @@ body {
 
 /* Sidebar Tabs */
 .sidebar-tabs {
-  @apply flex justify-center items-center gap-3;
+  @apply flex items-center;
   position: relative;
   padding: 0;
+  justify-content: space-evenly;
   --indicator-left: 0px;
   --indicator-width: 0px;
 }
@@ -698,8 +699,9 @@ body {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 330px;
   height: 2px;
   background: #E5E5E5;
   z-index: 1;
@@ -718,12 +720,13 @@ body {
 }
 
 .sidebar-tab {
-  @apply pb-[12px] text-center text-[13px] font-[500] whitespace-nowrap text-[#717171] transition-colors cursor-pointer;
+  @apply pb-[12px] text-center text-[14px] font-[500] whitespace-nowrap text-[#717171] transition-colors cursor-pointer;
   @apply hover:text-[#0069B2];
   position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  flex: 1;
+  padding-left: 3px;
+  padding-right: 3px;
+  background: transparent;
+  border: none;
 }
 
 .sidebar-tab.active {
@@ -751,7 +754,7 @@ body {
 
 /* Coupon Section Title */
 .coupon-section-title {
-  @apply text-[#2D3748] text-[18px] font-semibold mb-4 text-left;
+  @apply text-[#2D3748] text-[18px] font-semibold mb-2 mt-4 text-left;
 }
 
 .coupon-input-wrapper {
@@ -778,8 +781,7 @@ body {
   padding: 8px 20px;
   border-radius: 32px;
   height: 37px;
-  width: auto;
-  min-width: 87px;
+  width: 107px;
   @apply hover:bg-[#D1EBFF] transition-colors;
   white-space: nowrap;
   border: none;
@@ -841,7 +843,7 @@ body {
 .sidebar-divider::before,
 .sidebar-divider::after {
   content: '';
-  flex: 1;
+  width: 133px;
   border-bottom: 1px solid #BBBBBB;
 }
 
@@ -851,7 +853,7 @@ body {
 
 /* Premium Section */
 .premium-title-main {
-  @apply text-[#0069B2] text-[18px] font-semibold mb-4 text-left;
+  @apply text-[#0069B2] text-[28px] font-semibold mb-4 text-left;
 }
 
 .premium-price-section {
@@ -1127,7 +1129,11 @@ body {
 }
 
 .lesson-duration {
-  @apply text-sm text-[#717171];
+  @apply text-sm text-[#717171] flex items-center gap-2;
+}
+
+.lesson-duration img {
+  @apply w-5 h-5;
 }
 
 /* ===== REVIEWS SECTION ===== */
