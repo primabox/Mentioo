@@ -1023,19 +1023,25 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-  @apply pb-8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .footer-container {
-  @apply container mx-auto px-8 lg:px-24;
+  @apply container mx-auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer-logo {
-  @apply pt-5 pb-6;
+  @apply pb-6;
 }
 
 .footer-logo-img {
-  @apply h-12 w-auto;
+  width: 146px;
+  height: 60px;
 }
 
 .footer-content {
@@ -1043,7 +1049,8 @@ body {
 }
 
 .footer-grid {
-  @apply flex flex-col md:flex-row md:items-start gap-y-8 gap-3 md:gap-8;
+  @apply flex flex-col md:flex-row md:items-start gap-y-8 md:gap-8;
+  gap: 10px;
 }
 
 .footer-info {
@@ -1051,7 +1058,7 @@ body {
 }
 
 .footer-info-text {
-  @apply text-base font-light text-gray-700 max-w-xs;
+  @apply text-base font-light text-[#1C1C1C] max-w-xs;
 }
 
 .footer-categories {
@@ -1063,7 +1070,7 @@ body {
 }
 
 .footer-links {
-  @apply space-y-2 text-sm text-gray-600;
+  @apply space-y-2 text-sm text-[#4D4D4D] font-[500];
 }
 
 .footer-link {
@@ -1293,6 +1300,91 @@ body {
 
   .diskuze-post-text {
     @apply text-sm;
+  }
+}
+
+/* iPhone 15 a podobná zařízení (393px - 480px) */
+@media (min-width: 393px) and (max-width: 480px) {
+  .main-wrapper {
+    @apply px-4;
+  }
+
+  .hero-title {
+    @apply text-[28px];
+  }
+
+  .hero-description {
+    @apply text-[15px];
+  }
+
+  .content-card {
+    padding: 1.75rem;
+  }
+
+  .content-heading {
+    @apply text-[22px];
+  }
+
+  .lesson-header {
+    @apply p-5;
+  }
+
+  .tabs-wrapper {
+    @apply px-3;
+  }
+
+  .tab {
+    @apply text-[12px] py-2.5;
+  }
+
+  /* Footer responsive pro iPhone 15 */
+  .footer {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .footer-logo-img {
+    width: 120px;
+    height: 50px;
+  }
+
+  .footer-grid {
+    @apply flex-col gap-6;
+  }
+
+  .footer-info,
+  .footer-about {
+    @apply w-full;
+  }
+
+  .footer-categories {
+    @apply grid-cols-2 gap-5;
+  }
+
+  .footer-heading {
+    @apply text-[15px] mb-2;
+  }
+
+  .footer-links {
+    @apply text-[13px];
+  }
+
+  .footer-info-text {
+    @apply text-[14px];
+  }
+
+  .footer-bottom {
+    @apply flex-col gap-3 py-3;
+  }
+
+  .footer-copyright {
+    @apply text-[12px] text-center;
+  }
+
+  .footer-social {
+    @apply gap-3;
   }
 }
 

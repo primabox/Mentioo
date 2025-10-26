@@ -537,63 +537,70 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-  @apply mt-16 py-12;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .footer-container {
-  @apply max-w-[1400px] mx-auto px-8;
+  @apply container mx-auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer-logo {
-  @apply mb-8;
+  @apply pb-6;
 }
 
 .footer-logo-img {
-  @apply w-32;
+  width: 146px;
+  height: 60px;
 }
 
 .footer-content {
-  @apply mb-8;
+  @apply pb-6;
 }
 
 .footer-grid {
-  @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8;
+  @apply flex flex-col md:flex-row md:items-start gap-y-8 md:gap-8;
+  gap: 10px;
 }
 
 .footer-info {
-  @apply lg:col-span-1;
+  @apply sm:w-1/4 min-w-0;
 }
 
 .footer-info-text {
-  @apply text-sm text-gray-600 leading-relaxed;
+  @apply text-base font-light text-[#1C1C1C] max-w-xs;
 }
 
 .footer-categories {
-  @apply lg:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8;
-}
-
-.footer-about {
-  @apply lg:col-span-1;
+  @apply flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-8;
 }
 
 .footer-heading {
-  @apply text-base font-semibold text-gray-900 mb-4;
+  @apply text-gray-900 font-medium mb-3 text-lg;
 }
 
 .footer-links {
-  @apply flex flex-col gap-2;
+  @apply space-y-2 text-sm text-[#4D4D4D] font-[500];
 }
 
 .footer-link {
-  @apply text-sm text-gray-600 hover:text-[#0069B2] transition-colors;
+  @apply hover:underline hover:text-blue-600 transition-colors;
+}
+
+.footer-about {
+  @apply md:w-48;
 }
 
 .footer-divider {
-  @apply border-t border-gray-200 my-8;
+  @apply border-t border-gray-200 mt-4;
 }
 
 .footer-bottom {
-  @apply flex flex-col md:flex-row items-center justify-between gap-4;
+  @apply py-4 flex flex-col md:flex-row items-center justify-between gap-4;
 }
 
 .footer-copyright {
@@ -605,7 +612,7 @@ body {
 }
 
 .social-link {
-  @apply transition-colors;
+  @apply rounded-full border border-transparent hover:scale-110 transition-all;
 }
 
 /* ===== COURSE-SPECIFIC STYLES ===== */
@@ -744,14 +751,16 @@ body {
 }
 
 .coupon-input-wrapper {
-  @apply flex gap-1;
+  @apply flex gap-2 items-center;
 }
 
 .coupon-input {
-  @apply flex-1 border border-[#E2E8F0] text-[14px] text-[#2D3748];
-  padding: 8px 8px 8px 8px;
+  @apply border text-[14px] text-[#2D3748];
+  width: 220px;
+  padding: 8px;
   border-radius: 6px;
   height: 45px;
+  border: 1px solid #E2E8F0;
   @apply focus:outline-none focus:border-[#0069B2] focus:ring-2 focus:ring-[#E6F4FF] transition-all;
   background: white;
 }
@@ -761,13 +770,19 @@ body {
 }
 
 .coupon-apply-btn {
-  @apply bg-[#E6F4FF] text-[#0069B2] text-[13px] cursor-pointer font-semibold;
-  padding: 8px 12px;
+  @apply bg-[#E6F4FF] text-[#0069B2] text-[13px] cursor-pointer font-[500] ;
+  padding: 8px 20px;
   border-radius: 32px;
-  height: 45px;
-  width: 220px;
+  height: 37px;
+  width: auto;
+  min-width: 87px;
   @apply hover:bg-[#D1EBFF] transition-colors;
   white-space: nowrap;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .coupon-link-btn {
@@ -2105,6 +2120,118 @@ body {
 
   .review-text {
     @apply text-sm;
+  }
+}
+
+@media (min-width: 393px) and (max-width: 480px) {
+  .main-wrapper {
+    @apply px-4;
+  }
+
+  .hero-gradient {
+    @apply p-5 text-center;
+    padding-right: 1.25rem;
+  }
+
+  .hero-title {
+    @apply text-[28px];
+  }
+
+  .hero-description {
+    @apply text-[15px];
+  }
+
+  .course-meta-row {
+    gap: 12px;
+    padding: 0;
+  }
+
+  .course-meta-item {
+    padding: 16px;
+  }
+
+  .content-card {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  .tabs-wrapper {
+    @apply px-3;
+  }
+
+  .tab {
+    @apply text-[12px] py-2.5;
+  }
+
+  .tab-content {
+    @apply p-5;
+  }
+
+  .sidebar-section {
+    @apply p-4;
+  }
+
+  .coupon-input {
+    width: 100%;
+  }
+
+  .course-image-wrapper {
+    max-height: 200px;
+  }
+
+  .course-thumbnail {
+    max-height: 200px;
+  }
+
+  /* Footer responsive pro iPhone 15 */
+  .footer {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .footer-logo-img {
+    width: 120px;
+    height: 50px;
+  }
+
+  .footer-grid {
+    @apply flex-col gap-6;
+  }
+
+  .footer-info,
+  .footer-about {
+    @apply w-full;
+  }
+
+  .footer-categories {
+    @apply grid-cols-2 gap-5;
+  }
+
+  .footer-heading {
+    @apply text-[15px] mb-2;
+  }
+
+  .footer-links {
+    @apply text-[13px];
+  }
+
+  .footer-info-text {
+    @apply text-[14px];
+  }
+
+  .footer-bottom {
+    @apply flex-col gap-3 py-3;
+  }
+
+  .footer-copyright {
+    @apply text-[12px] text-center;
+  }
+
+  .footer-social {
+    @apply gap-3;
   }
 }
 

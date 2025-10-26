@@ -1,8 +1,52 @@
 const reviewsSwiper = new Swiper('.myReviewsSwiper', {
-  loop: true, // Povolíme nekonečné scrollování
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 16,
+  loop: true,
+  speed: 600,
+  allowTouchMove: true,
+  touchRatio: 1,
+  centeredSlides: true,
   navigation: {
     nextEl: '.review-next',
     prevEl: '.review-prev',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      allowTouchMove: true,
+      centeredSlides: true,
+    },
+    640: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      allowTouchMove: true,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      allowTouchMove: true,
+      centeredSlides: true,
+    },
+    1024: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 24,
+      allowTouchMove: false,
+      centeredSlides: true,
+    },
+    1280: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 24,
+      allowTouchMove: false,
+      centeredSlides: true,
+    },
   },
   on: {
     slideChange: function () {

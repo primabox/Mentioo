@@ -504,7 +504,7 @@
       /* Mobilní swipery */
       .mySwiper,
       .myCategorySwiper,
-      .myReviewSwiper {
+      .myReviewsSwiper {
         width: 100% !important;
         padding-left: calc((100vw - 361px) / 2) !important;
         padding-right: calc((100vw - 361px) / 2) !important;
@@ -513,7 +513,7 @@
 
       .mySwiper .swiper-wrapper,
       .myCategorySwiper .swiper-wrapper,
-      .myReviewSwiper .swiper-wrapper {
+      .myReviewsSwiper .swiper-wrapper {
         gap: 16px !important;
       }
 
@@ -523,9 +523,15 @@
         flex-shrink: 0 !important;
       }
 
-      .myReviewSwiper .swiper-slide {
+      .myReviewsSwiper .swiper-slide {
         width: 490px !important;
         flex-shrink: 0 !important;
+      }
+
+      /* Review swiper centrování */
+      .myReviewsSwiper {
+        padding-left: calc((100vw - 490px) / 2) !important;
+        padding-right: calc((100vw - 490px) / 2) !important;
       }
 
       /* Category gradient má vlastní padding, musíme ho vynulovat */
@@ -544,6 +550,15 @@
 
         .mySwiper .swiper-slide,
         .myCategorySwiper .swiper-slide {
+          width: calc(100vw - 32px) !important;
+        }
+
+        .myReviewsSwiper {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        .myReviewsSwiper .swiper-slide {
           width: calc(100vw - 32px) !important;
         }
       }
@@ -673,33 +688,37 @@
     }
 
     /* Review Swiper */
-    .myReviewSwiper {
+    .myReviewsSwiper {
       width: 1518px !important;
       max-width: 100%;
+      height: auto !important;
       margin: 0 auto;
       overflow: hidden !important;
     }
 
-    .myReviewSwiper .swiper-wrapper {
+    .myReviewsSwiper .swiper-wrapper {
       gap: 24px !important;
     }
 
-    .myReviewSwiper .swiper-slide {
+    .myReviewsSwiper .swiper-slide {
       @apply flex justify-center;
       width: 490px !important;
-      height: auto !important;
+      height: 305px !important;
       margin-right: 0 !important;
     }
 
     /* Review Card Styling */
     .review-card {
-      @apply bg-white shadow-lg rounded-xl p-8 flex flex-col gap-6;
+      @apply bg-white shadow-lg flex flex-col relative;
       width: 490px !important;
       height: 305px !important;
+      padding: 32px !important;
+      border-radius: 16px !important;
+      gap: 0 !important;
     }
 
     .review-header {
-      @apply flex items-start mb-4;
+      @apply flex items-start mb-3;
     }
 
     .review-avatar {
@@ -715,7 +734,7 @@
     }
 
     .review-body {
-      @apply mt-6;
+      @apply mt-0;
     }
 
     .reviews-time {
@@ -724,7 +743,7 @@
 
     /* Review Rating (Stars) */
     .review-rating {
-      @apply flex mb-3 mt-1 gap-1 text-[12px];
+      @apply flex mb-2 mt-1 gap-1 text-[12px];
     }
 
     .review-rating i {
@@ -737,7 +756,7 @@
 
     /* SHADOW DIVIDER */
     .divider {
-      @apply w-full h-[1px] bg-gray-100 my-4;
+      @apply w-full h-[1px] bg-gray-100 my-3;
     }
 
     /* SWIPER BUTTONS */
@@ -794,19 +813,25 @@
 
     /* ===== FOOTER ===== */
     .footer {
-      @apply pb-8;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      padding-left: 200px;
+      padding-right: 200px;
     }
 
     .footer-container {
-      @apply container mx-auto px-8 lg:px-24;
+      @apply container mx-auto;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .footer-logo {
-      @apply pt-5 pb-6;
+      @apply pb-6;
     }
 
     .footer-logo-img {
-      @apply h-12 w-auto;
+      width: 146px;
+      height: 60px;
     }
 
     .footer-content {
@@ -814,7 +839,8 @@
     }
 
     .footer-grid {
-      @apply flex flex-col md:flex-row md:items-start gap-y-8 gap-3 md:gap-8;
+      @apply flex flex-col md:flex-row md:items-start gap-y-8 md:gap-8;
+      gap: 10px;
     }
 
     .footer-info {
@@ -822,7 +848,7 @@
     }
 
     .footer-info-text {
-      @apply text-base font-light text-gray-700 max-w-xs;
+      @apply text-base font-light text-[#1C1C1C] max-w-xs;
     }
 
     .footer-categories {
@@ -834,7 +860,7 @@
     }
 
     .footer-links {
-      @apply space-y-2 text-sm text-gray-600;
+      @apply space-y-2 text-sm text-[#4D4D4D] font-[500];
     }
 
     .footer-link {
@@ -1118,7 +1144,7 @@
       border-color: #28A6FF;
       box-shadow: 0 8px 24px rgba(40, 166, 255, 0.2);
       /* jemný modrý stín */
-      transform: translateY(-70px);
+      transform: translateY(-60px);
       /* decentní pohyb nahoru */
       transition: all 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
@@ -1295,4 +1321,110 @@
       max-width: 100%;
       overflow-x: hidden;
 
+    }
+
+    /* iPhone 15 a podobná zařízení (393px - 480px) */
+    @media (min-width: 393px) and (max-width: 480px) {
+      .main-wrapper {
+        @apply px-4;
+      }
+
+      .hero-section {
+        @apply px-4 py-12;
+      }
+
+      .hero-title {
+        @apply text-[32px];
+      }
+
+      .hero-subtitle {
+        @apply text-[15px];
+      }
+
+      .course-card {
+        width: 100%;
+      }
+
+      .course-card-title {
+        @apply text-[16px];
+      }
+
+      .course-card-description {
+        @apply text-[14px];
+      }
+
+      /* Footer responsive pro iPhone 15 */
+      .footer {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .footer-logo-img {
+        width: 120px;
+        height: 50px;
+      }
+
+      .footer-grid {
+        @apply flex-col gap-6;
+      }
+
+      .footer-info,
+      .footer-about {
+        @apply w-full;
+      }
+
+      .footer-categories {
+        @apply grid-cols-2 gap-5;
+      }
+
+      .footer-heading {
+        @apply text-[15px] mb-2;
+      }
+
+      .footer-links {
+        @apply text-[13px];
+      }
+
+      .footer-info-text {
+        @apply text-[14px];
+      }
+
+      .footer-bottom {
+        @apply flex-col gap-3 py-3;
+      }
+
+      .footer-copyright {
+        @apply text-[12px] text-center;
+      }
+
+      .footer-social {
+        @apply gap-3;
+      }
+
+      /* Review cards */
+      .review-card {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* Pricing cards */
+      .pricing-card {
+        @apply px-5 py-6;
+      }
+
+      /* Category swiper */
+      .category-card {
+        @apply text-[14px];
+      }
+
+      /* News section */
+      .news-card-title {
+        @apply text-[15px];
+      }
+
+      .news-card-description {
+        @apply text-[13px];
+      }
     }
