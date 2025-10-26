@@ -161,7 +161,7 @@ body {
   padding: 40px 12rem 80px 0px;
   margin-right: -28rem;
   z-index: 1;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 }
 
 .hero-bg {
@@ -250,7 +250,7 @@ body {
 }
 
 .tabs {
-  @apply flex gap-6 mt-8 relative;
+  @apply flex gap-6 mt-2 relative;
   --indicator-left: 0px;
   --indicator-width: 0px;
 }
@@ -269,7 +269,7 @@ body {
 }
 
 .tab {
-  @apply py-3.5 border-0 bg-transparent text-slate-600 text-[0.8125rem] font-medium cursor-pointer transition-all relative;
+  @apply py-3.5 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all relative;
 }
 
 .tab.active {
@@ -282,16 +282,11 @@ body {
 
 /* ===== TAB CONTENT ===== */
 .tab-content {
-  @apply p-6 hidden;
+  @apply p-6;
+  display: none;
 }
 
-.tab-content.active {
-  @apply block;
-}
 
-.content-heading {
-  @apply text-[40px] font-semibold text-[#1C1C1C] mb-3;
-}
 
 .content-text {
   @apply text-[16px] text-[#4D4D4D] leading-tight mb-3;
@@ -354,9 +349,186 @@ body {
   @apply absolute left-0 text-[#0069B2] font-bold;
 }
 
+/* ===== COURSE INCLUDES SECTION ===== */
+.course-includes-section {
+  @apply mb-8;
+}
+
+.includes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 529px;
+  height: auto;
+  min-height: 160px;
+  border-radius: 16px;
+  padding: 32px;
+  column-gap: 48px;
+  background: #F5F9FF;
+}
+
+.includes-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.includes-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+  height: 100%;
+}
+
+.include-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.include-item img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.include-text {
+  @apply text-[16px] text-[#1C1C1C] font-normal;
+  white-space: nowrap;
+}
+
+/* ===== COURSE CURRICULUM ===== */
+.course-modules-section {
+  @apply mt-8;
+}
+
+.course-curriculum {
+  @apply flex flex-col gap-4;
+}
+
+.curriculum-module {
+  @apply bg-white rounded-xl overflow-hidden;
+  transition: background-color 0.2s ease;
+}
+
+.curriculum-module:hover {
+  @apply bg-[#FAFAFA];
+}
+
+.module-header {
+  @apply flex items-center justify-between p-5 cursor-pointer transition-all duration-300;
+}
+
+.module-header:hover {
+  @apply bg-[#F9FAFB];
+}
+
+.module-title-row {
+  @apply flex items-center gap-3;
+}
+
+.module-toggle {
+  @apply text-[#717171] text-sm;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+  transform-origin: center;
+}
+
+.module-toggle:hover {
+  @apply text-[#2191DF];
+}
+
+.curriculum-module .module-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease,
+              transform 0.4s ease;
+}
+
+.curriculum-module .module-content.open {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.curriculum-module:has(.module-content.open) .module-header {
+  @apply bg-[#F5F9FF];
+}
+
+.module-title {
+  @apply text-[16px] font-semibold text-[#1C1C1C];
+}
+
+.module-duration {
+  @apply text-[16px] text-[#717171];
+}
+
+.lesson-row {
+  @apply flex items-center justify-between p-4 transition-all duration-200;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.lesson-row:last-child {
+  border-bottom: none;
+}
+
+.lesson-row:hover {
+  @apply bg-[#F9FAFB];
+  transform: translateX(4px);
+}
+
+.lesson-info {
+  @apply flex items-center gap-3;
+}
+
+.lesson-info img {
+  @apply w-5 h-5;
+}
+
+.lesson-title {
+  @apply text-[16px] text-[#4D4D4D];
+}
+
+.lesson-duration {
+  @apply text-[16px] text-[#717171] flex items-center gap-2;
+}
+
+.lesson-duration img {
+  @apply w-5 h-5;
+}
+
+/* Lesson Status Badges */
+.lesson-status {
+  @apply flex items-center gap-2 py-2 px-3.5 font-[500] text-[14px] rounded-[4px];
+}
+
+.lesson-status-completed {
+  @apply bg-[#CCFFE7] text-[#006636];
+}
+
+.lesson-status-test {
+  @apply bg-[#E0F2FE] text-[#0369A1];
+}
+
+.lesson-status-warning {
+  @apply text-[#F59E0B];
+}
+
+.lesson-status-success {
+  @apply text-[#10B981];
+}
+
+.lesson-arrow {
+  @apply text-[#0069B2];
+}
+
 /* ===== SIDEBAR ===== */
 .sidebar {
-  @apply h-fit text-left items-start mt-12;
+  @apply h-fit text-left items-start mt-42;
   position: relative;
   z-index: 50;
 }
@@ -374,25 +546,21 @@ body {
 
 /* ===== ENROLLED SIDEBAR ===== */
 .enrolled-sidebar {
-  @apply bg-white overflow-hidden;
+  @apply bg-white overflow-hidden ;
   width: 383px;
   border-bottom-right-radius: 24px;
   border-bottom-left-radius: 24px;
-  padding-top: 54px;
+  padding: 32px 24px 0px 24px;
   box-shadow: 0px 4px 16px rgba(26, 120, 229, 0.08);
-}
-
-.sidebar-item {
-  @apply px-6 py-6;
-  border-bottom: 1px solid #F0F0F0;
-}
-
-.sidebar-item:last-of-type {
-  border-bottom: none;
 }
 
 .sidebar-item-header {
   @apply flex items-center gap-3 mb-3;
+  margin-top: 40px;
+}
+
+.sidebar-item-header:first-of-type {
+  @apply mt-0;
 }
 
 .sidebar-icon {
@@ -400,11 +568,11 @@ body {
 }
 
 .sidebar-item-title {
-  @apply text-[16px] font-semibold text-[#0069B2];
+  @apply text-[18px] font-semibold text-[#0069B2];
 }
 
 .sidebar-item-text {
-  @apply text-[14px] text-[#4D4D4D] leading-relaxed;
+  @apply text-[16px] text-[#4D4D4D] leading-relaxed;
 }
 
 .sidebar-item-text strong {
@@ -417,7 +585,7 @@ body {
 }
 
 .progress-bar-segmented {
-  @apply flex gap-1 w-full;
+  @apply flex gap-1 w-full items-center relative;
 }
 
 .progress-segment {
@@ -425,7 +593,21 @@ body {
 }
 
 .progress-segment.filled {
-  @apply bg-gradient-to-r from-[#0BA4DB] to-[#28D5D5];
+  @apply bg-[#28A6FF];
+}
+
+.progress-segment.empty {
+  @apply bg-[#D4EDFF];
+}
+
+.progress-dot {
+  @apply absolute rounded-full;
+  background: #28A6FF;
+  width: 4px;
+  height: 4px;
+  right: 3px;
+  top: 2px;
+  border-radius: 3px;
 }
 
 .progress-segment.empty {
@@ -438,9 +620,8 @@ body {
   padding: 12px 20px;
   border-radius: 32px;
   border: none;
-  margin: 24px;
-  margin-top: 0;
-  width: calc(100% - 48px);
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .continue-course-btn:hover {

@@ -77,9 +77,6 @@
                     <a href="#" class="icon-btn-alt">
                         <img src="img/network.png" alt="Globe" class="w-5 h-5" />
                     </a>
-                    <a href="#" class="user-profile-btn">
-                        <img src="img/avatar.jpg" alt="User" class="w-10 h-10 rounded-full object-cover" />
-                    </a>
                 </div>
             </div>
         </nav>
@@ -125,77 +122,390 @@
                     <!-- Tabs -->
                     <div class="tabs-wrapper">
                         <div class="tabs">
-                            <button class="tab active" data-tab="overview">Přehled kurzu</button>
-                            <button class="tab" data-tab="curriculum">Osnova kurzu</button>
+                            <button class="tab active" data-tab="overview">Obsah kurzu</button>
+                            <button class="tab" data-tab="curriculum">Hodnocení kurzu</button>
                             <button class="tab" data-tab="instructor">O lektorovi</button>
-                            <button class="tab" data-tab="reviews">Recenze</button>
                         </div>
                     </div>
 
-                    <!-- Tab Content: Přehled kurzu -->
-                    <div class="tab-content active" id="overview">
-                        <h2 class="content-heading">Co se v kurzu naučíte</h2>
-                        <div class="learning-grid">
-                            <div class="learning-column">
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                    <!-- Tab Content: Obsah kurzu -->
+                    <div class="tab-content" data-tab="overview">
+                 
+
+                        <!-- Co je zahrnuto v kurzu -->
+                        <div class="course-includes-section">
+                            <h3 class="section-subtitle">Co je zahrnuto v kurzu</h3>
+                            <div class="includes-container">
+                                <div class="includes-left">
+                                    <div class="include-item">
+                                        <img src="img/Course icons.png" alt="">
+                                        <span class="include-text">80 výukových videí</span>
+                                    </div>
+                                    <div class="include-item">
+                                        <img src="img/CourseIconPaper.png" alt="">
+                                        <span class="include-text">20 studijních dokumentů</span>
+                                    </div>
+                                    <div class="include-item">
+                                        <img src="img/assignment_turned_in.png" alt="">
+                                        <span class="include-text">3 projektové úkoly</span>
+                                    </div>
                                 </div>
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Nunc vulputate libero et velit interdum</span>
-                                </div>
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Ac aliquet odio mattis</span>
-                                </div>
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Lorem ipsum dolor sit amet consectetur</span>
-                                </div>
-                            </div>
-                            <div class="learning-column">
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Nunc vulputate libero et velit interdum</span>
-                                </div>
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Ac aliquet odio mattis</span>
-                                </div>
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Lorem ipsum dolor sit amet consectetur</span>
-                                </div>
-                                <div class="learning-item">
-                                    <i class="fas fa-check text-[#0069B2] text-xl mt-0.5"></i>
-                                    <span class="learning-text">Nunc vulputate libero et velit interdum</span>
+                                <div class="includes-right">
+                                    <div class="include-item">
+                                        <img src="img/CourseIconsChecks.png" alt="">
+                                        <span class="include-text">10 online testů</span>
+                                    </div>
+                                    <div class="include-item">
+                                        <img src="img/file_save.png" alt="">
+                                        <span class="include-text">soubory ke stažení</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <h2 class="content-heading">Popis kurzu</h2>
-                        <div class="description-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p>Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                        </div>
+                        <!-- Výukové moduly -->
+                        <div class="course-modules-section">
+                            <h3 class="section-subtitle">Výukové moduly</h3>
 
-                        <div class="info-grid">
-                            <div class="info-section">
-                                <h3 class="section-subtitle">Požadavky</h3>
-                                <ul class="info-list">
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                    <li>Nunc vulputate libero et velit interdum, ac aliquet odio mattis</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                </ul>
-                            </div>
-                            <div class="info-section">
-                                <h3 class="section-subtitle">Pro koho je kurz určen</h3>
-                                <ul class="info-list">
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                    <li>Nunc vulputate libero et velit interdum, ac aliquet odio mattis</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                                </ul>
+                            <div class="course-curriculum">
+                                <!-- Module 1: Introduction -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Introduction</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content">
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Intro to the Figma Advanced Course</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>06:55</span>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Getting Started in Figma Advanced Course</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>06:55</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Module 2: Auto Layout -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Auto Layout</span>
+                                        </div>
+                                        <span class="module-duration">12 lekcí • 2 hodiny • 2 studijní dokumenty • 1 online test</span>
+                                    </div>
+                                    <div class="module-content">
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <span class="lesson-status lesson-status-completed">Dokončeno</span>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <span class="lesson-status lesson-status-completed">Dokončeno</span>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <span class="lesson-status lesson-status-completed">Dokončeno</span>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <span class="lesson-status lesson-status-completed">Dokončeno</span>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <span class="lesson-status lesson-status-completed">Dokončeno</span>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/CourseIconsChecks.png" alt="">
+                                                <span class="lesson-title">Online test: Auto Layout</span>
+                                            </div>
+                                            <span class="lesson-status lesson-status-test">Hodnocení: 8/10</span>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Auto Layout vs Constraints in Figma</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <span class="lesson-status-warning">⚠ 67 % splněno</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <span class="lesson-status-success">✓ 92 % splněno</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>25:55</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>25:55</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>25:55</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>25:55</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Intro to the Figma Advanced Course</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>06:55</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/Course icons.png" alt="">
+                                                <span class="lesson-title">Intro to the Figma Advanced Course</span>
+                                            </div>
+                                            <div class="lesson-duration">
+                                                <img src="img/play_circle.png" alt="">
+                                                <span>06:55</span>
+                                                <i class="fas fa-arrow-right lesson-arrow"></i>
+                                            </div>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/CourseIconPaper.png" alt="">
+                                                <span class="lesson-title">Auto Layout documentation 2</span>
+                                            </div>
+                                            <i class="fas fa-arrow-right lesson-arrow"></i>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/CourseIconPaper.png" alt="">
+                                                <span class="lesson-title">Auto Layout documentation 2</span>
+                                            </div>
+                                            <i class="fas fa-arrow-right lesson-arrow"></i>
+                                        </div>
+                                        <div class="lesson-row">
+                                            <div class="lesson-info">
+                                                <img src="img/CourseIconsChecks.png" alt="">
+                                                <span class="lesson-title">Online test: Auto Layout</span>
+                                            </div>
+                                            <i class="fas fa-arrow-right lesson-arrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Module 3: Grids -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Grids</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 4: Simple App Brand -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Simple App Brand</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 5: Nested & Responsive Auto Layout -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Nested & Responsive Auto Layout</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 6: Animation -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Animation</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 7: Prototyping -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Prototyping</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 8: Components & Variants -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Components & Variants</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 9: Typography -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Typography</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 10: Styles & Libraries -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Styles & Libraries</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 11: Variables -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Variables</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 12: Design Tokens -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Design Tokens</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 13: Accessibility -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Accessibility</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
+
+                                <!-- Module 14: Working with Stakeholders -->
+                                <div class="curriculum-module">
+                                    <div class="module-header">
+                                        <div class="module-title-row">
+                                            <i class="fas fa-chevron-up module-toggle"></i>
+                                            <span class="module-title">Working with Stakeholders</span>
+                                        </div>
+                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                    </div>
+                                    <div class="module-content"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,46 +524,39 @@
                 <!-- Enrolled User Sidebar -->
                 <div class="enrolled-sidebar">
                     <!-- 1. Postup kurzem -->
-                    <div class="sidebar-item">
-                        <div class="sidebar-item-header">
-                            <i class="fas fa-trophy sidebar-icon"></i>
-                            <h3 class="sidebar-item-title">Postup kurzem</h3>
-                        </div>
-                        <p class="sidebar-item-text">Dokončili jste <strong>20 %</strong> kurzu.</p>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar-segmented">
-                                <div class="progress-segment filled" style="width: 20%"></div>
-                                <div class="progress-segment empty" style="width: 80%"></div>
-                            </div>
+                    <div class="sidebar-item-header">
+                        <img src="img/trophy.png" alt="">
+                        <h3 class="sidebar-item-title">Postup kurzem</h3>
+                    </div>
+                    <p class="sidebar-item-text">Dokončili jste <strong>20 %</strong> kurzu.</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-segmented">
+                            <div class="progress-segment filled" style="width: 20%"></div>
+                            <div class="progress-segment empty" style="width: 80%"></div>
+                            <div class="progress-dot"></div>
                         </div>
                     </div>
 
                     <!-- 2. Čas strávený v kurzu -->
-                    <div class="sidebar-item">
-                        <div class="sidebar-item-header">
-                            <i class="fas fa-clock sidebar-icon"></i>
-                            <h3 class="sidebar-item-title">Čas strávený v kurzu</h3>
-                        </div>
-                        <p class="sidebar-item-text">2 hodiny a 10 minut</p>
+                    <div class="sidebar-item-header">
+                        <img src="img/alarmBlue.png" alt="">
+                        <h3 class="sidebar-item-title">Čas strávený v kurzu</h3>
                     </div>
+                    <p class="sidebar-item-text">2 hodiny a 10 minut</p>
 
                     <!-- 3. Hodnocení testů -->
-                    <div class="sidebar-item">
-                        <div class="sidebar-item-header">
-                            <i class="fas fa-star sidebar-icon"></i>
-                            <h3 class="sidebar-item-title">Hodnocení testů</h3>
-                        </div>
-                        <p class="sidebar-item-text">Zatím nemáte žádná hodnocení.</p>
+                    <div class="sidebar-item-header">
+                        <img src="img/stars.png" alt="">
+                        <h3 class="sidebar-item-title">Hodnocení testů</h3>
                     </div>
+                    <p class="sidebar-item-text">Zatím nemáte žádná hodnocení.</p>
 
                     <!-- 4. Certifikáty -->
-                    <div class="sidebar-item">
-                        <div class="sidebar-item-header">
-                            <i class="fas fa-file-alt sidebar-icon"></i>
-                            <h3 class="sidebar-item-title">Certifikáty</h3>
-                        </div>
-                        <p class="sidebar-item-text">Certifikát o absolvování obdržíte po dokončení kurzu.</p>
+                    <div class="sidebar-item-header">
+                        <img src="img/article.png" alt="">
+                        <h3 class="sidebar-item-title">Certifikáty</h3>
                     </div>
+                    <p class="sidebar-item-text">Certifikát o absolvování obdržíte po dokončení kurzu.</p>
 
                     <!-- Action Button -->
                     <button class="continue-course-btn">Pokračovat v kurzu</button>
@@ -365,6 +668,7 @@
     <script type="module" src="js/tabs.js"></script>
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
+    <script type="module" src="js/curriculum.js"></script>
 </body>
 
 </html>
