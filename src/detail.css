@@ -408,6 +408,7 @@ body {
 /* ===== SIDEBAR LAYOUT ===== */
 .sidebar {
   @apply h-fit;
+  width: 383px;
   position: relative;
   z-index: 10;
   margin-top: 48px;
@@ -416,6 +417,7 @@ body {
 /* ===== PROGRESS CARD - TOP SECTION ===== */
 .progress-card {
   @apply bg-white rounded-2xl p-5 mb-5;
+  width: 383px;
   position: relative;
   z-index: 10;
   border: none !important;
@@ -1300,91 +1302,6 @@ body {
 
   .diskuze-post-text {
     @apply text-sm;
-  }
-}
-
-/* iPhone 15 a podobná zařízení (393px - 480px) */
-@media (min-width: 393px) and (max-width: 480px) {
-  .main-wrapper {
-    @apply px-4;
-  }
-
-  .hero-title {
-    @apply text-[28px];
-  }
-
-  .hero-description {
-    @apply text-[15px];
-  }
-
-  .content-card {
-    padding: 1.75rem;
-  }
-
-  .content-heading {
-    @apply text-[22px];
-  }
-
-  .lesson-header {
-    @apply p-5;
-  }
-
-  .tabs-wrapper {
-    @apply px-3;
-  }
-
-  .tab {
-    @apply text-[12px] py-2.5;
-  }
-
-  /* Footer responsive pro iPhone 15 */
-  .footer {
-    padding-top: 32px;
-    padding-bottom: 32px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .footer-logo-img {
-    width: 120px;
-    height: 50px;
-  }
-
-  .footer-grid {
-    @apply flex-col gap-6;
-  }
-
-  .footer-info,
-  .footer-about {
-    @apply w-full;
-  }
-
-  .footer-categories {
-    @apply grid-cols-2 gap-5;
-  }
-
-  .footer-heading {
-    @apply text-[15px] mb-2;
-  }
-
-  .footer-links {
-    @apply text-[13px];
-  }
-
-  .footer-info-text {
-    @apply text-[14px];
-  }
-
-  .footer-bottom {
-    @apply flex-col gap-3 py-3;
-  }
-
-  .footer-copyright {
-    @apply text-[12px] text-center;
-  }
-
-  .footer-social {
-    @apply gap-3;
   }
 }
 

@@ -456,10 +456,11 @@ body {
   @apply h-fit text-left items-start mt-12;
   position: relative;
   z-index: 50;
+  width: 383px; 
 }
 
 .progress-card {
-  @apply bg-white rounded-2xl p-5 mb-5;
+  @apply bg-white rounded-2xl px-5  mb-5;
   position: relative;
   z-index: 10;
   border: none !important;
@@ -619,11 +620,13 @@ body {
 
 /* Course Image */
 .course-image-wrapper {
-  @apply w-full overflow-hidden rounded-t-2xl mb-0;
+  @apply overflow-hidden rounded-t-2xl mb-0;
+  width: 383px;
 }
 
 .course-thumbnail {
-  @apply w-full h-auto object-cover;
+  @apply h-auto object-cover;
+  width: 383px;
   display: block;
 }
 
@@ -643,6 +646,7 @@ body {
 /* Sidebar Sections */
 .sidebar-section {
   @apply px-1 pt-6 pb-5;
+  width: 383px;
   text-align: left !important;
 }
 
@@ -683,9 +687,9 @@ body {
 
 /* Sidebar Tabs */
 .sidebar-tabs {
-  @apply flex justify-center items-center gap-2;
+  @apply flex justify-center items-center gap-3;
   position: relative;
-  padding: 0 3px;
+  padding: 0;
   --indicator-left: 0px;
   --indicator-width: 0px;
 }
@@ -714,7 +718,7 @@ body {
 }
 
 .sidebar-tab {
-  @apply py-3 text-center text-[14px] font-[500] whitespace-nowrap text-[#717171] transition-colors cursor-pointer;
+  @apply pb-[12px] text-center text-[13px] font-[500] whitespace-nowrap text-[#717171] transition-colors cursor-pointer;
   @apply hover:text-[#0069B2];
   position: relative;
   padding-left: 0;
@@ -828,7 +832,7 @@ body {
 /* Premium Section */
 /* Divider */
 .sidebar-divider {
-  @apply relative py-6 px-1;
+  @apply relative py-6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1137,7 +1141,7 @@ body {
 }
 
 .reviews-big-number {
-  @apply text-[56px] font-bold text-[#1C1C1C] leading-none;
+  @apply text-[22px] font-bold text-[#1C1C1C] leading-none;
 }
 
 .reviews-stars-large {
@@ -1209,7 +1213,16 @@ body {
 }
 
 .review-card {
-  @apply p-6 bg-white border border-[#E5E5E5] rounded-xl relative;
+  @apply bg-white relative;
+  width: 527px;
+  max-width: 100%;
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: none;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
 }
 
 .review-card-header {
@@ -1242,29 +1255,56 @@ body {
 
 /* Pagination */
 .reviews-pagination {
-  @apply flex items-center justify-center gap-2;
+  @apply flex items-center justify-center;
+  gap: 10px;
+  margin-top: 80px;
+  margin-bottom: 313px:
 }
 
-.pagination-arrow,
-.pagination-number {
-  @apply w-10 h-10 flex items-center justify-center rounded-lg border border-[#E5E5E5] bg-white text-[#4D4D4D] text-sm font-medium cursor-pointer transition-all;
+.pagination-arrow {
+  @apply flex items-center justify-center bg-white border-[#E9F6FF] border-[1px]   cursor-pointer transition-all;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  padding: 12px;
+  color: #2191DF;
 }
 
-.pagination-arrow:hover:not(:disabled),
-.pagination-number:hover {
-  @apply bg-[#F5F9FF] border-[#0069B2];
-}
-
-.pagination-number.active {
-  @apply bg-[#0069B2] text-white border-[#0069B2];
+.pagination-arrow:hover:not(:disabled) {
+  @apply bg-[#E9F6FF] border-[#2191DF];
 }
 
 .pagination-arrow:disabled {
   @apply opacity-40 cursor-not-allowed;
 }
 
+.pagination-number {
+  @apply flex items-center justify-center bg-white cursor-pointer transition-all;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  padding: 12px;
+  color: #4D4D4D;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.pagination-number:hover {
+  @apply bg-[#F5F9FF] border-[#0069B2];
+}
+
+.pagination-number.active {
+  @apply bg-[#E9F6FF] text-[#0069B2] border-[#0069B2] border-[1px];
+}
+
 .pagination-dots {
-  @apply text-[#A0AEC0] px-2;
+  @apply px-2 flex items-center justify-center -translate-y-1 ;
+  height: 48px;
+  color: #4D4D4D;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1;
 }
 
 /* Old review styles - keeping for compatibility */
@@ -1330,23 +1370,48 @@ body {
 }
 
 .price-large {
-  @apply text-[32px] font-bold text-[#E53E3E] text-left;
+  @apply text-[36px] font-bold text-[#E53E3E] text-left;
   line-height: 1;
 }
 
 .price-original {
-  @apply text-[16px] text-[#A0AEC0] line-through text-left;
+  @apply text-[20px] text-[#A0AEC0] line-through text-left;
 }
 
 /* Sidebar Buttons */
 .btn-primary-sidebar {
-  @apply w-full py-[12px] px-[20px] bg-[#0069B2] text-white text-[13px] font-[500] rounded-[32px] cursor-pointer    ;
+  @apply bg-[#0069B2] text-white cursor-pointer;
+  width: 335px;
+  height: 45px;
+  border-radius: 32px;
+  padding: 12px 20px;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @apply hover:bg-[#005A94] transition-colors;
   box-shadow: 0 2px 4px rgba(0, 105, 178, 0.2);
 }
 
 .btn-secondary-sidebar {
-  @apply w-full py-[12px] px-[20px] bg-[#E6F4FF] text-[#0069B2] text-[13px] font-[500] rounded-[32px] mt-3 cursor-pointer;
+  @apply bg-[#E6F4FF] text-[#0069B2] cursor-pointer;
+  width: 335px;
+  height: 45px;
+  border-radius: 32px;
+  padding: 12px 20px;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
   @apply hover:bg-[#D1EBFF] transition-colors;
 }
 
@@ -1432,7 +1497,6 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: #4D4D4D;
-  margin-bottom: 20px;
   width: 100%;
   font-weight: 400;
 }
@@ -1446,11 +1510,13 @@ body {
 }
 
 .instructor-link {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #28A6FF;
   text-decoration: none;
   display: inline-block;
+  margin-top: 24px;
+  margin-bottom: 52px;
 }
 
 .instructor-link:hover {
@@ -1465,7 +1531,7 @@ body {
 }
 
 .courses-heading {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: #1C1C1C;
   margin: 0 0 8px 0;
@@ -1630,7 +1696,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 32px;
   text-align: left;
   width: 100%;
 }
