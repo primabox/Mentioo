@@ -26,6 +26,10 @@ function closeDiskuzeDetail() {
     }
 }
 
+// Make functions globally available for onclick handlers
+window.openDiskuzeDetail = openDiskuzeDetail;
+window.closeDiskuzeDetail = closeDiskuzeDetail;
+
 function submitMainReply(button) {
     const form = button.closest('.diskuze-reply-form');
     const textarea = form.querySelector('.diskuze-reply-textarea');
@@ -201,3 +205,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Make functions globally available for onclick handlers
+window.submitReply = submitReply;
+window.submitMainReply = submitMainReply;

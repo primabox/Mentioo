@@ -134,9 +134,28 @@ body {
   @apply max-w-[1400px] mx-auto pt-24 pb-12 px-8;
 }
 
-.back-link {
-  @apply inline-flex items-center gap-2 text-[#1C1C1C] no-underline text-sm  hover:text-cyan-500 my-[40px] font-[500] transition;
+/* ===== BREADCRUMB NAVIGATION ===== */
+.breadcrumb-nav {
+  @apply flex items-center gap-2 my-[40px] text-[16px];
 }
+
+.breadcrumb-item {
+  @apply text-[#4D4D4D] no-underline transition-colors;
+}
+
+.breadcrumb-item:hover {
+  @apply text-[#0069B2];
+}
+
+.breadcrumb-item.active {
+  @apply text-[#0069B2] underline font-[400];
+}
+
+.breadcrumb-separator {
+  @apply text-[#4D4D4D] text-xs;
+}
+
+
 
 .content-layout {
   @apply grid gap-8 justify-center;
