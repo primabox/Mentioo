@@ -41,6 +41,20 @@ document.addEventListener('DOMContentLoaded', function () {
         if (targetContent) {
             targetContent.style.display = 'block';
         }
+
+        // Zobrazit/skrýt seznam testů v sidebaru
+        const testResultsList = document.querySelector('.test-results-list');
+        const testResultsDefault = document.querySelector('.test-results-default');
+        
+        if (testResultsList && testResultsDefault) {
+            if (tabId === 'curriculum') {
+                testResultsList.style.display = 'block';
+                testResultsDefault.style.display = 'none';
+            } else {
+                testResultsList.style.display = 'none';
+                testResultsDefault.style.display = 'block';
+            }
+        }
     }
 
     // Inicializace - skrýt všechny obsahy kromě aktivního
