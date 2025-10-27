@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
             content.style.display = 'none';
         });
 
+        // Zavřít všechny otevřené note tooltips při změně tabu
+        document.querySelectorAll('.note-hover-tooltip.active').forEach(tooltip => {
+            tooltip.classList.remove('active');
+        });
+
         // Aktivovat vybraný tab
         targetTab.classList.add('active');
 

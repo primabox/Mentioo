@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristýna Nováková - Profil Lektora | Sentioo</title>
+    <link rel="stylesheet" href="src/profil-lektoraa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">
+                    <img src="img/Logo.png" alt="Sentioo Logo" />
+                </a>
+            </div>
+
+            <!-- Searchbar -->
+            <div class="searchbar-container">
+                <form class="search-form" role="search">
+                    <div class="search-wrapper">
+                        <span class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Hamburger (mobile) -->
+            <div class="hamburger">
+                <button id="navbar-toggle" class="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="#" class="mobile-link">Nabídka kurzů</a>
+                <a href="#" class="mobile-link">Lektoři</a>
+                <a href="#" class="mobile-link">Blog</a>
+                <a href="#" class="mobile-link">Přihlásit se</a>
+                <a href="#" class="mobile-link">Registrovat se</a>
+            </div>
+
+            <!-- Desktop menu -->
+            <div id="navbar-menu" class="navbar-menu">
+                <ul class="nav-links">
+                    <li class="nav-item group">
+                        <a href="#" class="nav-link">
+                            Nabídka kurzů
+                        </a>
+                        <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                        <div class="dropdown">
+                            <div class="py-2">
+                                <a href="#" class="dropdown-link">Programování</a>
+                                <a href="#" class="dropdown-link">Design</a>
+                                <a href="#" class="dropdown-link">Marketing</a>
+                                <a href="#" class="dropdown-link">Business</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
+                </ul>
+
+                <!-- User Profile & Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="btn-primary" style="padding: 8px 20px; font-size: 14px;">Přihlásit se</a>
+                    <a href="#" class="btn-secondary" style="padding: 8px 20px; font-size: 14px;">Registrovat se</a>
+                    <a href="#" class="icon-btn">
+                        <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                    </a>
+                    <a href="#" class="icon-btn-alt">
+                        <img src="img/network.png" alt="Globe" class="w-5 h-5" />
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <div class="content-container">
+            <!-- Back Link -->
+            <a href="#" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Zpět
+            </a>
+
+            <!-- Hero Section - Profile -->
+            <section class="hero-section">
+                <div class="hero-bg"></div>
+                <div class="hero-content">
+                    <!-- Profile Image -->
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image-container">
+                            <img src="img/profilLektorkaK.jpg" alt="Kristýna Nováková" class="profile-image">
+                        </div>
+                    </div>
+
+                    <!-- Profile Info -->
+                    <div class="profile-info">
+                        <span class="instructor-label">Mentální lektor</span>
+                        <h1 class="instructor-name">Kristýna Nováková</h1>
+                        <p class="instructor-title">Adobe Certified Instructor & Adobe Certified Expert</p>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-primary">Poslat správu</button>
+                            <button class="btn-secondary">Prodloužené kurzy</button>
+                        </div>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Stats Card -->
+                    <div class="stats-card">
+                        <div class="stat-item">
+                            <span class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <div class="stat-content">
+                                <span class="stat-value">4,8 (858 hodnocení)</span>
+                                <span class="stat-label"></span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </span>
+                            <div class="stat-content">
+                                <span class="stat-value">2 580 studentů</span>
+                                <span class="stat-label"></span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <div class="stat-content">
+                                <span class="stat-value">10 set Jukunků</span>
+                                <span class="stat-label"></span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </span>
+                            <div class="stat-content">
+                                <span class="stat-value">15 kurzů dokončených na Mentioo</span>
+                                <span class="stat-label"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs-wrapper">
+                <div class="tabs">
+                    <button class="tab active" data-tab="profil">Profil</button>
+                    <button class="tab" data-tab="hodnoceni">Hodnocení</button>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <section class="content-section">
+                <!-- Tab Content: Profil -->
+                <div id="profil" class="tab-content active">
+                    <h2 class="section-title">O lektorovi</h2>
+                    <div class="description-text">
+                        <p>I'm passionate about all things design, including web design, front-end development and design strategy. The skills that I have developed in my experience have enabled me to generate concepts, refine direction and produce assets.</p>
+                        <p>My previous positions have provided me with over a decade of design and web experience, as an ecommerce manager, brand and graphic designer, theme developer, online marketer and full-stack web designer.</p>
+                    </div>
+
+                    <!-- Topics Section -->
+                    <div class="topics-section">
+                        <h3 class="topics-title">Témata, kterým se lektor věnuje</h3>
+                        <div class="topics-grid">
+                            <button class="topic-tag">Figma</button>
+                            <button class="topic-tag">website</button>
+                            <button class="topic-tag">Adobe Photoshop</button>
+                            <button class="topic-tag">responsive thinking</button>
+                            <button class="topic-tag">adobe ilustrator</button>
+                            <button class="topic-tag">Web-design</button>
+                            <button class="topic-tag">Adobe-app-design</button>
+                            <button class="topic-tag">Design-tools</button>
+                            <button class="topic-tag">User-experience-design</button>
+                            <button class="topic-tag">User-research</button>
+                        </div>
+                    </div>
+
+                    <!-- Courses Section -->
+                    <div class="courses-section">
+                        <h3 class="courses-title">Další kurzy</h3>
+                        
+                        <!-- Course Card 1 -->
+                        <div class="course-card">
+                            <div class="course-thumbnail">
+                                <img src="img/figma-icon.png" alt="UI/UX Design" style="filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="course-info">
+                                <h4 class="course-title">UI/UX Design Masterclass</h4>
+                                <p class="course-description">Vivem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac ornare odio consequat elit.</p>
+                                <div class="course-meta">
+                                    <div class="course-rating">
+                                        <span>4,8</span>
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <span>43 lekcí</span>
+                                    <span>5 hodin</span>
+                                    <span>Základní Úroveň</span>
+                                </div>
+                                <div class="course-price-wrapper">
+                                    <div>
+                                        <span class="course-price">4 500 Kč</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 2 -->
+                        <div class="course-card">
+                            <div class="course-thumbnail">
+                                <img src="img/figma-icon.png" alt="UI/UX Design" style="filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="course-info">
+                                <h4 class="course-title">UI/UX Design Masterclass</h4>
+                                <p class="course-description">Vivem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac ornare odio consequat elit.</p>
+                                <div class="course-meta">
+                                    <div class="course-rating">
+                                        <span>4,8</span>
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <span>43 lekcí</span>
+                                    <span>5 hodin</span>
+                                    <span>Základní Úroveň</span>
+                                </div>
+                                <div class="course-price-wrapper">
+                                    <div>
+                                        <span class="course-price">8 500 Kč</span>
+                                        <span class="course-price-old">12 000 Kč</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 3 -->
+                        <div class="course-card">
+                            <div class="course-thumbnail">
+                                <img src="img/figma-icon.png" alt="UI/UX Design" style="filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="course-info">
+                                <h4 class="course-title">UI/UX Design Masterclass</h4>
+                                <p class="course-description">Vivem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac ornare odio consequat elit.</p>
+                                <div class="course-meta">
+                                    <div class="course-rating">
+                                        <span>4,8</span>
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <span>43 lekcí</span>
+                                    <span>5 hodin</span>
+                                    <span>Základní Úroveň</span>
+                                </div>
+                                <div class="course-price-wrapper">
+                                    <div>
+                                        <span class="course-price">4 500 Kč</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 4 -->
+                        <div class="course-card">
+                            <div class="course-thumbnail">
+                                <img src="img/figma-icon.png" alt="UI/UX Design" style="filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="course-info">
+                                <h4 class="course-title">UI/UX Design Masterclass</h4>
+                                <p class="course-description">Vivem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac ornare odio consequat elit.</p>
+                                <div class="course-meta">
+                                    <div class="course-rating">
+                                        <span>4,8</span>
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                    <span>43 lekcí</span>
+                                    <span>5 hodin</span>
+                                    <span>Základní Úroveň</span>
+                                </div>
+                                <div class="course-price-wrapper">
+                                    <div>
+                                        <span class="course-price">4 500 Kč</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Hodnocení -->
+                <div id="hodnoceni" class="tab-content" style="display: none;">
+                    <h2 class="section-title">Hodnocení lektora</h2>
+                    <div class="description-text">
+                        <p>Zde budou zobrazena hodnocení od studentů...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="img/FooterLogo.png" alt="Sentioo Logo" class="footer-logo-img">
+            </div>
+
+            <!-- Content -->
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div>
+                        <div class="footer-info-text">
+                            <p class="font-semibold text-lg">Mentio s.r.o</p>
+                            <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
+                            <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
+                            <p class="mt-2">Spisová značka C 987654 vedená u Městského soudu v Praze</p>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div>
+                        <h4 class="footer-heading">Kategorie kurzů</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Kategorie 1</a></li>
+                            <li><a href="#" class="footer-link">Kategorie 2</a></li>
+                            <li><a href="#" class="footer-link">Kategorie 3</a></li>
+                            <li><a href="#" class="footer-link">Kategorie 4</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Links 1 -->
+                    <div>
+                        <h4 class="footer-heading">Typy kurzů</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Typ kurzu 1</a></li>
+                            <li><a href="#" class="footer-link">Typ kurzu 2</a></li>
+                            <li><a href="#" class="footer-link">Typ kurzu 3</a></li>
+                            <li><a href="#" class="footer-link">Typ kurzu 4</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Links 2 -->
+                    <div>
+                        <h4 class="footer-heading">O nás</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Lektoři</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                            <li><a href="#" class="footer-link">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="footer-socials">
+                <a href="#" class="footer-social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="footer-social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="footer-social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2025 Mentio ipsum</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/hamburger.js"></script>
+    <script>
+        // Simple tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.dataset.tab;
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                document.getElementById(tabName).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>

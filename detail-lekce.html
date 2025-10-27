@@ -299,7 +299,7 @@
           </div>
 
           <div class="tab-content" data-tab="dalsi" style="display: none;">
-            <h3 class="content-heading">Užitečné odkazy</h3>
+            <h3 class="content-heading-file">Odkazy ke stažení</h3>
 
             <div class="links-grid grid grid-cols-2 gap-6 mt-6">
               <a href="#" class="link-card">
@@ -343,7 +343,7 @@
               </a>
             </div>
 
-            <h3 class="content-heading mt-10">Odkazy ke stažení</h3>
+            <h3 class="content-heading-file">Odkazy ke stažení</h3>
 
             <div class="downloads-grid grid grid-cols-2 gap-4 mt-6">
               <div class="download-item">
@@ -934,10 +934,39 @@
     </div>
   </footer>
 
+  <!-- Poznámka Tooltip -->
+  <div id="note-tooltip" class="note-tooltip" style="display: none;">
+    <button id="create-note-btn" class="create-note-btn">
+      <i class="fas fa-sticky-note"></i>
+      Vytvořit poznámku
+    </button>
+  </div>
+
+  <!-- Modal pro vytvoření poznámky -->
+  <div id="note-modal" class="note-modal" style="display: none;">
+    <div class="note-modal-overlay" onclick="closeNoteModal()"></div>
+    <div class="note-modal-content">
+      <div class="note-modal-header">
+        <h3>Přidat poznámku</h3>
+      </div>
+      <div class="note-modal-body">
+        <div class="note-selected-text">
+          <strong>Označený text:</strong>
+          <p id="selected-text-display"></p>
+        </div>
+        <textarea id="note-textarea" placeholder="Napište svou poznámku..." rows="6"></textarea>
+      </div>
+      <div class="note-modal-footer">
+        <button class="note-btn-cancel" onclick="closeNoteModal()">Zrušit</button>
+        <button class="note-btn-save" onclick="saveNote()">Potvrdit</button>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="js/tabs.js"></script>
   <script type="module" src="js/hamburger.js"></script>
   <script type="module" src="js/diskuze.js"></script>
-
+  <script defer src="js/notes.js"></script>
   
 </body>
 
