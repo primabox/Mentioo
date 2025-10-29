@@ -47,6 +47,9 @@
                 <a href="#" class="mobile-link">Lektoři</a>
                 <a href="#" class="mobile-link">Blog</a>
                 <a href="#" class="mobile-link">Můj profil</a>
+                <!-- Auth buttons for mobile hamburger -->
+                <a href="#" class="mobile-btn">Přihlásit se</a>
+                <a href="#" class="btn-outline">Zaregistrovat se</a>
             </div>
 
             <!-- Desktop menu -->
@@ -70,12 +73,11 @@
                     <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
                 </ul>
 
-                <!-- User Profile & Icons -->
+                <!-- User Profile / Auth Buttons & Icons -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="user-profile-link">
-                        <img src="img/person_gray.png" alt="">
-                        <span>Jana Blahošová</span>
-                    </a>
+                    <a href="#" class="btn-outline">Přihlásit se</a>
+                    <a href="#" class="btn-primary">Zaregistrovat se</a>
+
                     <a href="#" class="icon-btn">
                         <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
                     </a>
@@ -86,6 +88,13 @@
             </div>
         </nav>
     </header>
+
+      <div class="bubble-field md:block hidden">
+            <div class="bubble" style="top:125px; left:95%; width:13px; height:13px;"></div>
+            <div class="bubble" style="top:275px; left:98%; width:8px; height:8px;"></div>
+            <div class="bubble" style="top:515px; left:8%; width:9px; height:9px;"></div>
+            <div class="bubble" style="top:425px; left:4%; width:7px; height:7px;"></div>
+        </div>
 
     <div class="main-wrapper">
         <div class="content-layout">
@@ -711,6 +720,7 @@
     <script type="module" src="js/tabs.js"></script>
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/reviewsPagination.js"></script>
+    <script type="module" src="js/bubbles.js"></script>
 
 </body>
 
