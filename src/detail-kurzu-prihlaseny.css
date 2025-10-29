@@ -1043,6 +1043,11 @@ body {
     padding: 0 20px 40px;
   }
 
+  /* Footer */
+  .footer-categories {
+    @apply grid-cols-2;
+  }
+
   .content-layout {
     gap: 32px;
   }
@@ -1486,6 +1491,11 @@ body {
   /* Navbar */
   .navbar {
     @apply px-5;
+  }
+
+  /* Footer */
+  .footer-categories {
+    @apply grid-cols-2;
   }
 
   /* Hero */

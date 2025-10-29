@@ -792,7 +792,7 @@
       }
 
       .footer-categories {
-        @apply grid-cols-2 !important;
+        @apply !grid-cols-2;
       }
     }
 
@@ -802,7 +802,7 @@
       }
 
       .footer-categories {
-        @apply grid-cols-2 !important;
+        @apply !grid-cols-2;
       }
     }
 

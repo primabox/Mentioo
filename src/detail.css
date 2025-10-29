@@ -1466,7 +1466,7 @@ body {
   }
 
   .footer-categories {
-    @apply grid-cols-2 !important;
+    @apply grid-cols-2;
   }
 }
 
@@ -1482,7 +1482,7 @@ body {
 
   /* Footer */
   .footer-categories {
-    @apply grid-cols-2 !important;
+    @apply grid-cols-2;
   }
 
   /* Navbar */

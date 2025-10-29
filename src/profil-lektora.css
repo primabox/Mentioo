@@ -182,44 +182,89 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1024px) {
-    .navbar {
-        @apply px-5;
-    }
 
+/* Large Desktop (max-width: 1400px) */
+@media (max-width: 1400px) {
     .hero-gradient {
-        padding: 40px 2rem;
-    }
-
-    .lektor-hero-content {
-        @apply flex-col items-center text-center gap-8;
-    }
-
-    .hero-divider {
-        display: none;
-    }
-
-    .lektor-main-info {
-        @apply flex-col items-center text-center gap-6;
-        margin-left: 0;
-    }
-
-    .lektor-avatar-img {
-        width: 240px;
-        height: 240px;
-    }
-
-    .lektor-avatar::before {
-        width: 280px;
-        height: 280px;
+        padding: 50px 2rem;
     }
 
     .lektor-stats {
-        padding-right: 0;
-        width: 100%;
+        padding-right: 16px;
     }
 }
 
+/* Medium Desktop (max-width: 1280px) */
+@media (max-width: 1280px) {
+    .hero-gradient {
+        padding: 50px 2rem;
+    }
+
+    .lektor-hero-content {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .lektor-main-info {
+        margin-left: 0;
+        gap: 10px;
+    }
+
+    .lektor-avatar-img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .lektor-avatar::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .lektor-name {
+        font-size: 44px;
+    }
+
+    .lektor-title {
+        font-size: 18px;
+    }
+
+    .lektor-stats {
+        padding-right: 12px;
+    }
+
+    .stat-value {
+        font-size: 14px;
+    }
+
+    .hero-divider {
+        height: 200px;
+    }
+
+    /* Footer */
+    .footer-categories {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    /* Course Cards */
+    .instructor-course-card {
+        gap: 20px;
+    }
+
+    .course-card-img {
+        width: 240px;
+        min-width: 240px;
+        height: 160px;
+    }
+
+    .course-card-title {
+        font-size: 17px;
+    }
+
+    .course-card-desc {
+        font-size: 15px;
+    }
+}
 
 @media (max-width: 768px) {
     .navbar {
@@ -390,44 +435,224 @@
     }
 }
 
-/* ===== FOOTER RESPONSIVE ===== */
+/* ===== FOOTER ===== */
+.footer {
+    padding: 50px 200px;
+}
+
+@media (max-width: 1400px) {
+    .footer {
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        padding: 50px 60px;
+    }
+}
+
 @media (max-width: 768px) {
-    .footer-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-        flex-direction: column !important;
+    .navbar {
+        @apply px-5;
     }
 
-    .footer-info {
-        order: 1;
-        width: 100% !important;
+    .footer {
+        padding: 40px 40px;
     }
 
     .footer-categories {
-        order: 2;
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 16px !important;
-        width: 100% !important;
-        flex: none !important;
+        @apply grid-cols-2;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        @apply px-5;
     }
 
-    .footer-about {
-        order: 3;
-        width: 100% !important;
+    .footer {
+        padding: 32px 24px;
+    }
+
+    .footer-categories {
+        @apply grid-cols-2;
+    }
+}
+
+.footer-container {
+    @apply container mx-auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer-logo {
+    @apply pb-6;
+}
+
+.footer-logo-img {
+    width: 146px;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .footer-logo-img {
+        width: 130px;
+        height: 54px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo-img {
+        width: 120px;
+        height: 50px;
+    }
+}
+
+.footer-content {
+    @apply pb-6;
+}
+
+.footer-grid {
+    @apply flex flex-col md:flex-row md:items-start gap-8;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        @apply flex-col gap-6;
+    }
+}
+
+.footer-info {
+    @apply sm:w-1/4 min-w-0;
+}
+
+@media (max-width: 768px) {
+    .footer-info {
+        @apply w-full;
+    }
+}
+
+.footer-info-text {
+    @apply text-base font-light text-[#1C1C1C] max-w-xs;
+}
+
+@media (max-width: 768px) {
+    .footer-info-text {
+        @apply text-sm;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-info-text {
+        @apply text-[14px];
+    }
+}
+
+.footer-categories {
+    @apply flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8;
+}
+
+@media (max-width: 768px) {
+    .footer-categories {
+        @apply grid-cols-2 gap-6;
     }
 }
 
 @media (max-width: 480px) {
     .footer-categories {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
+        @apply grid-cols-1 gap-5;
     }
+}
 
-    .footer-grid {
-        gap: 20px !important;
+.footer-heading {
+    @apply text-gray-900 font-medium mb-3 text-lg;
+}
+
+@media (max-width: 768px) {
+    .footer-heading {
+        @apply text-base mb-2;
     }
+}
+
+@media (max-width: 480px) {
+    .footer-heading {
+        @apply text-[15px] mb-2;
+    }
+}
+
+.footer-links {
+    @apply space-y-2 text-sm text-[#4D4D4D] font-[500];
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        @apply text-sm;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        @apply text-[13px];
+    }
+}
+
+.footer-link {
+    @apply hover:underline hover:text-blue-600 transition-colors;
+}
+
+.footer-about {
+    @apply md:w-48;
+}
+
+@media (max-width: 768px) {
+    .footer-about {
+        @apply w-full;
+    }
+}
+
+.footer-divider {
+    @apply border-t border-gray-200 mt-4;
+}
+
+.footer-bottom {
+    @apply py-4 flex flex-col md:flex-row items-center justify-between gap-4;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        @apply flex-col gap-3 py-3;
+    }
+}
+
+.footer-copyright {
+    @apply text-sm text-gray-600;
+}
+
+@media (max-width: 768px) {
+    .footer-copyright {
+        @apply text-sm text-center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-copyright {
+        @apply text-[12px] text-center;
+    }
+}
+
+.footer-social {
+    @apply flex items-center gap-4;
+}
+
+@media (max-width: 768px) {
+    .footer-social {
+        @apply gap-3;
+    }
+}
+
+.social-link {
+    @apply rounded-full border border-transparent hover:scale-110 transition-all;
 }
 
 /* ===== INSTRUCTOR COURSES SECTION ===== */
