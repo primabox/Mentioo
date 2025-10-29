@@ -1271,7 +1271,7 @@
                             </div>
                         </div>
 
-                        <button class="btn-primary-sidebar">
+                        <button class="btn-primary-sidebar" id="add-to-cart-btn">
                             Přidat do košíku
                         </button>
 
@@ -1476,12 +1476,78 @@
         </div>
     </footer>
 
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal" style="display: none;">
+        <div class="cart-modal-overlay"></div>
+        <div class="cart-modal-content">
+            <button class="cart-modal-close" id="cart-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="cart-modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Přidáno do košíku</h3>
+            </div>
+
+            <div class="cart-modal-body">
+                <div class="cart-item">
+                    <img src="img/kurz1.jpg" alt="Course" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-title">Figma UI UX Design Advanced</h4>
+                        <p class="cart-item-instructor">Platební facilitátor</p>
+                        <p class="cart-item-price">9 500 Kč <span class="cart-item-original">12 000 Kč</span></p>
+                    </div>
+                </div>
+
+                <div class="cart-upsell-section">
+                    <h4 class="cart-upsell-title">Mohlo by vás zajímat</h4>
+                    
+                    <div class="cart-upsell-item">
+                        <img src="img/kurz1.jpg" alt="Course" class="cart-upsell-image">
+                        <div class="cart-upsell-info">
+                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="cart-upsell-instructor">Platební facilitátor</p>
+                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">6 000 Kč</span></p>
+                        </div>
+                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                    </div>
+
+                    <div class="cart-upsell-item">
+                        <img src="img/kurz1.jpg" alt="Course" class="cart-upsell-image">
+                        <div class="cart-upsell-info">
+                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="cart-upsell-instructor">Platební facilitátor</p>
+                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">6 000 Kč</span></p>
+                        </div>
+                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                    </div>
+
+                    <div class="cart-upsell-item">
+                        <img src="img/kurz1.jpg" alt="Course" class="cart-upsell-image">
+                        <div class="cart-upsell-info">
+                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="cart-upsell-instructor">Platební facilitátor</p>
+                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">6 000 Kč</span></p>
+                        </div>
+                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-modal-footer">
+                <button class="cart-btn-continue" id="cart-btn-continue">Pokračovat v nákupu</button>
+                <button class="cart-btn-checkout" id="cart-btn-checkout">Do košíku</button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="js/tabs.js"></script>
     <script type="module" src="js/curriculum.js"></script>
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/sidebarTabs.js"></script>
     <script type="module" src="js/bubbles.js"></script>
     <script type="module" src="js/reviewsPagination.js"></script>
+    <script defer src="js/cartModal.js"></script>
 </body>
 
 </html>
