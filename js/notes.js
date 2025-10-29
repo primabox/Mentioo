@@ -1,3 +1,6 @@
+// Vymazat poznámky při načtení stránky
+sessionStorage.removeItem('lessonNotes');
+
 // Text selection and note creation functionality
 let selectedText = '';
 let selectionRange = null;
@@ -68,8 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastRect = rects[rects.length - 1];
 
         modal.style.display = 'block';
-        modal.style.left = lastRect.left + 'px';
-        modal.style.top = (lastRect.bottom + 8 + window.scrollY) + 'px';
+        modal.style.position = 'absolute';
+        modal.style.left = lastRect.left + window.scrollX + 'px';
+        modal.style.top = (lastRect.bottom + window.scrollY + 8) + 'px';
       }
 
       textarea.value = '';
@@ -135,14 +139,14 @@ function saveNote() {
 
   // Pokud editujeme existující poznámku
   if (editingNoteId) {
-    let notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+    let notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
     const noteIndex = notes.findIndex(n => n.id === parseInt(editingNoteId));
 
     if (noteIndex !== -1) {
       // Aktualizovat text poznámky
       notes[noteIndex].noteText = noteText;
       notes[noteIndex].timestamp = new Date().toISOString();
-      localStorage.setItem('lessonNotes', JSON.stringify(notes));
+      sessionStorage.setItem('lessonNotes', JSON.stringify(notes));
 
       // Aktualizovat tooltip v highlighted textu
       const highlightedElement = document.querySelector(`[data-note-id="${editingNoteId}"]`);
@@ -178,10 +182,10 @@ function saveNote() {
     timestamp: new Date().toISOString()
   };
 
-  // Uložení do localStorage
-  let notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+  // Uložení do sessionStorage
+  let notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
   notes.push(note);
-  localStorage.setItem('lessonNotes', JSON.stringify(notes));
+  sessionStorage.setItem('lessonNotes', JSON.stringify(notes));
 
   // Zvýraznění vybraného textu
   if (selectionRange) {
@@ -214,7 +218,7 @@ function highlightSelectedText(range, noteId) {
   span.setAttribute('data-note-id', noteId);
 
   // Získat text poznámky
-  const notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+  const notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
   const note = notes.find(n => n.id === noteId);
   const noteText = note ? note.noteText : '';
 
@@ -241,13 +245,26 @@ function highlightSelectedText(range, noteId) {
     span.addEventListener('click', function (e) {
       e.stopPropagation();
 
-      // Zavři všechny ostatní tooltips
+      // Zavři všechny ostatní tooltips a odeber active class ze spanů
       document.querySelectorAll('.note-hover-tooltip.active').forEach(t => {
-        if (t !== tooltip) t.classList.remove('active');
+        if (t !== tooltip) {
+          t.classList.remove('active');
+          // Odeber active class z parent spanu
+          if (t.parentElement && t.parentElement.classList.contains('highlighted-note')) {
+            t.parentElement.classList.remove('active');
+          }
+        }
       });
 
       // Toggle tooltip
-      tooltip.classList.toggle('active');
+      const isActive = tooltip.classList.toggle('active');
+      
+      // Přidej nebo odeber active class ze spanu
+      if (isActive) {
+        span.classList.add('active');
+      } else {
+        span.classList.remove('active');
+      }
     });
   } catch (e) {
     console.log('Nelze zvýraznit výběr přes více elementů');
@@ -268,13 +285,18 @@ function toggleDeleteConfirm(button, noteId) {
 }
 
 function confirmDeleteNote(noteId) {
-  let notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+  let notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
   notes = notes.filter(n => n.id !== noteId);
-  localStorage.setItem('lessonNotes', JSON.stringify(notes));
+  sessionStorage.setItem('lessonNotes', JSON.stringify(notes));
 
-  // Odstranění zvýraznění
+  // Zavřít tooltip před odstraněním zvýraznění
   const highlightedElement = document.querySelector(`[data-note-id="${noteId}"]`);
   if (highlightedElement) {
+    const tooltip = highlightedElement.querySelector('.note-hover-tooltip');
+    if (tooltip) {
+      tooltip.classList.remove('active');
+    }
+    
     const parent = highlightedElement.parentNode;
     while (highlightedElement.firstChild) {
       parent.insertBefore(highlightedElement.firstChild, highlightedElement);
@@ -292,6 +314,10 @@ document.addEventListener('click', function (e) {
   if (e.target.matches('.tab') || e.target.closest('.tab')) {
     document.querySelectorAll('.note-hover-tooltip.active').forEach(t => {
       t.classList.remove('active');
+      // Odeber active class z parent spanu
+      if (t.parentElement && t.parentElement.classList.contains('highlighted-note')) {
+        t.parentElement.classList.remove('active');
+      }
     });
 
     // Zavřít i modal pro přidání poznámky
@@ -306,13 +332,17 @@ document.addEventListener('click', function (e) {
   if (!e.target.closest('.highlighted-note')) {
     document.querySelectorAll('.note-hover-tooltip.active').forEach(t => {
       t.classList.remove('active');
+      // Odeber active class z parent spanu
+      if (t.parentElement && t.parentElement.classList.contains('highlighted-note')) {
+        t.parentElement.classList.remove('active');
+      }
     });
   }
 });
 
 function editNote(noteId) {
   // Najít poznámku
-  const notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+  const notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
   const note = notes.find(n => n.id === noteId);
 
   if (!note) {
@@ -320,39 +350,46 @@ function editNote(noteId) {
     return;
   }
 
-  // Najít tooltip v highlighted elementu
-  const highlightedElement = document.querySelector(`[data-note-id="${noteId}"]`);
-  const tooltip = highlightedElement.querySelector('.note-hover-tooltip');
-
-  if (!tooltip) return;
-
-  // Uložit původní obsah pro případné zrušení
-  tooltip.dataset.originalContent = tooltip.innerHTML;
-  tooltip.dataset.editingNoteId = noteId;
-
-  // Nahradit obsah tooltiptu editačním formulářem
-  tooltip.innerHTML = `
-    <textarea class="note-edit-textarea" style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 14px; resize: vertical;">${note.noteText}</textarea>
-    <div class="note-tooltip-buttons" style="margin-top: 8px;">
-      <button class="note-hover-btn" onclick="saveEditedNote(${noteId}); event.stopPropagation();" style="background: #4CAF50; color: white;">
-        <i class="fas fa-check"></i>Uložit
-      </button>
-      <button class="note-hover-btn" onclick="cancelEditNote(${noteId}); event.stopPropagation();" style="background: #f44336; color: white;">
-        <i class="fas fa-times"></i>Zrušit
-      </button>
-    </div>
-  `;
-
-  // Focus na textarea
-  const textarea = tooltip.querySelector('.note-edit-textarea');
-  if (textarea) {
-    textarea.focus();
-    // Nastavit kurzor na konec textu
-    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+  // Zavřít tooltip
+  const activeTooltip = document.querySelector('.note-hover-tooltip.active');
+  if (activeTooltip) {
+    activeTooltip.classList.remove('active');
   }
-} function displayNotesInTab() {
+
+  // Najít highlighted element
+  const highlightedElement = document.querySelector(`[data-note-id="${noteId}"]`);
+  if (!highlightedElement) return;
+
+  // Vytvořit nebo zobrazit existující modal
+  let modal = document.getElementById('note-modal');
+  if (!modal) {
+    console.log('Modal nenalezen');
+    return;
+  }
+
+  const textarea = document.getElementById('note-textarea');
+  const modalTitle = modal.querySelector('.note-modal-header h3');
+  
+  // Nastavit text pro editaci
+  textarea.value = note.noteText;
+  modalTitle.textContent = 'Upravit poznámku';
+  
+  // Uložit ID editované poznámky
+  modal.dataset.editingNoteId = noteId;
+
+  // Pozice modalu pod highlighted elementem
+  const rect = highlightedElement.getBoundingClientRect();
+  modal.style.display = 'block';
+  modal.style.position = 'absolute';
+  modal.style.top = `${rect.bottom + window.scrollY + 8}px`;
+  modal.style.left = `${rect.left + window.scrollX}px`;
+
+  textarea.focus();
+}
+
+function displayNotesInTab() {
   const notesTab = document.querySelector('.tab-content[data-tab="poznamky"]');
-  const notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+  const notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
 
   if (notes.length === 0) {
     notesTab.innerHTML = `
@@ -365,10 +402,10 @@ function editNote(noteId) {
         <h3 class="notes-page-title">Poznámky z lekce</h3>
         <div class="notes-page-actions">
           <button class="notes-action-btn">
-            <i class="fas fa-download"></i>
+            <img src="img/download.png" alt="Stáhnout">
           </button>
           <button class="notes-action-btn">
-            <i class="fas fa-share-nodes"></i>
+            <img src="img/share.png" alt="Sdílet">
           </button>
         </div>
       </div>
@@ -390,7 +427,9 @@ function editNote(noteId) {
             </div>
           </div>
           <div class="note-display-content">
-            <p>${note.noteText}</p>
+            <div class="note-text-wrapper">
+              <p>${note.noteText}</p>
+            </div>
             <button class="note-copy-btn" onclick="copyNoteText('${note.noteText.replace(/'/g, "\\'")}'); event.stopPropagation();">
               <img src="img/file_copy.png" alt="Kopírovat">
             </button>
@@ -467,9 +506,9 @@ function copyNoteText(text) {
 }
 
 function deleteNote(noteId) {
-  let notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
+  let notes = JSON.parse(sessionStorage.getItem('lessonNotes') || '[]');
   notes = notes.filter(n => n.id !== noteId);
-  localStorage.setItem('lessonNotes', JSON.stringify(notes));
+  sessionStorage.setItem('lessonNotes', JSON.stringify(notes));
 
   // Odstranění zvýraznění
   const highlightedElement = document.querySelector(`[data-note-id="${noteId}"]`);
@@ -488,7 +527,24 @@ function deleteNote(noteId) {
 function showNotification(message) {
   const notification = document.createElement('div');
   notification.className = 'note-notification';
-  notification.textContent = message;
+  
+  const messageSpan = document.createElement('span');
+  messageSpan.textContent = message;
+  
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'note-notification-close';
+  closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+  closeBtn.onclick = function() {
+    notification.classList.remove('show');
+    setTimeout(() => {
+      if (notification.parentNode) {
+        document.body.removeChild(notification);
+      }
+    }, 300);
+  };
+  
+  notification.appendChild(messageSpan);
+  notification.appendChild(closeBtn);
   document.body.appendChild(notification);
 
   setTimeout(() => {
@@ -498,7 +554,9 @@ function showNotification(message) {
   setTimeout(() => {
     notification.classList.remove('show');
     setTimeout(() => {
-      document.body.removeChild(notification);
+      if (notification.parentNode) {
+        document.body.removeChild(notification);
+      }
     }, 300);
   }, 3000);
 }
@@ -507,68 +565,6 @@ function showNotification(message) {
 window.addEventListener('load', function () {
   displayNotesInTab();
 });
-
-function saveEditedNote(noteId) {
-  const highlightedElement = document.querySelector(`[data-note-id="${noteId}"]`);
-  const tooltip = highlightedElement.querySelector('.note-hover-tooltip');
-  const textarea = tooltip.querySelector('.note-edit-textarea');
-
-  const newNoteText = textarea.value.trim();
-
-  if (newNoteText.length === 0) {
-    alert('Poznámka nemůže být prázdná.');
-    return;
-  }
-
-  // Aktualizovat v localStorage
-  let notes = JSON.parse(localStorage.getItem('lessonNotes') || '[]');
-  const noteIndex = notes.findIndex(n => n.id === noteId);
-
-  if (noteIndex !== -1) {
-    notes[noteIndex].noteText = newNoteText;
-    notes[noteIndex].timestamp = new Date().toISOString();
-    localStorage.setItem('lessonNotes', JSON.stringify(notes));
-
-    // Obnovit tooltip s novým textem
-    tooltip.innerHTML = `
-      <p class="note-tooltip-text">${newNoteText}</p>
-      <div class="note-tooltip-buttons">
-        <button class="note-hover-btn" onclick="editNote(${noteId}); event.stopPropagation();">
-          <i class="fas fa-pen"></i>Editovat
-        </button>
-        <button class="note-hover-btn note-delete-btn-tooltip" data-note-id="${noteId}" onclick="toggleDeleteConfirm(this, ${noteId}); event.stopPropagation();">
-          <i class="fas fa-trash"></i>Smazat
-        </button>
-      </div>
-    `;
-
-    // Aktualizovat zobrazení v tabu
-    displayNotesInTab();
-
-    // Zavřít tooltip
-    tooltip.classList.remove('active');
-
-    showNotification('Poznámka byla úspěšně upravena!');
-  }
-
-  delete tooltip.dataset.originalContent;
-  delete tooltip.dataset.editingNoteId;
-}
-
-function cancelEditNote(noteId) {
-  const highlightedElement = document.querySelector(`[data-note-id="${noteId}"]`);
-  const tooltip = highlightedElement.querySelector('.note-hover-tooltip');
-
-  // Obnovit původní obsah
-  if (tooltip.dataset.originalContent) {
-    tooltip.innerHTML = tooltip.dataset.originalContent;
-    delete tooltip.dataset.originalContent;
-    delete tooltip.dataset.editingNoteId;
-  }
-
-  // Zavřít tooltip
-  tooltip.classList.remove('active');
-}
 
 // Export funkcí pro použití v HTML
 window.closeNoteModal = closeNoteModal;

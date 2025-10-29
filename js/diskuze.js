@@ -1,5 +1,75 @@
 // Diskuze functionality
 
+// Discussion Modal Functions
+function openDiscussionModal() {
+    console.log('openDiscussionModal called');
+    const modal = document.getElementById('discussion-modal');
+    console.log('Modal element:', modal);
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        console.log('Modal opened');
+    } else {
+        console.error('Modal not found!');
+    }
+}
+
+function closeDiscussionModal() {
+    console.log('closeDiscussionModal called');
+    const modal = document.getElementById('discussion-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        
+        // Clear form inputs
+        const inputs = modal.querySelectorAll('input, textarea');
+        inputs.forEach(input => input.value = '');
+    }
+}
+
+function submitDiscussionTopic() {
+    const modal = document.getElementById('discussion-modal');
+    const titleInput = modal.querySelector('.discussion-input');
+    const textareaInput = modal.querySelector('.discussion-textarea');
+    
+    if (titleInput.value.trim() && textareaInput.value.trim()) {
+        alert('Téma bylo úspěšně přidáno!');
+        closeDiscussionModal();
+    } else {
+        alert('Prosím, vyplňte všechna pole.');
+    }
+}
+
+// Make modal functions globally available
+window.openDiscussionModal = openDiscussionModal;
+window.closeDiscussionModal = closeDiscussionModal;
+window.submitDiscussionTopic = submitDiscussionTopic;
+
+// Add event listener for the button
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded - setting up discussion modal');
+    
+    const openModalBtn = document.getElementById('open-discussion-modal-btn');
+    console.log('Open modal button:', openModalBtn);
+    
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', function() {
+            console.log('Button clicked!');
+            openDiscussionModal();
+        });
+    } else {
+        console.error('Open modal button not found!');
+    }
+    
+    // Close modal when clicking on overlay
+    const modal = document.getElementById('discussion-modal');
+    const overlay = document.querySelector('.discussion-modal-overlay');
+    
+    if (overlay) {
+        overlay.addEventListener('click', closeDiscussionModal);
+    }
+});
+
 function openDiskuzeDetail(postId) {
     const listView = document.getElementById('diskuze-list-view');
     const detailView = document.getElementById('diskuze-detail-view');

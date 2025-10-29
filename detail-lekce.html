@@ -12,79 +12,79 @@
 
 <body class="font-[Poppins]">
   <!-- HEADER -->
-  <header class="header">
-    <nav class="navbar">
-      <!-- Logo -->
-      <div class="logo">
-        <a href="#">
-          <img src="img/Logo.png" alt="Logo" class="w-32" />
-        </a>
-      </div>
-
-      <!-- Searchbar -->
-      <div class="searchbar-container">
-        <form class="search-form" role="search">
-          <div class="search-wrapper">
-            <span class="search-icon">
-              <i class="fas fa-search translate-y-px"></i>
-            </span>
-            <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
-          </div>
-        </form>
-      </div>
-
-      <!-- Hamburger (mobile) -->
-      <div class="hamburger">
-        <button id="navbar-toggle" class="hamburger-btn">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="mobile-menu">
-        <a href="#" class="mobile-link">Nabídka kurzů</a>
-        <a href="#" class="mobile-link">Lektoři</a>
-        <a href="#" class="mobile-link">Blog</a>
-        <a href="#" class="mobile-btn">Jana Blahošová</a>
-      </div>
-
-      <!-- Desktop menu -->
-      <div id="navbar-menu" class="navbar-menu">
-        <ul class="nav-links">
-          <li class="nav-item group">
-            <a href="#" class="nav-link">
-              Nabídka kurzů
-              <i class="fas fa-chevron-down ml-1 text-xs transition-transform group-hover:rotate-180"></i>
-            </a>
-            <div class="dropdown">
-              <div class="py-2">
-                <a href="#" class="dropdown-link">Programování</a>
-                <a href="#" class="dropdown-link">Design</a>
-                <a href="#" class="dropdown-link">Marketing</a>
-                <a href="#" class="dropdown-link">Business</a>
-              </div>
+   <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">
+                    <img src="img/Logo.png" alt="Logo" class="w-32" />
+                </a>
             </div>
-          </li>
-          <li><a href="#" class="nav-link">Lektoři</a></li>
-          <li><a href="#" class="nav-link">Blog</a></li>
-        </ul>
 
-        <!-- Icons & User -->
-        <div class="flex items-center gap-3">
-          <a href="#" class="user-profile-link">
-            <i class="fas fa-user"></i>
-            <span>Jana Blahošová</span>
-          </a>
-          <a href="#" class="icon-btn">
-            <img src="img/Kosik.png" alt="Košík" class="w-6 h-6" />
-          </a>
-          <a href="#" class="icon-btn-alt">
-            <img src="img/network.png" alt="Jazyk" class="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </nav>
-  </header>
+            <!-- Searchbar -->
+            <div class="searchbar-container">
+                <form class="search-form" role="search">
+                    <div class="search-wrapper">
+                        <span class="search-icon">
+                            <i class="fas fa-search translate-y-px"></i>
+                        </span>
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Hamburger (mobile) -->
+            <div class="hamburger">
+                <button id="navbar-toggle" class="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="#" class="mobile-link">Nabídka kurzů</a>
+                <a href="#" class="mobile-link">Lektoři</a>
+                <a href="#" class="mobile-link">Blog</a>
+                <a href="#" class="mobile-link">Můj profil</a>
+            </div>
+
+            <!-- Desktop menu -->
+            <div id="navbar-menu" class="navbar-menu">
+                <ul class="nav-links">
+                    <li class="nav-item group">
+                        <a href="#" class="nav-link">
+                            Nabídka kurzů
+                        </a>
+                        <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                        <div class="dropdown">
+                            <div class="py-2">
+                                <a href="#" class="dropdown-link">Programování</a>
+                                <a href="#" class="dropdown-link">Design</a>
+                                <a href="#" class="dropdown-link">Marketing</a>
+                                <a href="#" class="dropdown-link">Business</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
+                </ul>
+
+                <!-- User Profile & Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="user-profile-link">
+                        <img src="img/person_gray.png" alt="">
+                        <span>Jana Blahošová</span>
+                    </a>
+                    <a href="#" class="icon-btn">
+                        <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                    </a>
+                    <a href="#" class="icon-btn-alt">
+                        <img src="img/network.png" alt="Globe" class="w-5 h-5" />
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
   <div class="main-wrapper">
     <a href="#" class="back-link">
@@ -428,7 +428,7 @@
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Hledat v diskuzi" class="diskuze-search-input">
                   </div>
-                  <button class="diskuze-new-btn">
+                  <button type="button" class="diskuze-new-btn" id="open-discussion-modal-btn">
                     <i class="fas fa-plus"></i>
                     Nové téma
                   </button>
@@ -976,10 +976,33 @@
     </div>
   </div>
 
+  <!-- Modal pro přidání nového tématu k diskuzi -->
+  <div id="discussion-modal" class="discussion-modal" style="display: none;">
+    <div class="discussion-modal-overlay"></div>
+    <div class="discussion-modal-content">
+      <h3 class="discussion-modal-title">Přidat nové téma k diskuzi</h3>
+      <div class="discussion-modal-body">
+        <div class="discussion-form-group">
+          <label class="discussion-label">Titulek</label>
+          <input type="text" class="discussion-input" placeholder="Kód kupónu">
+        </div>
+        <div class="discussion-form-group">
+          <label class="discussion-label">Popište váš problém/otázky/téma</label>
+          <textarea class="discussion-textarea" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="discussion-modal-footer">
+        <button class="discussion-btn-cancel">Odejít</button>
+        <button class="discussion-btn-submit">Zveřejnit téma</button>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="js/tabs.js"></script>
   <script type="module" src="js/hamburger.js"></script>
   <script type="module" src="js/diskuze.js"></script>
   <script defer src="js/notes.js"></script>
+  <script defer src="js/discussionModal.js"></script>
 
 </body>
 
