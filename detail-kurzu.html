@@ -77,8 +77,9 @@
 
                 <!-- Ikony -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="icon-btn">
+                    <a href="#" class="icon-btn relative">
                         <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                        <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
                     </a>
                     <a href="#" class="icon-btn-alt">
                         <img src="img/network.png" alt="Globe" class="w-5 h-5" />
@@ -1483,9 +1484,9 @@
             <button class="cart-modal-close" id="cart-modal-close">
                 <i class="fas fa-times"></i>
             </button>
-            
+
             <div class="cart-modal-header">
-                <i class="fas fa-check-circle"></i>
+                <img src="img/check_circle.png" alt="Check" class="cart-modal-check-icon">
                 <h3>Přidáno do košíku</h3>
             </div>
 
@@ -1500,8 +1501,9 @@
                 </div>
 
                 <div class="cart-upsell-section">
+                    <div class="cart-divider"></div>
                     <h4 class="cart-upsell-title">Mohlo by vás zajímat</h4>
-                    
+
                     <div class="cart-upsell-item">
                         <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
                         <div class="cart-upsell-info">
@@ -1547,7 +1549,7 @@
     <script type="module" src="js/sidebarTabs.js"></script>
     <script type="module" src="js/bubbles.js"></script>
     <script type="module" src="js/reviewsPagination.js"></script>
-    <script defer src="js/cartModal.js"></script>
+    <script type="module" src="js/cartModal.js"></script>
 </body>
 
 </html>

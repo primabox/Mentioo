@@ -18,8 +18,10 @@ body::-webkit-scrollbar {
 }
 
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* ===== HEADER ===== */
@@ -130,7 +132,7 @@ body {
   @apply w-11 h-11 flex items-center justify-center rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] transition;
 }
 
-.user-profile-link {  
+.user-profile-link {
   @apply flex items-center gap-2 text-[#1C1C1C] text-[16px] font-medium no-underline hover:text-[#0069B2] transition mx-[40px];
 }
 
@@ -1251,89 +1253,103 @@ body {
     @apply hidden;
   }
 
-  /* Main wrapper - centrování */
+  /* Navbar */
+  .navbar {
+    @apply px-5 justify-between;
+  }
+
+  .logo {
+    @apply justify-start;
+  }
+
+  /* Main wrapper */
   .main-wrapper {
-    @apply max-w-[100vw] overflow-x-hidden text-center;
-    padding: 1.5rem 1rem 3rem 1rem;
+    @apply px-4 max-w-full overflow-x-hidden;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
   }
 
-  /* Back link - centrování */
+  /* Back link */
   .back-link {
-    @apply text-center justify-center flex;
-    margin: 1rem auto 2rem auto;
+    @apply flex justify-center text-center mx-auto my-6;
   }
 
-  /* Content layout - centrování */
+  /* Content layout */
   .content-layout {
-    @apply justify-items-center max-w-full;
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
+    @apply grid-cols-1 justify-items-center max-w-full;
+    padding: 0;
   }
 
-  /* Hero gradient - centrování */
+  /* Hero gradient */
   .hero-gradient {
-    @apply relative flex flex-col items-center justify-center m-auto text-center max-w-full;
-    padding: 1.25rem;
-    border-radius: 0.9rem;
-    overflow: hidden;
+    @apply relative flex flex-col items-center justify-center text-center max-w-full rounded-2xl overflow-hidden mx-auto;
+    padding: 2rem;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 2rem;
   }
 
   .hero-bg {
-    @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-[#28A6FF] to-[#00E8E8] -z-10 opacity-[0.08];
+    @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-[#28A6FF] to-[#00E8E8] opacity-[0.08];
+    z-index: -1;
   }
 
-  .module-text,
-  .hero-title,
-  .hero-description,
-  .lesson-status {
-    @apply relative w-full mb-3 z-[1] whitespace-normal text-center;
-  }
-
-  .lesson-status {
-    @apply justify-center;
+  .module-text {
+    @apply relative w-full mb-4 text-center text-base;
+    z-index: 1;
+    padding: 0;
   }
 
   .hero-title {
-    @apply text-xl;
+    @apply relative w-full mb-4 text-center text-3xl font-semibold;
+    z-index: 1;
   }
 
-  .hero-description,
+  .hero-description {
+    @apply relative w-full mb-4 text-center text-lg;
+    z-index: 1;
+  }
+
   .lesson-status {
-    @apply text-sm;
+    @apply relative w-full mb-4 text-center justify-center text-base;
+    z-index: 1;
   }
 
-  /* Content card - centrování */
+  /* Content card */
   .content-card {
-    @apply rounded-lg p-3 m-auto max-w-full;
-  }
-
-  .sidebar {
-    @apply static mt-5 m-auto max-w-full;
-  }
-
-  .lesson-meta-grid {
-    @apply grid-cols-2 justify-items-center gap-6 max-w-full;
-  }
-
-  .meta-item {
-    @apply mb-3;
-  }
-
-  /* Lesson header responsive - centrování */
-  .lesson-header {
-    @apply w-full text-center min-h-0;
-    padding: 24px;
+    @apply w-full max-w-full rounded-2xl;
+    padding: 1.5rem;
     margin: 1.5rem auto;
   }
 
-  .lesson-header-title {
-    @apply text-center mb-6;
+  /* Sidebar */
+  .sidebar {
+    @apply static mt-6 mx-auto w-full max-w-full;
   }
 
-  /* Lesson summary responsive - centrování */
+  /* Lesson header */
+  .lesson-header {
+    @apply w-full text-center;
+    padding: 2rem;
+    margin: 2rem auto;
+  }
+
+  .lesson-header-title {
+    @apply text-center text-xl mb-6;
+  }
+
+  .lesson-meta-grid {
+    @apply grid-cols-1 gap-4 justify-items-center;
+  }
+
+  .meta-item {
+    @apply mb-4;
+  }
+
+  /* Lesson summary */
   .lesson-summary {
-    @apply w-full text-center min-h-0;
-    padding: 24px;
+    @apply w-full text-center;
+    padding: 2rem;
     margin: 2rem auto;
   }
 
@@ -1342,10 +1358,10 @@ body {
     @apply text-center mb-4;
   }
 
-  /* Tabs - centrování */
+  /* Tabs */
   .tabs-wrapper {
     @apply text-center;
-    margin: 1.5rem auto;
+    margin: 2rem auto;
   }
 
   .tabs {
@@ -1353,74 +1369,224 @@ body {
   }
 
   .tab {
-    margin: 0.25rem;
+    @apply px-4 py-3;
   }
 
-  /* Content - centrování nadpisů */
+  /* Tab content */
   .tab-content {
-    @apply text-center max-w-full p-4 py-0;
+    @apply max-w-full text-center;
+    padding: 1.5rem;
   }
 
   .content-heading,
-  .content-heading-big {
-    @apply text-center;
+  .content-heading-big,
+  .content-heading-file,
+  .content-heading-middle,
+  .content-heading-small {
+    @apply text-center text-3xl;
     margin: 2rem auto 1.5rem auto !important;
   }
 
   .content-text,
-  .content-text-big {
-    @apply text-left max-w-full;
+  .content-text-big,
+  .content-text-middle,
+  .content-text-small {
+    @apply text-center text-base max-w-full;
     margin: 1.5rem auto;
     padding: 0 0.5rem;
   }
 
   .content-list {
-    @apply text-left max-w-full;
+    @apply text-center max-w-full;
     margin: 1.5rem auto;
     padding: 0 0.5rem;
   }
 
   .content-list li {
-    @apply mb-3;
+    @apply mb-3 text-base;
   }
 
+  /* Images */
   .content-image,
   .smaller-content-image {
-    @apply block text-center;
+    @apply block mx-auto;
     margin: 2rem auto !important;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
   }
 
   .img-desc {
     @apply text-center;
-    margin: 0.75rem auto 2rem auto;
+    margin: 1rem auto 2rem auto;
   }
 
-  /* Curriculum module - centrování */
-  .curriculum-module {
-    @apply mx-auto;
-    max-width: calc(100% - 2rem);
-  }
-
-  .module-header {
-    @apply justify-center text-center;
-  }
-
-  .module-title-row {
-    @apply justify-center;
-  }
-
-  /* Responzivní downloads grid */
-  .downloads-grid {
-    @apply grid-cols-1 justify-items-center gap-6;
-  }
-
-  /* Responzivní link cards */
+  /* Downloads & Links */
+  .downloads-grid,
   .links-grid {
-    @apply grid-cols-1 gap-6 justify-items-center;
+    @apply grid-cols-1 gap-4 justify-items-center;
   }
 
   .link-card {
-    @apply h-auto min-h-[90px] px-4 py-3 text-center max-w-full mb-4;
+    @apply h-auto min-h-[90px] p-4 text-center max-w-full mb-4;
+  }
+
+  .link-title {
+    @apply text-lg text-center;
+  }
+
+  .link-desc {
+    @apply text-base text-center;
+  }
+
+  /* Diskuze */
+  .diskuze-search-bar {
+    @apply flex-col items-stretch gap-4 text-center mb-6;
+  }
+
+  .diskuze-search-box {
+    @apply w-full max-w-none mx-auto mb-4;
+  }
+
+  .diskuze-new-btn {
+    @apply w-full justify-center mx-auto mb-4;
+  }
+
+  .diskuze-title {
+    @apply text-2xl text-center mb-6;
+  }
+
+  .diskuze-header {
+    @apply text-center mb-6;
+  }
+
+  /* Footer */
+  .footer {
+    @apply px-6 py-8;
+  }
+
+  .footer-categories {
+    @apply grid-cols-2 !important;
+  }
+}
+
+/* Mobil (max-width: 480px) */
+@media (max-width: 480px) {
+
+  /* Main wrapper */
+  .main-wrapper {
+    @apply px-4;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Footer */
+  .footer-categories {
+    @apply grid-cols-2 !important;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply px-5 justify-between;
+  }
+
+  .logo {
+    @apply justify-start;
+  }
+
+  /* Hero gradient */
+  .hero-gradient {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+
+  .module-text {
+    @apply text-center text-sm mb-3;
+    padding: 0;
+  }
+
+  .hero-title {
+    @apply text-2xl text-center mb-3;
+  }
+
+  .hero-description {
+    @apply text-base text-center mb-3;
+  }
+
+  .lesson-status {
+    @apply text-sm text-center;
+  }
+
+  /* Content components */
+  .content-card {
+    @apply w-full text-center;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .lesson-header {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+
+  .lesson-header-title {
+    @apply text-lg text-center;
+  }
+
+  .lesson-meta-grid {
+    @apply grid-cols-1 gap-3 justify-items-center;
+  }
+
+  .lesson-summary {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+
+  .summary-title {
+    @apply text-lg text-center;
+  }
+
+  .summary-text {
+    @apply text-sm text-center;
+  }
+
+  /* Typography */
+  .content-heading,
+  .content-heading-big,
+  .content-heading-file,
+  .content-heading-middle,
+  .content-heading-small {
+    @apply text-2xl text-center;
+  }
+
+  .content-text,
+  .content-text-big,
+  .content-text-middle,
+  .content-text-small {
+    @apply text-sm text-center;
+  }
+
+  .content-list {
+    @apply text-center;
+  }
+
+  .content-list li {
+    @apply text-sm text-center;
+  }
+
+  /* Tabs */
+  .tabs {
+    @apply justify-center flex-wrap gap-2;
+  }
+
+  .tab {
+    @apply text-sm px-3 py-2;
+  }
+
+  /* Links & Downloads */
+  .link-card {
+    @apply p-3 text-center;
   }
 
   .link-title {
@@ -1428,185 +1594,105 @@ body {
   }
 
   .link-desc {
-    @apply text-xs text-center;
-  }
-
-  .link-icon {
-    @apply w-8 h-8 mx-auto;
-  }
-
-  .link-icon i {
-    @apply text-base;
-  }
-
-  .download-item {
-    @apply p-3 text-center mb-4;
-  }
-
-  .file-icon {
-    @apply w-10 h-10;
-    margin: 0 auto 0.5rem auto;
-  }
-
-  .download-left {
-    @apply gap-3 flex-col items-center text-center;
-  }
-
-  .download-info-title {
     @apply text-sm text-center;
-  }
-
-  .download-info-size {
-    @apply text-xs text-center;
-  }
-
-  /* Responzivní diskuze */
-  .diskuze-search-bar {
-    @apply flex-col items-stretch gap-3 justify-center text-center mb-6;
-  }
-
-  .diskuze-search-box {
-    @apply w-full max-w-none m-auto mb-4;
-  }
-
-  .diskuze-new-btn {
-    @apply w-full justify-center m-auto mb-4;
-  }
-
-  .diskuze-title {
-    @apply text-xl text-center mb-6;
-  }
-
-  .diskuze-header {
-    @apply text-center mb-6;
-  }
-
-  .diskuze-post {
-    @apply flex-col gap-3 p-3 text-center items-center mb-6;
-  }
-
-  .diskuze-avatar {
-    @apply w-12 h-12 mx-auto mb-2;
-  }
-
-  .diskuze-content {
-    @apply text-center mt-2;
-  }
-
-  .diskuze-author {
-    @apply text-center mb-2;
-  }
-
-  .diskuze-post-title {
-    @apply text-base text-center;
-    margin: 0.75rem 0;
-  }
-
-  .diskuze-post-text {
-    @apply text-sm text-center;
-    margin: 0.5rem 0;
-  }
-
-  .diskuze-stats {
-    @apply justify-center mt-4;
-  }
-
-  /* Footer responsive */
-  .footer {
-    @apply px-6 py-8;
-  }
-}
-
-/* Extra malá zařízení (max-width: 480px) */
-@media (max-width: 480px) {
-
-  /* Hero sekce */
-  .hero-title {
-    @apply text-lg;
-    text-align: center;
-  }
-
-  .hero-description {
-    @apply text-xs text-center;
-  }
-
-  .module-text {
-    @apply text-center justify-center;
-    display: flex;
-    margin: 0 auto;
-  }
-
-  .lesson-status {
-    @apply text-center justify-center;
-  }
-
-  /* Content card */
-  .content-card {
-    @apply p-6 m-auto text-center;
-  }
-
-  /* Nadpisy */
-  .content-heading,
-  .content-heading-big {
-    @apply text-xl text-center;
-  }
-
-  /* Text */
-  .content-text,
-  .content-text-big {
-    @apply text-xs text-left max-w-full;
-  }
-
-  /* Seznamy */
-  .content-list li {
-    @apply text-xs pl-3 text-left;
-  }
-
-  /* Lesson header */
-  .lesson-header {
-    @apply text-center p-4;
-  }
-
-  .lesson-header-title {
-    @apply text-center;
-  }
-
-  .lesson-meta-grid {
-    @apply justify-items-center text-center;
-  }
-
-  .meta-item {
-    @apply text-center flex flex-col items-center;
-  }
-
-  .meta-value {
-    @apply text-center flex flex-col items-center gap-1;
-  }
-
-  /* Tabs */
-  .tabs {
-    @apply justify-center flex-wrap;
   }
 
   /* Diskuze */
-  .diskuze-header,
   .diskuze-title {
+    @apply text-xl text-center;
+  }
+
+  .diskuze-search-box {
+    @apply w-full;
+  }
+
+  .diskuze-new-btn {
+    @apply w-full text-sm;
+  }
+
+  /* Images */
+  .content-image,
+  .smaller-content-image {
+    margin: 1.5rem auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .img-desc {
+    @apply text-sm text-center;
+    margin: 0.5rem auto 1rem auto;
+  }
+}
+
+/* Velmi malý mobil (max-width: 400px) */
+@media (max-width: 400px) {
+
+  .main-wrapper {
+    @apply px-3;
+  }
+
+  .navbar {
+    @apply px-2;
+  }
+
+  .hero-gradient {
+    padding: 1rem;
+    margin: 0.5rem auto;
+  }
+
+  .hero-title {
+    @apply text-xl;
+  }
+
+  .hero-description {
+    @apply text-sm;
+  }
+
+  .content-card,
+  .lesson-header,
+  .lesson-summary {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .content-heading,
+  .content-heading-big,
+  .content-heading-file,
+  .content-heading-middle,
+  .content-heading-small {
+    @apply text-xl text-center;
+  }
+
+  .content-text,
+  .content-text-big,
+  .content-text-middle,
+  .content-text-small {
+    @apply text-sm text-center;
+  }
+
+  .content-list {
     @apply text-center;
   }
 
-  /* Navbar */
-  .navbar {
-    @apply text-center justify-center;
+  .summary-title {
+    @apply text-center;
   }
 
-  .logo {
-    @apply m-auto;
+  .summary-text {
+    @apply text-center;
   }
 
-  /* Obrázky */
-  .content-image,
-  .smaller-content-image {
-    margin: 1rem auto !important;
+  .tabs {
+    @apply gap-1;
+  }
+
+  .tab {
+    @apply text-xs px-2 py-1.5;
+  }
+
+  .link-card {
+    @apply p-2;
   }
 }
 
@@ -2288,7 +2374,8 @@ body {
 .note-copy-btn {
   @apply flex-shrink-0 w-11 h-11 bg-white rounded-[32px] cursor-pointer flex items-center justify-center hover:bg-[#F3F4F6] hover:border-[#D1D5DB];
   transition: all 0.3s;
-  margin-top: -10px;  /* Změňte hodnotu podle potřeby */
+  margin-top: -10px;
+  /* Změňte hodnotu podle potřeby */
 }
 
 .note-copy-btn img {
@@ -2424,5 +2511,165 @@ body {
 
   .note-display-selected {
     margin-bottom: 20px;
+  }
+}
+
+
+/* ===== AUDIO PLAYERS ===== */
+.audio-players-section {
+  @apply mt-8 mb-8 w-full;
+}
+
+.audio-section-title {
+  @apply text-[18px] font-[500] text-[#1C1C1C] mb-4 p-0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.audio-player {
+  @apply flex flex-col w-full bg-white rounded-3xl p-6 border border-[#A9DBFF] shadow-sm gap-4;
+  max-width: 1085px;
+  height: 180px;
+}
+
+.audio-waveform {
+  @apply w-full flex items-center p-0 relative overflow-hidden bg-white rounded-lg;
+  height: 180px;
+}
+
+.waveform-bars {
+  @apply w-full h-full flex items-center justify-between gap-[3px] px-2;
+}
+
+.waveform-bar {
+  @apply flex-1 bg-[#D1D5DB] rounded-sm transition-colors;
+  min-width: 2px;
+  max-width: 4px;
+}
+
+.waveform-bar.active {
+  @apply bg-[#7ECAFF];
+}
+
+.audio-buttons {
+  @apply flex items-center gap-3;
+}
+
+.audio-play-btn {
+  @apply flex-shrink-0 bg-transparent border-none cursor-pointer p-0 transition-transform;
+}
+
+.audio-play-btn:hover {
+  transform: scale(1.05);
+}
+
+.audio-play-btn:active {
+  transform: scale(1.0);
+}
+
+.audio-controls {
+  @apply flex items-center gap-1 flex-shrink-0;
+}
+
+.audio-rewind,
+.audio-forward {
+  @apply bg-transparent border-none cursor-pointer p-1 transition-opacity;
+}
+
+.audio-rewind img,
+.audio-forward img {
+  @apply w-6 h-6;
+}
+
+.audio-rewind:hover,
+.audio-forward:hover {
+  @apply opacity-70;
+}
+
+.audio-info {
+  @apply flex items-center gap-2 flex-shrink-0 ml-auto;
+}
+
+.audio-speed {
+  @apply bg-transparent border-none text-[16px] font-semibold text-[#1C1C1C] cursor-pointer px-2 py-1 rounded transition-colors;
+}
+
+.audio-speed:hover {
+  @apply bg-[#F3F4F6];
+}
+
+.audio-time {
+  @apply text-[16px] font-normal text-[#1C1C1C];
+}
+
+/* Audio Player Responsive */
+@media (max-width: 768px) {
+  .audio-player {
+    @apply h-auto p-4 gap-3;
+  }
+
+  .audio-section-title {
+    @apply text-base mb-3;
+  }
+
+  .audio-waveform {
+    height: 120px;
+  }
+
+  .audio-buttons {
+    @apply flex-wrap gap-2;
+  }
+
+  .audio-play-btn svg {
+    @apply w-7 h-7;
+  }
+
+  .audio-controls {
+    @apply gap-1;
+  }
+
+  .audio-rewind svg,
+  .audio-forward svg {
+    @apply w-5 h-5;
+  }
+
+  .audio-info {
+    @apply ml-0 w-full justify-end;
+  }
+
+  .audio-speed,
+  .audio-time {
+    @apply text-[13px];
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-player {
+    @apply p-3 gap-2.5;
+  }
+
+  .audio-section-title {
+    @apply text-sm;
+  }
+
+  .audio-waveform {
+    height: 80px;
+  }
+
+  .waveform-bars {
+    @apply gap-0.5 px-1;
+  }
+
+  .audio-play-btn svg {
+    @apply w-6 h-6;
+  }
+
+  .audio-rewind svg,
+  .audio-forward svg {
+    @apply w-[18px] h-[18px];
+  }
+
+  .audio-speed,
+  .audio-time {
+    @apply text-xs;
   }
 }

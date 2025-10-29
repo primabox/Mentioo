@@ -129,6 +129,43 @@ body {
   @apply w-11 h-11 flex items-center justify-center rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] transition;
 }
 
+.cart-badge {
+  @apply absolute -top-1 -right-1 bg-[#0069B2] text-white text-[11px] font-semibold rounded-full w-5 h-5 flex items-center justify-center;
+  animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cart-badge.pulse {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
 /* ===== MAIN CONTENT ===== */
 .main-wrapper {
   @apply max-w-[1400px] mx-auto pt-24 pb-12 px-8;
@@ -181,7 +218,7 @@ body {
 }
 
 .hero-bg {
-  @apply absolute rounded-[48px]  bg-gradient-to-r from-[#28A6FF] to-[#00E8E8];
+  @apply absolute rounded-[48px] bg-gradient-to-r from-[#28A6FF] to-[#00E8E8];
   width: 1700px;
   height: 100%;
   top: 0;
@@ -221,7 +258,7 @@ body {
 }
 
 .instructor-label {
-  @apply text-[16px] text-[#333333] font-semibold mt-2 ;
+  @apply text-[16px] text-[#333333] font-semibold mt-2;
 }
 
 .instructor-name {
@@ -462,15 +499,15 @@ body {
   @apply h-fit text-left items-start mt-12;
   position: relative;
   z-index: 50;
-  width: 383px; 
+  width: 383px;
 }
 
 .progress-card {
-  @apply bg-white rounded-2xl px-5  mb-5;
+  @apply bg-white rounded-2xl px-5 mb-5;
   position: relative;
   z-index: 10;
   border: none !important;
-  box-shadow:   0 20px 30px 10px #1A78E514;
+  box-shadow: 0 20px 30px 10px #1A78E514;
   text-align: left !important;
 }
 
@@ -560,14 +597,30 @@ body {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    @apply px-5;
+  }
+
   .footer {
     padding: 40px 40px;
+  }
+
+  .footer-categories {
+    @apply grid-cols-2 !important;
   }
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    @apply px-5;
+  }
+
   .footer {
     padding: 32px 24px;
+  }
+
+  .footer-categories {
+    @apply grid-cols-2 !important;
   }
 }
 
@@ -907,7 +960,7 @@ body {
 }
 
 .coupon-apply-btn {
-  @apply bg-[#E6F4FF] text-[#0069B2] text-[13px] cursor-pointer font-[500] ;
+  @apply bg-[#E6F4FF] text-[#0069B2] text-[13px] cursor-pointer font-[500];
   padding: 8px 20px;
   border-radius: 32px;
   height: 37px;
@@ -978,7 +1031,7 @@ body {
 }
 
 .divider-text {
-  @apply px-4  text-[#717171] text-[14px] font-[400];
+  @apply px-4 text-[#717171] text-[14px] font-[400];
 }
 
 /* Premium Section */
@@ -1185,8 +1238,8 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.4s ease,
-              transform 0.4s ease;
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .curriculum-module .module-content.open {
@@ -1294,7 +1347,7 @@ body {
 
 /* Recommendation Badge */
 .recommendation-badge {
-  @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl  min-w-[180px];
+  @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
 }
 
 .recommendation-icon {
@@ -1369,11 +1422,11 @@ body {
   @apply flex items-center justify-center;
   gap: 10px;
   margin-top: 80px;
-  margin-bottom: 313px:
+  margin-bottom: 313px;
 }
 
 .pagination-arrow {
-  @apply flex items-center justify-center bg-white border-[#E9F6FF] border-[1px]   cursor-pointer transition-all;
+  @apply flex items-center justify-center bg-white border-[#E9F6FF] border-[1px] cursor-pointer transition-all;
   width: 48px;
   height: 48px;
   border-radius: 24px;
@@ -1409,7 +1462,7 @@ body {
 }
 
 .pagination-dots {
-  @apply px-2 flex items-center justify-center -translate-y-1 ;
+  @apply px-2 flex items-center justify-center -translate-y-1;
   height: 48px;
   color: #4D4D4D;
   font-size: 15px;
@@ -1500,7 +1553,7 @@ body {
 }
 
 .premium-btn-style {
-  @apply mt-4;
+  @apply mt-4 mx-auto block;
 }
 
 /* ===== INSTRUCTOR TAB - O LEKTOROVI ===== */
@@ -1586,11 +1639,11 @@ body {
 /* Course Card */
 .instructor-course-card {
   @apply shadow-lg flex gap-6 bg-white rounded-2xl items-center w-full max-w-full cursor-pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .instructor-course-card:hover {
-  @apply -translate-y-2;
+  transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
@@ -2182,11 +2235,11 @@ body {
 /* Extra malá zařízení (max-width: 480px) */
 @media (max-width: 480px) {
   .breadcrumb-nav {
-    @apply text-[12px] my-[15px] gap-1 ;
+    @apply text-[12px] my-[15px] gap-1;
   }
 
   .breadcrumb-separator {
-    @apply text-[9px]  whitespace-nowrap;
+    @apply text-[9px] whitespace-nowrap;
   }
 
   .hero-gradient {
@@ -2377,6 +2430,10 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
+  .instructor-course-card:hover {
+    transform: translateY(-4px);
+  }
+
   .course-card-img {
     width: 100%;
     min-width: 100%;
@@ -2497,8 +2554,8 @@ body {
   @apply flex items-center gap-3 mb-6;
 }
 
-.cart-modal-header i {
-  @apply text-2xl text-[#10B981];
+.cart-modal-check-icon {
+  @apply w-6 h-6 flex-shrink-0;
 }
 
 .cart-modal-header h3 {
@@ -2512,24 +2569,24 @@ body {
 
 /* Cart Item (Main Added Item) */
 .cart-item {
-  @apply flex gap-4 p-0 bg-transparent rounded-2xl;
+  @apply flex gap-3 p-0 bg-white border-none rounded-xl items-start;
 }
 
 .cart-item-image {
-  @apply w-[120px] h-[89px] rounded-xl object-cover flex-shrink-0;
+  @apply w-[120px] h-24 rounded-lg object-cover flex-shrink-0;
 }
 
 .cart-item-info {
-  @apply flex-1 flex flex-col gap-1 justify-center;
+  @apply flex-1 flex flex-col gap-0.5 justify-between min-h-24;
 }
 
 .cart-item-title {
-  @apply text-base font-semibold text-[#1C1C1C] m-0 leading-tight;
+  @apply text-base font-bold text-[#1C1C1C] m-0 leading-tight;
   font-family: 'Poppins', sans-serif;
 }
 
 .cart-item-instructor {
-  @apply text-sm text-[#717171] m-0;
+  @apply text-sm text-[#4D4D4D] m-0 mb-auto;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -2539,12 +2596,16 @@ body {
 }
 
 .cart-item-original {
-  @apply text-sm font-normal text-[#9CA3AF] line-through ml-2;
+  @apply text-xs font-normal text-[#9CA3AF] line-through ml-1;
 }
 
 /* Upsell Section */
 .cart-upsell-section {
   @apply flex flex-col gap-6;
+}
+
+.cart-divider {
+  @apply w-full h-[1px] bg-[#E8E8E8] mb-2 mt-3;
 }
 
 .cart-upsell-title {
@@ -2599,25 +2660,25 @@ body {
 /* Modal Footer */
 .cart-modal-footer {
   @apply flex gap-3 mt-6 pt-6 border-t border-[#E5E7EB];
+  justify-content: flex-end;
 }
 
 .cart-btn-continue {
-  @apply flex-1 text-sm font-medium text-[#1C1C1C] bg-white border border-[#E5E7EB] rounded-[32px] px-6 py-3 cursor-pointer transition-all;
+  @apply text-[13px] font-medium text-[#0069B2] bg-[#D4EDFF] border-none rounded-[32px] px-5 py-2.5 cursor-pointer transition-all;
   font-family: 'Poppins', sans-serif;
 }
 
 .cart-btn-continue:hover {
-  @apply bg-[#F9FAFB] border-[#D1D5DB];
+  @apply bg-[#BFE3FF];
 }
 
 .cart-btn-checkout {
-  @apply flex-1 text-sm font-medium text-white bg-[#0069B2] border-none rounded-[32px] px-6 py-3 cursor-pointer transition-all;
+  @apply text-[13px] font-medium text-white bg-[#0069B2] border-none rounded-[32px] px-5 py-2.5 cursor-pointer transition-all;
   font-family: 'Poppins', sans-serif;
 }
 
 .cart-btn-checkout:hover {
-  @apply bg-[#005A9C] -translate-y-px;
-  box-shadow: 0 4px 12px rgba(0, 105, 178, 0.2);
+  @apply bg-[#005A9C];
 }
 
 /* Responsive */

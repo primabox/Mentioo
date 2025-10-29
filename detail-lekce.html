@@ -12,79 +12,79 @@
 
 <body class="font-[Poppins]">
   <!-- HEADER -->
-   <header class="header">
-        <nav class="navbar">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="#">
-                    <img src="img/Logo.png" alt="Logo" class="w-32" />
-                </a>
-            </div>
+  <header class="header">
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#">
+          <img src="img/Logo.png" alt="Logo" class="w-32" />
+        </a>
+      </div>
 
-            <!-- Searchbar -->
-            <div class="searchbar-container">
-                <form class="search-form" role="search">
-                    <div class="search-wrapper">
-                        <span class="search-icon">
-                            <i class="fas fa-search translate-y-px"></i>
-                        </span>
-                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
-                    </div>
-                </form>
-            </div>
+      <!-- Searchbar -->
+      <div class="searchbar-container">
+        <form class="search-form" role="search">
+          <div class="search-wrapper">
+            <span class="search-icon">
+              <i class="fas fa-search translate-y-px"></i>
+            </span>
+            <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+          </div>
+        </form>
+      </div>
 
-            <!-- Hamburger (mobile) -->
-            <div class="hamburger">
-                <button id="navbar-toggle" class="hamburger-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+      <!-- Hamburger (mobile) -->
+      <div class="hamburger">
+        <button id="navbar-toggle" class="hamburger-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
 
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="mobile-menu">
-                <a href="#" class="mobile-link">Nabídka kurzů</a>
-                <a href="#" class="mobile-link">Lektoři</a>
-                <a href="#" class="mobile-link">Blog</a>
-                <a href="#" class="mobile-link">Můj profil</a>
-            </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <a href="#" class="mobile-link">Nabídka kurzů</a>
+        <a href="#" class="mobile-link">Lektoři</a>
+        <a href="#" class="mobile-link">Blog</a>
+        <a href="#" class="mobile-link">Můj profil</a>
+      </div>
 
-            <!-- Desktop menu -->
-            <div id="navbar-menu" class="navbar-menu">
-                <ul class="nav-links">
-                    <li class="nav-item group">
-                        <a href="#" class="nav-link">
-                            Nabídka kurzů
-                        </a>
-                        <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
-                        <div class="dropdown">
-                            <div class="py-2">
-                                <a href="#" class="dropdown-link">Programování</a>
-                                <a href="#" class="dropdown-link">Design</a>
-                                <a href="#" class="dropdown-link">Marketing</a>
-                                <a href="#" class="dropdown-link">Business</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
-                    <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
-                </ul>
-
-                <!-- User Profile & Icons -->
-                <div class="flex items-center gap-3">
-                    <a href="#" class="user-profile-link">
-                        <img src="img/person_gray.png" alt="">
-                        <span>Jana Blahošová</span>
-                    </a>
-                    <a href="#" class="icon-btn">
-                        <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
-                    </a>
-                    <a href="#" class="icon-btn-alt">
-                        <img src="img/network.png" alt="Globe" class="w-5 h-5" />
-                    </a>
-                </div>
+      <!-- Desktop menu -->
+      <div id="navbar-menu" class="navbar-menu">
+        <ul class="nav-links">
+          <li class="nav-item group">
+            <a href="#" class="nav-link">
+              Nabídka kurzů
+            </a>
+            <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+            <div class="dropdown">
+              <div class="py-2">
+                <a href="#" class="dropdown-link">Programování</a>
+                <a href="#" class="dropdown-link">Design</a>
+                <a href="#" class="dropdown-link">Marketing</a>
+                <a href="#" class="dropdown-link">Business</a>
+              </div>
             </div>
-        </nav>
-    </header>
+          </li>
+          <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
+          <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
+        </ul>
+
+        <!-- User Profile & Icons -->
+        <div class="flex items-center gap-3">
+          <a href="#" class="user-profile-link">
+            <img src="img/person_gray.png" alt="">
+            <span>Jana Blahošová</span>
+          </a>
+          <a href="#" class="icon-btn">
+            <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+          </a>
+          <a href="#" class="icon-btn-alt">
+            <img src="img/network.png" alt="Globe" class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <div class="main-wrapper">
     <a href="#" class="back-link">
@@ -291,6 +291,49 @@
                 Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum
                 tellus.
               </p>
+            </div>
+
+            <!-- Audio Players Section -->
+            <div class="audio-players-section">
+              <div class="audio-player">
+                <h3 class="audio-section-title">Auto Layout a jeho výhody</h3>
+
+                <div class="audio-waveform">
+                  <div class="waveform-bars"></div>
+                </div>
+
+                <div class="audio-buttons">
+                  <button class="audio-play-btn" id="audio-play-btn">
+                    <!-- Play icon -->
+                    <svg class="play-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <circle cx="16" cy="16" r="16" fill="#0EA5E9" />
+                      <path d="M13 10L21 16L13 22V10Z" fill="white" />
+                    </svg>
+                    <!-- Pause icon -->
+                    <svg class="pause-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                      style="display: none;">
+                      <circle cx="16" cy="16" r="16" fill="#0EA5E9" />
+                      <rect x="12" y="10" width="3" height="12" fill="white" />
+                      <rect x="17" y="10" width="3" height="12" fill="white" />
+                    </svg>
+                  </button>
+
+                  <div class="audio-controls">
+                    <button class="audio-rewind">
+                      <img src="img/Backward.png" alt="Zpět 10s" />
+                    </button>
+
+                    <button class="audio-forward">
+                      <img src="img/Forward.png" alt="Vpřed 10s" />
+                    </button>
+                  </div>
+
+                  <div class="audio-info">
+                    <button class="audio-speed">1x</button>
+                    <span class="audio-time">12:19</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1003,6 +1046,7 @@
   <script type="module" src="js/diskuze.js"></script>
   <script defer src="js/notes.js"></script>
   <script defer src="js/discussionModal.js"></script>
+  <script defer src="js/audioPlayer.js"></script>
 
 </body>
 
