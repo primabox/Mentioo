@@ -1037,18 +1037,19 @@ body {
 }
 
 .discussion-modal-content {
+  @apply pb-[32px] pr-[32px] pl-[32px] pt-[26px];
   position: relative;
   background: white;
   border-radius: 20px;
   width: 594px;
+  height: 392px;
   max-width: 90vw;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   z-index: 2;
-  padding: 40px 32px;
 }
 
 .discussion-modal-title {
-  @apply text-[20px] font-semibold text-[#1C1C1C] mb-6;
+  @apply text-[22px] font-semibold text-[#1C1C1C] mb-4;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -1061,7 +1062,7 @@ body {
 }
 
 .discussion-label {
-  @apply text-[14px] font-normal text-[#1C1C1C] mb-2;
+  @apply text-[14px] font-normal text-[#333333] mb-2;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -1081,11 +1082,12 @@ body {
 }
 
 .discussion-textarea {
-  @apply w-full border border-[#E5E7EB] rounded-[12px] px-4 py-3 text-[14px] text-[#1C1C1C] resize-none;
+  @apply border border-[#E5E7EB] rounded-[6px] text-[14px] text-[#1C1C1C] resize-none w-[530px];
   font-family: 'Poppins', sans-serif;
   outline: none;
   transition: border-color 0.2s;
-  min-height: 120px;
+  min-height: 80px;
+  padding: 8px 12px;
 }
 
 .discussion-textarea:focus {
@@ -1093,18 +1095,42 @@ body {
 }
 
 .discussion-modal-footer {
-  @apply flex gap-3 justify-end;
+  @apply flex gap-3 justify-center;
 }
 
 .discussion-btn-cancel {
-  @apply px-6 py-3 rounded-[32px] border border-[#0069B2] text-[#0069B2] text-[14px] font-medium cursor-pointer hover:bg-[#F0F9FF] transition-colors;
+  @apply border border-[#0069B2] text-[#0069B2] text-[14px] font-medium cursor-pointer;
   font-family: 'Poppins', sans-serif;
   background: white;
+  border-radius: 32px;
+  width: 261px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.discussion-btn-cancel:hover {
+  @apply shadow-lg;
+  transform: translateY(-2px);
 }
 
 .discussion-btn-submit {
-  @apply px-6 py-3 rounded-[32px] bg-[#0069B2] text-white text-[14px] font-medium cursor-pointer hover:bg-[#005299] transition-colors border-none;
+  @apply bg-[#D4EDFF] text-[#0069B2] text-[14px] font-medium cursor-pointer;
   font-family: 'Poppins', sans-serif;
+  border-radius: 32px;
+  width: 261px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.discussion-btn-submit:hover {
+  @apply shadow-lg;
+  transform: translateY(-2px);
 }
 
 /* ===== FOOTER ===== */
