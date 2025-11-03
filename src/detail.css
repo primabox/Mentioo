@@ -150,6 +150,7 @@ body {
   @apply inline-flex items-center gap-2 text-[#1C1C1C] no-underline text-sm hover:text-cyan-500 font-[500] transition;
   margin-top: 40px;
   margin-bottom: 40px;
+  margin-left: 8rem;
 }
 
 .content-layout {

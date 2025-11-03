@@ -38,7 +38,7 @@ body {
 
 /* ===== SEARCHBAR ===== */
 .searchbar-container {
-  @apply hidden md:flex flex-1 justify-center mx-6 max-w-[600px];
+  @apply hidden md:flex flex-1 justify-center mx-6 max-w-[801px];
 }
 
 .search-form {
@@ -96,15 +96,15 @@ body {
 }
 
 .nav-item {
-  @apply relative;
+  @apply relative flex items-center gap-3;
 }
 
 .nav-link {
-  @apply flex items-center hover:text-[#2563eb];
+  @apply hover:text-[#2563eb];
 }
 
 .dropdown {
-  @apply absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
+  @apply absolute top-full left-0 mt-4 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
   border: none !important;
 }
 
