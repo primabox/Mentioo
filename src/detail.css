@@ -276,8 +276,6 @@ body {
 .tabs {
   @apply flex gap-6;
   position: relative;
-  --indicator-left: 0px;
-  --indicator-width: 0px;
 }
 
 .tabs::before {
@@ -286,30 +284,38 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: #e2e8f0;
+  height: 1px;
+  background: linear-gradient(to right, #E8E8E8 40%, #D4EDFF 60%);
   z-index: 1;
 }
 
-.tabs::after {
+.tab {
+  @apply py-3.5 px-0 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tab::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: var(--indicator-left);
-  width: var(--indicator-width);
-  height: 2px;
-  background: #0069B2;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
 }
 
-.tab {
-  @apply py-3.5 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all;
-  position: relative;
-}
-
 .tab.active {
   @apply text-[#0069B2];
+}
+
+.tab.active::after {
+  width: 100%;
+  background: #0069B2;
 }
 
 .tab:hover {
@@ -1216,6 +1222,12 @@ body {
 
 /* Velké obrazovky do 1400px */
 @media (max-width: 1400px) {
+  .hero-gradient {
+    margin-right: -6rem;
+    margin-left: -2rem;
+    padding: 50px 5rem;
+  }
+
   .content-card {
     width: 100%;
     max-width: 1050px;
@@ -1223,8 +1235,28 @@ body {
   }
 }
 
+/* Medium Desktop (max-width: 1280px) */
+@media (max-width: 1280px) {
+  .hero-gradient {
+    margin-right: -4rem;
+    margin-left: -1.5rem;
+    padding: 50px 4rem;
+  }
+
+  .footer-categories {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
 /* Menší než 1200px – jeden sloupec layout */
 @media (max-width: 1200px) {
+  .hero-gradient {
+    margin-right: -2rem;
+    margin-left: -1rem;
+    padding: 50px 3.5rem;
+  }
+
   .content-layout {
     grid-template-columns: 1fr;
   }
@@ -1252,183 +1284,182 @@ body {
 
 /* Tablet / mobil (max-width: 768px) */
 @media (max-width: 768px) {
-
-  .searchbar-container,
-  .nav-links {
-    display: none;
+  .hero-gradient {
+    margin-right: -1rem;
+    margin-left: -0.5rem;
+    padding: 40px 2.5rem;
   }
 
+  /* Navbar */
   .navbar {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    justify-content: space-between;
+    @apply px-5;
   }
 
-  .logo {
-    justify-content: flex-start;
-  }
-
+  /* Layout & Wrapper */
   .main-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 16px 40px;
+    width: 390px;
     max-width: 100%;
-    overflow-x: hidden;
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
   }
 
-  .back-link {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 1.5rem auto;
+  /* Footer */
+  .footer-categories {
+    @apply grid-cols-2;
   }
 
   .content-layout {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    max-width: 100%;
+    gap: 24px;
     padding: 0;
+    grid-template-columns: 1fr;
+    width: 390px;
+    max-width: 100%;
   }
 
-  .hero-gradient {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .content-layout>div:first-child {
+    width: 390px;
     max-width: 100%;
-    border-radius: 1rem;
+  }
+
+  .back-link {
+    margin: 24px 0;
+  }
+
+  /* Hero Section */
+  .hero-gradient {
+    padding: 32px 20px 48px 20px !important;
+    margin: 0 0 32px 0 !important;
+    border-radius: 32px;
     overflow: hidden;
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 2rem;
-    padding: 2rem;
   }
 
   .hero-bg {
+    width: 100% !important;
+    height: 100%;
+    border-radius: 32px;
     position: absolute;
-    inset: 0;
-    border-radius: 1rem;
-    opacity: 0.08;
-    z-index: -1;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
-  /* TADY MUSÍ BÝT VŠECHNY HERO STYLY */
   .module-text {
-    @apply relative w-full mb-4 text-center text-base;
-    z-index: 1;
-    padding: 0;
+    font-size: 14px;
+    padding: 8px 16px;
   }
 
   .hero-title {
-    @apply relative w-full mb-4 text-center text-3xl font-semibold;
-    z-index: 1;
+    font-size: 40px;
+    margin-bottom: 24px;
+    text-align: center;
+    max-width: 100% !important;
   }
 
   .hero-description {
-    @apply relative w-full mb-4 text-center text-lg;
-    z-index: 1;
+    font-size: 18px;
+    text-align: center;
+    max-width: 100% !important;
+    max-height: none;
   }
 
-  .lesson-status {
-    @apply relative w-full mb-4 text-center justify-center text-base;
-    z-index: 1;
+  .instructor-info {
+    align-items: center;
   }
 
+  .instructor-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .instructor-details {
+    flex-direction: column;
+  }
+
+  .instructor-badges {
+    justify-content: center;
+  }
+
+  /* Content Card & Tabs */
   .content-card {
-    @apply w-full max-w-full rounded-2xl;
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-  }
-
-  .sidebar {
-    @apply static mt-6 mx-auto w-full max-w-full;
-  }
-
-  .lesson-header {
-    @apply w-full text-center;
-    padding: 2rem;
-    margin: 2rem auto;
-  }
-
-  .lesson-header-title {
-    @apply text-center text-xl mb-6;
-  }
-
-  .lesson-meta-grid {
-    @apply grid-cols-1 gap-4 justify-items-center;
-  }
-
-  .meta-item {
-    @apply mb-4;
-  }
-
-  .lesson-summary {
-    @apply w-full text-center;
-    padding: 2rem;
-    margin: 2rem auto;
-  }
-
-  .summary-title,
-  .summary-text {
-    @apply text-center mb-4;
+    width: 390px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .tabs-wrapper {
-    @apply text-center;
-    margin: 2rem auto;
+    padding: 0 16px;
   }
 
   .tabs {
-    @apply justify-center flex-wrap gap-3;
+    gap: 8px;
+    padding: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .tab {
-    @apply px-4 py-3;
+    font-size: 13px;
+    padding: 10px 16px;
+    flex: 0 0 auto;
   }
 
   .tab-content {
-    @apply max-w-full text-center;
-    padding: 1.5rem;
+    padding: 16px;
   }
 
-  .content-heading,
-  .content-heading-big,
-  .content-heading-file,
-  .content-heading-middle,
-  .content-heading-small {
-    @apply text-center text-3xl;
-    margin: 2rem auto 1.5rem auto !important;
+  /* Sidebar */
+  .sidebar {
+    margin-top: 32px;
+    width: 390px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .content-text,
-  .content-text-big,
-  .content-text-middle,
-  .content-text-small {
-    @apply text-center text-base max-w-full;
-    margin: 1.5rem auto;
-    padding: 0 0.5rem;
+  .price-card,
+  .instructor-card {
+    width: 390px;
+    max-width: 100%;
+    padding: 24px 16px 16px 16px;
+    border-radius: 0 0 16px 16px;
   }
 
-  .content-list {
-    @apply text-center max-w-full;
-    margin: 1.5rem auto;
-    padding: 0 0.5rem;
+  /* Lesson header and meta */
+  .lesson-header {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .lesson-header-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .lesson-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Content typography */
+  .content-heading {
+    font-size: 24px;
+    margin: 24px 0 16px 0;
+  }
+
+  .content-text {
+    font-size: 14px;
+    margin: 16px 0;
   }
 
   .content-list li {
-    @apply mb-3 text-base;
+    font-size: 14px;
+    margin-bottom: 12px;
   }
 
-  .content-image,
-  .smaller-content-image {
-    @apply block mx-auto;
-    margin: 2rem auto !important;
+  .content-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     height: auto;
+    margin: 24px 0;
   }
 
   .img-desc {
@@ -1441,46 +1472,19 @@ body {
     @apply grid-cols-1 gap-4 justify-items-center;
   }
 
-  .link-card {
-    @apply h-auto min-h-[90px] p-4 text-center max-w-full mb-4;
-  }
-
-  .link-title {
-    @apply text-lg text-center;
-  }
-
-  .link-desc {
-    @apply text-base text-center;
-  }
-
-  .diskuze-search-bar {
-    @apply flex-col items-stretch gap-4 text-center mb-6;
-  }
-
-  .diskuze-search-box {
-    @apply w-full max-w-none mx-auto mb-4;
-  }
-
-  .diskuze-new-btn {
-    @apply w-full justify-center mx-auto mb-4;
-  }
-
-  .diskuze-title {
-    @apply text-2xl text-center mb-6;
-  }
-
-  .diskuze-header {
-    @apply text-center mb-6;
-  }
-
+  /* Footer */
   .footer {
-    @apply px-6 py-8;
+    padding: 40px 24px;
   }
 
-  .footer-categories {
-    @apply grid-cols-2;
+  .footer-grid {
+    flex-direction: column;
   }
 
+  .footer-logo-img {
+    width: 130px;
+    height: 54px;
+  }
 }
 
 /* ← SPRÁVNÉ UKONČENÍ 768px media query */
@@ -1489,11 +1493,9 @@ body {
 /* Mobil (max-width: 480px) */
 @media (max-width: 480px) {
 
-  /* Main wrapper */
-  .main-wrapper {
-    @apply px-4;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+  /* Navbar */
+  .navbar {
+    @apply px-5;
   }
 
   /* Footer */
@@ -1501,70 +1503,61 @@ body {
     @apply grid-cols-2;
   }
 
-  /* Navbar */
-  .navbar {
-    @apply px-5 justify-between;
-  }
-
-  .logo {
-    @apply justify-start;
-  }
-
-  /* Hero gradient */
+  /* Hero */
   .hero-gradient {
-    padding: 1.5rem;
-    border-radius: 1rem;
-    margin: 1rem auto;
+    margin: 0 0 24px 0 !important;
   }
 
-  .module-text {
-    @apply text-center text-sm mb-3;
-    padding: 0;
+  .hero-bg {
+    width: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 
   .hero-title {
-    @apply text-2xl text-center mb-3;
+    font-size: 28px;
   }
 
   .hero-description {
-    @apply text-base text-center mb-3;
+    font-size: 16px;
   }
 
-  .lesson-status {
-    @apply text-sm text-center;
+  .module-text {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 
-  /* Content components */
+  /* Tabs */
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab {
+    font-size: 12px;
+    padding: 8px 12px;
+    flex: 0 0 auto;
+  }
+
+  /* Content */
   .content-card {
-    @apply w-full text-center;
-    padding: 1rem;
-    margin: 1rem auto;
+    padding: 0;
+  }
+
+  .tab-content {
+    padding: 16px 12px;
+  }
+
+  .content-heading {
+    font-size: 18px;
   }
 
   .lesson-header {
-    padding: 1.5rem;
-    margin: 1.5rem auto;
+    padding: 16px;
   }
 
   .lesson-header-title {
-    @apply text-lg text-center;
-  }
-
-  .lesson-meta-grid {
-    @apply grid-cols-1 gap-3 justify-items-center;
-  }
-
-  .lesson-summary {
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-  }
-
-  .summary-title {
-    @apply text-lg text-center;
-  }
-
-  .summary-text {
-    @apply text-sm text-center;
+    font-size: 18px;
   }
 
   /* Typography */
@@ -1576,63 +1569,35 @@ body {
     @apply text-2xl text-center;
   }
 
-  .content-text,
-  .content-text-big,
-  .content-text-middle,
-  .content-text-small {
-    @apply text-sm text-center;
-  }
-
-  .content-list {
-    @apply text-center;
+  .content-text {
+    font-size: 13px;
   }
 
   .content-list li {
-    @apply text-sm text-center;
-  }
-
-  /* Tabs */
-  .tabs {
-    @apply justify-center flex-wrap gap-2;
-  }
-
-  .tab {
-    @apply text-sm px-3 py-2;
-  }
-
-  /* Links & Downloads */
-  .link-card {
-    @apply p-3 text-center;
-  }
-
-  .link-title {
-    @apply text-base text-center;
-  }
-
-  .link-desc {
-    @apply text-sm text-center;
-  }
-
-  /* Diskuze */
-  .diskuze-title {
-    @apply text-xl text-center;
-  }
-
-  .diskuze-search-box {
-    @apply w-full;
-  }
-
-  .diskuze-new-btn {
-    @apply w-full text-sm;
+    font-size: 13px;
   }
 
   /* Images */
-  .content-image,
-  .smaller-content-image {
-    margin: 1.5rem auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
+  .content-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0;
+  }
+
+  /* Sidebar */
+  .sidebar-item-title {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 32px 20px;
+  }
+
+  .footer-logo-img {
+    width: 110px;
+    height: 46px;
   }
 
   .img-desc {
@@ -2088,6 +2053,11 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .hero-gradient {
+    padding: 40px 2rem !important;
+    margin-top: 20px;
+  }
+
   .course-detail-layout {
     @apply flex-col;
   }

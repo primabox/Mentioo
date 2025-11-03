@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* ===== HEADER ===== */
+.header {
+    @apply sticky top-0 z-[9999] bg-white shadow-sm;
+}
+
 /* ===== HERO SECTION ===== */
 .hero-gradient {
     @apply relative rounded-[48px] overflow-visible;
@@ -460,6 +465,12 @@
         margin-top: 16px;
     }
 
+    .hero-bg {
+        max-width: 398px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .lektor-hero-content {
         @apply gap-4;
     }
@@ -506,7 +517,7 @@
     }
 
     .instructor-bio-text {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 18px;
     }
 
@@ -840,16 +851,15 @@
 
 /* ===== RESPONSIVE INSTRUCTOR COURSES ===== */
 
-/* Tablet (1024px) - 2-column grid with mobile card design */
+/* Tablet (1024px) - single column layout */
 @media (max-width: 1024px) {
     .instructor-courses-section {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 24px;
     }
 
     .courses-heading {
-        grid-column: 1 / -1;
         font-size: 20px;
         margin-bottom: 0;
     }
@@ -924,6 +934,8 @@
 /* Tablet (768px) */
 @media (max-width: 768px) {
     .instructor-courses-section {
+        display: flex;
+        flex-direction: column;
         gap: 20px;
     }
 
@@ -961,73 +973,116 @@
         margin-bottom: 16px;
     }
 
-    /* make courses single-column on small screens with vertical spacing */
+    /* make courses single-column with flex layout */
     .instructor-courses-section {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 16px;
     }
 
+    /* News card style - flexible height */
     .instructor-course-card {
-        flex-direction: column;
-        padding: 0;
-        gap: 0;
-        align-items: stretch;
+        background-color: white;
+        border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        width: 362px;
+        min-height: 451px;
+        cursor: pointer;
+        transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
     }
 
     .instructor-course-card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-12px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        text-decoration: none;
     }
 
+    /* News card image - larger for better proportions */
     .course-card-img {
         width: 100%;
-        min-width: 100%;
-        height: 220px;
-        border-radius: 0;
-        @apply rounded-tl-[16px] rounded-tr-[16px];
-    }
-
-    .course-card-content {
-        padding: 20px;
-        gap: 8px;
+        height: 240px;
+        object-fit: cover;
+        bor
+        flex-grow: 1;
+        text-align: center;
+        align-items: center;
     }
 
     .course-card-title {
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 8px;
+        color: #111827;
+        text-align: center;
+        padding: 20px 24px 0 24px;
     }
 
     .course-card-desc {
         font-size: 14px;
         line-height: 21px;
         margin-bottom: 16px;
+        color: #4B5563;
+        text-align: center;
+        padding: 0 24px;
     }
 
     .course-card-bottom {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        margin-top: 0;
+        justify-content: center;
+        gap: 16px;
+        margin-top: auto;
+        width: 100%;
+        padding: 0 24px 24px 24px;
     }
 
     .course-rating-info {
+        display: flex;
         flex-wrap: wrap;
-        gap: 4px;
-        font-size: 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        font-size: 15px;
+        text-align: center;
+        width: 100%;
+        line-height: 1.5;
     }
 
-    .course-card-price,
+    .course-card-price {
+        font-size: 22px;
+        font-weight: 700;
+        margin-right: 0;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .course-card-price-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
     .course-card-price-sale {
-        font-size: 18px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #E53E3E;
         margin-right: 0;
     }
 
     .course-card-price-old {
-        font-size: 14px;
+        font-size: 16px;
+        color: #999999;
+        text-decoration: line-through;
         margin-right: 0;
     }
 }

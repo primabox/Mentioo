@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (reviewData.positive && reviewData.positive.trim()) {
             positiveFeedbackHtml = `
                 <div class="review-feedback review-feedback-positive">
-                    <div class="review-feedback-icon">
+                    <img src="img/check_circle.png" alt="">
                         <i class="fas fa-plus-circle"></i>
                     </div>
                     <p class="review-feedback-text">${reviewData.positive}</p>
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             negativeFeedbackHtml = `
                 <div class="review-feedback review-feedback-negative">
                     <div class="review-feedback-icon">
-                        <i class="fas fa-minus-circle"></i>
+                        <img src="img/do_not_disturb_on.png" alt="">
                     </div>
                     <p class="review-feedback-text">${reviewData.negative}</p>
                 </div>
