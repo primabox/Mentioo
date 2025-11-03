@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             positiveFeedbackHtml = `
                 <div class="review-feedback review-feedback-positive">
                     <img src="img/check_circle.png" alt="">
-                        <i class="fas fa-plus-circle"></i>
-                    </div>
                     <p class="review-feedback-text">${reviewData.positive}</p>
                 </div>
             `;
@@ -40,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (reviewData.negative && reviewData.negative.trim()) {
             negativeFeedbackHtml = `
                 <div class="review-feedback review-feedback-negative">
-                    <div class="review-feedback-icon">
-                        <img src="img/do_not_disturb_on.png" alt="">
-                    </div>
+                    <img src="img/do_not_disturb_on.png" alt="">
                     <p class="review-feedback-text">${reviewData.negative}</p>
                 </div>
             `;
