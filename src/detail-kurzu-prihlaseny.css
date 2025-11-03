@@ -1040,7 +1040,9 @@ body {
 
   /* Layout & Wrapper */
   .main-wrapper {
-    padding: 0 20px 40px;
+    padding: 0 16px 40px;
+    width: 390px;
+    max-width: 100%;
   }
 
   /* Footer */
@@ -1049,7 +1051,16 @@ body {
   }
 
   .content-layout {
-    gap: 32px;
+    gap: 24px;
+    padding: 0;
+    grid-template-columns: 1fr;
+    width: 390px;
+    max-width: 100%;
+  }
+
+  .content-layout>div:first-child {
+    width: 390px;
+    max-width: 100%;
   }
 
   .back-link {
@@ -1111,7 +1122,8 @@ body {
 
   /* Content Card & Tabs */
   .content-card {
-    width: 100%;
+    width: 390px;
+    max-width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -1131,7 +1143,7 @@ body {
   }
 
   .tab-content {
-    padding: 20px 16px;
+    padding: 16px;
   }
 
   /* Learning Grid */
@@ -1153,7 +1165,8 @@ body {
 
   /* Current Lesson Section */
   .current-lesson-section {
-    width: 100%;
+    width: 390px;
+    max-width: 100%;
     height: auto;
     flex-direction: column;
     align-items: flex-start;
@@ -1162,11 +1175,13 @@ body {
   }
 
   .current-lesson-progress {
+    width: 390px;
     max-width: 100%;
   }
 
   .current-lesson-progress-bar {
-    width: 100%;
+    width: 390px;
+    max-width: 100%;
   }
 
   .current-lesson-title {
@@ -1182,7 +1197,8 @@ body {
   }
 
   .continue-lesson-btn {
-    width: 100%;
+    width: 390px;
+    max-width: 100%;
     padding: 12px 20px;
   }
 
@@ -1252,181 +1268,54 @@ body {
     font-size: 14px;
   }
 
-  /* Reviews Section */
-  .reviews-header {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .rating-bars {
-    max-width: 100%;
-    margin-left: 0;
-  }
-
-  .rating-bar-bg {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .recommendation-badge {
-    width: 100%;
-  }
-
-  .reviews-grid {
-    padding: 0;
-  }
-
-  .review-card {
-    width: 100%;
-    padding: 24px 20px;
-  }
-
-  .review-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .review-card-name-starfs {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .review-card-text {
-    font-size: 14px;
-  }
-
-  .review-feedback {
-    padding: 16px;
-  }
-
-  .instructor-response {
-    padding: 16px;
-  }
-
-  .write-review-btn {
-    font-size: 13px;
-    padding: 10px 20px;
-  }
-
-  /* Review Modal */
-  .review-modal-content {
-    width: 90%;
-    max-width: 420px;
-    padding: 24px;
-  }
-
-  .review-modal-title {
-    font-size: 20px;
-  }
-
-  .review-modal-stars i {
-    font-size: 28px;
-  }
-
-  /* Pagination */
-  .reviews-pagination {
-    margin: 48px 0;
-    gap: 8px;
-  }
-
-  .pagination-number,
-  .pagination-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  /* O Lektorovi Section */
-  .instructor-profile-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-  }
-
-  .instructor-avatar-large {
-    width: 160px;
-    height: 160px;
-  }
-
-  .instructor-name-title {
-    font-size: 20px;
-  }
-
-  .instructor-subtitle {
-    font-size: 16px;
-  }
-
-  .instructor-stats-list {
-    align-items: center;
-  }
-
-  .instructor-stat-row {
-    font-size: 14px;
-  }
-
-  .instructor-bio-text {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .instructor-course-card {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .course-card-img {
-    width: 100%;
-    min-width: 100%;
-    height: 200px;
-    border-radius: 16px 16px 0 0;
-  }
-
-  .course-card-content {
-    padding: 20px;
-  }
-
-  .course-card-title {
-    font-size: 16px;
-  }
-
-  .course-card-desc {
-    font-size: 14px;
-  }
-
-  .course-card-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .rating-number {
-    font-size: 15px;
-  }
-
-  .rating-stars i {
-    font-size: 13px;
-  }
-
   /* Sidebar */
   .sidebar {
     margin-top: 32px;
+    width: 390px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .course-image-wrapper,
-  .course-thumbnail,
+  .course-image-wrapper {
+    width: 390px;
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .course-thumbnail {
+    width: 390px;
+    max-width: 100%;
+    height: auto;
+  }
+
   .enrolled-sidebar {
-    width: 100%;
+    width: 390px;
+    max-width: 100%;
+    padding: 24px 16px 16px 16px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .sidebar-item-header {
+    margin-top: 24px;
+    gap: 8px;
+  }
+
+  .sidebar-item-header:first-of-type {
+    margin-top: 0;
+  }
+
+  .sidebar-icon {
+    font-size: 18px;
   }
 
   .sidebar-item-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .sidebar-item-text {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .test-result-name {
@@ -1456,8 +1345,8 @@ body {
   }
 
   .completion-badge {
-    width: 100%;
-    max-width: 240px;
+    width: 390px;
+    max-width: 100%;
     margin: 0 auto 16px;
   }
 
@@ -1638,12 +1527,23 @@ body {
     line-height: 20px;
   }
 
+  .instructor-course-card {
+    flex-direction: column;
+    width: 358px;
+    max-width: 100%;
+    padding: 0;
+  }
+
   .course-card-img {
-    height: 160px;
+    width: 390px;
+    min-width: 100%;
+    height: 200px;
+    border-radius: 16px 16px 0 0;
   }
 
   .course-card-content {
-    padding: 16px;
+    padding: 20px 16px;
+    width: 100%;
   }
 
   .course-card-title {
