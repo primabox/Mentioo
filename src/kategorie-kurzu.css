@@ -420,21 +420,24 @@ body {
 }
 
 .tag {
-    @apply px-3 py-1.5 rounded-md text-xs font-medium;
-}
-
-.tag-green {
-    @apply text-[#0F7B2F];
-    background-color: #D4F5DE;
-}
-
-.tag-blue {
-    @apply bg-blue-100 text-blue-700;
+    @apply rounded-md font-medium;
+    padding: 5px 10px;
+    font-size: 14px;
 }
 
 .tag-purple {
-    @apply text-[#7C3AED];
-    background-color: #EDE9FE;
+    background-color: #EFE6FF;
+    color: #7045C2;
+}
+
+.tag-cyan {
+    background-color: #E6FFFC;
+    color: #005D5D;
+}
+
+.tag-green {
+    background-color: #CCFFE7;
+    color: #006636;
 }
 
 .tag-turquoise {
