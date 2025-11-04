@@ -12,6 +12,7 @@ export default defineConfig({
         detailKurzuPrihlaseny: resolve(__dirname, "detail-kurzu-prihlaseny.html"),
         detailKurzuPrihlasenyHotovo: resolve(__dirname, "detail-kurzu-prihlaseny-hotovo.html"),
         detailLekce: resolve(__dirname, "detail-lekce.html"),
+        profilLektora: resolve(__dirname, "profil-lektora.html"),
       },
     },
   },

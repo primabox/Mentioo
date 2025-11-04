@@ -106,6 +106,14 @@
     <div class="hero-wrapper">
       <!-- Gradient box -->
       <div class="hero-gradient">
+        <!-- Bubliny -->
+        <div class="bubble-field md:block hidden">
+          <div class="bubble" style="top:80%; left:85%; width:21px; height:21px;"></div>
+          <div class="bubble" style="top:20%; left:70%; width:11px; height:11px;"></div>
+          <div class="bubble" style="top:60%; left:55%; width:8px; height:8px;"></div>
+          <div class="bubble" style="top:65%; left:35%; width:14px; height:14px;"></div>
+          <div class="bubble" style="top:40%; left:1%; width:10px; height:10px;"></div>
+        </div>
 
         <!-- Obsah -->
         <div class="hero-content">
@@ -123,41 +131,32 @@
               <a href="#" class="hero-btn-outline">Stát se lektorem</a>
             </div>
           </div>
+        </div>
 
-          <!-- Bubliny -->
-          <div class="bubble-field md:block hidden">
-            <div class="bubble" style="top:80%; left:85%; width:21px; height:21px;"></div>
-            <div class="bubble" style="top:20%; left:70%; width:11px; height:11px;"></div>
-            <div class="bubble" style="top:60%; left:55%; width:8px; height:8px;"></div>
-            <div class="bubble" style="top:65%; left:35%; width:14px; height:14px;"></div>
-            <div class="bubble" style="top:40%; left:1%; width:10px; height:10px;"></div>
+        <!-- Statistika - skrýt na md a výše -->
+        <div class="hero-stats hidden">
+          <div class="stat-box">
+            <span class="stat-number">+1000</span>
+            <p class="stat-label">Aktivních studentů</p>
           </div>
         </div>
+
+        <div class="hero-stats--secondary hidden">
+          <div class="stat-box">
+            <span class="stat-number">+200</span>
+            <p class="stat-label">Online kurzů</p>
+          </div>
+        </div>
+
+        <!-- Hero image -->
+        <div class="hero-image hidden">
+          <img src="img/heroGirl.png" alt="Hero girl" />
+        </div>
+
+        <div class="hero-circle lg:block hidden"></div>
+        <div class="hero-circle hero-circle--small lg:block hidden"></div>
       </div>
     </div>
-
-    <!-- Statistika - skrýt na md a výše -->
-    <div class="hero-stats hidden ">
-      <div class="stat-box">
-        <span class="stat-number">+1000</span>
-        <p class="stat-label">Aktivních studentů</p>
-      </div>
-    </div>
-
-    <div class="hero-stats--secondary hidden ">
-      <div class="stat-box">
-        <span class="stat-number">+200</span>
-        <p class="stat-label">Online kurzů</p>
-      </div>
-    </div>
-
-    <!-- Hero image -->
-    <div class="hero-image hidden">
-      <img src="img/heroGirl.png" alt="Hero girl" />
-    </div>
-
-    <div class="hero-circle lg:block hidden"></div>
-    <div class="hero-circle hero-circle--small lg:block hidden"></div>
 
   </section>
 
@@ -409,7 +408,9 @@
   </section>
 
   <section class="category-section">
+
     <div class="category-wrapper">
+
 
       <!-- NADPIS A PODNADPIS -->
       <div class="category-header text-center">
@@ -435,220 +436,218 @@
           <span class="slider-bar"></span>
         </div>
       </div>
-
-      <!-- ===== CATEGORY GRADIENT SECTION ===== -->
-      <div class="category-gradient relative">
-
-        <!-- Navigační šipky -->
-        <div class="category-prev">
-          <i class="fas fa-chevron-left text-[#0069B2] text-xl"></i>
-        </div>
-        <div class="category-next">
-          <i class="fas fa-chevron-right text-[#0069B2] text-xl"></i>
-        </div>
-
-        <!-- Obsah uvnitř gradientu -->
-        <div class="category-content">
-          <!-- SWIPER -->
-          <div class="swiper myCategorySwiper">
-            <div class="swiper-wrapper max-w-[1525px]">
-
-              <!-- Karta 1 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card1.png" alt="Web Development Bootcamp" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Web Development Bootcamp</h3>
-                  <p class="category-card-text">Learn to build modern websites from scratch with Erika Simpson...</p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,8</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="rating-count">(5)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-green">Novinka</span>
-                    <span class="tag tag-purple">Free trial</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 2 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card2.png" alt="UI/UX Design Masterclass" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">UI/UX Design Masterclass</h3>
-                  <p class="category-card-text">Master modern UI/UX principles with practical design exercises...</p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,6</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="rating-count">(4)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-green">Novinka</span>
-                    <span class="tag tag-blue">Pro nováčky</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 3 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card3.png" alt="Modern Illustration Course" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Modern Illustration Course</h3>
-                  <p class="category-card-text">Create vibrant digital illustrations and improve your creative
-                    workflow...</p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,8</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="rating-count">(5)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-turquoise">Nejlepší hodnocení</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 4 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card4.png" alt="Data Science Fundamentals" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Data Science Fundamentals</h3>
-                  <p class="category-card-text">Explore the world of data analytics and Python-based insights...</p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,8</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="rating-count">(4)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-green">Novinka</span>
-                    <span class="tag tag-purple">Free trial</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 5 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card1.png" alt="Digital Marketing 101" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Digital Marketing 101</h3>
-                  <p class="category-card-text">Learn to master SEO, PPC, and social media marketing strategies...</p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,7</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="rating-count">(6)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-blue">Trending</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 6 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card2.png" alt="Leadership Mastery" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Leadership Mastery</h3>
-                  <p class="category-card-text">Enhance your leadership skills with practical techniques and tools...
-                  </p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,9</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="rating-count">(8)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-turquoise">Top kurz</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 7 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card3.png" alt="Photography for Beginners" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Photography for Beginners</h3>
-                  <p class="category-card-text">Capture the perfect shot using simple techniques and camera control...
-                  </p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,5</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                      <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="rating-count">(3)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-green">Novinka</span>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Karta 8 -->
-              <a href="detail-kurzu.html" class="swiper-slide category-card">
-                <img src="img/card4.png" alt="Music Production Basics" class="category-img" />
-                <div class="category-card-body">
-                  <h3 class="category-card-title">Music Production Basics</h3>
-                  <p class="category-card-text">Start producing your own music with professional tools and workflows...
-                  </p>
-                  <div class="category-card-rating">
-                    <span class="rating-value">4,8</span>
-                    <div class="rating-stars">
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                      <i class="fa-regular fa-star"></i>
-                    </div>
-                    <span class="rating-count">(4)</span>
-                  </div>
-                  <div class="category-tags">
-                    <span class="tag tag-purple">Free trial</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bubliny -->
-      <div class="bubble-field md:block hidden">
-        <div class="bubble" style="top:18%; left:85%; width:13px; height:13px;"></div>
-        <div class="bubble" style="top:92%; left:3%; width:14px; height:14px;"></div>
-        <div class="bubble" style="top:95%; left:10%; width:9px; height:9px;"></div>
-      </div>
-
-      <!-- Tlačítko -->
-      <div class="category-button-wrapper">
-        <button class="category-btn-outline">Další kurzy</button>
-      </div>
     </div>
-    </div>
-
-    </div>
-
   </section>
+
+  <!-- ===== CATEGORY GRADIENT SECTION ===== -->
+  <div class="category-gradient relative">
+
+
+    <!-- Navigační šipky -->
+    <div class="category-prev">
+      <i class="fas fa-chevron-left text-[#0069B2] text-xl"></i>
+    </div>
+    <div class="category-next">
+      <i class="fas fa-chevron-right text-[#0069B2] text-xl"></i>
+    </div>
+
+    <!-- Obsah uvnitř gradientu -->
+    <div class="category-content">
+      <!-- SWIPER -->
+      <div class="swiper myCategorySwiper">
+        <div class="swiper-wrapper max-w-[1525px]">
+
+          <!-- Karta 1 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card1.png" alt="Web Development Bootcamp" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Web Development Bootcamp</h3>
+              <p class="category-card-text">Learn to build modern websites from scratch with Erika Simpson...</p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,8</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="rating-count">(5)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-green">Novinka</span>
+                <span class="tag tag-purple">Free trial</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 2 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card2.png" alt="UI/UX Design Masterclass" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">UI/UX Design Masterclass</h3>
+              <p class="category-card-text">Master modern UI/UX principles with practical design exercises...</p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,6</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <span class="rating-count">(4)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-green">Novinka</span>
+                <span class="tag tag-blue">Pro nováčky</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 3 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card3.png" alt="Modern Illustration Course" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Modern Illustration Course</h3>
+              <p class="category-card-text">Create vibrant digital illustrations and improve your creative
+                workflow...</p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,8</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="rating-count">(5)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-turquoise">Nejlepší hodnocení</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 4 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card4.png" alt="Data Science Fundamentals" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Data Science Fundamentals</h3>
+              <p class="category-card-text">Explore the world of data analytics and Python-based insights...</p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,8</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="rating-count">(4)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-green">Novinka</span>
+                <span class="tag tag-purple">Free trial</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 5 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card1.png" alt="Digital Marketing 101" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Digital Marketing 101</h3>
+              <p class="category-card-text">Learn to master SEO, PPC, and social media marketing strategies...</p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,7</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <span class="rating-count">(6)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-blue">Trending</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 6 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card2.png" alt="Leadership Mastery" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Leadership Mastery</h3>
+              <p class="category-card-text">Enhance your leadership skills with practical techniques and tools...
+              </p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,9</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="rating-count">(8)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-turquoise">Top kurz</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 7 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card3.png" alt="Photography for Beginners" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Photography for Beginners</h3>
+              <p class="category-card-text">Capture the perfect shot using simple techniques and camera control...
+              </p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,5</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <span class="rating-count">(3)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-green">Novinka</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Karta 8 -->
+          <a href="detail-kurzu.html" class="swiper-slide category-card">
+            <img src="img/card4.png" alt="Music Production Basics" class="category-img" />
+            <div class="category-card-body">
+              <h3 class="category-card-title">Music Production Basics</h3>
+              <p class="category-card-text">Start producing your own music with professional tools and workflows...
+              </p>
+              <div class="category-card-rating">
+                <span class="rating-value">4,8</span>
+                <div class="rating-stars">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+                <span class="rating-count">(4)</span>
+              </div>
+              <div class="category-tags">
+                <span class="tag tag-purple">Free trial</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bubliny -->
+  <div class="bubble-field md:block hidden">
+    <div class="bubble" style="top:18%; left:85%; width:13px; height:13px;"></div>
+    <div class="bubble" style="top:92%; left:3%; width:14px; height:14px;"></div>
+    <div class="bubble" style="top:95%; left:10%; width:9px; height:9px;"></div>
+  </div>
+
+  <!-- Tlačítko -->
+  <div class="category-button-wrapper">
+    <button class="category-btn-outline">Další kurzy</button>
+  </div>
+  </div>
 
 
 
@@ -695,7 +694,8 @@
                   Jméno a příjmení lektora
                 </a>
               </div>
-              <p class="text-gray-600 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+              <p class="text-gray-600 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+                libero et velit interdum, ac aliquet odio mattis.</p>
             </div>
           </div>
 
@@ -1020,105 +1020,105 @@
   </section>
 
 
-   <footer class="footer bg-[#F5F9FF]">
-        <div class="footer-container">
-            <!-- Logo  -->
-            <div class="footer-logo">
-                <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+  <footer class="footer bg-[#F5F9FF]">
+    <div class="footer-container">
+      <!-- Logo  -->
+      <div class="footer-logo">
+        <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+      </div>
+
+      <!-- Obsah -->
+      <div class="footer-content">
+        <div class="footer-grid">
+          <!-- INFO -->
+          <div class="footer-info">
+            <div class="footer-info-text">
+              <p class="font-semibold text-lg">Mentio s.r.o</p>
+              <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
+              <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
+              <p class="mt-2 leading-relaxed ">Spisová značka C 987654 vedená u Městského soudu v Praze
+              </p>
+            </div>
+          </div>
+
+          <!-- 4X4 KATEGORIE-->
+          <div class="footer-categories">
+            <div>
+              <h4 class="footer-heading">Kategorie kurzů</h4>
+              <ul class="footer-links">
+                <li><a class="footer-link" href="#">Kategorie 1</a></li>
+                <li><a class="footer-link" href="#">Kategorie 2</a></li>
+                <li><a class="footer-link" href="#">Kategorie 3</a></li>
+                <li><a class="footer-link" href="#">Kategorie 4</a></li>
+              </ul>
             </div>
 
-            <!-- Obsah -->
-            <div class="footer-content">
-                <div class="footer-grid">
-                    <!-- INFO -->
-                    <div class="footer-info">
-                        <div class="footer-info-text">
-                            <p class="font-semibold text-lg">Mentio s.r.o</p>
-                            <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
-                            <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
-                            <p class="mt-2 leading-relaxed ">Spisová značka C 987654 vedená u Městského soudu v Praze
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- 4X4 KATEGORIE-->
-                    <div class="footer-categories">
-                        <div>
-                            <h4 class="footer-heading">Kategorie kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Kategorie 1</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 2</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 3</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- O nás -->
-                    <div class="footer-about">
-                        <h4 class="footer-heading">O nás</h4>
-                        <ul class="footer-links">
-                            <li><a class="footer-link" href="#">Lektoři</a></li>
-                            <li><a class="footer-link" href="#">Kariéra</a></li>
-                            <li><a class="footer-link" href="#">Blog</a></li>
-                            <li><a class="footer-link" href="#">Kontakt</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div>
+              <h4 class="footer-heading">Typy kurzů</h4>
+              <ul class="footer-links">
+                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+              </ul>
             </div>
 
-            <!-- divider -->
-            <div class="footer-divider"></div>
-
-            <!-- COPYRIGHT + IKONY -->
-            <div class="footer-bottom">
-                <div class="footer-copyright">© 2025 Lorem ipsum</div>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
-                    </a>
-
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
-                    </a>
-
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
-                    </a>
-                </div>
+            <div>
+              <h4 class="footer-heading">Typy kurzů</h4>
+              <ul class="footer-links">
+                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+              </ul>
             </div>
+
+            <div>
+              <h4 class="footer-heading">Typy kurzů</h4>
+              <ul class="footer-links">
+                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- O nás -->
+          <div class="footer-about">
+            <h4 class="footer-heading">O nás</h4>
+            <ul class="footer-links">
+              <li><a class="footer-link" href="#">Lektoři</a></li>
+              <li><a class="footer-link" href="#">Kariéra</a></li>
+              <li><a class="footer-link" href="#">Blog</a></li>
+              <li><a class="footer-link" href="#">Kontakt</a></li>
+            </ul>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <!-- divider -->
+      <div class="footer-divider"></div>
+
+      <!-- COPYRIGHT + IKONY -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2025 Lorem ipsum</div>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
+          </a>
+
+          <a href="#" class="social-link" aria-label="Facebook">
+            <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
+          </a>
+
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Načtení Swiper knihovny před vlastními skripty -->
