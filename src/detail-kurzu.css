@@ -1199,12 +1199,17 @@ body {
 
 /* Curriculum */
 .course-curriculum {
-  @apply flex flex-col gap-4;
+  @apply flex flex-col border border-[#F5F5F5] rounded-xl overflow-hidden;
 }
 
 .curriculum-module {
-  @apply bg-white rounded-xl overflow-hidden;
+  @apply bg-white overflow-hidden;
   transition: background-color 0.2s ease;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.curriculum-module:last-child {
+  border-bottom: none;
 }
 
 .curriculum-module:hover {
@@ -1298,7 +1303,7 @@ body {
 /* ===== REVIEWS SECTION ===== */
 /* Reviews Header */
 .reviews-header {
-  @apply flex items-center justify-between gap-6 mb-8 p-6 bg-[#F9FAFB] rounded-xl;
+  @apply flex items-center justify-between gap-6 mb-8 p-6 rounded-xl;
 }
 
 .reviews-main-rating {
@@ -1569,7 +1574,7 @@ body {
 }
 
 .instructor-info-block {
-  @apply flex-1;
+  @apply flex-1 mt-4;
 }
 
 .instructor-name-title {

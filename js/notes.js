@@ -258,7 +258,7 @@ function highlightSelectedText(range, noteId) {
 
       // Toggle tooltip
       const isActive = tooltip.classList.toggle('active');
-      
+
       // Přidej nebo odeber active class ze spanu
       if (isActive) {
         span.classList.add('active');
@@ -296,7 +296,7 @@ function confirmDeleteNote(noteId) {
     if (tooltip) {
       tooltip.classList.remove('active');
     }
-    
+
     const parent = highlightedElement.parentNode;
     while (highlightedElement.firstChild) {
       parent.insertBefore(highlightedElement.firstChild, highlightedElement);
@@ -369,11 +369,11 @@ function editNote(noteId) {
 
   const textarea = document.getElementById('note-textarea');
   const modalTitle = modal.querySelector('.note-modal-header h3');
-  
+
   // Nastavit text pro editaci
   textarea.value = note.noteText;
   modalTitle.textContent = 'Upravit poznámku';
-  
+
   // Uložit ID editované poznámky
   modal.dataset.editingNoteId = noteId;
 
@@ -527,14 +527,14 @@ function deleteNote(noteId) {
 function showNotification(message) {
   const notification = document.createElement('div');
   notification.className = 'note-notification';
-  
+
   const messageSpan = document.createElement('span');
   messageSpan.textContent = message;
-  
+
   const closeBtn = document.createElement('button');
   closeBtn.className = 'note-notification-close';
   closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-  closeBtn.onclick = function() {
+  closeBtn.onclick = function () {
     notification.classList.remove('show');
     setTimeout(() => {
       if (notification.parentNode) {
@@ -542,7 +542,7 @@ function showNotification(message) {
       }
     }, 300);
   };
-  
+
   notification.appendChild(messageSpan);
   notification.appendChild(closeBtn);
   document.body.appendChild(notification);

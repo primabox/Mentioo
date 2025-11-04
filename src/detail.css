@@ -150,7 +150,7 @@ body {
 
 /* ===== MAIN CONTENT ===== */
 .main-wrapper {
-  @apply max-w-[1744px] mx-auto pb-12 px-8;
+  @apply max-w-full mx-auto pb-12 px-8;
   overflow-x: hidden;
 }
 
@@ -188,7 +188,7 @@ body {
 .hero-bg {
   @apply absolute inset-0 rounded-3xl bg-gradient-to-r from-[#28A6FF] to-[#00E8E8];
   z-index: -1;
-  opacity: 0.08;
+  opacity: 8%;
 }
 
 .module-text {
@@ -206,9 +206,13 @@ body {
 }
 
 .lesson-status {
-  @apply flex items-center gap-2 py-2 font-[500] text-[14px] text-[#1C1C1C];
+  @apply flex items-center gap-2 py-2 font-[500] text-[14px] text-[#1C1C1C] cursor-pointer transition-colors;
   padding-left: 0;
   padding-right: 14px;
+}
+
+.lesson-status:hover {
+  @apply text-[#0069B2];
 }
 
 .lesson-status img {
@@ -533,6 +537,15 @@ body {
   border: none !important;
 }
 
+.bubble-field {
+  @apply absolute inset-0 pointer-events-none z-10;
+}
+
+.bubble {
+  @apply absolute rounded-full bg-[#00E8E8];
+}
+
+
 /* Header with Navigation */
 .other-lessons-header {
   @apply flex items-center justify-between mb-4;
@@ -614,27 +627,30 @@ body {
   @apply text-[#CBD5E1];
 }
 
-/* Tooltip pro zakázané lekce */
+/* Tooltip pro zakázané lekce - standalone element */
 .lesson-item.disabled {
   @apply relative;
 }
 
-.lesson-item.disabled::after {
-  @apply absolute left-full ml-2 bg-[#1C1C1C] text-white px-3 py-2 rounded-lg text-[11px] whitespace-nowrap opacity-0 pointer-events-none shadow-lg;
-  content: 'Dostupné až po dokončení předchozí lekce';
+.lesson-tooltip {
+  @apply absolute left-full ml-4 bg-[#1C1C1C] text-white px-1 py-2 rounded-md text-[12px] opacity-0 pointer-events-none shadow-lg;
+  width: 164px;
   top: 50%;
   transform: translateY(-50%) translateX(-0.25rem);
   transition: all 0.2s ease;
   z-index: 100;
+  text-align: left;
+  line-height: 1.2;
+  white-space: normal;
 }
 
-.lesson-item.disabled:hover::after {
-  @apply translate-y-[-50%] translate-x-0;
+.relative:hover .lesson-tooltip {
   opacity: 1 !important;
+  transform: translateY(-50%) translateX(0);
 }
 
 .lesson-item.active {
-  @apply bg-[#F5F9FF] -mx-1 px-5 rounded-lg;
+  @apply bg-[#F5F9FF] -mx-1 pl-3 pr-0 rounded-lg;
 }
 
 .lesson-item.active .lesson-name {
@@ -642,7 +658,7 @@ body {
 }
 
 .lesson-item.active .lesson-arrow {
-  @apply text-[#2191DF];
+  @apply text-[#2191DF] mr-3;
 }
 
 /* Lesson Name */
@@ -661,7 +677,7 @@ body {
 }
 
 .link-card {
-  @apply flex items-center justify-between gap-4 h-[98px] rounded-[16px] px-6 py-4 border border-gray-200 hover:border-[#0069B2] hover:bg-[#F5F9FF] transition cursor-pointer no-underline;
+  @apply flex items-center justify-between gap-4 h-[98px] rounded-[16px] px-6 py-4 shadow-md hover:shadow-lg hover:bg-[#F5F9FF] transition cursor-pointer no-underline;
 }
 
 .link-text {
@@ -690,7 +706,7 @@ body {
 }
 
 .download-item {
-  @apply flex items-center justify-between gap-4 p-4 rounded-[16px] border border-gray-200 hover:border-[#0069B2] hover:bg-[#F5F9FF] transition;
+  @apply flex items-center justify-between gap-4 p-4 rounded-[16px] shadow-md hover:shadow-lg hover:bg-[#F5F9FF] transition;
 }
 
 .download-left {
@@ -698,7 +714,7 @@ body {
 }
 
 .file-icon {
-  @apply w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden;
+  @apply w-[36px] h-[36px] rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden;
 }
 
 .file-icon img {
@@ -730,7 +746,12 @@ body {
 }
 
 .download-btn {
-  @apply w-10 h-10 flex items-center justify-center rounded-full bg-[#E5F3FC] text-[#0069B2] hover:bg-[#0069B2] hover:text-white transition flex-shrink-0;
+  @apply w-10 h-10 flex items-center justify-center rounded-full bg-[#E5F3FC] text-[#0069B2] flex-shrink-0;
+  transform: translateY(0);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
 }
 
 /* ===== DISKUZE ===== */
@@ -951,7 +972,6 @@ body {
 
 .diskuze-comment {
   @apply flex gap-3 p-4 bg-white rounded-lg;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .diskuze-comment:last-child {
@@ -1342,6 +1362,7 @@ body {
   }
 
   .hero-bg {
+    opacity: 8%;
     width: 100% !important;
     height: 100%;
     border-radius: 32px;

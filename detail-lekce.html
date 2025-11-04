@@ -11,6 +11,17 @@
 </head>
 
 <body class="font-[Poppins]">
+  <div class="bubble-field md:block hidden">
+    <div class="bubble opacity-[40]" style="top:250px; left:98%; width:10px; height:10px;"></div>
+    <div class="bubble" style="top:350px; left:93%; width:13px; height:13px;"></div>
+    <div class="bubble" style="top:375px; left:92%; width:9px; height:9px;"></div>
+    <div class="bubble" style="top:340px; left:9%; width:9px; height:9px;"></div>
+    <div class="bubble" style="top:390px; left:4%; width:7px; height:7px;"></div>
+    <div class="bubble" style="top:880px; left:11%; width:9px; height:9px;"></div>
+    <div class="bubble" style="top:700px; left:61%; width:14px; height:14px;"></div>
+    <div class="bubble" style="top:735px; left:64%; width:9px; height:9px;"></div>
+  </div>
+
   <!-- HEADER -->
   <header class="header">
     <nav class="navbar">
@@ -108,9 +119,9 @@
             Become a Figma Pro with our in-depth Advanced Figma tutorial course.
             Discover advanced design strategies & so much more!
           </p>
-          <div class="lesson-status">
-            <img src="img/favorite icon.png" alt="">
-            Přidat lekci do oblíbených
+          <div class="lesson-status" id="favorite-toggle">
+            <img src="img/favorite icon.png" alt="" id="favorite-icon">
+            <span id="favorite-text">Přidat lekci do oblíbených</span>
           </div>
         </div>
 
@@ -354,7 +365,7 @@
                   <p class="link-desc">Popis odkazu, co v něm může student najít a v čem to může být užitečné.</p>
                 </div>
                 <div class="link-icon">
-                  <i class="fas fa-link"></i>
+                  <img src="img/chain.png" alt="">
                 </div>
               </a>
 
@@ -364,7 +375,7 @@
                   <p class="link-desc">Krátký popis, proč je odkaz důležitý a kdy ho použít.</p>
                 </div>
                 <div class="link-icon">
-                  <i class="fas fa-link"></i>
+                  <img src="img/chain.png" alt="">
                 </div>
               </a>
 
@@ -374,7 +385,7 @@
                   <p class="link-desc">Ukázka materiálu nebo další čtení k tématu lekce.</p>
                 </div>
                 <div class="link-icon">
-                  <i class="fas fa-link"></i>
+                  <img src="img/chain.png" alt="">
                 </div>
               </a>
 
@@ -384,7 +395,7 @@
                   <p class="link-desc">Doplňující zdroje a reference pro další studium.</p>
                 </div>
                 <div class="link-icon">
-                  <i class="fas fa-link"></i>
+                  <img src="img/chain.png" alt="">
                 </div>
               </a>
             </div>
@@ -403,7 +414,7 @@
                   </div>
                 </div>
                 <a href="#" class="download-btn">
-                  <i class="fas fa-download"></i>
+                  <img src="img/download.png" alt="">
                 </a>
               </div>
 
@@ -418,7 +429,7 @@
                   </div>
                 </div>
                 <a href="#" class="download-btn">
-                  <i class="fas fa-download"></i>
+                  <img src="img/download.png" alt="">
                 </a>
               </div>
 
@@ -433,7 +444,7 @@
                   </div>
                 </div>
                 <a href="#" class="download-btn">
-                  <i class="fas fa-download"></i>
+                  <img src="img/download.png" alt="">
                 </a>
               </div>
 
@@ -448,7 +459,7 @@
                   </div>
                 </div>
                 <a href="#" class="download-btn">
-                  <i class="fas fa-download"></i>
+                  <img src="img/download.png" alt="">
                 </a>
               </div>
             </div>
@@ -687,7 +698,7 @@
                       <img src="img/thumb_up.png" alt=""> 126
                     </button>
                     <button class="diskuze-comment-reply">
-                      <i class="fas fa-reply"></i> Odpovědět
+                      <img src="img/reply.png" alt=""> Odpovědět
                     </button>
 
 
@@ -726,7 +737,7 @@
                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
                         <button class="diskuze-comment-reply">
-                          <i class="fas fa-reply"></i> Odpovědět
+                          <img src="img/reply.png" alt=""> Odpovědět
                         </button>
                       </div>
 
@@ -746,7 +757,7 @@
                               <img src="img/thumb_up.png" alt=""> 1
                             </button>
                             <button class="diskuze-comment-reply">
-                              <i class="fas fa-reply"></i> Odpovědět
+                              <img src="img/reply.png" alt=""> Odpovědět
                             </button>
                           </div>
                         </div>
@@ -770,7 +781,7 @@
                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
                         <button class="diskuze-comment-reply">
-                          <i class="fas fa-reply"></i> Odpovědět
+                          <img src="img/reply.png" alt=""> Odpovědět
                         </button>
                       </div>
                     </div>
@@ -792,7 +803,7 @@
                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
                         <button class="diskuze-comment-reply">
-                          <i class="fas fa-reply"></i> Odpovědět
+                          <img src="img/reply.png" alt=""> Odpovědět
                         </button>
                       </div>
                     </div>
@@ -848,9 +859,13 @@
             <span class="current-chapter-text">Další lekce v kapitole</span>
           </div>
 
-          <div class="lesson-item disabled">
-            <span class="lesson-name">Online test: Auto Layout 2</span>
-            <i class="fas fa-arrow-right lesson-arrow"></i>
+          <div class="relative">
+            <div class="lesson-item disabled">
+              <span class="lesson-name">Online test: Auto Layout 2</span>
+              <i class="fas fa-arrow-right lesson-arrow"></i>
+            </div>
+            <div class="lesson-tooltip">Test bude zpřístupněn
+              po dokončení lekce.</div>
           </div>
 
           <div class="lesson-list">
@@ -884,9 +899,13 @@
               <i class="fas fa-arrow-right lesson-arrow"></i>
             </a>
 
-            <div class="lesson-item disabled">
-              <span class="lesson-name">Online test: Auto Layout 2</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+            <div class="relative">
+              <div class="lesson-item disabled">
+                <span class="lesson-name">Online test: Auto Layout 2</span>
+                <i class="fas fa-arrow-right lesson-arrow"></i>
+              </div>
+              <div class="lesson-tooltip">Test bude zpřístupněn
+                po dokončení lekce.</div>
             </div>
           </div>
         </div>
@@ -1050,6 +1069,8 @@
   <script type="module" src="js/notes.js"></script>
   <script type="module" src="js/discussionModal.js"></script>
   <script type="module" src="js/audioPlayer.js"></script>
+  <script type="module" src="js/favorites.js"></script>
+  <script type="module" src="js/bubbles.js"></script>
 
 </body>
 
