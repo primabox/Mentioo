@@ -2,15 +2,11 @@ const reviewsSwiper = new Swiper('.myReviewsSwiper', {
   slidesPerView: 1,
   slidesPerGroup: 1,
   spaceBetween: 16,
-  loop: true,
+  loop: false,
   speed: 600,
   allowTouchMove: true,
   touchRatio: 1,
   centeredSlides: true,
-  navigation: {
-    nextEl: '.review-next',
-    prevEl: '.review-prev',
-  },
   breakpoints: {
     320: {
       slidesPerView: 1,
@@ -50,8 +46,8 @@ const reviewsSwiper = new Swiper('.myReviewsSwiper', {
   },
   on: {
     slideChange: function () {
-      // Změníme aktivní tečku při změně slide
-      const activeIndex = this.realIndex;
+      // Změníme aktivní tečku - zobrazujeme jen 3 tečky (cykl se opakuje)
+      const activeIndex = this.activeIndex % 3;
       const dots = document.querySelectorAll('.dot');
       dots.forEach((dot, index) => {
         dot.classList.remove('active');
@@ -67,5 +63,20 @@ const reviewsSwiper = new Swiper('.myReviewsSwiper', {
 const prevButton = document.querySelector('.review-prev');
 const nextButton = document.querySelector('.review-next');
 
-prevButton.addEventListener('click', () => reviewsSwiper.slidePrev());
-nextButton.addEventListener('click', () => reviewsSwiper.slideNext());
+prevButton.addEventListener('click', () => {
+  // Pokud jsme na 1. slidu (index 0), přejdeme na poslední (index 2)
+  if (reviewsSwiper.activeIndex === 0) {
+    reviewsSwiper.slideTo(2, 600);
+  } else {
+    reviewsSwiper.slidePrev();
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  // Pokud jsme na 3. slidu (index 2), vraťme se na 1. slide (index 0)
+  if (reviewsSwiper.activeIndex === 2) {
+    reviewsSwiper.slideTo(0, 600);
+  } else {
+    reviewsSwiper.slideNext();
+  }
+});

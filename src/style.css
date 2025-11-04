@@ -391,13 +391,13 @@
     /* Pozicování pro tlačítko "Předchozí" */
     .review-prev {
       left: -65px;
-      /* 20px od levého okraje */
+      top: 55% !important;
     }
 
     /* Pozicování pro tlačítko "Další" */
     .review-next {
       right: -65px;
-      /* 20px od pravého okraje */
+      top: 55% !important;
     }
 
     .swiper-button-prev {
@@ -585,7 +585,7 @@
 
     /* ===== CATEGORY SECTION ===== */
     .category-section {
-      @apply relative flex justify-center pt-16 pb-1 overflow-hidden;
+      @apply relative flex justify-center pt-16 overflow-hidden;
     }
 
     .category-wrapper {
@@ -709,7 +709,7 @@
     .myReviewsSwiper {
       width: 1518px !important;
       max-width: 100%;
-      height: auto !important;
+      height: 310px !important;
       margin: 0 auto;
       overflow: hidden !important;
     }
@@ -1259,26 +1259,33 @@
       }
     }
 
+    .dots-container {
+      @apply flex justify-center gap-1 mt-8;
+    }
+
     .dot {
-      @apply w-[10px] h-[10px] rounded-full mr-2;
-      transition: all 0.3s ease-in-out;
-      /* Přechod pro změnu velikosti a barvy */
+      @apply w-[10px] h-[10px] rounded-full;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
     }
 
     /* Aktivní tečka */
     .dot.active {
       @apply bg-[#28A6FF];
-      /* Modrá pro aktivní tečku */
-      transform: scale(1.2);
-      /* Zvýšíme velikost aktivní tečky */
+      transform: scale(1.3);
+      box-shadow: 0 0 8px rgba(40, 166, 255, 0.4);
     }
 
     /* Neaktivní tečky */
     .dot:not(.active) {
       @apply bg-[#D1D5DB];
-      /* Šedá pro neaktivní tečky */
       transform: scale(1);
-      /* Základní velikost pro neaktivní tečky */
+    }
+
+    /* Hover efekt na neaktivní tečky */
+    .dot:not(.active):hover {
+      @apply bg-[#9CA3AF];
+      transform: scale(1.1);
     }
 
     /* ===== Pricing Section ===== */
