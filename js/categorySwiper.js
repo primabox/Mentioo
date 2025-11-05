@@ -123,7 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.categorySwiper = categorySwiper;
 
-  // 2️⃣ Uložení slidů s kategoriemi
+
+
   categorySwiper.slides.forEach((slide) => {
     const title = slide.querySelector(".category-card-title")?.textContent.toLowerCase() || "";
     const text = slide.querySelector(".category-card-text")?.textContent.toLowerCase() || "";
@@ -145,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3️⃣ Filtrování
   const filterSlides = (category) => {
     categorySwiper.removeAllSlides();
 
@@ -160,13 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
     categorySwiper.update();
     categorySwiper.slideTo(0, 0);
 
-    // 🔥 Zavolej update hned po změně slidů
+
     setTimeout(() => {
       updateNavigationButtons(categorySwiper);
     }, 50);
   };
 
-  // 4️⃣ Modrý proužek
   const updateSliderPosition = (activeTab) => {
     const tabRect = activeTab.getBoundingClientRect();
     const wrapperRect = tabsWrapper.getBoundingClientRect();
@@ -175,14 +174,14 @@ document.addEventListener("DOMContentLoaded", () => {
     tabsWrapper.style.setProperty("--bar-left", `${tabRect.left - wrapperRect.left}px`);
   };
 
-  // 5️⃣ Mobilní scrollování
+
   if (window.innerWidth < 768) {
     tabsWrapper.style.overflowX = "auto";
     tabsWrapper.style.scrollBehavior = "smooth";
     tabsWrapper.style.WebkitOverflowScrolling = "touch";
   }
 
-  // 6️⃣ Event listenery
+
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       tabs.forEach(t => t.classList.remove("active"));
@@ -206,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 7️⃣ Inicializace
   const firstTab = tabs[0];
   updateSliderPosition(firstTab);
   filterSlides("web");

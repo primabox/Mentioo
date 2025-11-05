@@ -14,10 +14,10 @@
 
 <body class="font-[Poppins] overflow-x-hidden">
     <div class="bubble-field overflow-x-hidden overflow-y-hidden md:block hidden">
-        <div class="bubble w-[13px] h-[13px] top-[226px] left-[1868px]"></div>
-        <div class="bubble w-[13px] h-[13px] top-[611px] left-[49px]"></div>
-        <div class="bubble w-[14px] h-[14px] top-[1459px] left-[1816px]"></div>
-        <div class="bubble w-[13px] h-[13px] top-[1709px] left-[1586px]"></div>
+        <div class="bubble w-[13px] h-[13px]" style="top: 30%; left: 49%;"></div>
+        <div class="bubble w-[13px] h-[13px]" style="top: 40%; left: 3%;"></div>
+        <div class="bubble w-[14px] h-[14px]" style="top: 26%; left: 97%;"></div>
+        <div class="bubble w-[13px] h-[13px]" style="top: 40%; left: 90%;"></div>
     </div>
 
     <!-- HEADER -->
@@ -54,6 +54,7 @@
                 <a href="#" class="mobile-link">Nabídka kurzů</a>
                 <a href="#" class="mobile-link">Lektoři</a>
                 <a href="#" class="mobile-link">Blog</a>
+                <a href="#" class="mobile-btn-outline">Přihlásit se</a>
                 <a href="#" class="mobile-btn">Zaregistrovat se</a>
             </div>
 
@@ -86,8 +87,9 @@
 
                 <!-- Ikony -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="icon-btn">
+                    <a href="#" class="icon-btn relative">
                         <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                        <span id="cart-badge" class="cart-badge" style="display: none;">0</span>
                     </a>
                     <a href="#" class="icon-btn-alt">
                         <img src="img/network.png" alt="Globe" class="w-5 h-5" />
@@ -100,9 +102,9 @@
     <!-- BREADCRUMB -->
     <div class="breadcrumb-wrapper">
         <div class="breadcrumb">
-            <a href="index.html">Domů</a>
+            <a href="index.html"><img src="img/home.png" alt="Domů" class="breadcrumb-home-icon"></a>
             <i class="fas fa-chevron-right text-xs"></i>
-            <span>Kurzy grafického designu</span>
+            <span>Grafický design</span>
         </div>
     </div>
 
@@ -111,15 +113,6 @@
         <div class="hero-wrapper">
             <!-- Gradient box -->
             <div class="hero-gradient">
-                <!-- Bubliny -->
-                <div class="bubble-field md:block hidden">
-                    <div class="bubble" style="top:80%; left:85%; width:21px; height:21px;"></div>
-                    <div class="bubble" style="top:20%; left:70%; width:11px; height:11px;"></div>
-                    <div class="bubble" style="top:60%; left:55%; width:8px; height:8px;"></div>
-                    <div class="bubble" style="top:65%; left:35%; width:14px; height:14px;"></div>
-                    <div class="bubble" style="top:40%; left:1%; width:10px; height:10px;"></div>
-                </div>
-
                 <!-- Obsah -->
                 <div class="hero-content">
                     <!-- Texty -->
@@ -141,10 +134,15 @@
         <div class="content-wrapper">
 
             <!-- SIDEBAR -->
-            <aside class="sidebar-filters">
+            <aside class="sidebar-filters" id="sidebar-filters">
                 <!-- Hodnocení -->
                 <div class="filter-section">
-                    <h3 class="filter-title">Hodnocení</h3>
+                    <div class="filter-header">
+                        <h3 class="filter-title">Hodnocení</h3>
+                        <button class="filter-collapse-btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
                     <div class="filter-options">
                         <label class="filter-checkbox">
                             <input type="checkbox" />
@@ -166,18 +164,35 @@
 
                 <!-- Cena -->
                 <div class="filter-section">
-                    <h3 class="filter-title">Cena</h3>
+                    <div class="filter-header">
+                        <h3 class="filter-title">Cena</h3>
+                        <button class="filter-collapse-btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
                     <div class="price-range">
-                        <input type="range" min="0" max="50000" value="25000" class="price-slider" />
                         <div class="price-labels">
-                            <span>0 Kč – 50 000 Kč</span>
+                            <span id="price-range-text">0 Kč – 12 000 Kč</span>
+                        </div>
+                        <div class="price-slider-container">
+                            <input type="range" min="0" max="50000" value="0" class="price-slider price-slider-min"
+                                id="price-min" />
+                            <input type="range" min="0" max="50000" value="12000" class="price-slider price-slider-max"
+                                id="price-max" />
+                            <div class="price-slider-track"></div>
+                            <div class="price-slider-range" id="price-slider-range"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Témata -->
                 <div class="filter-section">
-                    <h3 class="filter-title">Témata</h3>
+                    <div class="filter-header">
+                        <h3 class="filter-title">Témata</h3>
+                        <button class="filter-collapse-btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
                     <div class="filter-options">
                         <label class="filter-checkbox">
                             <input type="checkbox" />
@@ -210,7 +225,12 @@
 
                 <!-- Typ kurzu -->
                 <div class="filter-section">
-                    <h3 class="filter-title">Typ kurzu</h3>
+                    <div class="filter-header">
+                        <h3 class="filter-title">Typ kurzu</h3>
+                        <button class="filter-collapse-btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
                     <div class="filter-options">
                         <label class="filter-checkbox">
                             <input type="checkbox" />
@@ -242,7 +262,12 @@
 
                 <!-- Úroveň -->
                 <div class="filter-section">
-                    <h3 class="filter-title">Úroveň</h3>
+                    <div class="filter-header">
+                        <h3 class="filter-title">Úroveň</h3>
+                        <button class="filter-collapse-btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
                     <div class="filter-options">
                         <label class="filter-checkbox">
                             <input type="checkbox" />
@@ -308,26 +333,28 @@
                                         <span class="course-level">Mírně pokročilí</span>
                                     </div>
                                     <div class="course-bottom">
-                                        <div class="course-rating-badge">
-                                            <span class="rating-value">4,8</span>
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                        <div class="course-rating-tags">
+                                            <div class="course-rating-badge">
+                                                <span class="rating-value">4,8</span>
+                                                <div class="rating-stars">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="rating-count">(5)</span>
                                             </div>
-                                            <span class="rating-count">(5)</span>
+                                            <div class="course-tags">
+                                                <span class="tag tag-green">Bestseller</span>
+                                                <span class="tag tag-purple">Free trial</span>
+                                            </div>
                                         </div>
-                                        <div class="course-tags">
-                                            <span class="tag tag-green">Novinka</span>
-                                            <span class="tag tag-purple">Free trial</span>
+                                        <div class="course-price-section">
+                                            <div class="price-value">4 500 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="course-price-section">
-                                    <div class="price-value">4 500 Kč</div>
-                                    <button class="add-to-cart-btn">Přidat do košíku</button>
                                 </div>
                             </div>
                         </div>
@@ -355,25 +382,30 @@
                                         <span class="course-level">Pokročilí</span>
                                     </div>
                                     <div class="course-bottom">
-                                        <div class="course-rating-badge">
-                                            <span class="rating-value">4,9</span>
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                        <div class="course-rating-tags">
+                                            <div class="course-rating-badge">
+                                                <span class="rating-value">4,9</span>
+                                                <div class="rating-stars">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="rating-count">(8)</span>
                                             </div>
-                                            <span class="rating-count">(8)</span>
+                                            <div class="course-tags">
+                                                <span class="tag tag-purple">Nejlepší hodnocení</span>
+                                            </div>
                                         </div>
-                                        <div class="course-tags">
-                                            <span class="tag tag-turquoise">Nejlepší hodnocení</span>
+                                        <div class="course-price-section">
+                                            <div class="price-wrapper">
+                                                <span class="price-old">4 500 Kč</span>
+                                                <span class="price-sale">2 200 Kč</span>
+                                            </div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="course-price-section">
-                                    <div class="price-value">2 200 Kč</div>
-                                    <button class="add-to-cart-btn">Přidat do košíku</button>
                                 </div>
                             </div>
                         </div>
@@ -401,26 +433,28 @@
                                         <span class="course-level">Začátečníci</span>
                                     </div>
                                     <div class="course-bottom">
-                                        <div class="course-rating-badge">
-                                            <span class="rating-value">4,7</span>
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
+                                        <div class="course-rating-tags">
+                                            <div class="course-rating-badge">
+                                                <span class="rating-value">4,7</span>
+                                                <div class="rating-stars">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                                <span class="rating-count">(12)</span>
                                             </div>
-                                            <span class="rating-count">(12)</span>
+                                            <div class="course-tags">
+                                                <span class="tag tag-cyan">Novinka</span>
+                                                <span class="tag tag-purple">Free trial</span>
+                                            </div>
                                         </div>
-                                        <div class="course-tags">
-                                            <span class="tag tag-green">Novinka</span>
-                                            <span class="tag tag-purple">Free trial</span>
+                                        <div class="course-price-section">
+                                            <div class="price-value">12 000 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="course-price-section">
-                                    <div class="price-value">12 000 Kč</div>
-                                    <button class="add-to-cart-btn">Přidat do košíku</button>
                                 </div>
                             </div>
                         </div>
@@ -448,51 +482,54 @@
                                         <span class="course-level">Všechny úrovně</span>
                                     </div>
                                     <div class="course-bottom">
-                                        <div class="course-rating-badge">
-                                            <span class="rating-value">4,6</span>
-                                            <div class="rating-stars">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
+                                        <div class="course-rating-tags">
+                                            <div class="course-rating-badge">
+                                                <span class="rating-value">4,6</span>
+                                                <div class="rating-stars">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                                <span class="rating-count">(7)</span>
                                             </div>
-                                            <span class="rating-count">(7)</span>
+                                            <div class="course-tags">
+                                                <span class="tag tag-green">Bestseller</span>
+                                            </div>
                                         </div>
-                                        <div class="course-tags">
-                                            <span class="tag tag-blue">Trending</span>
+                                        <div class="course-price-section">
+                                            <div class="price-value">8 500 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="course-price-section">
-                                    <div class="price-value">8 500 Kč</div>
-                                    <button class="add-to-cart-btn">Přidat do košíku</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Course Card 5 -->
-                    <div class="course-card">
-                        <div class="course-card-content">
-                            <img src="img/card4.png" alt="Photography for Beginners" class="course-image">
-                            <div class="course-info">
-                                <div class="course-main">
-                                    <div class="course-text">
-                                        <h3 class="course-title">Photography for Beginners</h3>
-                                        <p class="course-description">Capture stunning photos and learn the basics of
-                                            photography composition, lighting techniques and post-processing workflows
-                                            for professional results.</p>
-                                        <div class="course-meta">
-                                            <span class="course-author">Erika Svobodová</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-lessons">28 lekcí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-duration">3 hodiny</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-level">Začátečníci</span>
-                                        </div>
-                                        <div class="course-bottom">
+                <div class="course-card">
+                    <div class="course-card-content">
+                        <img src="img/card4.png" alt="Photography for Beginners" class="course-image">
+                        <div class="course-info">
+                            <div class="course-main">
+                                <div class="course-text">
+                                    <h3 class="course-title">Photography for Beginners</h3>
+                                    <p class="course-description">Capture stunning photos and learn the basics of
+                                        photography composition, lighting techniques and post-processing workflows
+                                        for professional results.</p>
+                                    <div class="course-meta">
+                                        <span class="course-author">Erika Svobodová</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-lessons">28 lekcí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-duration">3 hodiny</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-level">Začátečníci</span>
+                                    </div>
+                                    <div class="course-bottom">
+                                        <div class="course-rating-tags">
                                             <div class="course-rating-badge">
                                                 <span class="rating-value">4,5</span>
                                                 <div class="rating-stars">
@@ -505,40 +542,42 @@
                                                 <span class="rating-count">(4)</span>
                                             </div>
                                             <div class="course-tags">
-                                                <span class="tag tag-green">Novinka</span>
+                                                <span class="tag tag-cyan">Novinka</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="course-price-section">
-                                        <div class="price-value">3 200 Kč</div>
-                                        <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        <div class="course-price-section">
+                                            <div class="price-value">3 200 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Course Card 6 -->
-                    <div class="course-card">
-                        <div class="course-card-content">
-                            <img src="img/card1.png" alt="Digital Marketing 101" class="course-image">
-                            <div class="course-info">
-                                <div class="course-main">
-                                    <div class="course-text">
-                                        <h3 class="course-title">Digital Marketing 101</h3>
-                                        <p class="course-description">Learn to master SEO, PPC, and social media
-                                            marketing strategies that drive real business results and build successful
-                                            online marketing campaigns.</p>
-                                        <div class="course-meta">
-                                            <span class="course-author">Martin Procházka</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-lessons">38 lekcí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-duration">6 hodin</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-level">Mírně pokročilí</span>
-                                        </div>
-                                        <div class="course-bottom">
+                <!-- Course Card 6 -->
+                <div class="course-card">
+                    <div class="course-card-content">
+                        <img src="img/card1.png" alt="Digital Marketing 101" class="course-image">
+                        <div class="course-info">
+                            <div class="course-main">
+                                <div class="course-text">
+                                    <h3 class="course-title">Digital Marketing 101</h3>
+                                    <p class="course-description">Learn to master SEO, PPC, and social media
+                                        marketing strategies that drive real business results and build successful
+                                        online marketing campaigns.</p>
+                                    <div class="course-meta">
+                                        <span class="course-author">Martin Procházka</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-lessons">38 lekcí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-duration">6 hodin</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-level">Mírně pokročilí</span>
+                                    </div>
+                                    <div class="course-bottom">
+                                        <div class="course-rating-tags">
                                             <div class="course-rating-badge">
                                                 <span class="rating-value">4,8</span>
                                                 <div class="rating-stars">
@@ -551,41 +590,43 @@
                                                 <span class="rating-count">(9)</span>
                                             </div>
                                             <div class="course-tags">
-                                                <span class="tag tag-blue">Trending</span>
+                                                <span class="tag tag-green">Bestseller</span>
                                                 <span class="tag tag-purple">Free trial</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="course-price-section">
-                                        <div class="price-value">5 800 Kč</div>
-                                        <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        <div class="course-price-section">
+                                            <div class="price-value">5 800 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Course Card 7 -->
-                    <div class="course-card">
-                        <div class="course-card-content">
-                            <img src="img/card3.png" alt="Branding & Identity Design" class="course-image">
-                            <div class="course-info">
-                                <div class="course-main">
-                                    <div class="course-text">
-                                        <h3 class="course-title">Branding & Identity Design</h3>
-                                        <p class="course-description">Create memorable brand identities and
-                                            comprehensive visual systems that resonate with target audiences and
-                                            communicate brand values effectively.</p>
-                                        <div class="course-meta">
-                                            <span class="course-author">Klára Horáková</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-lessons">42 lekcí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-duration">5 hodin</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-level">Pokročilí</span>
-                                        </div>
-                                        <div class="course-bottom">
+                <!-- Course Card 7 -->
+                <div class="course-card">
+                    <div class="course-card-content">
+                        <img src="img/card3.png" alt="Branding & Identity Design" class="course-image">
+                        <div class="course-info">
+                            <div class="course-main">
+                                <div class="course-text">
+                                    <h3 class="course-title">Branding & Identity Design</h3>
+                                    <p class="course-description">Create memorable brand identities and
+                                        comprehensive visual systems that resonate with target audiences and
+                                        communicate brand values effectively.</p>
+                                    <div class="course-meta">
+                                        <span class="course-author">Klára Horáková</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-lessons">42 lekcí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-duration">5 hodin</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-level">Pokročilí</span>
+                                    </div>
+                                    <div class="course-bottom">
+                                        <div class="course-rating-tags">
                                             <div class="course-rating-badge">
                                                 <span class="rating-value">4,7</span>
                                                 <div class="rating-stars">
@@ -598,40 +639,42 @@
                                                 <span class="rating-count">(6)</span>
                                             </div>
                                             <div class="course-tags">
-                                                <span class="tag tag-purple">Pro pokročilé</span>
+                                                <span class="tag tag-purple">Nejlepší hodnocení</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="course-price-section">
-                                        <div class="price-value">6 500 Kč</div>
-                                        <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        <div class="course-price-section">
+                                            <div class="price-value">6 500 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Course Card 8 -->
-                    <div class="course-card">
-                        <div class="course-card-content">
-                            <img src="img/card2.png" alt="Motion Graphics Fundamentals" class="course-image">
-                            <div class="course-info">
-                                <div class="course-main">
-                                    <div class="course-text">
-                                        <h3 class="course-title">Motion Graphics Fundamentals</h3>
-                                        <p class="course-description">Master the art of motion graphics with After
-                                            Effects and Cinema 4D. Learn animation principles, visual effects and
-                                            professional motion design workflows.</p>
-                                        <div class="course-meta">
-                                            <span class="course-author">Jakub Krejčí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-lessons">48 lekcí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-duration">6 hodin</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-level">Pokročilí</span>
-                                        </div>
-                                        <div class="course-bottom">
+                <!-- Course Card 8 -->
+                <div class="course-card">
+                    <div class="course-card-content">
+                        <img src="img/card2.png" alt="Motion Graphics Fundamentals" class="course-image">
+                        <div class="course-info">
+                            <div class="course-main">
+                                <div class="course-text">
+                                    <h3 class="course-title">Motion Graphics Fundamentals</h3>
+                                    <p class="course-description">Master the art of motion graphics with After
+                                        Effects and Cinema 4D. Learn animation principles, visual effects and
+                                        professional motion design workflows.</p>
+                                    <div class="course-meta">
+                                        <span class="course-author">Jakub Krejčí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-lessons">48 lekcí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-duration">6 hodin</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-level">Pokročilí</span>
+                                    </div>
+                                    <div class="course-bottom">
+                                        <div class="course-rating-tags">
                                             <div class="course-rating-badge">
                                                 <span class="rating-value">4,6</span>
                                                 <div class="rating-stars">
@@ -644,40 +687,42 @@
                                                 <span class="rating-count">(8)</span>
                                             </div>
                                             <div class="course-tags">
-                                                <span class="tag tag-turquoise">Nejlepší hodnocení</span>
+                                                <span class="tag tag-purple">Nejlepší hodnocení</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="course-price-section">
-                                        <div class="price-value">9 200 Kč</div>
-                                        <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        <div class="course-price-section">
+                                            <div class="price-value">9 200 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Course Card 9 -->
-                    <div class="course-card">
-                        <div class="course-card-content">
-                            <img src="img/card4.png" alt="Package Design Workshop" class="course-image">
-                            <div class="course-info">
-                                <div class="course-main">
-                                    <div class="course-text">
-                                        <h3 class="course-title">Package Design Workshop</h3>
-                                        <p class="course-description">Design compelling product packaging that stands
-                                            out on shelves and communicates brand values through strategic visual design
-                                            and consumer psychology.</p>
-                                        <div class="course-meta">
-                                            <span class="course-author">Věra Šťastná</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-lessons">36 lekcí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-duration">4 hodiny</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-level">Mírně pokročilí</span>
-                                        </div>
-                                        <div class="course-bottom">
+                <!-- Course Card 9 -->
+                <div class="course-card">
+                    <div class="course-card-content">
+                        <img src="img/card4.png" alt="Package Design Workshop" class="course-image">
+                        <div class="course-info">
+                            <div class="course-main">
+                                <div class="course-text">
+                                    <h3 class="course-title">Package Design Workshop</h3>
+                                    <p class="course-description">Design compelling product packaging that stands
+                                        out on shelves and communicates brand values through strategic visual design
+                                        and consumer psychology.</p>
+                                    <div class="course-meta">
+                                        <span class="course-author">Věra Šťastná</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-lessons">36 lekcí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-duration">4 hodiny</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-level">Mírně pokročilí</span>
+                                    </div>
+                                    <div class="course-bottom">
+                                        <div class="course-rating-tags">
                                             <div class="course-rating-badge">
                                                 <span class="rating-value">4,4</span>
                                                 <div class="rating-stars">
@@ -690,40 +735,42 @@
                                                 <span class="rating-count">(5)</span>
                                             </div>
                                             <div class="course-tags">
-                                                <span class="tag tag-green">Novinka</span>
+                                                <span class="tag tag-cyan">Novinka</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="course-price-section">
-                                        <div class="price-value">4 800 Kč</div>
-                                        <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        <div class="course-price-section">
+                                            <div class="price-value">4 800 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Course Card 10 -->
-                    <div class="course-card">
-                        <div class="course-card-content">
-                            <img src="img/card1.png" alt="Typography Masterclass" class="course-image">
-                            <div class="course-info">
-                                <div class="course-main">
-                                    <div class="course-text">
-                                        <h3 class="course-title">Typography Masterclass</h3>
-                                        <p class="course-description">Master the fundamentals of typography design
-                                            including font selection, hierarchy, spacing and advanced typographic
-                                            techniques for print and digital media.</p>
-                                        <div class="course-meta">
-                                            <span class="course-author">Robert Černý</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-lessons">30 lekcí</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-duration">5 hodin</span>
-                                            <span class="course-dot">•</span>
-                                            <span class="course-level">Všechny úrovně</span>
-                                        </div>
-                                        <div class="course-bottom">
+                <!-- Course Card 10 -->
+                <div class="course-card">
+                    <div class="course-card-content">
+                        <img src="img/card1.png" alt="Typography Masterclass" class="course-image">
+                        <div class="course-info">
+                            <div class="course-main">
+                                <div class="course-text">
+                                    <h3 class="course-title">Typography Masterclass</h3>
+                                    <p class="course-description">Master the fundamentals of typography design
+                                        including font selection, hierarchy, spacing and advanced typographic
+                                        techniques for print and digital media.</p>
+                                    <div class="course-meta">
+                                        <span class="course-author">Robert Černý</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-lessons">30 lekcí</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-duration">5 hodin</span>
+                                        <span class="course-dot">•</span>
+                                        <span class="course-level">Všechny úrovně</span>
+                                    </div>
+                                    <div class="course-bottom">
+                                        <div class="course-rating-tags">
                                             <div class="course-rating-badge">
                                                 <span class="rating-value">4,9</span>
                                                 <div class="rating-stars">
@@ -736,20 +783,21 @@
                                                 <span class="rating-count">(11)</span>
                                             </div>
                                             <div class="course-tags">
-                                                <span class="tag tag-turquoise">Nejlepší hodnocení</span>
+                                                <span class="tag tag-purple">Nejlepší hodnocení</span>
                                                 <span class="tag tag-purple">Free trial</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="course-price-section">
-                                        <div class="price-value">3 800 Kč</div>
-                                        <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        <div class="course-price-section">
+                                            <div class="price-value">3 800 Kč</div>
+                                            <button class="add-to-cart-btn">Přidat do košíku</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Pagination -->
+                </div>
+                <!-- Pagination -->
                 <div class="courses-pagination">
                     <button class="pagination-arrow pagination-prev" disabled>
                         <i class="fas fa-chevron-left text-[#2191DF] text-[16px]"></i>
@@ -764,8 +812,8 @@
                         <i class="fas fa-chevron-right text-[#2191DF] text-[16px]"></i>
                     </button>
                 </div>
-                </div>
             </div>
+        </div>
     </main>
 
     <!-- INSTRUCTORS SECTION -->
@@ -780,21 +828,21 @@
             <div class="instructors-grid">
                 <!-- Instructor Card 1 -->
                 <div class="instructor-card">
-                    <img src="img/card2.png" alt="Kristýna Nováková" class="instructor-avatar">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Kristýna Nováková" class="instructor-avatar">
                     <div class="instructor-info">
                         <h3 class="instructor-name">Kristýna Nováková</h3>
                         <p class="instructor-role">Adobe Certified Instructor</p>
                         <div class="instructor-stats">
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-star text-yellow-400"></i>
-                                <span>4,8 (1 859 hodnocení)</span>
+                                <i class="fa-solid fa-star text-[#FFBE0A]"></i>
+                                <span><strong>4,8</strong> (1 859 hodnocení)</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-graduation-cap text-[#2191DF]"></i>
+                                <img src="img/school.png" alt="Studenti" class="w-4 h-4">
                                 <span>2 580 studentů</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-play-circle text-[#2191DF]"></i>
+                                <img src="img/play_circle.png" alt="Kurzy" class="w-4 h-4">
                                 <span>15 kurzů</span>
                             </div>
                         </div>
@@ -803,21 +851,21 @@
 
                 <!-- Instructor Card 2 -->
                 <div class="instructor-card">
-                    <img src="img/card3.png" alt="Kristýna Nováková" class="instructor-avatar">
+                    <img src="img/profilLektorkaK.jpg" alt="Kristýna Nováková" class="instructor-avatar">
                     <div class="instructor-info">
                         <h3 class="instructor-name">Kristýna Nováková</h3>
                         <p class="instructor-role">Adobe Certified Instructor</p>
                         <div class="instructor-stats">
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-star text-yellow-400"></i>
-                                <span>4,8 (1 859 hodnocení)</span>
+                                <i class="fa-solid fa-star text-[#FFBE0A]"></i>
+                                <span><strong>4,8</strong> (1 859 hodnocení)</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-graduation-cap text-[#2191DF]"></i>
+                                <img src="img/school.png" alt="Studenti" class="w-4 h-4">
                                 <span>2 580 studentů</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-play-circle text-[#2191DF]"></i>
+                                <img src="img/play_circle.png" alt="Kurzy" class="w-4 h-4">
                                 <span>15 kurzů</span>
                             </div>
                         </div>
@@ -826,21 +874,21 @@
 
                 <!-- Instructor Card 3 -->
                 <div class="instructor-card">
-                    <img src="img/card1.png" alt="Kristýna Nováková" class="instructor-avatar">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Kristýna Nováková" class="instructor-avatar">
                     <div class="instructor-info">
                         <h3 class="instructor-name">Kristýna Nováková</h3>
                         <p class="instructor-role">Adobe Certified Instructor</p>
                         <div class="instructor-stats">
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-star text-yellow-400"></i>
-                                <span>4,8 (1 859 hodnocení)</span>
+                                <i class="fa-solid fa-star text-[#FFBE0A]"></i>
+                                <span><strong>4,8</strong> (1 859 hodnocení)</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-graduation-cap text-[#2191DF]"></i>
+                                <img src="img/school.png" alt="Studenti" class="w-4 h-4">
                                 <span>2 580 studentů</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-play-circle text-[#2191DF]"></i>
+                                <img src="img/play_circle.png" alt="Kurzy" class="w-4 h-4">
                                 <span>15 kurzů</span>
                             </div>
                         </div>
@@ -849,21 +897,21 @@
 
                 <!-- Instructor Card 4 -->
                 <div class="instructor-card">
-                    <img src="img/card4.png" alt="Kristýna Nováková" class="instructor-avatar">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Kristýna Nováková" class="instructor-avatar">
                     <div class="instructor-info">
                         <h3 class="instructor-name">Kristýna Nováková</h3>
                         <p class="instructor-role">Adobe Certified Instructor</p>
                         <div class="instructor-stats">
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-star text-yellow-400"></i>
-                                <span>4,8 (1 859 hodnocení)</span>
+                                <i class="fa-solid fa-star text-[#FFBE0A]"></i>
+                                <span><strong>4,8</strong> (1 859 hodnocení)</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-graduation-cap text-[#2191DF]"></i>
+                                <img src="img/school.png" alt="Studenti" class="w-4 h-4">
                                 <span>2 580 studentů</span>
                             </div>
                             <div class="instructor-stat">
-                                <i class="fa-solid fa-play-circle text-[#2191DF]"></i>
+                                <img src="img/play_circle.png" alt="Kurzy" class="w-4 h-4">
                                 <span>15 kurzů</span>
                             </div>
                         </div>
@@ -984,8 +1032,79 @@
         </div>
     </footer>
 
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal" style="display: none;">
+        <div class="cart-modal-overlay"></div>
+        <div class="cart-modal-content">
+            <button class="cart-modal-close" id="cart-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="cart-modal-header">
+                <img src="img/check_circle.png" alt="Check" class="cart-modal-check-icon">
+                <h3>Přidáno do košíku</h3>
+            </div>
+
+            <div class="cart-modal-body">
+                <div class="cart-item">
+                    <img src="img/UIUX.jpg" alt="Course" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <h4 class="cart-item-title">Figma UI UX Design Advanced</h4>
+                        <p class="cart-item-instructor">Kristýna Nováková</p>
+                        <p class="cart-item-price">8 500 Kč <span class="cart-item-original">12 000 Kč</span></p>
+                    </div>
+                </div>
+
+                <div class="cart-upsell-section">
+                    <div class="cart-divider"></div>
+                    <h4 class="cart-upsell-title">Mohlo by vás zajímat</h4>
+
+                    <div class="cart-upsell-item">
+                        <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
+                        <div class="cart-upsell-info">
+                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="cart-upsell-instructor">Kristýna Nováková</p>
+                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">8 000 Kč</span></p>
+                        </div>
+                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                    </div>
+
+                    <div class="cart-upsell-item">
+                        <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
+                        <div class="cart-upsell-info">
+                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="cart-upsell-instructor">Kristýna Nováková</p>
+                            <p class="cart-upsell-price no-discount">4 500 Kč</p>
+                        </div>
+                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                    </div>
+
+                    <div class="cart-upsell-item">
+                        <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
+                        <div class="cart-upsell-info">
+                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="cart-upsell-instructor">Kristýna Nováková</p>
+                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">8 000 Kč</span></p>
+                        </div>
+                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-modal-footer">
+                <button class="cart-btn-continue" id="cart-btn-continue">Pokračovat v nákupu</button>
+                <button class="cart-btn-checkout" id="cart-btn-checkout">Do košíku</button>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
-    <script src="js/hamburger.js"></script>
+    <script type="module" src="js/bubbles.js"></script>
+    <script type="module" src="js/hamburger.js"></script>
+    <script type="module" src="js/sidebarToggle.js"></script>
+    <script type="module" src="js/cartModal.js"></script>
+    <script type="module" src="js/priceRange.js"></script>
+    <script type="module" src="js/instructorsNav.js"></script>
 
 </body>
 
