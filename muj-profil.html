@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj profil | Mentioo</title>
+    <link rel="stylesheet" href="src/muj-profil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="font-[Poppins]">
+    <div class="bubble-field md:block hidden">
+        <div class="bubble opacity-[40]" style="top:250px; left:98%; width:10px; height:10px;"></div>
+        <div class="bubble" style="top:350px; left:93%; width:13px; height:13px;"></div>
+        <div class="bubble" style="top:375px; left:92%; width:9px; height:9px;"></div>
+        <div class="bubble" style="top:340px; left:9%; width:9px; height:9px;"></div>
+        <div class="bubble" style="top:390px; left:4%; width:7px; height:7px;"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">
+                    <img src="img/Logo.png" alt="Logo" class="w-32" />
+                </a>
+            </div>
+
+            <!-- Searchbar -->
+            <div class="searchbar-container">
+                <form class="search-form" role="search">
+                    <div class="search-wrapper">
+                        <span class="search-icon">
+                            <i class="fas fa-search translate-y-px"></i>
+                        </span>
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Hamburger (mobile) -->
+            <div class="hamburger">
+                <button id="navbar-toggle" class="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="#" class="mobile-link">Nabídka kurzů</a>
+                <a href="#" class="mobile-link">Lektoři</a>
+                <a href="#" class="mobile-link">Blog</a>
+                <a href="#" class="mobile-user-link">
+                    <span>Jana Blahošová</span>
+                    <img src="img/person_gray.png" alt="">
+                </a>
+            </div>
+
+            <!-- Desktop menu -->
+            <div id="navbar-menu" class="navbar-menu">
+                <ul class="nav-links">
+                    <li class="nav-item group">
+                        <a href="#" class="nav-link">
+                            Nabídka kurzů
+                        </a>
+                        <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                        <div class="dropdown">
+                            <div class="py-2">
+                                <a href="#" class="dropdown-link">Programování</a>
+                                <a href="#" class="dropdown-link">Design</a>
+                                <a href="#" class="dropdown-link">Marketing</a>
+                                <a href="#" class="dropdown-link">Business</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
+                </ul>
+
+                <!-- User Profile & Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="icon-btn">
+                        <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                    </a>
+                    <a href="#" class="icon-btn-alt">
+                        <img src="img/network.png" alt="Globe" class="w-5 h-5" />
+                    </a>
+
+                    <a href="#" class="user-profile-link">
+                        <img src="img/person_gray.png" alt="">
+                        <span>Jana Blahošová</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-wrapper">
+            <div class="content-layout">
+                <div>
+                    <div class="hero-gradient">
+                        <div class="hero-bg"></div>
+
+                        <h1 class="hero-title">Můj profil</h1>
+
+                    </div>
+
+                    <!-- Course Meta Row -->
+                    <div class="course-meta-row">
+                        <div class="course-meta-item">
+                            <div class="meta-icon meta-icon-purple">
+                                <img src="img/book_ribbon.png"  alt="Aktivní kurzy" class="h-[24px] w-[28px]">
+                            </div>
+                            <div class="meta-content">
+                                <div class="meta-number">5</div>
+                                <div class="meta-description">Aktivní kurzy</div>
+                            </div>
+                        </div>
+                        <div class="course-meta-item">
+                            <div class="meta-icon meta-icon-green">
+                                <img src="img/check_circle_darkGreen.png" alt="Dokončené lekce" class="h-[24px] w-[24x]">
+                            </div>
+                            <div class="meta-content">
+                                <div class="meta-number">116</div>
+                                <div class="meta-description">Dokončené lekce</div>
+                            </div>
+                        </div>
+                        <div class="course-meta-item">
+                            <div class="meta-icon meta-icon-blue">
+                                <img src="img/school_cyan.png" alt="Studijních hodin" class="h-[24px] w-[28px]">
+                            </div>
+                            <div class="meta-content">
+                                <div class="meta-number">116</div>
+                                <div class="meta-description">Studijních hodin</div>
+                            </div>
+                        </div>
+                        <div class="course-meta-item">
+                            <div class="meta-icon meta-icon-yellow">
+                                <img src="img/calendar_month.png" alt="Denní řady" class="h-[24px] w-[24px]">
+                            </div>
+                            <div class="meta-content">
+                                <div class="meta-number">32</div>
+                                <div class="meta-description">Denní řady</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="profile-layout">
+        <!-- LEFT COLUMN - Active Courses -->
+        <div class="profile-main">
+            <div class="section-header">
+                <h2 class="section-heading">Aktivní kurzy</h2>
+                <a href="#" class="section-link">Zobrazit všechny</a>
+            </div>
+            
+            <div class="active-courses-grid">
+                <!-- Course Card 1 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <span class="course-badge badge-bestseller">Bestseller</span>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 2 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Advanced Figma Course" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <span class="course-badge badge-bestseller">Bestseller</span>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 3 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Web Development Basics" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <span class="course-badge badge-bestseller">Bestseller</span>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 4 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="React Fundamentals" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <span class="course-badge badge-bestseller">Bestseller</span>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 5 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Python Programming" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <span class="course-badge badge-bestseller">Bestseller</span>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN - Sidebar -->
+        <aside class="profile-sidebar">
+            <!-- Profile Card -->
+            <div class="sidebar-profile-card">
+                <div class="sidebar-profile-header">
+                    <div class="sidebar-profile-badge">
+                        <img src="img/diamond.png" alt="Diamond" class="w-10 h-10">
+                        <span>156<br><span class="badge-text">počet bodů</span></span>
+                    </div>
+                    
+                    <div class="sidebar-profile-avatar">
+                        <img src="img/profilovka.png" alt="Jan Novák">
+                    </div>
+                </div>
+                
+                <h3 class="sidebar-profile-name">Jan Novák</h3>
+                <p class="sidebar-profile-email">
+                    <i class="far fa-envelope"></i> novak@gmail.com
+                </p>
+                <p class="sidebar-profile-member">
+                    <i class="far fa-calendar"></i> členem od 14. ledna 2025
+                </p>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="sidebar-menu">
+                <a href="#" class="sidebar-menu-item active">
+                    <img src="img/dashboardGray.png" alt="">
+                    <span>Můj profil</span>
+                </a>
+                <a href="#" class="sidebar-menu-item">
+                    <img src="img/book_ribbonGray.png" alt="">
+                    <span>Moje kurzy</span>
+                </a>
+                <a href="#" class="sidebar-menu-item">
+                    <img src="img/postGray.png" alt="">
+                    <span>Zprávy</span>
+                </a>
+                
+                <div class="sidebar-menu-divider"></div>
+                
+                <a href="#" class="sidebar-menu-item">
+                    <img src="img/Certificate.png" alt="">
+                    <span>Certifikáty</span>
+                </a>
+                <a href="#" class="sidebar-menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Nastavení</span>
+                </a>
+                
+                <div class="sidebar-menu-divider"></div>
+                
+                <a href="#" class="sidebar-menu-item">
+                    <img src="img/kosikGray.png" alt="">
+                    <span>Historie nákupů</span>
+                </a>
+                <a href="#" class="sidebar-menu-item">
+                    <img src="img/creditCard.png" alt="">
+                    <span>Předplatné</span>
+                </a>
+            </nav>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer bg-[#F5F9FF]">
+        <div class="footer-container">
+            <!-- Logo  -->
+            <div class="footer-logo">
+                <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+            </div>
+
+            <!-- Obsah -->
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <!-- INFO -->
+                    <div class="footer-info">
+                        <div class="footer-info-text">
+                            <p class="font-semibold text-lg">Mentio s.r.o</p>
+                            <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
+                            <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
+                            <p class="mt-2 leading-relaxed ">Spisová značka C 987654 vedená u Městského soudu v Praze
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4X4 KATEGORIE-->
+                    <div class="footer-categories">
+                        <div>
+                            <h4 class="footer-heading">Kategorie kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Kategorie 1</a></li>
+                                <li><a class="footer-link" href="#">Kategorie 2</a></li>
+                                <li><a class="footer-link" href="#">Kategorie 3</a></li>
+                                <li><a class="footer-link" href="#">Kategorie 4</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Typy kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Typy kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Typy kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- O nás -->
+                    <div class="footer-about">
+                        <h4 class="footer-heading">O nás</h4>
+                        <ul class="footer-links">
+                            <li><a class="footer-link" href="#">Lektoři</a></li>
+                            <li><a class="footer-link" href="#">Kariéra</a></li>
+                            <li><a class="footer-link" href="#">Blog</a></li>
+                            <li><a class="footer-link" href="#">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- divider -->
+            <div class="footer-divider"></div>
+
+            <!-- COPYRIGHT + IKONY -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2025 Lorem ipsum</div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
+                    </a>
+
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
+                    </a>
+
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/hamburger.js"></script>
+    <script type="module" src="js/bubbles.js"></script>
+</body>
+
+</html>
