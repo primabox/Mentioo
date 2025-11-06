@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM loaded, setting up cart modal...');
 
     const addToCartBtn = document.getElementById('add-to-cart-btn');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
     const modal = document.getElementById('cart-modal');
     const overlay = document.querySelector('.cart-modal-overlay');
     const closeBtn = document.getElementById('cart-modal-close');
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('Elements found:', {
         addToCartBtn: !!addToCartBtn,
+        addToCartBtns: addToCartBtns.length,
         modal: !!modal,
         overlay: !!overlay,
         closeBtn: !!closeBtn,
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Open modal
+    // Open modal for single add to cart button (detail page)
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -59,6 +61,17 @@ document.addEventListener('DOMContentLoaded', function () {
             openCartModal();
         });
     }
+
+    // Open modal for multiple add to cart buttons (category page)
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log('Add to cart clicked from course card');
+            cartCount++;
+            updateCartBadge();
+            openCartModal();
+        });
+    });
 
     // Add event listeners to upsell buttons
     upsellBtns.forEach(btn => {
