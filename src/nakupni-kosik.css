@@ -135,7 +135,7 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero-section {
-  @apply relative flex justify-center pt-36 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
+  @apply relative flex justify-center pt-36 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
 }
 
 .hero-wrapper {
@@ -370,15 +370,18 @@ body {
 }
 
 .add-to-cart-btn {
-  @apply  text-[#0069B2] font-semibold transition-colors cursor-pointer border-none;
+  @apply  text-[#0069B2] font-semibold transition-colors cursor-pointer border-none pl-6;
   white-space: nowrap;
-  padding: 8px 20px 8px 20px;
+
   border-radius: 32px;
+  transition: transform 0.2s ease;
 }
 
 .add-to-cart-btn:hover {
-  @apply bg-[#E5F8FF];
+  transform: translateY(-2px);
 }
+
+
 
 .continue-shopping-btn {
   @apply bg-[#D4EDFF] text-[#0069B2] font-medium cursor-pointer border-none;
@@ -409,7 +412,7 @@ body {
 }
 
 .order-summary-row {
-  @apply flex items-center justify-between py-3;
+  @apply flex items-center justify-between py-1;
 }
 
 .order-summary-label {
@@ -446,7 +449,7 @@ body {
 }
 
 .promo-code-btn {
-  @apply px-6 py-3 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-full hover:bg-[#0069B2] hover:text-white transition-all cursor-pointer border-none text-sm;
+  @apply px-6 py-2 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-full hover:bg-[#0069B2] hover:text-white transition-all cursor-pointer border-none text-sm;
 }
 
 /* ===== RECOMMENDED SECTION ===== */
