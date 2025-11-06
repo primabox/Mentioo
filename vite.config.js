@@ -16,6 +16,7 @@ export default defineConfig({
         nakupniKosik: resolve(__dirname, "nakupni-kosik.html"),
         mujProfil: resolve(__dirname, "muj-profil.html"),
         kategorieKurzu: resolve(__dirname, "kategorie-kurzu.html"),
+        pokladna: resolve(__dirname, "pokladna.html"),
       },
     },
   },

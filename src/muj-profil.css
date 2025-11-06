@@ -140,7 +140,7 @@ body {
 
 /* ===== HERO SECTION (from detail-kurzu) ===== */
 .hero-section {
-  @apply relative flex justify-center pt-36 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
+  @apply relative flex justify-center pt-36 pb-8 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
 }
 
 .hero-wrapper {
@@ -178,7 +178,7 @@ body {
 }
 
 .hero-title {
-  @apply text-[56px] text-[#1C1C1C] max-w-[1040px] font-semibold leading-[100%] mb-4 mt-2 ml-[50px];
+  @apply text-[56px] text-[#1C1C1C] max-w-[1040px] font-semibold leading-[100%] mb-4 mt-2 ml-[70px];
 }
 
 .hero-description {
@@ -281,7 +281,7 @@ body {
 }
 
 .section-link {
-  @apply text-[#0069B2] font-medium hover:underline;
+  @apply text-[#1C1C1C] font-medium hover:underline;
 }
 
 /* ===== COURSE CARDS ===== */
@@ -317,10 +317,20 @@ body {
   @apply flex items-center justify-between gap-4;
 }
 
+.course-card-badges {
+  @apply flex items-center gap-2;
+}
+
 .course-badge {
   @apply px-3 py-1 font-medium bg-[#E0F2FE] text-[#0369A1] flex items-center gap-1 flex-shrink-0;
   font-size: 14px;
   border-radius: 4px;
+}
+
+.course-pin-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 .badge-bestseller {
@@ -453,7 +463,7 @@ body {
   @apply w-[130px] h-[130px] rounded-full overflow-hidden border-10 border-[#D4EDFF] shadow-md;
   position: absolute;
   top: -80px;
-  right: 10px;
+  right: -20px;
   z-index: 102;
 }
 
@@ -473,7 +483,7 @@ body {
 .sidebar-profile-header {
   display: block;
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .sidebar-profile-badge {
@@ -559,6 +569,17 @@ body {
 
 .sidebar-menu-item.active i {
   @apply text-[#0069B2];
+}
+
+/* Ikony v sidebar menu */
+.sidebar-menu-item img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(96%) contrast(88%);
+}
+
+.sidebar-menu-item.active img {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(96%) saturate(2577%) hue-rotate(195deg) brightness(94%) contrast(101%);
 }
 
 /* ===== FOOTER (from index.html) ===== */

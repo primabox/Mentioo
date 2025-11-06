@@ -23,7 +23,6 @@ body {
   scrollbar-width: none;
   /* Firefox */
 }
-
 /* ===== HEADER ===== */
 .header {
   @apply bg-white shadow-sm sticky top-0 z-[9999];

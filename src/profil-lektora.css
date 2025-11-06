@@ -1,12 +1,110 @@
 @import "tailwindcss";
 
+/* ===== HEADER ===== */
+.header {
+  @apply bg-white shadow fixed top-0 left-0 right-0 z-[9999];
+}
+
+.navbar {
+  @apply flex items-center justify-between py-4 px-10 lg:px-20;
+}
+
+.logo {
+  @apply flex-shrink-0;
+}
+
+/* ===== SEARCHBAR ===== */
+.searchbar-container {
+  @apply hidden md:flex flex-1 justify-center mx-6 max-w-[741px];
+}
+
+.search-form {
+  @apply w-full;
+}
+
+.search-wrapper {
+  @apply relative;
+}
+
+.search-icon {
+  @apply pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 text-[#64748b];
+}
+
+.search-input {
+  @apply w-full h-14 pl-12 pr-5 rounded-full border border-gray-200 placeholder-gray-500 text-slate-700 focus:border-[#2563eb] focus:ring-4 focus:ring-[#e0f2fe] outline-none transition;
+}
+
+/* ===== MOBILE MENU ===== */
+.hamburger {
+  @apply xl:hidden flex items-center relative;
+}
+
+.hamburger-btn {
+  @apply text-2xl text-gray-700 hover:text-[#2563eb] transition;
+}
+
+.mobile-menu {
+  @apply flex flex-col items-center bg-white shadow-md py-5 space-y-4 xl:hidden fixed top-[72px] left-0 w-full max-w-[100vw] overflow-x-hidden z-[9998];
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.mobile-link {
+  @apply text-gray-700 font-medium hover:text-[#2563eb];
+}
+
+.mobile-btn {
+  @apply px-5 py-2.5 rounded-full bg-[#0069B2] text-white hover:bg-[#1d4ed8] transition;
+}
+
+/* ===== DESKTOP MENU ===== */
+.navbar-menu {
+  @apply hidden xl:flex items-center gap-8;
+}
+
+.nav-links {
+  @apply flex items-center gap-6 text-base font-medium text-gray-900;
+}
+
+.nav-item {
+  @apply relative flex items-center gap-3;
+}
+
+.nav-link {
+  @apply hover:text-[#2563eb];
+}
+
+.dropdown {
+  @apply absolute top-full left-0 mt-4 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
+  border: none !important;
+}
+
+.dropdown-link {
+  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-[#e0f2fe] hover:text-[#2563eb];
+}
+
+/* ===== BUTTONS ===== */
+.icon-btn {
+  @apply w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-100 transition;
+}
+
+.icon-btn-alt {
+  @apply w-11 h-11 flex items-center justify-center rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] transition;
+}
+
 /* ===== HERO SECTION ===== */
 .hero-gradient {
     @apply relative rounded-[48px] overflow-visible;
     padding: 60px 3rem 60px 3rem;
     z-index: 1;
     /* increased space from header */
-    margin-top: 80px;
+    margin-top: 150px;
     margin-bottom: 80px;
 }
 
@@ -32,7 +130,7 @@
 }
 
 .lektor-main-info {
-    @apply flex items-center gap-15 ml-24;
+    @apply flex items-center gap-19 ml-21;
 }
 
 .lektor-avatar {
@@ -173,7 +271,7 @@
 }
 
 .instructor-link {
-    @apply text-sm font-medium text-[#28A6FF] no-underline inline-block mt-6 mb-[52px];
+    @apply text-sm font-medium text-[#0069B2] no-underline inline-block mt-6 mb-[42px];
 }
 
 .instructor-link:hover {
@@ -187,6 +285,7 @@
 
 .topics-grid {
     @apply flex flex-wrap gap-3;
+    max-width: 830px;
 }
 
 .topic-tag {
@@ -196,11 +295,18 @@
     background: transparent;
     font-size: 14px;
     font-weight: 400;
+    white-space: nowrap;
 }
 
 .topic-tag:hover {
     background: #0069B2;
     color: white;
+}
+
+/* ===== TABS ===== */
+.tab.active::after {
+  width: 100%;
+  background: #0069B2;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -755,7 +861,7 @@
 
 /* ===== INSTRUCTOR COURSES SECTION ===== */
 .instructor-courses-section {
-    @apply flex flex-col gap-6;
+    @apply flex flex-col gap-5;
 }
 
 .courses-heading {
@@ -764,7 +870,8 @@
 
 /* Course Card */
 .instructor-course-card {
-    @apply shadow-lg flex gap-6 bg-white rounded-2xl items-center w-full max-w-full cursor-pointer;
+    @apply flex gap-6 bg-white rounded-2xl items-center w-full max-w-full cursor-pointer;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1035,7 +1142,7 @@
 /* ===== REVIEWS SECTION ===== */
 /* Reviews Header */
 .reviews-header {
-    @apply flex items-center justify-between gap-6 mb-8 p-6 bg-[#F9FAFB] rounded-xl;
+    @apply flex items-center justify-between gap-6 mb-8 p-6  rounded-xl;
 }
 
 /* Reviews adjustments at 1024px: stack rating box and bars, center badges */
@@ -1142,6 +1249,19 @@
     @apply w-full h-[1px] bg-gray-100 my-4;
 }
 
+/* Course Header in Reviews */
+.course-header {
+    @apply flex flex-col mb-2;
+}
+
+.course-header h3 {
+    @apply mb-0;
+}
+
+.course-header a {
+    @apply mb-1;
+}
+
 /* Reviews Grid */
 .reviews-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6 mb-8;
@@ -1199,7 +1319,6 @@
     @apply flex items-center justify-center;
     gap: 10px;
     margin-top: 80px;
-    margin-bottom: 313px;
 }
 
 .pagination-arrow {
