@@ -103,15 +103,17 @@
         <div class="hero-wrapper">
             <div class="content-layout">
                 <div>
-                    <div class="hero-gradient">
-                        <div class="hero-bg"></div>
+                    <!-- Hero Tab Content: Můj profil -->
+                    <div class="hero-tab-content active" data-tab="muj-profil">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
 
-                        <h1 class="hero-title">Můj profil</h1>
+                            <h1 class="hero-title">Můj profil</h1>
 
-                    </div>
+                        </div>
 
-                    <!-- Course Meta Row -->
-                    <div class="course-meta-row">
+                        <!-- Course Meta Row -->
+                        <div class="course-meta-row">
                         <div class="course-meta-item">
                             <div class="meta-icon meta-icon-purple">
                                 <img src="img/book_ribbon.png"  alt="Aktivní kurzy" class="h-[24px] w-[28px]">
@@ -149,6 +151,85 @@
                             </div>
                         </div>
                     </div>
+                    </div>
+
+                    <!-- Hero Tab Content: Moje kurzy -->
+                    <div class="hero-tab-content" data-tab="moje-kurzy">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
+                            <h1 class="hero-title">Moje kurzy</h1>
+                        </div>
+                        <div class="course-meta-row course-meta-row-center">
+                            <!-- Streak Card -->
+                            <div class="streak-card">
+                                <div class="streak-days">
+                                    <div class="streak-day completed">
+                                        <div class="streak-day-icon">
+                                            <img src="img/check_circle_filled.png" alt="Completed" class="w-[25px] h-[25px]">
+                                        </div>
+                                        <div class="streak-day-label">Po</div>
+                                    </div>
+                                    <div class="streak-day completed">
+                                        <div class="streak-day-icon">
+                                            <img src="img/check_circle_filled.png" alt="Completed" class="w-[25px] h-[25px]">
+                                        </div>
+                                        <div class="streak-day-label">Út</div>
+                                    </div>
+                                    <div class="streak-day">
+                                        <div class="streak-day-icon"></div>
+                                        <div class="streak-day-label">St</div>
+                                    </div>
+                                    <div class="streak-day">
+                                        <div class="streak-day-icon"></div>
+                                        <div class="streak-day-label">Čt</div>
+                                    </div>
+                                    <div class="streak-day">
+                                        <div class="streak-day-icon"></div>
+                                        <div class="streak-day-label">Pá</div>
+                                    </div>
+                                    <div class="streak-day">
+                                        <div class="streak-day-icon"></div>
+                                        <div class="streak-day-label">So</div>
+                                    </div>
+                                    <div class="streak-day">
+                                        <div class="streak-day-icon"></div>
+                                        <div class="streak-day-label">Ne</div>
+                                    </div>
+                                </div>
+                                <div class="streak-header">
+                                    <div class="streak-icon">
+                                        <img src="img/streakFire.png" alt="Fire" class="w-[56px] h-[76px]">
+                                    </div>
+                                    <div class="streak-info">
+                                        <div class="streak-number">14 dní</div>
+                                        <div class="streak-description">učení v řadě</div>
+                                    </div>
+                                </div>
+                                <button class="streak-info-btn">
+                                    <img src="img/info.png" alt="Info">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hero Tab Content: Moje kurzy END -->
+
+                    <!-- Hero Tab Content: Certifikáty -->
+                    <div class="hero-tab-content" data-tab="certifikaty">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
+                            <h1 class="hero-title">Certifikáty</h1>
+                        </div>
+                    </div>
+                    <!-- Hero Tab Content: Certifikáty END -->
+
+                    <!-- Hero Tab Content: Nastavení -->
+                    <div class="hero-tab-content" data-tab="nastaveni">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
+                            <h1 class="hero-title">Nastavení</h1>
+                        </div>
+                    </div>
+                    <!-- Hero Tab Content: Nastavení END -->
                 </div>
             </div>
         </div>
@@ -156,12 +237,18 @@
 
     <!-- MAIN CONTENT -->
     <div class="profile-layout">
+        <div class="streak-tooltip">
+            <h4 class="streak-tooltip-title">Jak získat strike?</h4>
+            <p class="streak-tooltip-text">Učte se alespoň 30 minutdennĕ nebo udělejte test.</p>
+        </div>
         <!-- LEFT COLUMN - Active Courses -->
         <div class="profile-main">
-            <div class="section-header">
-                <h2 class="section-heading">Aktivní kurzy</h2>
-                <a href="#" class="section-link">Zobrazit všechny</a>
-            </div>
+            <!-- Tab Content: Můj profil -->
+            <div class="profile-tab-content active" data-tab="muj-profil">
+                <div class="section-header">
+                    <h2 class="section-heading">Aktivní kurzy</h2>
+                    <a href="#" class="section-link">Zobrazit všechny</a>
+                </div>
             
             <div class="active-courses-grid">
                 <!-- Course Card 1 -->
@@ -339,6 +426,608 @@
                     </div>
                 </a>
             </div>
+            </div>
+
+            <!-- Tab Content: Moje kurzy -->
+            <div class="profile-tab-content" data-tab="moje-kurzy">
+                <div class="course-filter-tabs">
+                    <button class="filter-tab active">
+                        <img src="img/whiteCheckmark.png" alt="Check" class="filter-tab-check">
+                        <span>Aktivní kurzy</span>
+                        <span class="filter-tab-count">5</span>
+                    </button>
+                    <button class="filter-tab">
+                        <img src="img/whiteCheckmark.png" alt="Check" class="filter-tab-check">
+                        <span>Nezahájené kurzy</span>
+                        <span class="filter-tab-count">2</span>
+                    </button>
+                    <button class="filter-tab">
+                        <img src="img/whiteCheckmark.png" alt="Check" class="filter-tab-check">
+                        <span>Dokončené kurzy</span>
+                        <span class="filter-tab-count">1</span>
+                    </button>
+                </div>
+            
+            <div class="active-courses-grid">
+                <!-- Course Card 1 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pinFilled.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-bestseller">Aktivní</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 2 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Advanced Figma Course" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-nezahajeny">Nezahájený</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 3 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Web Development Basics" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-bestseller">Aktivní</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 4 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/card3.png" alt="React Fundamentals" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-dokonceno">Dokončeno</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">100 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 100;"></div>
+                                    <div class="module-progress-empty" style="flex: 0;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 5 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Python Programming" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-bestseller">Aktivní</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 6 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Python Programming" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-nezahajeny">Nezahájený</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">0 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 0;"></div>
+                                    <div class="module-progress-empty" style="flex: 100;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 7 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Python Programming" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-bestseller">Aktivní</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Course Card 8 -->
+                <a href="detail-kurzu.html" class="course-card">
+                    <img src="img/UiPrice.jpg" alt="Python Programming" class="course-card-img">
+                    <div class="course-card-content">
+                        <div class="course-card-header">
+                            <h4 class="course-card-title">UI/UX Design Masterclass</h4>
+                            <div class="course-card-badges">
+                                <img src="img/pin.png" alt="Pin" class="course-pin-icon">
+                                <span class="course-badge badge-bestseller">Aktivní</span>
+                            </div>
+                        </div>
+                        <p class="course-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="course-card-footer">
+                            <div class="course-meta whitespace-nowrap">
+                                <img src="img/alarmBlue.png" alt="Lekce" class="h-[20px] w-[22px]">
+                                <span>2 lekcí (3 min)</span>
+                                <span class="course-progress-text">20 % splněno</span>
+                            </div>
+                            
+                            <div class="course-progress-wrapper">
+                                <div class="course-progress-bar">
+                                    <div class="module-progress-fill" style="flex: 20;"></div>
+                                    <div class="module-progress-empty" style="flex: 80;"></div>
+                                    <div class="module-progress-dot"></div>
+                                </div>
+                                
+                                <button class="course-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Tab Content: Moje kurzy  END -->
+            </div>
+
+            <!-- Tab Content: Certifikáty -->
+            <div class="profile-tab-content" data-tab="certifikaty">
+                <h2 class="certificates-year-heading">2025</h2>
+                
+                <h3 class="certificates-course-title">UI/UX Design Masterclass</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Scrum Master Mini kurz</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">Complete Web Design: from Figma to Webflow to Freelancing</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--zip">
+                                <img src="img/FileType.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">The Ultimate Project Management PMP Prep Course</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--zip">
+                                <img src="img/FileType.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">IT & Software Hardware Microcontroller Mastering Microcontroller and Embedded Driver Development</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h2 class="certificates-year-heading">2024</h2>
+                
+                <h3 class="certificates-course-title">UI/UX Design Masterclass</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Scrum Master Mini kurz</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">Complete Web Design: from Figma to Webflow to Freelancing</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Scrum Master Mini kurz</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">Complete Web Design: from Figma to Webflow to Freelancing</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">The Ultimate Project Management PMP Prep Course</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--zip">
+                                <img src="img/FileType.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="certificates-course-title">IT & Software Hardware Microcontroller Mastering Microcontroller and Embedded Driver Development</h3>
+                
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-left">
+                            <div class="file-icon file-icon--pdf">
+                                <img src="img/FilePDF.png" alt="">
+                            </div>
+                            <div>
+                                <div class="download-info-title">Certifikát splnění kurzu</div>
+                                <div class="download-info-size">23 MB</div>
+                            </div>
+                        </div>
+                        <a href="#" class="download-btn">
+                            <img src="img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content: Certifikáty END -->
+
+            <!-- Tab Content: Nastavení -->
+            <div class="profile-tab-content" data-tab="nastaveni">
+                <div class="settings-container">
+                    <div class="tabs-wrapper">
+                        <div class="tabs">
+                            <button class="tab active" data-tab="nastaveni-profilu">Nastavení profilu</button>
+                            <button class="tab" data-tab="heslo">Heslo</button>
+                            <button class="tab" data-tab="notifikace">Notifikace</button>
+                            <button class="tab" data-tab="ucet">Účet</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Nastavení profilu -->
+                    <div class="settings-tab-content active" data-settings-tab="nastaveni-profilu">
+                        <div class="settings-avatar-wrapper">
+                            <div class="settings-avatar">
+                                <span class="settings-avatar-initials">JN</span>
+                            </div>
+                            <div class="settings-avatar-buttons">
+                                <button class="settings-change-avatar-btn">Změnit obrázek</button>
+                                <button class="settings-remove-avatar-btn">Odstranit</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-form">
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label class="settings-label">Jméno</label>
+                                    <input type="text" class="settings-input" placeholder="Jan">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label class="settings-label">Příjmení</label>
+                                    <input type="text" class="settings-input" placeholder="Novák">
+                                </div>
+                            </div>
+
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label class="settings-label">E-mail</label>
+                                    <input type="email" class="settings-input" placeholder="novak@gmail.com">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label class="settings-label">Jazyk účtu</label>
+                                    <select class="settings-select">
+                                        <option>Čeština</option>
+                                        <option>English</option>
+                                        <option>Deutsch</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button class="settings-save-btn">Uložit změny</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Heslo -->
+                    <div class="settings-tab-content" data-settings-tab="heslo">
+                        <p>Heslo content</p>
+                    </div>
+
+                    <!-- Tab Content: Notifikace -->
+                    <div class="settings-tab-content" data-settings-tab="notifikace">
+                        <p>Notifikace content</p>
+                    </div>
+
+                    <!-- Tab Content: Účet -->
+                    <div class="settings-tab-content" data-settings-tab="ucet">
+                        <p>Účet content</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content: Nastavení END -->
         </div>
 
         <!-- RIGHT COLUMN - Sidebar -->
@@ -367,11 +1056,11 @@
 
             <!-- Sidebar Menu -->
             <nav class="sidebar-menu">
-                <a href="#" class="sidebar-menu-item active">
+                <a href="#" class="sidebar-menu-item active" data-tab="muj-profil">
                     <img src="img/dashboardGray.png" alt="">
                     <span>Můj profil</span>
                 </a>
-                <a href="#" class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item" data-tab="moje-kurzy">
                     <img src="img/book_ribbonGray.png" alt="">
                     <span>Moje kurzy</span>
                 </a>
@@ -382,11 +1071,11 @@
                 
                 <div class="sidebar-menu-divider"></div>
                 
-                <a href="#" class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item" data-tab="certifikaty">
                     <img src="img/Certificate.png" alt="">
                     <span>Certifikáty</span>
                 </a>
-                <a href="#" class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item" data-tab="nastaveni">
                     <img src="img/setting.png" alt="">
                     <span>Nastavení</span>
                 </a>
@@ -405,8 +1094,70 @@
         </aside>
     </div>
 
+    <!-- Streak Info Modal -->
+    <div id="streakModal" class="streak-modal">
+        <div class="streak-modal-overlay"></div>
+        <div class="streak-modal-content">
+            <button class="streak-modal-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <div class="streak-modal-header">
+                <img src="img/modalImg.png" alt="Streak Fire" class="streak-modal-fire">
+            </div>
+            
+            <div class="streak-modal-body">
+                <h3 class="streak-modal-title">14 dní</h3>
+                <p class="streak-modal-subtitle">učení v řadě</p>
+                
+                <div class="streak-modal-week">
+                    <div class="streak-modal-day completed">
+                        <div class="streak-modal-day-icon">
+                            <img src="img/check_circle_filled.png" alt="Completed">
+                        </div>
+                        <span class="streak-modal-day-label">Po</span>
+                    </div>
+                    <div class="streak-modal-day completed">
+                        <div class="streak-modal-day-icon">
+                            <img src="img/check_circle_filled.png" alt="Completed">
+                        </div>
+                        <span class="streak-modal-day-label">Út</span>
+                    </div>
+                    <div class="streak-modal-day upcoming">
+                        <div class="streak-modal-day-icon">
+                            <img src="img/check_circle_filled.png" alt="Completed">
+                        </div>
+                        <span class="streak-modal-day-label">St</span>
+                    </div>
+                    <div class="streak-modal-day">
+                        <div class="streak-modal-day-icon"></div>
+                        <span class="streak-modal-day-label">Čt</span>
+                    </div>
+                    <div class="streak-modal-day">
+                        <div class="streak-modal-day-icon"></div>
+                        <span class="streak-modal-day-label">Pá</span>
+                    </div>
+                    <div class="streak-modal-day">
+                        <div class="streak-modal-day-icon"></div>
+                        <span class="streak-modal-day-label">So</span>
+                    </div>
+                    <div class="streak-modal-day">
+                        <div class="streak-modal-day-icon"></div>
+                        <span class="streak-modal-day-label">Ne</span>
+                    </div>
+                    
+                    <p class="streak-modal-message">Udrž si denní řadu a pokračuj v učení i zítra.</p>
+                </div>
+                
+                <button class="streak-modal-btn">Pokračovat v učení</button>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
-    <footer class="footer bg-[#F5F9FF]">
+    <footer class="footer bg-[#F5F9FF]">`
         <div class="footer-container">
             <!-- Logo  -->
             <div class="footer-logo">
@@ -506,8 +1257,53 @@
         </div>
     </footer>
 
+    <!-- Upload Avatar Modal -->
+    <div class="upload-avatar-modal" id="uploadAvatarModal">
+        <div class="upload-avatar-overlay"></div>
+        <div class="upload-avatar-content">
+            <div class="upload-avatar-header">
+                <h3 class="upload-avatar-title">Nahrát obrázek</h3>
+                <button class="upload-avatar-close" id="closeUploadModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#4D4D4D" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="upload-avatar-body">
+                <!-- File Upload State -->
+                <div class="upload-avatar-empty" id="uploadEmpty">
+                    <input type="file" id="avatarFileInput" accept="image/*" class="upload-avatar-file-input">
+                    <label for="avatarFileInput" class="upload-avatar-file-label">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 12V36M12 24H36" stroke="#0069B2" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <span class="upload-avatar-file-text">Vyberte soubor</span>
+                    </label>
+                </div>
+
+                <!-- Image Preview & Crop State -->
+                <div class="upload-avatar-preview" id="uploadPreview" style="display: none;">
+                    <img src="" alt="Preview" class="upload-avatar-img" id="previewImage">
+                    <div class="upload-avatar-crop-circle"></div>
+                </div>
+            </div>
+
+            <div class="upload-avatar-footer">
+                <button class="upload-avatar-cancel-btn" id="cancelUploadBtn">Odejít</button>
+                <button class="upload-avatar-save-btn" id="saveUploadBtn">Uložit</button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
+    <script type="module" src="js/profileSidebarTabs.js"></script>
+    <script type="module" src="js/courseFilter.js"></script>
+    <script type="module" src="js/streakModal.js"></script>
+    <script type="module" src="js/streakTooltip.js"></script>
+    <script type="module" src="js/settingsTabs.js"></script>
+    <script type="module" src="js/uploadAvatar.js"></script>
 </body>
 
 </html>

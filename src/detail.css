@@ -747,10 +747,12 @@ body {
 .download-btn {
   @apply w-10 h-10 flex items-center justify-center rounded-full bg-[#E5F3FC] text-[#0069B2] flex-shrink-0;
   transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .download-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 105, 178, 0.2);
 }
 
 /* ===== DISKUZE ===== */

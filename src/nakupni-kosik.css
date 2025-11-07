@@ -174,7 +174,7 @@ body {
 }
 
 .hero-title {
-  @apply text-[56px] text-[#1C1C1C] max-w-[1040px] font-semibold leading-[100%] mb-4 mt-2 ml-[60px];
+  @apply text-[56px] text-[#1C1C1C] max-w-[1040px] font-semibold leading-[100%] mb-4 mt-2 ml-[6w0px];
 }
 
 /* ===== CART LAYOUT ===== */

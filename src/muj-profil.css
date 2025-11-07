@@ -203,6 +203,11 @@ body {
   margin-left: calc(40% - 539px - 50px);
   margin-right: auto;
   z-index: 100;
+  overflow: visible;
+}
+
+.course-meta-row-center {
+  justify-content: center;
 }
 
 .course-meta-item {
@@ -260,6 +265,123 @@ body {
   @apply text-[16px] text-[#4D4D4D] font-[400];
 }
 
+/* ===== STREAK CARD ===== */
+.streak-card {
+  @apply bg-white rounded-2xl flex items-center;
+  width: 1014px;
+  height: 76px;
+  padding: 0 24px;
+  position: relative;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+.streak-days {
+  @apply flex gap-14 items-center;
+  order: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-40%);
+}
+
+.streak-header {
+  @apply flex items-center gap-3;
+  order: 1;
+}
+
+.streak-icon {
+  @apply flex-shrink-0;
+}
+
+.streak-icon img {
+  width: 56px;
+  height: 76  px;
+}
+
+.streak-info {
+  @apply flex-shrink-0 ml-3;
+}
+
+.streak-number {
+  @apply text-[22px] font-semibold text-[#1C1C1C] mb-2;
+  line-height: 1.2;
+}
+
+.streak-description {
+  @apply text-sm text-[#4D4D4D];
+  line-height: 1.2;
+}
+
+.streak-info-btn {
+  @apply flex items-center justify-center rounded-full hover:bg-gray-100 transition cursor-pointer border-none bg-transparent;
+  width: 24px;
+  height: 24px;
+  order: 3;
+  align-self: flex-start;
+  position: relative;
+}
+
+/* Streak Tooltip */
+.streak-tooltip {
+  position: absolute;
+  top: 420px;
+  left: 1035px;
+  width: 340px;
+  height: 116px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10000 !important;
+}
+
+.streak-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.streak-tooltip-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1C1C1C;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.streak-tooltip-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4D4D4D;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.streak-day {
+  @apply flex flex-col items-center gap-1;
+}
+
+.streak-day-icon {
+  @apply flex items-center justify-center rounded-full mb-3;
+  width: 25px;
+  height: 25px;
+}
+
+.streak-day:not(.completed) .streak-day-icon {
+  background-color: #F5F5F5;
+}
+
+.streak-day-label {
+  @apply text-[18px] font-semibold text-[#1C1C1C];
+  line-height: 1;
+}
+
+.streak-day:not(.completed) .streak-day-label {
+  color: #606060;
+}
+
 /* ===== PROFILE LAYOUT ===== */
 .profile-layout {
   @apply max-w-[1750px] mx-auto py-8 px-4 sm:px-6 md:px-10 lg:px-20 grid gap-8;
@@ -282,6 +404,24 @@ body {
 
 .section-link {
   @apply text-[#1C1C1C] font-medium hover:underline;
+}
+
+/* ===== PROFILE TAB CONTENT ===== */
+.profile-tab-content {
+  display: none;
+}
+
+.profile-tab-content.active {
+  display: block;
+}
+
+/* ===== HERO TAB CONTENT ===== */
+.hero-tab-content {
+  display: none;
+}
+
+.hero-tab-content.active {
+  display: block;
 }
 
 /* ===== COURSE CARDS ===== */
@@ -337,6 +477,159 @@ body {
   @apply bg-[#EFE6FF] text-[#7045C2];
 }
 
+.badge-nezahajeny {
+  background-color: #FFF1CC;
+  color: #785800;
+  font-size: 14px;
+}
+
+.badge-dokonceno {
+  background-color: #CCFFE7;
+  color: #006636;
+  font-size: 14px;
+}
+
+/* ===== COURSE FILTER TABS ===== */
+.course-filter-tabs {
+  @apply flex gap-2 mb-8;
+}
+
+.filter-tab {
+  @apply flex items-center gap-2 px-2 py-1 bg-white border border-[#E5E7EB] rounded-full text-[14px] text-[#1C1C1C] font-medium cursor-pointer transition-all duration-200;
+}
+
+.filter-tab:hover {
+  @apply border-[#0069B2];
+}
+
+.filter-tab.active {
+  @apply bg-[#0069B2] text-white border-[#0069B2];
+}
+
+.filter-tab-check {
+  @apply hidden w-[18px] h-[18px];
+}
+
+.filter-tab.active .filter-tab-check {
+  @apply block;
+}
+
+.filter-tab-count {
+  @apply flex items-center justify-center min-w-[24px] h-6 px-1.5 bg-[#E8E8E8] rounded-full text-sm font-medium;
+}
+
+.filter-tab.active .filter-tab-count {
+  @apply bg-[#F5F9FF] text-[#0069B2];
+}
+
+/* ===== STREAK MODAL ===== */
+.streak-modal {
+  @apply fixed inset-0 z-[10000] hidden items-center justify-center;
+}
+
+.streak-modal.active {
+  @apply flex;
+}
+
+.streak-modal.active ~ * {
+  filter: blur(4px);
+}
+
+.streak-modal-overlay {
+  @apply absolute inset-0 bg-black/50;
+  backdrop-filter: blur(8px);
+}
+
+.streak-modal-content {
+  @apply relative bg-white rounded-3xl overflow-hidden;
+  width: 460px;
+  height: 636px;
+  display: flex;
+  flex-direction: column;
+}
+
+.streak-modal-close {
+  @apply absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition cursor-pointer z-10;
+  border: none;
+  background: transparent;
+  color: #1C1C1C;
+}
+
+.streak-modal-header {
+  @apply relative flex items-center justify-center;
+
+  height: 260px;
+}
+
+.streak-modal-fire {
+  width: 780px;
+  height: 262px;
+}
+
+.streak-modal-body {
+  @apply flex flex-col items-center px-8 py-6;
+  flex: 1;
+}
+
+.streak-modal-title {
+  @apply text-[28px] font-semibold text-[#2191DF] mb-1;
+}
+
+.streak-modal-subtitle {
+  @apply text-base text-[#4D4D4D] mb-6;
+}
+
+.streak-modal-week {
+  @apply flex flex-wrap gap-7 mb-6 p-6 bg-white border-2 border-[#E0F4FF] rounded-2xl;
+  width: 100%;
+}
+
+.streak-modal-day {
+  @apply flex flex-col items-center gap-2;
+  flex: 0 0 auto;
+}
+
+.streak-modal-day-icon {
+  @apply w-[25px] h-[25px] rounded-full flex items-center justify-center;
+  background: #F5F5F5;
+}
+
+.streak-modal-day.completed .streak-modal-day-icon {
+  background: transparent;
+}
+
+.streak-modal-day-icon img {
+  @apply w-[25px] h-[25px];
+}
+
+.streak-modal-day-label {
+  @apply text-[18px] font-semibold text-[#606060];
+}
+
+.streak-modal-day.completed .streak-modal-day-label {
+  @apply text-[#1C1C1C];
+}
+
+.streak-modal-day.upcoming .streak-modal-day-label {
+  color: #009952;
+}
+
+.streak-modal-message {
+  @apply text-center text-[#4D4D4D]  text-[14px] px-4;
+  line-height: 1.5;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.streak-modal-btn {
+  @apply  py-3 px-5 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-full transition cursor-pointer w-[224px];
+  border: none;
+}
+
+.streak-modal-btn:hover {
+  transform: translateY(-2px);
+}
+
 .course-card-title {
   @apply text-[20px] font-semibold text-[#1C1C1C] m-0 flex-1;
 }
@@ -346,7 +639,7 @@ body {
 }
 
 .course-card-footer {
-  @apply flex flex-col gap-3 mt-auto;
+  @apply flex flex-col mt-auto;
 }
 
 .course-meta {
@@ -898,6 +1191,15 @@ body {
   .sidebar-profile-member {
     margin-bottom: 6px;
   }
+  
+  .streak-card {
+    width: 668px;
+    max-width: 100%;
+  }
+  
+  .streak-days {
+    @apply gap-8 ml-[25px];
+  }
 }
 
 @media (max-width: 480px) {
@@ -1073,5 +1375,753 @@ body {
     padding: 16px;
     height: auto;
     min-height: 56px;
+  }
+  
+  .course-filter-tabs {
+    @apply gap-1.5 mb-6;
+  }
+  
+  .filter-tab {
+    @apply gap-1.5 px-2.5 py-1.5 text-sm;
+  }
+  
+  .filter-tab-check {
+    @apply w-4 h-4;
+  }
+  
+  .filter-tab span:first-of-type {
+    @apply text-sm;
+  }
+  
+  .filter-tab-count {
+    @apply min-w-[20px] h-5 px-1 text-xs;
+  }
+  
+  .streak-card {
+    @apply flex-col items-start gap-4;
+    width: 100%;
+    max-width: 361px;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .streak-header {
+    @apply w-full;
+    order: 1;
+  }
+  
+  .streak-days {
+    @apply w-full gap-8 justify-center;
+    order: 2;
+    position: static;
+    transform: none;
+  }
+  
+  .streak-info-btn {
+    @apply mb-0;
+    order: 1;
+    margin-left: 173px;
+  }
+  
+  .streak-day {
+    @apply gap-2;
+  }
+  
+  .streak-day-icon {
+    @apply w-[25px] h-[25px] mb-2;
+  }
+  
+  .streak-day-label {
+    @apply text-sm;
+  }
+  
+  .streak-number {
+    @apply text-lg mb-1;
+  }
+  
+  .streak-description {
+    @apply text-xs;
+  }
+  
+  .streak-icon img {
+    width: 48px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    @apply px-5;
+  }
+
+  .footer {
+    padding: 32px 24px;
+  }
+  
+  .footer-columns {
+    @apply grid-cols-1 gap-5;
+  }
+  
+  .footer-logo img {
+    width: 120px;
+    height: 50px;
+  }
+  
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+  
+  .content-layout {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  
+  .hero-gradient {
+    padding: 20px 16px;
+    border-radius: 24px;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .course-meta-row {
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+    padding: 0;
+    gap: 12px;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .course-meta-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(26, 120, 229, 0.08);
+  }
+  
+  .course-meta-item:not(:last-child)::after {
+    display: none;
+  }
+  
+  .meta-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  
+  .meta-content {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+  }
+  
+  .meta-number {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .meta-description {
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .profile-layout {
+    padding: 32px 16px;
+  }
+  
+  .section-heading {
+    font-size: 20px;
+  }
+  
+  .active-courses-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .course-card {
+    width: 361px;
+    max-width: 100%;
+    height: 510px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  .course-card-img {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .course-card-content {
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .course-card-title {
+    font-size: 16px;
+  }
+  
+  .course-card-desc {
+    font-size: 14px;
+  }
+  
+  .course-arrow-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .sidebar-profile-avatar {
+    width: 130px;
+    height: 130px;
+    position: static;
+    margin: 0;
+  }
+  
+  .sidebar-profile-badge {
+    margin-top: 35px;
+  }
+  
+  .sidebar-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-profile-card {
+    padding: 24px;
+    height: auto;
+    padding-top: 24px;
+  }
+  
+  .sidebar-profile-name {
+    font-size: 18px;
+  }
+  
+  .sidebar-menu {
+    padding: 20px 16px;
+  }
+  
+  .sidebar-menu-item {
+    padding: 16px;
+    height: auto;
+    min-height: 56px;
+  }
+  
+  .course-filter-tabs {
+    @apply gap-1.5 mb-6;
+  }
+  
+  .filter-tab {
+    @apply gap-1.5 px-2.5 py-1.5 text-sm;
+  }
+  
+  .filter-tab-check {
+    @apply w-4 h-4;
+  }
+  
+  .filter-tab span:first-of-type {
+    @apply text-sm;
+  }
+  
+  .filter-tab-count {
+    @apply min-w-[20px] h-5 px-1 text-xs;
+  }
+  
+  .streak-modal-content {
+    width: 90%;
+    max-width: 380px;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .streak-modal-header {
+    height: 200px;
+  }
+  
+  .streak-modal-fire {
+     width: 780px;
+    height: 207px;
+  }
+  
+  .streak-modal-body {
+    @apply px-6 py-4;
+  }
+  
+  .streak-modal-title {
+    @apply text-[28px];
+  }
+  
+  .streak-modal-subtitle {
+    @apply text-sm mb-4;
+  }
+  
+  .streak-modal-week {
+    @apply gap-2 p-4 mb-4;
+  }
+  
+  .streak-modal-day-icon {
+    @apply w-8 h-8;
+  }
+  
+  .streak-modal-day-icon img {
+    @apply w-8 h-8;
+  }
+  
+  .streak-modal-day-label {
+    @apply text-xs;
+  }
+  
+  .streak-modal-message {
+    @apply text-sm mb-4 px-2;
+  }
+  
+  .streak-modal-btn {
+    @apply py-2.5 text-sm;
+  }
+}
+
+/* ===== CERTIFICATES TAB ===== */
+.certificates-year-heading {
+  @apply text-[32px] font-semibold text-[#1C1C1C] mb-12 mt-8;
+}
+
+.certificates-year-heading:first-child {
+  @apply mt-0;
+}
+
+.certificates-course-title {
+  @apply text-[16px] font-medium text-[#4D4D4D]  mt-6;
+}
+
+.certificates-course-title:first-of-type {
+  @apply mt-0;
+}
+
+/* ===== DOWNLOADS ===== */
+.downloads-grid {
+  @apply grid grid-cols-2 gap-4 mb-12 mt-2;
+}
+
+.download-item {
+  @apply flex items-center justify-between gap-4 p-4 rounded-[16px] shadow-md hover:shadow-lg hover:bg-[#F5F9FF] transition;
+  width: 532px;
+  height: 78px;
+}
+
+.download-left {
+  @apply flex items-center gap-4 flex-1;
+}
+
+.file-icon {
+  @apply w-[36px] h-[36px] rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden;
+}
+
+.file-icon img {
+  @apply w-full h-full object-contain;
+}
+
+.file-icon--pdf {
+  @apply bg-red-50;
+}
+
+.file-icon--ai {
+  @apply bg-orange-50;
+}
+
+.file-icon--zip {
+  @apply bg-blue-50;
+}
+
+.file-icon--code {
+  @apply bg-green-50;
+}
+
+.download-info-title {
+  @apply text-base font-medium text-[#1C1C1C];
+}
+
+.download-info-size {
+  @apply text-sm text-gray-500;
+}
+
+.download-btn {
+  @apply w-10 h-10 flex items-center justify-center rounded-full bg-[#E5F3FC] text-[#0069B2] flex-shrink-0;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 105, 178, 0.2);
+}
+
+/* Mobile responsiveness for downloads */
+@media (max-width: 768px) {
+  .downloads-grid {
+    @apply grid-cols-1;
+  }
+  
+  .download-item {
+    width: 100%;
+    max-width: 532px;
+  }
+}
+
+/* ===== SETTINGS TAB ===== */
+.settings-container {
+  width: 1078px;
+  height: 558px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* ===== TABS ===== */
+.tabs-wrapper {
+  @apply px-6;
+}
+
+.tabs {
+  @apply flex gap-6;
+  position: relative;
+  --indicator-left: 0px;
+  --indicator-width: 0px;
+}
+
+.tabs::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, #E8E8E8 40%, #D4EDFF 60%);
+  z-index: 1;
+}
+
+.tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--indicator-left);
+  width: var(--indicator-width);
+  height: 2px;
+  background: #0069B2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.tab {
+  @apply py-3.5 px-0 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tab.active {
+  @apply text-[#0069B2];
+}
+
+.tab:hover:not(.active) {
+  @apply text-[#4D4D4D];
+}
+
+/* Settings tab content */
+.settings-tab-content {
+  display: none;
+  padding: 32px 48px;
+}
+
+.settings-tab-content.active {
+  display: block;
+}
+
+/* Settings Avatar Section */
+.settings-avatar-wrapper {
+  @apply flex items-center gap-12 mb-8;
+}
+
+.settings-avatar {
+  @apply rounded-full bg-[#F5F5F5] flex items-center justify-center flex-shrink-0;
+  width: 180px;
+  height: 180px;
+  border: 10px solid #D4EDFF;
+}
+
+.settings-avatar-initials {
+  @apply text-[48px] font-semibold text-[#8D8D8D];
+}
+
+.settings-avatar-buttons {
+  @apply flex gap-3;
+}
+
+.settings-change-avatar-btn {
+  @apply px-6 py-2.5 bg-[#D4EDFF] text-[#0069B2] rounded-full text-sm font-medium hover:bg-[#C0E5FF] transition cursor-pointer;
+}
+
+.settings-remove-avatar-btn {
+  @apply px-5 py-3 border border-[#0069B2] text-[#0069B2] rounded-full text-sm font-medium hover:bg-[#F9FAFB] transition;
+}
+
+/* Settings Form */
+.settings-form {
+  @apply flex-1;
+}
+
+.settings-form-row {
+  @apply grid grid-cols-2 gap-6 mb-6;
+}
+
+.settings-form-group {
+  @apply flex flex-col;
+}
+
+.settings-label {
+  @apply text-sm font-medium text-[#1C1C1C] mb-2;
+}
+
+.settings-input,
+.settings-select {
+  @apply w-full px-4 py-3 border border-[#E5E7EB] rounded-[6px] text-sm text-[#1C1C1C] focus:outline-none focus:border-[#0069B2] transition;
+}
+
+.settings-select {
+  @apply cursor-pointer appearance-none bg-white;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23717171' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.settings-save-btn {
+  @apply px-5 py-3 bg-[#0069B2] text-white rounded-full text-sm font-medium hover:bg-[#005A94] transition mt-4 cursor-pointer;
+}
+
+/* Mobile responsiveness for settings */
+@media (max-width: 768px) {
+  .settings-container {
+    width: 100%;
+    height: auto;
+    min-height: 558px;
+  }
+
+  .tabs-wrapper {
+    padding: 0 16px;
+  }
+
+  .tabs {
+    gap: 8px;
+    padding: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab {
+    font-size: 13px;
+    padding: 10px 16px;
+    flex: 0 0 auto;
+  }
+
+  .settings-tab-content {
+    padding: 24px 16px;
+  }
+
+  .settings-avatar-wrapper {
+    @apply flex-col items-center mb-6;
+  }
+
+  .settings-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .settings-avatar-initials {
+    @apply text-[36px];
+  }
+
+  .settings-avatar-buttons {
+    @apply flex-col w-full;
+  }
+
+  .settings-change-avatar-btn,
+  .settings-remove-avatar-btn {
+    @apply w-full;
+  }
+
+  .settings-form-row {
+    @apply grid-cols-1 gap-4;
+  }
+}
+
+/* ===== UPLOAD AVATAR MODAL ===== */
+.upload-avatar-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-avatar-modal.active {
+  display: flex;
+}
+
+.upload-avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.upload-avatar-content {
+  position: relative;
+  width: 564px;
+  height: 706px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.upload-avatar-header {
+  @apply flex items-center justify-between px-8 mt-8;
+}
+
+.upload-avatar-title {
+  @apply text-xl font-semibold text-[#1C1C1C];
+}
+
+.upload-avatar-close {
+  @apply w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition cursor-pointer border-none bg-transparent;
+}
+
+.upload-avatar-body {
+  @apply flex-1 flex items-center justify-center px-8;
+}
+
+/* File Upload Empty State */
+.upload-avatar-empty {
+  @apply bg-gray-800;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-avatar-file-input {
+  display: none;
+}
+
+.upload-avatar-file-label {
+  @apply flex flex-col items-center gap-4 cursor-pointer;
+}
+
+.upload-avatar-file-text {
+  @apply text-white text-lg font-medium;
+}
+
+/* Image Preview & Crop */
+.upload-avatar-preview {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2B8FB3 0%, #0069B2 100%);
+  overflow: hidden;
+}
+
+.upload-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: none;
+}
+
+.upload-avatar-img:active {
+  cursor: grabbing;
+}
+
+.upload-avatar-crop-circle {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 4px dashed #FFFFFF;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
+.upload-avatar-footer {
+  @apply flex items-center justify-end gap-4 px-8 py-6
+}
+
+.upload-avatar-cancel-btn {
+  @apply px-5 py-3 border border-[#0069B2] text-[#0069B2] rounded-full text-sm font-medium  transition cursor-pointer hover:bg-[#0069B2] hover:text-white;
+}
+
+.upload-avatar-save-btn {
+  @apply px-5 py-3 bg-[#D4EDFF] text-[#0069B2] rounded-full text-sm font-medium hover:bg-[#C0E5FF] transition cursor-pointer ;
+}
+
+/* Mobile responsiveness for upload modal */
+@media (max-width: 768px) {
+  .upload-avatar-content {
+    width: 90%;
+    max-width: 564px;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  .upload-avatar-empty,
+  .upload-avatar-preview {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .upload-avatar-crop-circle {
+    width: 60%;
+    height: 60%;
   }
 }

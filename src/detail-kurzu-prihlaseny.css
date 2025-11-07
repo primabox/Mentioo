@@ -764,6 +764,23 @@ body {
   @apply bg-[#005A94];
 }
 
+/* Refund Course Button */
+.refund-course-btn {
+  @apply w-full bg-[#D4EDFF] text-[#0069B2] text-sm font-medium cursor-pointer transition-all px-5 py-3 rounded-[32px] border-none mt-2 mb-6;
+}
+
+.refund-course-btn:hover {
+  @apply bg-[#d1ebff];
+}
+
+.start-course-btn {
+  @apply w-full bg-[#0069B2] text-white text-sm font-medium cursor-pointer transition-all px-5 py-3 rounded-[32px] border-none mt-6;
+}
+
+.start-course-btn:hover {
+  @apply bg-[#005A94];
+}
+
 /* ===== FOOTER ===== */
 .footer {
   @apply bg-[#F5F9FF] pt-[50px] pb-[50px] px-[200px];
@@ -1328,6 +1345,14 @@ body {
   }
 
   .continue-course-btn {
+    font-size: 14px;
+  }
+
+  .refund-course-btn {
+    font-size: 14px;
+  }
+
+  .start-course-btn {
     font-size: 14px;
   }
 

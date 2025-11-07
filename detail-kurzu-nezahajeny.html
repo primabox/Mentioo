@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma UI UX Design Advanced - Přihlášený | Sentioo</title>
+    <link rel="stylesheet" href="src/detail-kurzu-prihlaseny.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="font-[Poppins]">
+
+    <div>
+        <div class="bubble-field overflow-x-hidden overflow-y-hidden md:block hidden">
+            <div class="bubble w-[13px] h-[13px] top-[226px] left-[1868px]"></div>
+            <div class="bubble w-[13px] h-[13px] top-[611px] left-[49px]"></div>
+            <div class="bubble w-[14px] h-[14px] top-[1459px] left-[1816px]"></div>
+            <div class="bubble w-[13px] h-[13px] top-[1709px] left-[1586px]"></div>
+        </div>
+        <!-- HEADER -->
+        <header class="header">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="img/Logo.png" alt="Logo" class="w-32" />
+                    </a>
+                </div>
+
+                <!-- Searchbar -->
+                <div class="searchbar-container">
+                    <form class="search-form" role="search">
+                        <div class="search-wrapper">
+                            <span class="search-icon">
+                                <i class="fas fa-search translate-y-px"></i>
+                            </span>
+                            <input type="search" name="q" aria-label="Hledat" placeholder="Hledat"
+                                class="search-input" />
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Hamburger (mobile) -->
+                <div class="hamburger">
+                    <button id="navbar-toggle" class="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="mobile-menu">
+                    <a href="#" class="mobile-link">Nabídka kurzů</a>
+                    <a href="#" class="mobile-link">Lektoři</a>
+                    <a href="#" class="mobile-link">Blog</a>
+                    <a href="#" class="mobile-user-link">
+                        <span>Jana Blahošová</span>
+                        <img src="img/person_gray.png" alt="">
+                    </a>
+                </div>
+
+                <!-- Desktop menu -->
+                <div id="navbar-menu" class="navbar-menu">
+                    <ul class="nav-links">
+                        <li class="nav-item group">
+                            <a href="#" class="nav-link">
+                                Nabídka kurzů
+                            </a>
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                            <div class="dropdown">
+                                <div class="py-2">
+                                    <a href="#" class="dropdown-link">Programování</a>
+                                    <a href="#" class="dropdown-link">Design</a>
+                                    <a href="#" class="dropdown-link">Marketing</a>
+                                    <a href="#" class="dropdown-link">Business</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
+                        <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
+                    </ul>
+
+                    <!-- User Profile & Icons -->
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="user-profile-link">
+                            <img src="img/person_gray.png" alt="">
+                            <span>Jana Blahošová</span>
+                        </a>
+                        <a href="#" class="icon-btn">
+                            <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                        </a>
+                        <a href="#" class="icon-btn-alt">
+                            <img src="img/network.png" alt="Globe" class="w-5 h-5" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="main-wrapper">
+            <!-- Content Layout -->
+            <div class="content-layout">
+                <!-- Main Content Column -->
+                <div>
+                    <!-- Back Link -->
+                    <a href="#" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        Zpět na přehled kurzu
+                    </a>
+
+                    <!-- Hero Section -->
+                    <section class="hero-gradient">
+                        <div class="hero-bg"></div>
+                        <h1 class="hero-title">Figma UI UX Design Advanced</h1>
+                        <p class="hero-description">
+                            Become a Figma Pro with our in-depth Advanced Figma tutorial course. Discover advanced
+                            design
+                            strategies & so much more!
+                        </p>
+
+                        <!-- Instructor Info -->
+                        <div class="instructor-info">
+                            <div class="instructor-profile">
+                                <img src="img/profilLektorkaK.jpg" alt="Lektor" class="instructor-avatar">
+                                <div class="instructor-details">
+                                    <span class="instructor-label">Lektor:</span>
+                                    <a href="#" class="instructor-name">Kristýna Nováčková</a>
+                                </div>
+                            </div>
+                            <div class="instructor-badges">
+                                <span class="badge badge-bestseller">Bestseller</span>
+                                <span class="badge badge-trial">Free trial</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Content Card -->
+                    <div class="content-card">
+                        <!-- Tabs -->
+                        <div class="tabs-wrapper">
+                            <div class="tabs">
+                                <button class="tab active" data-tab="overview">Obsah kurzu</button>
+                                <button class="tab" data-tab="curriculum">Hodnocení kurzu</button>
+                                <button class="tab" data-tab="instructor">O lektorovi</button>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content: Obsah kurzu -->
+                        <div class="tab-content" data-tab="overview">
+
+
+                            <!-- Výukové moduly -->
+                            <div class="course-modules-section">
+                                <h3 class="section-subtitle">Výukové moduly</h3>
+
+                                <div class="course-curriculum">
+                                    <!-- Module 1: Introduction -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Introduction</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <!-- Module 2: Auto Layout -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Auto Layout</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <!-- Module 3: Grids -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Grids</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 4: Simple App Brand -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Nested & Responsive Auto Layout</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 5: Nested & Responsive Auto Layout -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Simple App Brand</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 6: Animation -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Animation</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 7: Prototyping -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Prototyping</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 8: Components & Variants -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Components & Variants</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 9: Typography -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Typography</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 10: Styles & Libraries -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Styles & Libraries</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+
+                                    <!-- Module 11: Variables -->
+                                    <div class="curriculum-module">
+                                        <div class="module-header">
+                                            <div class="module-title-row">
+                                                <i class="fas fa-chevron-up module-toggle"></i>
+                                                <span class="module-title">Variables</span>
+                                            </div>
+                                            <span class="module-duration">2 lekce • 10 minut • 1 online test • 2 studijní dokumenty</span>
+                                        </div>
+                                        <div class="module-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Course Image -->
+                    <div class="course-image-wrapper">
+                        <img src="img/UiPrice.jpg" alt="Course Thumbnail" class="course-thumbnail">
+                    </div>
+
+                    <!-- Enrolled User Sidebar -->
+                    <div class="enrolled-sidebar">
+                        <!-- Success Badge -->
+                        <div class="completion-badge">
+                            <span class="completion-badge-text">Úspěšně dokončeno</span>
+                        </div>
+
+                        <!-- 1. Postup kurzem -->
+                        <div class="sidebar-item-header">
+                            <img src="img/trophy.png" alt="">
+                            <h3 class="sidebar-item-title">Postup kurzem</h3>
+                        </div>
+                        <p class="sidebar-item-text">Dokončili jste 0 % kurzu.</p>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-segmented">
+                                <div class="progress-segment filled" style="width: 0%"></div>
+                                <div class="progress-segment empty" style="width: 100%"></div>
+                                <div class="progress-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Čas strávený v kurzu -->
+                        <div class="sidebar-item-header">
+                            <img src="img/alarmBlue.png" alt="">
+                            <h3 class="sidebar-item-title">Čas strávený v kurzu</h3>
+                        </div>
+                        <p class="sidebar-item-text">0 hodin a 0 minut</p>
+
+                        <!-- 3. Hodnocení testů -->
+                        <!-- 3. Hodnocení testů -->
+                        <div class="sidebar-item-header">
+                            <img src="img/stars.png" alt="">
+                            <h3 class="sidebar-item-title">Hodnocení testů</h3>
+                        </div>
+
+                        <!-- Default text when not in reviews tab -->
+                        <p class="sidebar-item-text test-results-default">Zatím nemáte žádná hodnocení.</p>
+
+                        <!-- Test Results List -->
+                        <div class="test-results-list" style="display: none;">
+                            <!-- Test 1 -->
+                            <div class="test-result-item">
+                                <span class="test-result-name">Test 1: Autolayout</span>
+                                <div class="test-result-score success">Hodnocení: 8/10</div>
+                            </div>
+
+                            <!-- Test 2 -->
+                            <div class="test-result-item">
+                                <span class="test-result-name">Test 2: Responsive autolayout</span>
+                                <div class="test-result-score warning">Hodnocení: 6/10</div>
+                            </div>
+
+                            <!-- Test 3 -->
+                            <div class="test-result-item">
+                                <span class="test-result-name">Test 3: Animation</span>
+                                <div class="test-result-score perfect">Hodnocení: 10/10</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Certifikáty -->
+                        <div class="sidebar-item-header">
+                            <img src="img/article.png" alt="">
+                            <h3 class="sidebar-item-title">Certifikáty</h3>
+                        </div>
+
+                        <p class="sidebar-item-text">Zatím nemáte žádné certifikáty.</p>
+
+                        <!-- Action Button -->
+                        <button class="start-course-btn">Zahájit kurz</button>
+                        <button class="refund-course-btn">Vrátit kurz</button>
+
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer bg-[#F5F9FF]">
+            <div class="footer-container">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+                </div>
+
+                <!-- Obsah -->
+                <div class="footer-content">
+                    <div class="footer-grid">
+                        <!-- INFO -->
+                        <div class="footer-info">
+                            <div class="footer-info-text">
+                                <p class="font-semibold text-lg">Mentio s.r.o</p>
+                                <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
+                                <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
+                                <p class="mt-2 leading-relaxed ">Spisová značka C 987654 vedená u Městského soudu v
+                                    Praze
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 4X4 KATEGORIE-->
+                        <div class="footer-categories">
+                            <div>
+                                <h4 class="footer-heading">Kategorie kurzů</h4>
+                                <ul class="footer-links">
+                                    <li><a class="footer-link" href="#">Kategorie 1</a></li>
+                                    <li><a class="footer-link" href="#">Kategorie 2</a></li>
+                                    <li><a class="footer-link" href="#">Kategorie 3</a></li>
+                                    <li><a class="footer-link" href="#">Kategorie 4</a></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="footer-heading">Typy kurzů</h4>
+                                <ul class="footer-links">
+                                    <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="footer-heading">Typy kurzů</h4>
+                                <ul class="footer-links">
+                                    <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="footer-heading">Typy kurzů</h4>
+                                <ul class="footer-links">
+                                    <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                    <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- O nás -->
+                        <div class="footer-about">
+                            <h4 class="footer-heading">O nás</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Lektoři</a></li>
+                                <li><a class="footer-link" href="#">Kariéra</a></li>
+                                <li><a class="footer-link" href="#">Blog</a></li>
+                                <li><a class="footer-link" href="#">Kontakt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- divider -->
+                <div class="footer-divider"></div>
+
+                <!-- COPYRIGHT + IKONY -->
+                <div class="footer-bottom">
+                    <div class="footer-copyright">© 2025 Lorem ipsum</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Review Modal -->
+        <div id="reviewModal" class="review-modal" style="display: none;">
+            <div class="review-modal-overlay"></div>
+            <div class="review-modal-content">
+                <h2 class="review-modal-title">Vaše hodnocení</h2>
+
+                <!-- Rating Stars -->
+                <div class="review-modal-section">
+                    <label class="review-modal-label">Jaké hodnocení byste kurzu udělili?</label>
+                    <div class="review-modal-stars" id="modalStars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+
+                <!-- Experience Text -->
+                <div class="review-modal-section">
+                    <label class="review-modal-label">Popište svoji zkušenost s kurzem</label>
+                    <textarea class="review-modal-textarea" id="experienceText"
+                        placeholder="Vaše zkušenost..."></textarea>
+                </div>
+
+                <!-- Positive Feedback -->
+                <div class="review-modal-section">
+                    <label class="review-modal-label review-modal-label-positive">
+                        <i class="fas fa-plus-circle"></i>
+                        Popište pozitiva
+                    </label>
+                    <textarea class="review-modal-textarea" id="positiveText"
+                        placeholder="Co se vám líbilo..."></textarea>
+                </div>
+
+                <!-- Negative Feedback -->
+                <div class="review-modal-section">
+                    <label class="review-modal-label review-modal-label-negative">
+                        <i class="fas fa-minus-circle"></i>
+                        Popište negativa
+                    </label>
+                    <textarea class="review-modal-textarea" id="negativeText"
+                        placeholder="Co by se dalo zlepšit..."></textarea>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="review-modal-actions">
+                    <button class="review-modal-btn review-modal-btn-cancel" id="cancelReview">Odejít</button>
+                    <button class="review-modal-btn review-modal-btn-submit" id="submitReview">Zveřejnit
+                        hodnocení</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="js/tabs.js"></script>
+        <script type="module" src="js/hamburger.js"></script>
+        <script type="module" src="js/bubbles.js"></script>
+        <script type="module" src="js/curriculum.js"></script>
+        <script type="module" src="js/reviewsPagination.js"></script>
+        <script type="module" src="js/reviewModal.js"></script>
+</body>
+
+</html>
