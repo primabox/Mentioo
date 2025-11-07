@@ -12,11 +12,11 @@
 
 <body class="font-[Poppins]">
     <div class="bubble-field md:block hidden">
-        <div class="bubble opacity-[40]" style="top:250px; left:98%; width:10px; height:10px;"></div>
-        <div class="bubble" style="top:350px; left:93%; width:13px; height:13px;"></div>
-        <div class="bubble" style="top:375px; left:92%; width:9px; height:9px;"></div>
-        <div class="bubble" style="top:340px; left:9%; width:9px; height:9px;"></div>
-        <div class="bubble" style="top:390px; left:4%; width:7px; height:7px;"></div>
+        <div class="bubble" style="top:200px; left:53%; width:10px; height:10px;"></div>
+        <div class="bubble" style="top:240px; left:46%; width:5px; height:5px;"></div>
+        <div class="bubble" style="top:475px; left:93%; width:13px; height:13px;"></div>
+        <div class="bubble opacity-[40%]" style="top:340px; left:4%; width:14px; height:14px;"></div>
+        <div class="bubble" style="top:385px; left:2%; width:7px; height:7px;"></div>
     </div>
 
     <!-- HEADER -->
@@ -1611,13 +1611,13 @@
                     <div class="messages-sidebar">
                         <!-- Tabs -->
                         <div class="messages-tabs">
-                            <button class="messages-tab">Nepřečtené</button>
-                            <button class="messages-tab">Přímé zprávy</button>
-                            <button class="messages-tab">Diskuze</button>
+                            <button class="messages-tab" data-filter="all">Nepřečtené <span class="messages-badge">2</span></button>
+                            <button class="messages-tab" data-filter="prime">Přímé zprávy</button>
+                            <button class="messages-tab" data-filter="diskuze">Diskuze</button>
                         </div>
 
                         <!-- Direct Messages Section -->
-                        <div class="messages-section">
+                        <div class="messages-section" data-category="prime">
                             <div class="messages-section-header">
                                 <img src="img/mailBlack.png" alt="" class="w-5 h-5">
                                 <span class="messages-section-title">Přímé zprávy</span>
@@ -1636,13 +1636,16 @@
                                     <span class="message-time">01.11.</span>
                                 </div>
 
-                                <div class="message-item active">
+                                <div class="message-item active" data-unread="true">
                                     <img src="img/Avatar1.png" alt="Alex Smith" class="message-avatar">
                                     <div class="message-info">
                                         <div class="message-name">Alex Smith</div>
                                         <div class="message-preview">Ještě bych vám doporučil...</div>
                                     </div>
-                                    <span class="message-time">01.11.</span>
+                                    <div class="message-time-wrapper">
+                                        <span class="message-unread-dot"></span>
+                                        <span class="message-time">01.11.</span>
+                                    </div>
                                 </div>
 
                                 <div class="message-item">
@@ -1666,7 +1669,7 @@
                         </div>
 
                         <!-- Diskuze Section -->
-                        <div class="messages-section">
+                        <div class="messages-section" data-category="diskuze">
                             <div class="messages-section-header">
                                 <img src="img/chatBlack.png" alt="" class="w-5 h-5">
                                 <span class="messages-section-title">Diskuze</span>
@@ -1676,13 +1679,16 @@
                             </div>
 
                             <div class="messages-list">
-                                <div class="message-item">
+                                <div class="message-item" data-unread="true">
                                     <img src="img/UiPrice.jpg" alt="UI/UX Design" class="message-avatar message-avatar-square">
                                     <div class="message-info">
                                         <div class="message-course">UI/UX Design Masterclass</div>
                                         <div class="message-preview">Cvičení 1: Jak vyřešit problém s constraints?</div>
                                     </div>
-                                    <span class="message-time">28.10.</span>
+                                    <div class="message-time-wrapper">
+                                        <span class="message-unread-dot"></span>
+                                        <span class="message-time">28.10.</span>
+                                    </div>
                                 </div>
 
                                 <div class="message-item">
@@ -1711,7 +1717,7 @@
                         <!-- Chat Header -->
                         <div class="chat-header">
                             <div class="chat-header-user">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-avatar">
                                 <div class="chat-user-info">
                                     <div class="chat-user-name">
                                         Alex Smith
@@ -1726,7 +1732,7 @@
                         <div class="chat-messages">
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">12:01</div>
                                     <div class="chat-message-bubble">
@@ -1740,7 +1746,7 @@
 
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">14:58</div>
                                     <div class="chat-message-bubble">
@@ -1762,7 +1768,7 @@
 
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">15:07</div>
                                     <div class="chat-message-bubble">
@@ -1795,7 +1801,7 @@
 
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">15:07</div>
                                     <div class="chat-message-bubble">
@@ -1817,7 +1823,7 @@
 
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">15:20</div>
                                     <div class="chat-message-bubble">
@@ -1839,7 +1845,7 @@
 
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">15:30</div>
                                     <div class="chat-message-bubble">
@@ -1861,7 +1867,7 @@
 
                             <!-- Message -->
                             <div class="chat-message chat-message-sender">
-                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <img src="img/Avatar1.png" alt="Alex Smith" class="chat-message-avatar">
                                 <div class="chat-message-content">
                                     <div class="chat-message-time">15:40</div>
                                     <div class="chat-message-bubble">
@@ -1932,6 +1938,7 @@
                 <a href="#" class="sidebar-menu-item" data-tab="zpravy">
                     <img src="img/postGray.png" alt="">
                     <span>Zprávy</span>
+                    <span class="messages-notification-dot">2</span>
                 </a>
                 
                 <div class="sidebar-menu-divider"></div>
@@ -2175,6 +2182,7 @@
     <script type="module" src="js/passwordToggle.js"></script>
     <script type="module" src="js/pricingTabs.js"></script>
     <script type="module" src="js/messagesCollapse.js"></script>
+    <script type="module" src="js/messagesFilter.js"></script>
 </body>
 
 </html>
