@@ -230,6 +230,33 @@
                         </div>
                     </div>
                     <!-- Hero Tab Content: Nastavení END -->
+
+                    <!-- Hero Tab Content: Historie nákupů -->
+                    <div class="hero-tab-content" data-tab="historie-nakupu">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
+                            <h1 class="hero-title">Historie nákupů</h1>
+                        </div>
+                    </div>
+                    <!-- Hero Tab Content: Historie nákupů END -->
+
+                    <!-- Hero Tab Content: Předplatné -->
+                    <div class="hero-tab-content" data-tab="predplatne">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
+                            <h1 class="hero-title">Předplatné</h1>
+                        </div>
+                    </div>
+                    <!-- Hero Tab Content: Předplatné END -->
+
+                    <!-- Hero Tab Content: Zprávy -->
+                    <div class="hero-tab-content" data-tab="zpravy">
+                        <div class="hero-gradient">
+                            <div class="hero-bg"></div>
+                            <h1 class="hero-title">Zprávy</h1>
+                        </div>
+                    </div>
+                    <!-- Hero Tab Content: Zprávy END -->
                 </div>
             </div>
         </div>
@@ -1013,21 +1040,793 @@
 
                     <!-- Tab Content: Heslo -->
                     <div class="settings-tab-content" data-settings-tab="heslo">
-                        <p>Heslo content</p>
+                        <div class="settings-password-wrapper">
+                            <h2 class="settings-password-heading">Změnit heslo</h2>
+
+                            <div class="settings-password-form">
+                                <div class="password-input-group">
+                                    <label for="oldPassword" class="password-label">Staré heslo</label>
+                                    <div class="password-input-wrapper">
+                                        <input type="password" id="oldPassword" class="password-input">
+                                        <button type="button" class="password-toggle" data-target="oldPassword">
+                                            <img src="img/visibility.png" alt="Show password" class="eye-icon eye-show" width="24" height="24">
+                                            <img src="img/visibility_off.png" alt="Hide password" class="eye-icon eye-hide" width="24" height="24" style="display: none;">
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="password-input-group">
+                                    <label for="newPassword" class="password-label">Nové heslo</label>
+                                    <div class="password-input-wrapper">
+                                        <input type="password" id="newPassword" class="password-input">
+                                        <button type="button" class="password-toggle" data-target="newPassword">
+                                            <img src="img/visibility.png" alt="Show password" class="eye-icon eye-show" width="24" height="24">
+                                            <img src="img/visibility_off.png" alt="Hide password" class="eye-icon eye-hide" width="24" height="24" style="display: none;">
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="password-input-group">
+                                    <label for="confirmPassword" class="password-label">Potvrdit nové heslo</label>
+                                    <div class="password-input-wrapper">
+                                        <input type="password" id="confirmPassword" class="password-input">
+                                        <button type="button" class="password-toggle" data-target="confirmPassword">
+                                            <img src="img/visibility.png" alt="Show password" class="eye-icon eye-show" width="24" height="24">
+                                            <img src="img/visibility_off.png" alt="Hide password" class="eye-icon eye-hide" width="24" height="24" style="display: none;">
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button class="settings-password-btn">Nastavit nové heslo</button>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Tab Content: Notifikace -->
                     <div class="settings-tab-content" data-settings-tab="notifikace">
-                        <p>Notifikace content</p>
+                        <div class="notifications-wrapper">
+                            <h2 class="notifications-heading">Nastavení notifikací</h2>
+                            
+                            <div class="notification-item">
+                                <div class="notification-content">
+                                    <h3 class="notification-title">Povolit notifikace</h3>
+                                    <p class="notification-description">Dostávejte včas upozornění o přicházejících zprávách a nových příspěvcích do diskuzí.</p>
+                                </div>
+                                <label class="notification-toggle">
+                                    <input type="checkbox" class="notification-checkbox">
+                                    <span class="notification-slider"></span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Tab Content: Účet -->
                     <div class="settings-tab-content" data-settings-tab="ucet">
-                        <p>Účet content</p>
+                        <div class="account-wrapper">
+                            <h2 class="account-heading">Smazání účtu</h2>
+                            
+                            <p class="account-description">
+                                Smazáním účtu se <strong>odhlásíte ze všech kurzů a ztratíte přístup ke všem datům</strong>. Obnovení není možné ani při založení nového účtu se stejným e-mailem. Pokud chcete zrušit žádost o smazání, kontaktujte sentioo@info.cz do 14 dnů od podání.
+                            </p>
+                            
+                            <button class="account-delete-btn">Smazat účet</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- Tab Content: Nastavení END -->
+
+            <!-- Tab Content: Historie nákupů -->
+            <div class="profile-tab-content" data-tab="historie-nakupu">
+                <div class="course-filter-tabs">
+                    <button class="filter-tab active" data-filter="kurzy">
+                        <span>Kurzy</span>
+                        <span class="filter-tab-count">3</span>
+                    </button>
+                    <button class="filter-tab" data-filter="predplatna">
+                        <span>Předplatná</span>
+                        <span class="filter-tab-count">2</span>
+                    </button>
+                    <button class="filter-tab" data-filter="storno">
+                        <span>Storno</span>
+                        <span class="filter-tab-count">1</span>
+                    </button>
+                </div>
+
+                <div class="purchase-history-container">
+                    <table class="purchase-history-table">
+                        <thead>
+                            <tr>
+                                <th>Položka</th>
+                                <th>Datum</th>
+                                <th>Cena</th>
+                                <th>Způsob platby</th>
+                                <th>Faktura</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-category="kurzy">
+                                <td>
+                                    <div class="purchase-item">
+                                        <img src="img/bookRibbonBlue.png" alt="Kurz" class="purchase-icon">
+                                        <span class="purchase-item-title">Figma UI/UX Design Advanced</span>
+                                    </div>
+                                </td>
+                                <td>21.12.2025</td>
+                                <td>349 Kč</td>
+                                <td>MasterCard ***8681</td>
+                                <td>
+                                    <button class="purchase-download-btn">
+                                        <img src="img/download.png" alt="Stáhnout">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-category="kurzy">
+                                <td>
+                                    <div class="purchase-item">
+                                        <img src="img/bookRibbonBlue.png" alt="Kurz" class="purchase-icon">
+                                        <div>
+                                            <div class="purchase-item-title">Figma UI/UX Design Advanced</div>
+                                            <div class="purchase-item-title">The Ultimate Project Management PMP Prep Course</div>
+                                            <div class="purchase-item-title">PMP Exam Cram Course - 35-Hour Course Condensed - 12 PDUs</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>30.05.2025</td>
+                                <td>2 476 Kč</td>
+                                <td>MasterCard ***8681</td>
+                                <td>
+                                    <button class="purchase-download-btn">
+                                        <img src="img/download.png" alt="Stáhnout">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-category="predplatna">
+                                <td>
+                                    <div class="purchase-item">
+                                        <img src="img/creditCardBlue.png" alt="Předplatné" class="purchase-icon">
+                                        <span class="purchase-item-title">Předplatné Základní plán měsíční</span>
+                                    </div>
+                                </td>
+                                <td>16.07.2025</td>
+                                <td>199 Kč</td>
+                                <td>MasterCard ***8681</td>
+                                <td>
+                                    <button class="purchase-download-btn">
+                                        <img src="img/download.png" alt="Stáhnout">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-category="predplatna">
+                                <td>
+                                    <div class="purchase-item">
+                                        <img src="img/creditCardBlue.png" alt="Předplatné" class="purchase-icon">
+                                        <span class="purchase-item-title">Předplatné Základní plán měsíční</span>
+                                    </div>
+                                </td>
+                                <td>16.03.2025</td>
+                                <td>199 Kč</td>
+                                <td>MasterCard ***8681</td>
+                                <td>
+                                    <button class="purchase-download-btn">
+                                        <img src="img/download.png" alt="Stáhnout">
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-category="storno">
+                                <td>
+                                    <div class="purchase-item">
+                                        <img src="img/bookRibbonBlue.png" alt="Kurz" class="purchase-icon">
+                                        <div>
+                                            <div class="purchase-item-title">IT & Software Hardware Microcontroller Mastering</div>
+                                            <div class="purchase-item-title">Microcontroller and Embedded Driver Development</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>24.01.2025</td>
+                                <td>759 Kč</td>
+                                <td>MasterCard ***8681</td>
+                                <td>
+                                    <button class="purchase-download-btn">
+                                        <img src="img/download.png" alt="Stáhnout">
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Mobile Cards (hidden on desktop) -->
+                    <div class="purchase-card" data-category="kurzy">
+                        <div class="purchase-card-header">
+                            <img src="img/bookRibbonBlue.png" alt="Kurz" class="purchase-card-icon">
+                            <span class="purchase-card-title">Figma UI/UX Design Advanced</span>
+                            <button class="purchase-card-download">
+                                <img src="img/download.png" alt="Stáhnout">
+                            </button>
+                        </div>
+                        <div class="purchase-card-details">
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Datum</span>
+                                <span class="purchase-card-value">21.12.2025</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Cena</span>
+                                <span class="purchase-card-value">349 Kč</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Způsob platby</span>
+                                <span class="purchase-card-value">MasterCard ***8681</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-card">
+                        <div class="purchase-card-header">
+                            <img src="img/creditCardBlue.png" alt="Předplatné" class="purchase-card-icon">
+                            <span class="purchase-card-title">Předplatné Základní plán měsíční</span>
+                            <button class="purchase-card-download">
+                                <img src="img/download.png" alt="Stáhnout">
+                            </button>
+                        </div>
+                        <div class="purchase-card-details">
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Datum</span>
+                                <span class="purchase-card-value">16.07.2025</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Cena</span>
+                                <span class="purchase-card-value">199 Kč</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Způsob platby</span>
+                                <span class="purchase-card-value">MasterCard ***8681</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-card" data-category="kurzy">
+                        <div class="purchase-card-header">
+                            <img src="img/bookRibbonBlue.png" alt="Kurz" class="purchase-card-icon">
+                            <div class="purchase-card-title">
+                                <div>Figma UI/UX Design Advanced</div>
+                                <div>The Ultimate Project Management PMP Prep Course</div>
+                                <div>PMP Exam Cram Course - 35-Hour Course Condensed - 12 PDUs</div>
+                            </div>
+                            <button class="purchase-card-download">
+                                <img src="img/download.png" alt="Stáhnout">
+                            </button>
+                        </div>
+                        <div class="purchase-card-details">
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Datum</span>
+                                <span class="purchase-card-value">30.05.2025</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Cena</span>
+                                <span class="purchase-card-value">2 476 Kč</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Způsob platby</span>
+                                <span class="purchase-card-value">MasterCard ***8681</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-card" data-category="predplatna">
+                        <div class="purchase-card-header">
+                            <img src="img/creditCardBlue.png" alt="Předplatné" class="purchase-card-icon">
+                            <span class="purchase-card-title">Předplatné Základní plán měsíční</span>
+                            <button class="purchase-card-download">
+                                <img src="img/download.png" alt="Stáhnout">
+                            </button>
+                        </div>
+                        <div class="purchase-card-details">
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Datum</span>
+                                <span class="purchase-card-value">16.07.2025</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Cena</span>
+                                <span class="purchase-card-value">199 Kč</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Způsob platby</span>
+                                <span class="purchase-card-value">MasterCard ***8681</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-card" data-category="predplatna">
+                        <div class="purchase-card-header">
+                            <img src="img/creditCardBlue.png" alt="Předplatné" class="purchase-card-icon">
+                            <span class="purchase-card-title">Předplatné Základní plán měsíční</span>
+                            <button class="purchase-card-download">
+                                <img src="img/download.png" alt="Stáhnout">
+                            </button>
+                        </div>
+                        <div class="purchase-card-details">
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Datum</span>
+                                <span class="purchase-card-value">16.03.2025</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Cena</span>
+                                <span class="purchase-card-value">199 Kč</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Způsob platby</span>
+                                <span class="purchase-card-value">MasterCard ***8681</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-card" data-category="storno">
+                        <div class="purchase-card-header">
+                            <img src="img/bookRibbonBlue.png" alt="Kurz" class="purchase-card-icon">
+                            <div class="purchase-card-title">
+                                <div>IT & Software Hardware Microcontroller Mastering</div>
+                                <div>Microcontroller and Embedded Driver Development</div>
+                            </div>
+                            <button class="purchase-card-download">
+                                <img src="img/download.png" alt="Stáhnout">
+                            </button>
+                        </div>
+                        <div class="purchase-card-details">
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Datum</span>
+                                <span class="purchase-card-value">24.01.2025</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Cena</span>
+                                <span class="purchase-card-value">759 Kč</span>
+                            </div>
+                            <div class="purchase-card-detail">
+                                <span class="purchase-card-label">Způsob platby</span>
+                                <span class="purchase-card-value">MasterCard ***8681</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content: Historie nákupů END -->
+
+            <!-- Tab Content: Předplatné -->
+            <div class="profile-tab-content" data-tab="predplatne">
+                <div class="subscription-container">
+                    <!-- Current Subscription -->
+                    <div class="current-subscription">
+                        <h3 class="subscription-heading">Detaily předplatného</h3>
+                        
+                        <div class="subscription-detail-card">
+                            <div class="subscription-detail-left">
+                                <div class="subscription-plan-name">Základní plán</div>
+                                
+                                <ul class="subscription-features">
+                                    <li class="subscription-feature">
+                                        <img src="img/check_circle.png" alt="check" class="feature-check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                    <li class="subscription-feature">
+                                        <img src="img/check_circle.png" alt="check" class="feature-check" />
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                    </li>
+                                    <li class="subscription-feature">
+                                        <img src="img/check_circle.png" alt="check" class="feature-check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="subscription-detail-right"> 
+                                <div class="subscription-price">
+                                    <span class="price-amount">199 Kč</span>
+                                    <span class="price-period">| měsíc</span>
+                                </div>
+                                
+                                <button class="cancel-subscription-btn">Zrušit předplatné</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Subscription  EXPIRED -->
+                    <div class="current-subscription">        
+                        <div class="subscription-detail-card">
+                            <div class="subscription-detail-left">
+                                <div class="subscription-plan-name">
+                                    Základní plán
+                                    <span class="expired-badge">Platnost vypršela</span>
+                                </div>
+                                
+                                <ul class="subscription-features">
+                                    <li class="subscription-feature">
+                                        <img src="img/check_circle.png" alt="check" class="feature-check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                    <li class="subscription-feature">
+                                        <img src="img/check_circle.png" alt="check" class="feature-check" />
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                    </li>
+                                    <li class="subscription-feature">
+                                        <img src="img/check_circle.png" alt="check" class="feature-check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="subscription-detail-right"> 
+                                
+                                
+                                <button class="expired-subscription-btn">Obnovit předplatné</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Current Subscription  EXPIRED END -->
+                    
+                    <!-- Change Subscription -->
+                    <div class="change-subscription">
+                        <h3 class="subscription-heading">Změna předplatného</h3>
+                        
+                        <!-- Plan Tabs -->
+                        <div class="subscription-tabs">
+                            <button class="subscription-tab active" data-period="annual">
+                                <span>Roční platba</span>
+                            </button>
+                            <button class="subscription-tab" data-period="monthly">
+                                <span>Měsíční platba</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Pricing Cards -->
+                        <div class="subscription-plans">
+                            <!-- Standard Plan -->
+                            <div class="subscription-plan-card">
+                                <h4 class="plan-card-title">Standard</h4>
+                                <div class="plan-card-price">
+                                    <p>
+                                        <span class="plan-price-number price-number">299 Kč </span>
+                                        <span class="plan-price-period price-unit">| měsíc</span>
+                                    </p>
+                                </div>
+                                <ul class="plan-card-features">
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                    </li>
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                </ul>
+                                <button class="plan-select-btn">Vyzkoušet zdarma</button>
+                            </div>
+                            
+                            <!-- Premium Plan -->
+                            <div class="subscription-plan-card">
+                                <h4 class="plan-card-title">Prémium</h4>
+                                <div class="plan-card-price">
+                                    <p>
+                                        <span class="plan-price-number price-number">599 Kč </span>
+                                        <span class="plan-price-period price-unit">| měsíc</span>
+                                    </p>
+                                </div>
+                                <ul class="plan-card-features">
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                    </li>
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                </ul>
+                                <button class="plan-select-btn">Vyzkoušet zdarma</button>
+                            </div>
+                            
+                            <!-- Teams/Business Plan -->
+                            <div class="subscription-plan-card">
+                                <h4 class="plan-card-title">Teams/Business</h4>
+                                <div class="plan-card-price">
+                                    <span class="plan-price-special">Individuální</span>
+                                </div>
+                                <ul class="plan-card-features">
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                    </li>
+                                    <li class="plan-card-feature">
+                                        <img src="img/check_circle.png" alt="check" />
+                                        <span>Lorem ipsum dolor sit amet</span>
+                                    </li>
+                                </ul>
+                                <button class="plan-select-btn">Vyzkoušet zdarma</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Info -->
+                    <div class="payment-info">
+                        <h3 class="subscription-heading">Platební údaje</h3>
+                        
+                        <div class="payment-method-card">
+                            <div class="payment-left">
+                                <div class="payment-badge">Měsíční platba</div>
+                                
+                                <div class="payment-details">
+                                    <div class="payment-next-date">
+                                        <span class="payment-label">Další platba:</span>
+                                        <span class="payment-date">1. listopadu 2025</span>
+                                    </div>
+                                    <div class="payment-card">
+                                        <img src="img/masterCard.png" alt="Mastercard" class="payment-card-logo" />
+                                        <span class="payment-card-number">•••• •••• •••• 8699</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-right">
+                                <button class="payment-method-btn">Platební metoda</button>
+                                <button class="change-payment-btn">Změnit na roční platbu</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-info">
+                        
+                        <div class="payment-method-card">
+                            <div class="payment-left">
+                                <div class="payment-details">
+                                    <div class="payment-card">
+                                        <img src="img/masterCard.png" alt="Mastercard" class="payment-card-logo" />
+                                        <span class="payment-card-number">•••• •••• •••• 8699</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-right">
+                                <button class="payment-method-btn">Platební metoda</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content: Předplatné END --> 
+
+            <!-- Tab Content: Zprávy -->
+            <div class="profile-tab-content" data-tab="zpravy">
+                <div class="messages-container">
+                    <!-- Left Sidebar - Conversations List -->
+                    <div class="messages-sidebar">
+                        <!-- Tabs -->
+                        <div class="messages-tabs">
+                            <button class="messages-tab">Nepřečtené</button>
+                            <button class="messages-tab active">Přímé zprávy</button>
+                            <button class="messages-tab">Diskuze</button>
+                        </div>
+
+                        <!-- Direct Messages Section -->
+                        <div class="messages-section">
+                            <div class="messages-section-header">
+                                <img src="img/drafts.png" alt="" class="w-5 h-5">
+                                <span>Přímé zprávy</span>
+                                <button class="messages-collapse-btn">
+                                    <img src="img/expand_less.png" alt="" class="w-5 h-5">
+                                </button>
+                            </div>
+
+                            <div class="messages-list">
+                                <div class="message-item">
+                                    <img src="img/profilovka.png" alt="John Wellsh" class="message-avatar">
+                                    <div class="message-info">
+                                        <div class="message-name">John Wellsh</div>
+                                        <div class="message-preview">Ještě bych vám doporučil...</div>
+                                    </div>
+                                    <span class="message-time">01.11.</span>
+                                </div>
+
+                                <div class="message-item active">
+                                    <img src="img/Avatar1.png" alt="Alex Smith" class="message-avatar">
+                                    <div class="message-info">
+                                        <div class="message-name">Alex Smith</div>
+                                        <div class="message-preview">Ještě bych vám doporučil...</div>
+                                    </div>
+                                    <span class="message-time">01.11.</span>
+                                </div>
+
+                                <div class="message-item">
+                                    <img src="img/profilovka.png" alt="Elena Konečná" class="message-avatar">
+                                    <div class="message-info">
+                                        <div class="message-name">Elena Konečná</div>
+                                        <div class="message-preview">Ještě bych vám doporučil...</div>
+                                    </div>
+                                    <span class="message-time">01.11.</span>
+                                </div>
+
+                                <div class="message-item">
+                                    <img src="img/profilovka.png" alt="Martin Pospíšil" class="message-avatar">
+                                    <div class="message-info">
+                                        <div class="message-name">Martin Pospíšil</div>
+                                        <div class="message-preview">Ještě bych vám doporučil...</div>
+                                    </div>
+                                    <span class="message-time">01.11.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diskuze Section -->
+                        <div class="messages-section">
+                            <div class="messages-section-header">
+                                <img src="img/forum.png" alt="" class="w-5 h-5">
+                                <span>Diskuze</span>
+                                <button class="messages-collapse-btn">
+                                    <img src="img/expand_more.png" alt="" class="w-5 h-5">
+                                </button>
+                            </div>
+
+                            <div class="messages-list">
+                                <div class="message-item">
+                                    <img src="img/UiPrice.jpg" alt="UI/UX Design" class="message-avatar message-avatar-square">
+                                    <div class="message-info">
+                                        <div class="message-course">UI/UX Design Masterclass</div>
+                                        <div class="message-preview">Cvičení 1: Jak vyřešit problém s constraints?</div>
+                                    </div>
+                                    <span class="message-time">28.10.</span>
+                                </div>
+
+                                <div class="message-item">
+                                    <img src="img/UiPrice.jpg" alt="UI/UX Design" class="message-avatar message-avatar-square">
+                                    <div class="message-info">
+                                        <div class="message-course">UI/UX Design Masterclass</div>
+                                        <div class="message-preview">Problém s pochopením autolayoutu</div>
+                                    </div>
+                                    <span class="message-time">28.10.</span>
+                                </div>
+
+                                <div class="message-item">
+                                    <img src="img/UiPrice.jpg" alt="UI/UX Design" class="message-avatar message-avatar-square">
+                                    <div class="message-info">
+                                        <div class="message-course">UI/UX Design Masterclass</div>
+                                        <div class="message-preview">Jak ve Figmě vytvořím komponentu?</div>
+                                    </div>
+                                    <span class="message-time">28.10.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Chat Window -->
+                    <div class="messages-chat">
+                        <!-- Chat Header -->
+                        <div class="chat-header">
+                            <div class="chat-header-user">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-avatar">
+                                <div class="chat-user-info">
+                                    <div class="chat-user-name">
+                                        Alex Smith
+                                        <span class="chat-user-status">● Online</span>
+                                    </div>
+                                    <div class="chat-user-title">Adobe Certified Instructor</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Messages -->
+                        <div class="chat-messages">
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">12:01</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Date Divider -->
+                            <div class="chat-date-divider">01.09.2025</div>
+
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">14:58</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">14:59</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:07</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">14:59</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">14:59</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:07</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">14:59</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+                        </div>
+
+                        <!-- Chat Input -->
+                        <div class="chat-input-wrapper">
+                            <input type="text" class="chat-input" placeholder="Napište zprávu...">
+                            <button class="chat-send-btn">
+                                <img src="img/sendArrow.png" alt="Send" class="w-[13px] h-[13px]">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content: Zprávy END -->
         </div>
 
         <!-- RIGHT COLUMN - Sidebar -->
@@ -1047,10 +1846,10 @@
                 
                 <h3 class="sidebar-profile-name">Jan Novák</h3>
                 <p class="sidebar-profile-email">
-                    <i class="far fa-envelope"></i> novak@gmail.com
+                    <img src="img/drafts.png" alt="" class="w-4 h-4"> novak@gmail.com
                 </p>
                 <p class="sidebar-profile-member">
-                    <i class="far fa-calendar"></i> členem od 14. ledna 2025
+                    <img src="img/calendar_todayProfile.png" alt="" class="w-[15] h-[17]"> členem od 14. ledna 2025
                 </p>
             </div>
 
@@ -1064,7 +1863,7 @@
                     <img src="img/book_ribbonGray.png" alt="">
                     <span>Moje kurzy</span>
                 </a>
-                <a href="#" class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item" data-tab="zpravy">
                     <img src="img/postGray.png" alt="">
                     <span>Zprávy</span>
                 </a>
@@ -1082,11 +1881,11 @@
                 
                 <div class="sidebar-menu-divider"></div>
                 
-                <a href="#" class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item" data-tab="historie-nakupu">
                     <img src="img/kosikGray.png" alt="">
                     <span>Historie nákupů</span>
                 </a>
-                <a href="#" class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item" data-tab="predplatne">
                     <img src="img/creditCard.png" alt="">
                     <span>Předplatné</span>
                 </a>
@@ -1155,6 +1954,7 @@
             </div>
         </div>
     </div>
+    <!-- Streak Info Modal END-->
 
     <!-- FOOTER -->
     <footer class="footer bg-[#F5F9FF]">`
@@ -1256,6 +2056,7 @@
             </div>
         </div>
     </footer>
+     <!-- FOOTER END -->
 
     <!-- Upload Avatar Modal -->
     <div class="upload-avatar-modal" id="uploadAvatarModal">
@@ -1295,6 +2096,7 @@
             </div>
         </div>
     </div>
+     <!-- Upload Avatar Modal End -->
 
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
@@ -1304,6 +2106,8 @@
     <script type="module" src="js/streakTooltip.js"></script>
     <script type="module" src="js/settingsTabs.js"></script>
     <script type="module" src="js/uploadAvatar.js"></script>
+    <script type="module" src="js/passwordToggle.js"></script>
+    <script type="module" src="js/pricingTabs.js"></script>
 </body>
 
 </html>

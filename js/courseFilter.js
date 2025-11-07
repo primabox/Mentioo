@@ -1,11 +1,11 @@
-// Course Filter Functionality
+// Course Filter Functionality for Moje Kurzy
 document.addEventListener('DOMContentLoaded', function() {
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    let currentFilter = 'aktivni'; // Default active filter
+    // Moje kurzy filters
+    const courseFilterTabs = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .filter-tab');
+    let currentCourseFilter = 'aktivni';
     
-    filterTabs.forEach(tab => {
+    courseFilterTabs.forEach(tab => {
         tab.addEventListener('click', function() {
-            // Get the filter type from the tab text
             const tabText = this.querySelector('span').textContent.trim();
             let filterType;
             
@@ -17,21 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 filterType = 'dokonceno';
             }
             
-            // Check if clicking the same tab again
-            if (this.classList.contains('active') && currentFilter === filterType) {
-                // Toggle off - remove active and show all courses
+            if (this.classList.contains('active') && currentCourseFilter === filterType) {
                 this.classList.remove('active');
-                currentFilter = null;
+                currentCourseFilter = null;
                 showAllCourses();
             } else {
-                // Remove active class from all tabs
-                filterTabs.forEach(t => t.classList.remove('active'));
-                
-                // Add active class to clicked tab
+                courseFilterTabs.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
-                currentFilter = filterType;
-                
-                // Filter courses
+                currentCourseFilter = filterType;
                 filterCourses(filterType);
             }
         });
@@ -42,15 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         courseCards.forEach(card => {
             const badge = card.querySelector('.course-badge');
-            
             if (!badge) {
                 card.style.display = 'none';
                 return;
             }
             
-            const badgeText = badge.textContent.trim();
             let shouldShow = false;
-            
             if (filterType === 'aktivni' && badge.classList.contains('badge-bestseller')) {
                 shouldShow = true;
             } else if (filterType === 'nezahajeny' && badge.classList.contains('badge-nezahajeny')) {
@@ -67,6 +57,61 @@ document.addEventListener('DOMContentLoaded', function() {
         const courseCards = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .course-card');
         courseCards.forEach(card => {
             card.style.display = 'flex';
+        });
+    }
+    
+    // Purchase History Filters
+    const purchaseFilterTabs = document.querySelectorAll('.profile-tab-content[data-tab="historie-nakupu"] .filter-tab');
+    let currentPurchaseFilter = 'kurzy';
+    
+    purchaseFilterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const filterType = this.getAttribute('data-filter');
+            
+            if (this.classList.contains('active') && currentPurchaseFilter === filterType) {
+                this.classList.remove('active');
+                currentPurchaseFilter = null;
+                showAllPurchases();
+            } else {
+                purchaseFilterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                currentPurchaseFilter = filterType;
+                filterPurchases(filterType);
+            }
+        });
+    });
+    
+    function filterPurchases(filterType) {
+        const tableRows = document.querySelectorAll('.purchase-history-table tbody tr');
+        tableRows.forEach(row => {
+            const category = row.getAttribute('data-category');
+            if (category === filterType) {
+                row.classList.remove('filter-hidden');
+            } else {
+                row.classList.add('filter-hidden');
+            }
+        });
+        
+        const mobileCards = document.querySelectorAll('.purchase-card');
+        mobileCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (category === filterType) {
+                card.classList.remove('filter-hidden');
+            } else {
+                card.classList.add('filter-hidden');
+            }
+        });
+    }
+    
+    function showAllPurchases() {
+        const tableRows = document.querySelectorAll('.purchase-history-table tbody tr');
+        tableRows.forEach(row => {
+            row.classList.remove('filter-hidden');
+        });
+        
+        const mobileCards = document.querySelectorAll('.purchase-card');
+        mobileCards.forEach(card => {
+            card.classList.remove('filter-hidden');
         });
     }
 });

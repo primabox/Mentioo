@@ -29,7 +29,7 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-  @apply bg-white shadow fixed top-0 left-0 right-0 z-[9999];
+  @apply bg-white shadow-sm fixed top-0 left-0 right-0 z-[9999];
 }
 
 .navbar {
@@ -42,7 +42,10 @@ body {
 
 /* ===== SEARCHBAR ===== */
 .searchbar-container {
-  @apply hidden md:flex flex-1 justify-center mx-6 max-w-[801px];
+  @apply hidden md:flex flex-1 justify-center;
+  max-width: 801px;
+  margin-left: 24px;
+  margin-right: 16px;
 }
 
 .search-form {
@@ -58,7 +61,8 @@ body {
 }
 
 .search-input {
-  @apply w-full h-14 pl-12 pr-5 rounded-full border border-gray-200 placeholder-gray-500 text-slate-700 focus:border-[#2563eb] focus:ring-4 focus:ring-[#e0f2fe] outline-none transition;
+  @apply w-full pl-12 pr-5 rounded-full border border-gray-200 placeholder-gray-500 text-slate-700 focus:border-[#2563eb] focus:ring-4 focus:ring-[#e0f2fe] outline-none transition;
+  height: 56px;
 }
 
 /* ===== MOBILE MENU ===== */
@@ -87,20 +91,22 @@ body {
 }
 
 .mobile-user-link {
-  @apply flex items-center gap-2 text-gray-700 font-medium hover:text-[#2563eb];
+  @apply flex items-center gap-2 text-[#1C1C1C] text-[16px] font-medium hover:text-[#0069B2] transition;
 }
 
 .mobile-user-link img {
-  @apply w-5 h-5;
+  @apply w-3 h-3;
 }
 
 /* ===== DESKTOP MENU ===== */
 .navbar-menu {
-  @apply hidden xl:flex items-center gap-8;
+  @apply hidden xl:flex items-center;
+  gap: 40px;
 }
 
 .nav-links {
-  @apply flex items-center gap-6 text-base font-medium text-gray-900;
+  @apply flex items-center text-base font-medium text-gray-900;
+  gap: 40px;
 }
 
 .nav-item {
@@ -112,7 +118,7 @@ body {
 }
 
 .dropdown {
-  @apply absolute top-full left-0 mt-4 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
+  @apply absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
   border: none !important;
 }
 
@@ -122,7 +128,7 @@ body {
 
 /* ===== USER PROFILE LINK ===== */
 .user-profile-link {
-  @apply flex items-center gap-2 hover:text-[#2563eb] transition-colors ml-8;
+  @apply flex items-center gap-2 text-[#1C1C1C] text-[16px] font-medium no-underline hover:text-[#0069B2] transition mx-[40px];
 }
 
 .user-profile-link img {
@@ -140,7 +146,7 @@ body {
 
 /* ===== HERO SECTION (from detail-kurzu) ===== */
 .hero-section {
-  @apply relative flex justify-center pt-36 pb-8 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
+  @apply relative flex justify-center pt-38 pb-8 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
 }
 
 .hero-wrapper {
@@ -424,6 +430,77 @@ body {
   display: block;
 }
 
+.hero-tab-content[data-tab="historie-nakupu"].active ~ .hero-section,
+.hero-tab-content[data-tab="historie-nakupu"].active {
+  padding-bottom: 0;
+}
+
+.hero-section:has(.hero-tab-content[data-tab="historie-nakupu"].active) {
+  @apply pb-0;
+}
+
+.hero-section:has(.hero-tab-content[data-tab="predplatne"].active) {
+  @apply pb-0;
+}
+
+.hero-section:has(.hero-tab-content[data-tab="nastaveni"].active) {
+  @apply pb-0;
+}
+
+.hero-section:has(.hero-tab-content[data-tab="certifikaty"].active) {
+  @apply pb-0;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="predplatne"].active) {
+  padding-top: 0;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="nastaveni"].active) {
+  padding-top: 0;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="historie-nakupu"].active) {
+  padding-top: 0;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="certifikaty"].active) {
+  padding-top: 0;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="zpravy"].active) {
+  padding-top: 0;
+}
+
+/* Remove padding from hero and profile for zpravy tab */
+.profile-layout:has(.profile-tab-content[data-tab="zpravy"].active) .hero-gradient {
+  padding-bottom: 0;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="zpravy"].active) .sidebar-profile-card {
+  margin-top: 118px;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="historie-nakupu"].active) .sidebar-profile-card {
+  margin-top: 150px;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="nastaveni"].active) .sidebar-profile-card {
+  margin-top: 150px;
+}
+
+.profile-layout:has(.profile-tab-content[data-tab="certifikaty"].active) .sidebar-profile-card {
+  margin-top: 150px;
+}
+
+/* Footer margin for predplatne tab */
+.footer:has(~ * .profile-tab-content[data-tab="predplatne"].active) {
+  margin-top: 250px;
+}
+
+body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
+  margin-top: 250px;
+}
+
 /* ===== COURSE CARDS ===== */
 .active-courses-grid {
   @apply flex flex-col gap-6 items-center;
@@ -495,7 +572,7 @@ body {
 }
 
 .filter-tab {
-  @apply flex items-center gap-2 px-2 py-1 bg-white border border-[#E5E7EB] rounded-full text-[14px] text-[#1C1C1C] font-medium cursor-pointer transition-all duration-200;
+  @apply flex items-center gap-2 px-2 py-1 bg-white border border-[#E5E7EB] rounded-full text-[14px] text-[#4D4D4D] font-normal cursor-pointer transition-all duration-200;
 }
 
 .filter-tab:hover {
@@ -814,7 +891,7 @@ body {
 
 .sidebar-profile-email,
 .sidebar-profile-member {
-  @apply text-sm text-[#6B7280] mb-2 flex items-center gap-2 w-full;
+  @apply text-[#4D4D4D] text-[16px] mb-2 flex items-center gap-2 w-full;
 }
 
 .sidebar-profile-email i,
@@ -1067,6 +1144,16 @@ body {
 @media (max-width: 768px) {
   .navbar {
     @apply px-5;
+  }
+
+  /* Hide streak tooltip on mobile */
+  .streak-tooltip {
+    @apply hidden;
+  }
+
+  /* Center filter tabs on mobile */
+  .course-filter-tabs {
+    @apply justify-center;
   }
 
   .footer {
@@ -1847,7 +1934,7 @@ body {
 /* Settings tab content */
 .settings-tab-content {
   display: none;
-  padding: 32px 48px;
+  padding: 32px 24px;
 }
 
 .settings-tab-content.active {
@@ -1935,10 +2022,31 @@ body {
     justify-content: center;
   }
 
+  .tabs::before,
+  .tabs::after {
+    display: none;
+  }
+
   .tab {
     font-size: 13px;
     padding: 10px 16px;
     flex: 0 0 auto;
+  }
+
+  .tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #0069B2;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+  }
+
+  .tab.active::after {
+    width: 100%;
   }
 
   .settings-tab-content {
@@ -2123,5 +2231,981 @@ body {
   .upload-avatar-crop-circle {
     width: 60%;
     height: 60%;
+  }
+}
+
+/* ============================================
+   PASSWORD SETTINGS (HESLO TAB)
+   ============================================ */
+
+.settings-password-wrapper {
+  @apply w-full max-w-[490px];
+}
+
+.settings-password-heading {
+  @apply text-[22px] font-semibold text-[#1C1C1C] mb-8 mt-8;
+  line-height: 1.2;
+}
+
+.settings-password-form {
+  @apply flex flex-col gap-6;
+}
+
+.password-input-group {
+  @apply flex flex-col gap-2;
+}
+
+.password-label {
+  @apply text-sm font-normal text-[#333333];
+  line-height: 1.4;
+}
+
+.password-input-wrapper {
+  @apply relative w-full;
+}
+
+.password-input {
+  @apply w-full h-12 px-4 pr-12 border border-[#E8E8E8] rounded-[6px] text-base text-[#1a1a1a] outline-none transition-colors;
+  line-height: 1.5;
+}
+
+.password-input:focus {
+  @apply border-[#0069b2];
+}
+
+.password-toggle {
+  @apply absolute right-3 top-1/2 -translate-y-1/2 bg-transparent border-none p-1 cursor-pointer flex items-center justify-center w-8 h-8;
+}
+
+.password-toggle:hover {
+  @apply opacity-70;
+}
+
+.settings-password-btn {
+  @apply w-fit px-5 py-3 bg-[#0069b2] border-none rounded-[32px] text-sm font-medium text-white cursor-pointer transition-colors mt-2;
+  line-height: 1.5;
+}
+
+.settings-password-btn:hover {
+  @apply bg-[#005a96];
+}
+
+.settings-password-btn:active {
+  @apply bg-[#004a7a];
+}
+
+@media (max-width: 768px) {
+  .settings-password-heading {
+    @apply text-xl mb-6;
+  }
+
+  .settings-password-form {
+    @apply gap-5;
+  }
+
+  .password-input {
+    @apply h-11 text-sm;
+  }
+
+  .password-label {
+    @apply text-[13px];
+  }
+
+  .settings-password-btn {
+    @apply w-full px-3 text-sm;
+  }
+}
+
+/* ============================================
+   NOTIFICATIONS SETTINGS (NOTIFIKACE TAB)
+   ============================================ */
+
+.notifications-wrapper {
+  @apply w-full max-w-[982px];
+}
+
+.notifications-heading {
+  @apply text-[22px] font-bold text-[#1C1C1C] mt-3;
+  line-height: 1.2;
+}
+
+.notification-item {
+  @apply flex items-center justify-between gap-6 bg-white ;
+  width: 491px;
+  height: 121px;
+}
+
+.notification-content {
+  @apply flex-1;
+}
+
+.notification-title {
+  @apply text-sm font-semibold text-[#1C1C1C] mb-2;
+}
+
+.notification-description {
+  @apply text-sm text-[#333333];
+  line-height: 1.5;
+}
+
+/* Toggle Switch */
+.notification-toggle {
+  @apply relative inline-block flex-shrink-0 cursor-pointer;
+  width: 60px;
+  height: 32px;
+}
+
+.notification-checkbox {
+  @apply opacity-0 w-0 h-0;
+}
+
+.notification-slider {
+  @apply absolute inset-0 bg-[#DEE3E5] rounded-full transition-all duration-300 border-2 border-[#70787C];
+}
+
+.notification-slider::before {
+  @apply absolute bg-[#70787C] rounded-full transition-all duration-300;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-checkbox:checked + .notification-slider {
+  @apply bg-[#00CC6D] border-[#00CC6D];
+}
+
+.notification-checkbox:checked + .notification-slider::before {
+  @apply translate-x-7 bg-white;
+}
+
+.notification-checkbox:focus + .notification-slider {
+  box-shadow: 0 0 0 2px rgba(0, 105, 178, 0.2);
+}
+
+@media (max-width: 768px) {
+  .notifications-heading {
+    @apply text-xl mb-6;
+  }
+
+  .notification-item {
+    @apply w-full flex-col items-start gap-4 p-5;
+    height: auto;
+  }
+
+  .notification-title {
+    @apply text-sm;
+  }
+
+  .notification-description {
+    @apply text-xs;
+  }
+}
+
+/* ============================================
+   ACCOUNT SETTINGS (ÚČET TAB)
+   ============================================ */
+
+.account-wrapper {
+  @apply w-full max-w-[1078px];
+}
+
+.account-heading {
+  @apply text-[22px] font-bold text-[#1C1C1C] mb-6;
+  line-height: 1.2;
+}
+
+.account-description {
+  @apply text-[16px] text-[#4D4D4D] mb-6;
+  line-height: 1.6;
+  max-width: 1078px;
+}
+
+.account-description strong {
+  @apply font-semibold text-[#1C1C1C];
+}
+
+.account-delete-btn {
+  @apply px-5 py-3 bg-[#FFF1EB] text-[#AC3E0E] rounded-[32px] text-sm font-medium transition cursor-pointer;
+  line-height: 1.5;
+}
+
+.account-delete-btn:hover {
+  @apply bg-[#DC2626] text-white;
+}
+
+@media (max-width: 768px) {
+  .account-heading {
+    @apply text-xl mb-5;
+  }
+
+  .account-description {
+    @apply text-xs mb-5;
+  }
+
+  .account-delete-btn {
+    @apply w-full;
+  }
+}
+
+/* ============================================
+   PURCHASE HISTORY (HISTORIE NÁKUPŮ TAB)
+   ============================================ */
+
+.purchase-history-container {
+  @apply w-full  rounded-2xl overflow-hidden;
+  max-width: 1080px;
+  height: 548px;
+}
+
+.purchase-history-table {
+  @apply w-full;
+  border-collapse: collapse;
+}
+
+.purchase-history-table thead {
+  @apply  border-b border-[#BBBBBB];
+}
+
+.purchase-history-table th {
+  @apply text-left text-sm font-semibold text-[#333333]  py-4 px-6;
+  line-height: 1.4;
+}
+
+.purchase-history-table th:first-child {
+  @apply text-left px-2;
+}
+
+.purchase-history-table th:last-child {
+  @apply text-right px-2;
+}
+
+.purchase-history-table tbody tr {
+  @apply border-b border-[#E8E8E8] transition-colors;
+}
+
+.purchase-history-table tbody tr:hover {
+  @apply bg-[#F9FAFB];
+}
+
+.purchase-history-table tbody tr:last-child {
+  @apply border-b-0;
+}
+
+.purchase-history-table td {
+  @apply px-6 py-4 text-sm text-[#1C1C1C];
+  line-height: 1.5;
+}
+
+.purchase-history-table td:first-child {
+  @apply pl-8;
+}
+
+.purchase-history-table td:last-child {
+  @apply text-center px-6 ;
+}
+
+.purchase-item {
+  @apply flex items-start gap-3;
+}
+
+.purchase-icon {
+  @apply w-6 h-6 flex-shrink-0 mt-0.5;
+}
+
+.purchase-item-title {
+  @apply text-sm text-[#333333] font-normal;
+  line-height: 1.5;
+  width: 420px;
+}
+
+
+
+.purchase-download-btn {
+  @apply w-10 h-10 flex items-center justify-center rounded-full bg-[#D4EDFF] transition cursor-pointer border-none;
+  padding: 0;
+}
+
+.purchase-download-btn:hover {
+  @apply bg-[#D4EDFF];
+}
+
+.purchase-download-btn img {
+  @apply w-[16px] h-[16px];
+}
+
+/* Mobile Card Layout */
+.purchase-card {
+  @apply hidden;
+}
+
+/* Hidden state for filtered items */
+.purchase-card.filter-hidden,
+.purchase-history-table tbody tr.filter-hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  /* Hide table on mobile */
+  .purchase-history-table {
+    @apply hidden;
+  }
+
+  /* Show cards on mobile */
+  .purchase-history-container {
+    @apply flex flex-col gap-4 overflow-x-hidden;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .purchase-card {
+    @apply block bg-white rounded-2xl p-4 border border-[#E5E7EB];
+  }
+
+  .purchase-card.filter-hidden {
+    @apply hidden;
+  }
+
+  .purchase-card-header {
+    @apply flex items-start gap-3 mb-3 pb-3 border-b border-[#E5E7EB];
+  }
+
+  .purchase-card-icon {
+    @apply w-6 h-6 flex-shrink-0 mt-0.5;
+  }
+
+  .purchase-card-title {
+    @apply text-sm font-medium text-[#333333] flex-1;
+    line-height: 1.5;
+  }
+
+  .purchase-card-download {
+    @apply w-8 h-8 flex items-center justify-center rounded-full bg-[#D4EDFF] transition cursor-pointer flex-shrink-0;
+    padding: 0;
+  }
+
+  .purchase-card-download:active {
+    @apply bg-[#BFE0FF];
+  }
+
+  .purchase-card-download img {
+    @apply w-3.5 h-3.5;
+  }
+
+  .purchase-card-details {
+    @apply grid grid-cols-2 gap-3;
+  }
+
+  .purchase-card-detail {
+    @apply flex flex-col gap-1;
+  }
+
+  .purchase-card-label {
+    @apply text-xs text-[#666666] font-medium;
+  }
+
+  .purchase-card-value {
+    @apply text-sm text-[#1C1C1C] font-normal;
+  }
+}
+
+/* ============================================
+   SUBSCRIPTION (PŘEDPLATNÉ TAB)
+   ============================================ */
+
+.subscription-container {
+  @apply w-full flex flex-col gap-8;
+  max-width: 1080px;
+}
+
+/* Current Subscription */
+.current-subscription {
+  @apply w-full;
+}
+
+.subscription-heading {
+  @apply text-2xl font-semibold text-[#1C1C1C] mb-6;
+}
+
+.subscription-detail-card {
+  @apply bg-white rounded-2xl border border-[#E5E7EB] flex items-center justify-between py-[32px] pl-[40px] pr-[20px];
+  width: 1080px;
+  max-width: 100%;
+  height: 190px;
+  gap: 40px;
+}
+
+.subscription-detail-left {
+  @apply flex-1 flex flex-col gap-3;
+}
+
+.subscription-detail-right {
+  @apply flex flex-col items-end gap-14;
+}
+
+.subscription-plan-name {
+  @apply text-xl font-semibold text-[#2191DF] mb-1;
+  line-height: 1.2;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.expired-badge {
+  @apply px-[10px] py-1 rounded-[4px] bg-[#FFD2DB] text-[#99112E] text-sm font-medium;
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.subscription-price {
+  @apply text-right;
+}
+
+.price-amount {
+  @apply text-4xl font-semibold text-[#1C1C1C];
+  font-size: 36px;
+}
+
+.price-period {
+  @apply text-[#717171];
+  font-size: 20px;
+}
+
+.subscription-features {
+  @apply list-none flex flex-col;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.subscription-feature {
+  @apply flex items-start gap-2 text-[#1C1C1C];
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.feature-check {
+  @apply w-6 h-6  flex-shrink-0;
+  margin-bottom: 2px;
+}
+
+.cancel-subscription-btn {
+  @apply py-3 px-5 rounded-[32px] text-sm text-[#AC3E0E] font-medium hover:bg-[#FF4D4D] hover:text-white transition;
+  border-color: #FFB8B8;
+  background-color: #FFF1EB;
+  white-space: nowrap;
+}
+
+.expired-subscription-btn {
+  @apply py-3 px-5 rounded-[32px] bg-[#0069B2] text-white text-sm font-medium transition cursor-pointer mt-[100px];
+  white-space: nowrap;
+}
+
+.expired-subscription-btn:hover {
+  @apply bg-[#005A94];
+}
+
+/* Change Subscription */
+.change-subscription {
+  @apply w-full;
+}
+
+.subscription-tabs {
+  @apply flex  mb-8;
+  width: 230px;
+  position: relative;
+  --indicator-left: 0px;
+  --indicator-width: 0px;
+}
+
+.subscription-tabs::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #E8E8E8;
+  z-index: 1;
+}
+
+.subscription-tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--indicator-left);
+  width: var(--indicator-width);
+  height: 2px;
+  background: #0069B2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.subscription-tab {
+  @apply pb-3 px-3 text-sm font-medium text-[#666666] border-0 bg-transparent transition-all cursor-pointer whitespace-nowrap;
+  position: relative;
+  display: inline-block;
+}
+
+.subscription-tab:first-child {
+  @apply pl-2;
+}
+
+.subscription-tab:last-child {
+  @apply pr-2;
+}
+
+.subscription-tab.active {
+  @apply text-[#0069B2];
+}
+
+.subscription-tab:hover {
+  @apply text-[#0069B2];
+}
+
+.subscription-plans {
+  @apply grid grid-cols-3 gap-6;
+}
+
+.subscription-plan-card {
+  @apply bg-white rounded-2xl p-6 border-2 border-transparent hover:border-[#28A6FF] hover:shadow-lg transition;
+  height: 409px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 12px rgba(26, 120, 229, 0.08);
+}
+
+.plan-card-title {
+  @apply text-xl font-semibold text-[#2191DF] mb-4;
+}
+
+.plan-card-price {
+  @apply mb-4;
+}
+
+.plan-price-number {
+  @apply text-4xl font-semibold text-[#1C1C1C] ;
+}
+
+.plan-price-period {
+  @apply text-xl text-[#717171]   ;
+}
+
+.plan-price-special {
+  @apply text-4xl font-semibold text-[#1C1C1C];
+}
+
+.plan-card-features {
+  @apply list-none space-y-2 mb-6 flex-1 border-t border-[#E5E7EB] pt-6;
+  width: 280px;
+}
+
+.plan-card-feature {
+  @apply flex items-start gap-2 text-[16px] text-[#333333];
+}
+
+.plan-card-feature img {
+  @apply w-6 h-6 flex-shrink-0 mt-3;
+}
+
+.plan-card-feature:first-child img {
+  @apply w-6 h-6 flex-shrink-0 mt-0;
+}
+
+.plan-card-feature:last-child img {
+  @apply w-6 h-6 flex-shrink-0 mt-0;
+}
+
+.plan-select-btn {
+  @apply cursor-pointer w-[171px] h-[45px] py-5 px-3 rounded-full text-[14px] bg-[#D4EDFF] text-[#0069B2] font-medium hover:bg-[#BFE0FF] transition flex items-center justify-center;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.plan-select-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 105, 178, 0.2);
+}
+
+/* Payment Info */
+.payment-info {
+  @apply w-full;
+}
+
+.payment-method-card {
+  @apply bg-white rounded-2xl;
+  width: 1080px;
+  max-width: 100%;
+  padding: 32px 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.payment-left {
+  @apply flex flex-col gap-3;
+}
+
+.payment-badge {
+  @apply px-[10px] py-1 rounded-[4px] bg-[#CCFFE7] text-[#006636] text-sm font-medium;
+  align-self: flex-start;
+}
+
+.payment-details {
+  @apply flex flex-col gap-2;
+}
+
+.payment-next-date {
+  @apply flex items-center gap-2;
+}
+
+.payment-label {
+  @apply text-base font-semibold text-[#1C1C1C];
+}
+
+.payment-date {
+  @apply text-base text-[#666666];
+}
+
+.payment-card {
+  @apply flex items-center gap-3;
+}
+
+.payment-card-logo {
+  @apply w-[41px] h-[28px];
+}
+
+.payment-card-number {
+  @apply text-lg text-[#1C1C1C];
+}
+
+.payment-right {
+  @apply flex items-center gap-3;
+  margin-left: auto;
+}
+
+.payment-method-btn {
+  @apply py-3 px-4 rounded-full text-[#1C1C1C] font-medium  text-sm  transition cursor-pointer;
+  white-space: nowrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-method-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.change-payment-btn {
+  @apply py-3 px-5 rounded-full bg-[#D4EDFF] text-[#0069B2] text-sm font-medium hover:bg-[#BFE0FF] transition cursor-pointer;
+  white-space: nowrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.change-payment-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 105, 178, 0.2);
+}
+
+
+
+@media (max-width: 768px) {
+  .subscription-container {
+    @apply px-4;
+  }
+
+  .subscription-heading {
+    @apply text-xl mb-4;
+  }
+
+  .subscription-detail-card {
+    @apply flex-col items-start gap-6;
+    width: 100%;
+    height: auto;
+    padding: 24px;
+  }
+
+  .subscription-detail-left {
+    @apply w-full;
+  }
+
+  .subscription-detail-right {
+    @apply items-start w-full;
+  }
+
+  .subscription-plans {
+    @apply grid-cols-1;
+  }
+
+  .subscription-plan-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .plan-card-features {
+    width: 100%;
+  }
+
+  .subscription-tabs {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .payment-method-card {
+    @apply flex-col items-start gap-4;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .payment-left {
+    @apply w-full;
+  }
+
+  .payment-right {
+    @apply w-full flex-col;
+    margin-left: 0;
+  }
+
+  .payment-method-btn,
+  .change-payment-btn {
+    @apply w-full;
+  }
+}
+
+/* ============================================
+   MESSAGES (ZPRÁVY TAB)
+   ============================================ */
+
+.messages-container {
+  @apply w-full bg-white rounded-2xl;
+  width: 1080px;
+  height: 1250px;
+  max-width: 100%;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Sidebar */
+.messages-sidebar {
+  @apply w-[370px] border-r border-[#E5E7EB] flex flex-col;
+  flex-shrink: 0;
+}
+
+.messages-tabs {
+  @apply flex gap-4 px-6 py-4 border-b border-[#E5E7EB];
+}
+
+.messages-tab {
+  @apply text-sm font-normal text-[#666666] bg-transparent border-none cursor-pointer transition;
+  padding: 0;
+}
+
+.messages-tab.active {
+  @apply text-[#1C1C1C] font-medium;
+}
+
+.messages-section {
+  @apply flex flex-col;
+}
+
+.messages-section-header {
+  @apply flex items-center gap-2 px-6 py-4 bg-white cursor-pointer;
+}
+
+.messages-section-header span {
+  @apply flex-1 text-sm font-semibold text-[#1C1C1C];
+}
+
+.messages-collapse-btn {
+  @apply bg-transparent border-none cursor-pointer p-0;
+}
+
+.messages-list {
+  @apply flex flex-col;
+}
+
+.message-item {
+  @apply flex items-center gap-3 px-6 py-4 cursor-pointer transition hover:bg-[#F9FAFB];
+}
+
+.message-item.active {
+  @apply bg-[#F5F9FF];
+}
+
+.message-avatar {
+  @apply w-12 h-12 rounded-full flex-shrink-0 object-cover;
+}
+
+.message-avatar-square {
+  @apply rounded-lg;
+}
+
+.message-info {
+  @apply flex-1 min-w-0;
+}
+
+.message-name,
+.message-course {
+  @apply text-sm font-semibold text-[#1C1C1C] mb-1 truncate;
+}
+
+.message-course {
+  @apply text-[#0069B2];
+}
+
+.message-preview {
+  @apply text-xs text-[#666666] truncate;
+}
+
+.message-time {
+  @apply text-xs text-[#999999] flex-shrink-0;
+}
+
+/* Right Side - Chat */
+.messages-chat {
+  @apply flex-1 flex flex-col;
+}
+
+.chat-header {
+  @apply px-10 py-6 border-b border-[#E5E7EB];
+}
+
+.chat-header-user {
+  @apply flex items-center gap-4;
+}
+
+.chat-avatar {
+  @apply w-16 h-16 rounded-full object-cover;
+}
+
+.chat-user-info {
+  @apply flex flex-col gap-1;
+}
+
+.chat-user-name {
+  @apply text-lg font-semibold text-[#1C1C1C] flex items-center gap-2;
+}
+
+.chat-user-status {
+  @apply text-sm font-normal text-[#00CC6D];
+}
+
+.chat-user-title {
+  @apply text-sm text-[#666666];
+}
+
+/* Chat Messages */
+.chat-messages {
+  @apply flex-1 overflow-y-auto px-10 py-6; 
+}
+
+.chat-message {
+  @apply flex gap-3 mb-6;
+}
+
+.chat-message-sender {
+  @apply flex-row;
+}
+
+.chat-message-receiver {
+  @apply flex-row;
+  justify-content: flex-end;
+}
+
+.chat-message-avatar {
+  @apply w-10 h-10 rounded-full flex-shrink-0 object-cover;
+  margin-top: 20px;
+}
+
+.chat-message-content {
+  @apply flex flex-col gap-1;
+  max-width: 80%;
+}
+
+.chat-message-receiver .chat-message-content {
+  @apply items-end;
+}
+
+.chat-message-sender .chat-message-content {
+  @apply items-start;
+}
+
+.chat-message-time {
+  @apply text-xs text-[#999999];
+}
+
+.chat-message-bubble {
+  @apply px-4 py-3 text-sm;
+  line-height: 1.5;
+  border-radius: 16px;
+  max-width: 610px;
+}
+
+.chat-message-sender .chat-message-bubble {
+  @apply bg-[#F5F9FF] text-[#1C1C1C];
+}
+
+.chat-message-receiver .chat-message-bubble {
+  @apply bg-[#F5F9FF] text-[#1C1C1C];
+}
+
+.chat-date-divider {
+  @apply text-center text-xs text-[#999999] my-6;
+}
+
+/* Chat Input */
+.chat-input-wrapper {
+  @apply px-5 py-6 flex items-center gap-3;
+}
+
+.chat-input {
+  @apply flex-1 px-6 py-3 border border-[#E5E7EB] rounded-full text-sm outline-none;
+  background: #FFFFFF;
+}
+
+.chat-input::placeholder {
+  @apply text-[#999999];
+}
+
+.chat-send-btn {
+  @apply w-12 h-12 flex items-center justify-center rounded-full bg-[#D4EDFF] border-none cursor-pointer transition;
+}
+
+.chat-send-btn:hover {
+  @apply bg-[#BFE0FF];
+}
+
+@media (max-width: 768px) {
+  .messages-container {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    flex-direction: column;
+  }
+
+  .messages-sidebar {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .messages-chat {
+    min-height: 500px;
+  }
+
+  .chat-messages {
+    padding: 16px;
+  }
+
+  .chat-input-wrapper {
+    padding: 16px;
+  }
+
+  .chat-message-content {
+    max-width: 80%;
   }
 }

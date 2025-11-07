@@ -153,3 +153,137 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
   });
 });
+
+// ============================================
+// SUBSCRIPTION TABS (Předplatné tab)
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const subscriptionTabs = document.querySelectorAll('.subscription-tab');
+    const tabsContainer = document.querySelector('.subscription-tabs');
+
+    if (!tabsContainer || !subscriptionTabs || subscriptionTabs.length === 0) return;
+
+    // -------- Price management for subscription cards --------
+    const subscriptionPrices = [];
+
+    function parseSubscriptionPrices() {
+        const priceDivs = document.querySelectorAll('.subscription-plan-card .plan-card-price p');
+        subscriptionPrices.length = 0;
+        
+        priceDivs.forEach(p => {
+            const numberEl = p.querySelector('.price-number');
+            const unitEl = p.querySelector('.price-unit');
+            if (!numberEl || !unitEl) return;
+
+            const numText = numberEl.textContent.replace(/\s+/g, '').replace(',', '.');
+            const value = parseFloat(numText);
+            if (Number.isNaN(value)) return;
+
+            // Base monthly price
+            let baseMonthly = value;
+            if (unitEl.textContent.toLowerCase().includes('rok')) {
+                baseMonthly = value / 12;
+            }
+
+            subscriptionPrices.push({ el: p, numberEl, unitEl, baseMonthly });
+        });
+    }
+
+    function formatPrice(n) {
+        return Math.round(n).toLocaleString('cs-CZ');
+    }
+
+    function animateNumber(el, start, end, duration = 1000) {
+        const startTime = performance.now();
+        const step = (currentTime) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const value = start + (end - start) * progress;
+            el.textContent = formatPrice(value) + ' Kč ';
+            if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    }
+
+    function updateSubscriptionPrices(mode) {
+        subscriptionPrices.forEach(item => {
+            const { numberEl, unitEl, baseMonthly } = item;
+            let newValue, newUnit;
+
+            if (mode === 'annual') {
+                newValue = baseMonthly * 12;
+                newUnit = '| rok';
+            } else {
+                newValue = baseMonthly;
+                newUnit = '| měsíc';
+            }
+
+            // Fade out
+            numberEl.classList.add('fade-out');
+            unitEl.classList.add('fade-out');
+
+            setTimeout(() => {
+                const oldValue = parseFloat(numberEl.textContent.replace(/\D/g, '')) || 0;
+                animateNumber(numberEl, oldValue, newValue);
+                unitEl.textContent = newUnit;
+
+                // Fade in
+                numberEl.classList.remove('fade-out');
+                unitEl.classList.remove('fade-out');
+                numberEl.classList.add('fade-in');
+                unitEl.classList.add('fade-in');
+
+                setTimeout(() => {
+                    numberEl.classList.remove('fade-in');
+                    unitEl.classList.remove('fade-in');
+                }, 300);
+            }, 150);
+        });
+    }
+
+    // Function to update the sliding indicator
+    function updateSlidingIndicator(activeTab) {
+        if (!tabsContainer || !activeTab) return;
+        
+        const tabRect = activeTab.getBoundingClientRect();
+        const containerRect = tabsContainer.getBoundingClientRect();
+        const left = tabRect.left - containerRect.left;
+        const width = tabRect.width;
+        
+        tabsContainer.style.setProperty('--indicator-left', `${left}px`);
+        tabsContainer.style.setProperty('--indicator-width', `${width}px`);
+    }
+
+    // Initialize
+    parseSubscriptionPrices();
+    const activeTab = document.querySelector('.subscription-tab.active');
+    if (activeTab) {
+        updateSlidingIndicator(activeTab);
+        const mode = activeTab.getAttribute('data-period') || 'monthly';
+        updateSubscriptionPrices(mode);
+    }
+
+    subscriptionTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            subscriptionTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+
+            // Update sliding indicator
+            updateSlidingIndicator(this);
+
+            // Update prices
+            const mode = this.getAttribute('data-period') || 'monthly';
+            updateSubscriptionPrices(mode);
+        });
+    });
+
+    // Update indicator on window resize
+    window.addEventListener('resize', function() {
+        const activeTab = document.querySelector('.subscription-tab.active');
+        if (activeTab) {
+            updateSlidingIndicator(activeTab);
+        }
+    });
+});

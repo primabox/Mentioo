@@ -13,8 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #F9FAFB;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; 
   overflow-x: hidden;
 }
 
