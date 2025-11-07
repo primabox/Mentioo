@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; 
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
 
@@ -178,7 +178,7 @@ body {
 
 /* ===== CART LAYOUT ===== */
 .cart-layout {
-  @apply max-w-[1750px] mx-auto py-8 px-4 sm:px-6 md:px-10 lg:px-20 grid gap-8;
+  @apply max-w-[1750px] mx-auto pb-8 px-4 sm:px-6 md:px-10 lg:px-20 grid gap-8;
   grid-template-columns: 1fr 400px;
 }
 
@@ -462,6 +462,12 @@ body {
 
 .recommended-title {
   @apply text-[40px] font-semibold leading-tight mb-12 ml-[100px];
+}
+
+@media (max-width: 768px) {
+  .recommended-title {
+    @apply ml-0 text-center;
+  }
 }
 
 .recommended-grid {

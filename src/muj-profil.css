@@ -206,7 +206,7 @@ body {
   box-shadow: 0px 20px 30px 0px #1A78E514;
   position: relative;
   margin-top: -140px;
-  margin-left: calc(40% - 539px - 50px);
+  margin-left: calc(40% - 539px - 60px);
   margin-right: auto;
   z-index: 100;
   overflow: visible;
@@ -3021,9 +3021,11 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 }
 
 .messages-section-header {
-  @apply flex items-center gap-2 px-6 py-4 cursor-pointer;
+  @apply flex items-center gap-2 px-6 py-4 rounded-[12px] cursor-pointer;
   background: transparent;
   transition: background-color 0.3s ease;
+  width: 340px;
+  margin: 0 auto;
 }
 
 .messages-section:not(.collapsed) .messages-section-header {
@@ -3050,7 +3052,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 
 .messages-collapse-btn {
   @apply bg-transparent border-none cursor-pointer p-0;
-  font-size: 16px;
+  font-size: 12px;
   color: #666666;
 }
 
@@ -3073,6 +3075,8 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.3s ease;
   opacity: 1;
+  width: 340px;
+  margin: 0 auto;
 }
 
 .messages-section.collapsed .messages-list {
@@ -3081,7 +3085,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 }
 
 .message-item {
-  @apply flex items-center gap-3 px-6 py-4 cursor-pointer transition hover:bg-[#F9FAFB];
+  @apply flex items-center gap-3 px-6 py-4 cursor-pointer rounded-[12px] transition hover:bg-[#F5F9FF];
 }
 
 .message-item.active {
@@ -3110,11 +3114,11 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 }
 
 .message-preview {
-  @apply text-xs text-[#666666] truncate;
+  @apply text-xs text-[#717171] font-medium truncate;
 }
 
 .message-time {
-  @apply text-xs text-[#999999] flex-shrink-0;
+  @apply text-xs text-[#717171] font-medium flex-shrink-0;
 }
 
 /* Right Side - Chat */
