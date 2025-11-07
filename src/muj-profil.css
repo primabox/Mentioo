@@ -2996,16 +2996,24 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 }
 
 .messages-tabs {
-  @apply flex gap-4 px-6 py-4 border-b border-[#E5E7EB];
+  @apply flex gap-2 px-6 py-4;
 }
 
 .messages-tab {
-  @apply text-sm font-normal text-[#666666] bg-transparent border-none cursor-pointer transition;
-  padding: 0;
+  @apply text-sm font-medium text-[#666666] cursor-pointer transition;
+  padding: 4px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 32px;
+  background: transparent;
+}
+
+.messages-tab:hover {
+  @apply text-[#0069B2] border-[#0069B2];
 }
 
 .messages-tab.active {
-  @apply text-[#1C1C1C] font-medium;
+  @apply text-white;
+  background: #0069B2;
 }
 
 .messages-section {
@@ -3013,19 +3021,63 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 }
 
 .messages-section-header {
-  @apply flex items-center gap-2 px-6 py-4 bg-white cursor-pointer;
+  @apply flex items-center gap-2 px-6 py-4 cursor-pointer;
+  background: transparent;
+  transition: background-color 0.3s ease;
 }
 
-.messages-section-header span {
+.messages-section:not(.collapsed) .messages-section-header {
+  background: #F5F9FF;
+}
+
+.messages-section-title {
   @apply flex-1 text-sm font-semibold text-[#1C1C1C];
+  cursor: pointer;
+}
+
+.messages-section-title:hover {
+  color: #0069B2;
+}
+
+.messages-section-header:has(.messages-section-title:hover) {
+  background: #E8F3FF;
+  border-radius: 32x; 
+}
+
+.messages-section-header:has(.messages-section-title:hover) img {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(99%) saturate(1814%) hue-rotate(184deg) brightness(93%) contrast(101%);
 }
 
 .messages-collapse-btn {
   @apply bg-transparent border-none cursor-pointer p-0;
+  font-size: 16px;
+  color: #666666;
+}
+
+.messages-collapse-btn:hover {
+  color: #0069B2;
+}
+
+.messages-collapse-btn i {
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.messages-section.collapsed .messages-collapse-btn i {
+  transform: rotate(0deg);
 }
 
 .messages-list {
   @apply flex flex-col;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.messages-section.collapsed .messages-list {
+  max-height: 0;
+  opacity: 0;
 }
 
 .message-item {
@@ -3071,11 +3123,11 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 }
 
 .chat-header {
-  @apply px-10 py-6 border-b border-[#E5E7EB];
+  @apply px-10 py-6 ;
 }
 
 .chat-header-user {
-  @apply flex items-center gap-4;
+  @apply flex items-center rounded-[16px] gap-4 py-4 px-4 bg-[#F5F5F5];
 }
 
 .chat-avatar {
@@ -3100,7 +3152,30 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
 
 /* Chat Messages */
 .chat-messages {
-  @apply flex-1 overflow-y-auto px-10 py-6; 
+  @apply flex-1 px-10 py-6;
+  overflow-y: scroll;
+  max-height: calc(1250px - 120px - 80px);
+  padding-right: 20px;
+}
+
+/* Custom scrollbar for chat messages */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+  margin-left: -10px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+  min-height: 225px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
 }
 
 .chat-message {

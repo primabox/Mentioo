@@ -1612,17 +1612,17 @@
                         <!-- Tabs -->
                         <div class="messages-tabs">
                             <button class="messages-tab">Nepřečtené</button>
-                            <button class="messages-tab active">Přímé zprávy</button>
+                            <button class="messages-tab">Přímé zprávy</button>
                             <button class="messages-tab">Diskuze</button>
                         </div>
 
                         <!-- Direct Messages Section -->
                         <div class="messages-section">
                             <div class="messages-section-header">
-                                <img src="img/drafts.png" alt="" class="w-5 h-5">
-                                <span>Přímé zprávy</span>
+                                <img src="img/mailBlack.png" alt="" class="w-5 h-5">
+                                <span class="messages-section-title">Přímé zprávy</span>
                                 <button class="messages-collapse-btn">
-                                    <img src="img/expand_less.png" alt="" class="w-5 h-5">
+                                    <i class="fa-solid fa-chevron-down"></i>
                                 </button>
                             </div>
 
@@ -1668,10 +1668,10 @@
                         <!-- Diskuze Section -->
                         <div class="messages-section">
                             <div class="messages-section-header">
-                                <img src="img/forum.png" alt="" class="w-5 h-5">
-                                <span>Diskuze</span>
+                                <img src="img/chatBlack.png" alt="" class="w-5 h-5">
+                                <span class="messages-section-title">Diskuze</span>
                                 <button class="messages-collapse-btn">
-                                    <img src="img/expand_more.png" alt="" class="w-5 h-5">
+                                    <i class="fa-solid fa-chevron-down"></i>
                                 </button>
                             </div>
 
@@ -1810,6 +1810,72 @@
                                     <div class="chat-message-time">14:59</div>
                                     <div class="chat-message-bubble">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:20</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:25</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:30</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:35</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                                <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
+                            </div>
+
+                            <!-- Message -->
+                            <div class="chat-message chat-message-sender">
+                                <img src="img/avatar1.png" alt="Alex Smith" class="chat-message-avatar">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:40</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message - Receiver -->
+                            <div class="chat-message chat-message-receiver">
+                                <div class="chat-message-content">
+                                    <div class="chat-message-time">15:45</div>
+                                    <div class="chat-message-bubble">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                     </div>
                                 </div>
                                 <img src="img/profilovka.png" alt="You" class="chat-message-avatar">
@@ -2108,6 +2174,7 @@
     <script type="module" src="js/uploadAvatar.js"></script>
     <script type="module" src="js/passwordToggle.js"></script>
     <script type="module" src="js/pricingTabs.js"></script>
+    <script type="module" src="js/messagesCollapse.js"></script>
 </body>
 
 </html>
