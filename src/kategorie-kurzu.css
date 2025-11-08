@@ -439,7 +439,7 @@ body {
 
 /* Results Header */
 .results-header {
-    @apply flex items-center justify-between mb-6;
+    @apply flex items-center justify-between mb-3 mt-[15px];
     width: 1135px;
 }
 

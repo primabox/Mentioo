@@ -1597,7 +1597,9 @@ body {
   .content-heading-file,
   .content-heading-middle,
   .content-heading-small {
-    @apply text-2xl text-center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
   }
 
   .content-text {

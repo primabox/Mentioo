@@ -627,6 +627,14 @@ body {
   @apply mt-0;
 }
 
+.certificate-item-header {
+  @apply flex items-center gap-3 mb-3 mt-10 pl-[5px];
+}
+
+.certificate-item-header:first-of-type {
+  @apply mt-0;
+}
+
 .sidebar-icon {
   @apply text-[#0069B2] text-xl;
 }
@@ -708,14 +716,15 @@ body {
 /* Certificate Documents */
 .certificate-documents {
   @apply flex flex-col gap-3 mt-3 mb-2;
+  width: 335px;
 }
 
 .certificate-item {
-  @apply flex items-center  p-3 rounded-xl;
+  @apply flex items-center  py-3 rounded-xl;
 }
 
 .certificate-icon {
-  @apply flex items-center justify-center rounded-lg flex-shrink-0 p-2;
+  @apply flex items-center justify-center rounded-lg flex-shrink-0 py-2 pr-3;
 }
 
 .certificate-icon img {
@@ -920,6 +929,11 @@ body {
 
 /* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
+  .certificate-documents {
+    width: 100%;
+    max-width: 335px;
+  }
+
   .hero-gradient {
     padding: 40px 2rem !important;
     margin-top: 20px;
@@ -1029,6 +1043,10 @@ body {
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+  .certificate-documents {
+    width: 100%;
+    max-width: 100%;
+  }
 
   /* Navbar */
   .navbar {
@@ -1291,6 +1309,11 @@ body {
   }
 
   .sidebar-item-header {
+    margin-top: 24px;
+    gap: 8px;
+  }
+
+  .certificate-item-header {
     margin-top: 24px;
     gap: 8px;
   }
@@ -2138,6 +2161,10 @@ body {
 
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
+  .certificate-documents {
+    width: 100%;
+  }
+
   /* Instructor Tab Responsive */
   .instructor-profile-header {
     flex-direction: column;

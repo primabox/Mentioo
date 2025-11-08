@@ -134,7 +134,7 @@
 
 .hero-bg {
     @apply absolute rounded-[48px] bg-gradient-to-r from-[#28A6FF] to-[#00E8E8];
-    width: 100%;
+    width: 1744px;
     height: 100%;
     top: 0;
     left: 0;
@@ -148,7 +148,7 @@
 
 .hero-divider {
     width: 1px;
-    height: 250px;
+    height: 252px;
     background-color: #A9DBFF;
     flex-shrink: 0;
 }
@@ -186,15 +186,15 @@
 }
 
 .lektor-badge {
-    @apply inline-block px-3 py-1 bg-[#EFE6FF] text-[#7045C2] text-sm font-medium mb-1;
+    @apply inline-block px-3 py-1 bg-[#EFE6FF] text-[#7045C2] text-sm font-medium mb-4;
 }
 
 .lektor-name {
-    @apply text-[56px] font-bold text-gray-900 mb-2;
+    @apply text-[56px] font-semibold text-gray-900 mb-3;
 }
 
 .lektor-title {
-    @apply text-[20px] text-[#1C1C1C] mb-6;
+    @apply text-[20px] text-[#1C1C1C] mb-8;
 }
 
 .lektor-actions {
@@ -202,7 +202,7 @@
 }
 
 .lektor-btn-primary {
-    @apply px-6 py-3 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
+    @apply px-5 py-3 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -212,7 +212,7 @@
 }
 
 .lektor-btn-secondary {
-    @apply px-6 py-3 border border-[#0069B2] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
+    @apply px-5 py-3 border border-[#0069B2] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -222,11 +222,11 @@
 }
 
 .lektor-stats {
-    @apply space-y-2 flex-shrink-0 pr-32;
+    @apply  flex-shrink-0 pr-32;
 }
 
 .lektor-stat {
-    @apply flex items-center gap-3;
+    @apply flex items-center;
 }
 
 .stat-icon {
@@ -242,7 +242,7 @@
 }
 
 .lektor-social {
-    @apply flex justify-start ml-[5px];
+    @apply flex justify-start ml-[5px] mt-[50px];
     gap: 20px;
 }
 
@@ -292,7 +292,7 @@
 
 /* Instructor Bio Section (from detail-kurzu.css) */
 .instructor-bio-text {
-    @apply text-base leading-snug text-[#4D4D4D] w-full font-normal text-center;
+    @apply text-base leading-snug text-[#4D4D4D] w-full font-normal text-left;
     word-wrap: break-word;
     overflow-wrap: break-word;
     margin-bottom: 16px;
@@ -302,16 +302,6 @@
     margin-bottom: 0;
 }
 
-.instructor-bio-text p {
-    @apply m-0;
-    margin-bottom: 16px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.instructor-bio-text p:last-child {
-    @apply mb-0;
-}
 
 .instructor-link {
     @apply text-sm font-medium text-[#0069B2] no-underline inline-block mt-6 mb-[42px];
@@ -348,7 +338,7 @@
 
 /* ===== TABS ===== */
 .tabs-wrapper {
-  @apply px-6;
+  @apply pl-6;
 }
 
 .tabs {
@@ -397,7 +387,7 @@
 
 /* ===== TAB CONTENT ===== */
 .tab-content {
-  @apply p-6;
+  @apply py-6 pl-6 ;
 }
 
 /* Skrýt tooltip když je tab-content skrytý */
@@ -421,6 +411,10 @@
 
 /* Medium Desktop (max-width: 1280px) */
 @media (max-width: 1280px) {
+    .hero-bg {
+        width: 1400px;
+    }
+
     .hero-gradient {
         padding: 50px 2rem;
     }
@@ -493,6 +487,11 @@
 
 /* Tablet (max-width: 1024px) - Vertical hero layout */
 @media (max-width: 1024px) {
+    .hero-bg {
+        width: 100%;
+        max-width: 1200px;
+    }
+
     .hero-gradient {
         /* make padding symmetric and remove large negative margins from desktop styles */
         padding: 40px 2rem !important;
@@ -672,6 +671,11 @@
 }
 
 @media (max-width: 480px) {
+    .hero-bg {
+        width: 100%;
+        max-width: 640px;
+    }
+
     .navbar {
         @apply px-5;
     }
