@@ -239,7 +239,7 @@ body {
 
 /* ===== TABS ===== */
 .tabs-wrapper {
-  @apply px-6 border-none;
+  @apply pr-[25px]  border-none;
 }
 
 .tabs {
@@ -275,7 +275,7 @@ body {
 
 /* ===== TAB CONTENT ===== */
 .tab-content {
-  @apply p-6 hidden;
+  @apply pr-6 pt-6 pb-6 hidden;
 }
 
 
@@ -711,7 +711,7 @@ body {
 }
 
 .certificate-item {
-  @apply flex items-center bg-[#F9FAFB] p-3 rounded-xl;
+  @apply flex items-center  p-3 rounded-xl;
 }
 
 .certificate-icon {
