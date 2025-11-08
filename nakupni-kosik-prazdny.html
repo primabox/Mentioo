@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokladna | Mentioo</title>
-    <link rel="stylesheet" href="src/pokladna.css">
+    <title>Nákupní košík | Mentioo</title>
+    <link rel="stylesheet" href="src/nakupni-kosik.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
 
 <body class="font-[Poppins] overflow-x-hidden">
     <div class="bubble-field overflow-x-hidden overflow-y-hidden md:block hidden">
-        <div class="bubble w-[13px] h-[13px] top-[41%] left-[92%]"></div>
-        <div class="bubble w-[13px] h-[13px] top-[44%] left-[2.5%]"></div>
-        <div class="bubble w-[13px] h-[13px] top-[25%] left-[55%]"></div>
+        <div class="bubble w-[10px] h-[10px]" style="top: 22%; left: 60%;"></div>
+        <div class="bubble w-[13px] h-[13px]" style="top: 35%; left: 5%;"></div>
+        <div class="bubble w-[13px] h-[13px]" style="top: 50%; left: 96%;"></div>
+        <div class="bubble w-[13px] h-[13px]" style="top: 25%; left: 53%;"></div>
     </div>
 
     <!-- HEADER -->
@@ -102,138 +104,128 @@
                 <div>
                     <div class="hero-gradient">
                         <div class="hero-bg"></div>
-                        <h1 class="hero-title">Pokladna</h1>
+                        <h1 class="hero-title">Nákupní košík</h1>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CHECKOUT SECTION -->
-    <section class="checkout-section">
-        <div class="checkout-container">
-            <!-- Progress Steps -->
-            <div class="progress-steps">
-                <div class="progress-step active">
-                    <div class="step-number">1</div>
-                    <span class="step-label">Přihlášení</span>
-                </div>
-                <div class="step-divider"></div>
-                <div class="progress-step">
-                    <div class="step-number">2</div>
-                    <span class="step-label">Platba</span>
-                </div>
-            </div>
+    <!-- CART HEADER -->
+    <div class="cart-header-wrapper">
+        <h3 class="cart-header-count">0 položek v košíku</h3>
+    </div>
 
-            <!-- Main Content Grid -->
-            <div class="checkout-grid">
-                <!-- Left Side -->
-                <div class="left-side">
-                    <!-- Login Form -->
-                    <div class="login-column">
-                        <div class="login-content">
-                            <div class="login-text">
-                                <h2 class="login-title">Přihlásit se</h2>
-                                <p class="login-subtitle">K tomu, abyste mohli zakoupit kurzy je nutné se přihlásit. Jste už jen krok od úspěchu.</p>
-                                <p class="register-link">Ještě nemáte účet? <a href="#" class="register-link-text">Registrujte se</a>.</p>
+    <!-- EMPTY CART -->
+    <section class="empty-cart-section">
+        <div class="empty-cart-container">
+            <img src="img/cart.png" alt="Prázdný košík" class="empty-cart-icon">
+            <h2 class="empty-cart-title">Váš košík je prázdný.</h2>
+            <p class="empty-cart-text">Pokračujte v nákupu a najděte si ten pravý kurz pro Vás!</p>
+            <a href="index.html" class="empty-cart-btn">Pokračovat v nákupu</a>
+        </div>
+    </section>
+
+    <!-- MOHLO BY SE VÁM LÍBIT SECTION -->
+    <section class="recommended-section">
+        <div class="recommended-wrapper">
+            <h2 class="recommended-title">Mohlo by se vám líbit</h2>
+            
+            <div class="recommended-grid">
+                <!-- Karta 1 -->
+                <a href="detail-kurzu.html" class="news-card">
+                    <img src="img/card1.png" alt="Data Science Fundamentals" class="news-img" />
+                    <div class="news-card-body">
+                        <h3 class="news-card-title">Data Science Fundamentals</h3>
+                        <p class="news-card-text">Learn to build modern websites from scratch with Erika Simpson...</p>
+                        <div class="news-card-rating">
+                            <span class="rating-value">4.8</span>
+                            <div class="rating-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
-                            
-                            <form class="login-form">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" id="email" class="form-input" placeholder="Zadejte přihlašovací e-mail">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="password" class="form-label">Heslo</label>
-                                    <div class="password-wrapper">
-                                        <input type="password" id="password" class="form-input" placeholder="Zadejte heslo">
-                                        <button type="button" class="password-toggle">
-                                            <img src="img/visibility.png" alt="Show password">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <a href="#" class="forgot-password">Zapomenuté heslo?</a>
-
-                                <button type="submit" class="btn-submit">Přihlásit se</button>
-                            </form>
-
-                            <!-- Divider -->
-                            <div class="form-divider"></div>
-
-                            <!-- Social Login -->
-                            <div class="social-column">
-                                <button type="button" class="social-btn google-btn">
-                                    <img src="img/google.png" alt="Google" class="w-[24px] h-[24px]">
-                                </button>
-                                <button type="button" class="social-btn facebook-btn">
-                                    <img src="img/facebook.png" alt="Facebook" class="w-[21px] h-[20px]">
-                                </button>
-                            </div>
+                            <span class="rating-count">(5)</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag tag-green">Novinka</span>
+                            <span class="tag tag-purple">Free trial</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Right Column: Order Summary -->
-                <div class="summary-column">
-                    <div class="order-summary">
-                        <h3 class="summary-title">Shrnutí objednávky</h3>
-
-                        <div class="summary-divider"></div>
-
-                        <div class="summary-items">
-                            <!-- Course Item 1 -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
-                                </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-discount-badge">-30 %</span>
-                                    <div class="summary-prices">
-                                        <span class="summary-price-sale">8 500 Kč <span class="summary-price-old">12 000 Kč</span></span>
-                                        
-                                    </div>
-                                </div>
+                <!-- Karta 2 -->
+                <a href="detail-kurzu.html" class="news-card">
+                    <img src="img/card2.png" alt="UI/UX Design Masterclass" class="news-img" />
+                    <div class="news-card-body">
+                        <h3 class="news-card-title">UI/UX Design Masterclass</h3>
+                        <p class="news-card-text">Master modern UI/UX principles with practical design exercises...</p>
+                        <div class="news-card-rating">
+                            <span class="rating-value">4.6</span>
+                            <div class="rating-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
                             </div>
-
-                            <!-- Course Item 2 (with discount) -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
-                                </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-discount-badge">-30 %</span>
-                                    <div class="summary-prices">
-                                        <span class="summary-price-sale">8 500 Kč <span class="summary-price-old">12 000 Kč</span></span>
-                                  
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Course Item 3 -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
-                                </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-price">8 500 Kč</span>
-                                </div>
-                            </div>
+                            <span class="rating-count">(4)</span>
                         </div>
-
-                        <div class="summary-divider"></div>
-
-                        <!-- Total -->
-                        <div class="summary-total">
-                            <span class="total-label">Celkem</span>
-                            <span class="total-price">16 500 Kč</span>
+                        <div class="news-tags">
+                            <span class="tag tag-green">Novinka</span>
+                            <span class="tag tag-blue">Pro nováčky</span>
                         </div>
                     </div>
-                </div>
+                </a>
+
+                <!-- Karta 3 -->
+                <a href="detail-kurzu.html" class="news-card">
+                    <img src="img/card3.png" alt="Modern Illustration Course" class="news-img" />
+                    <div class="news-card-body">
+                        <h3 class="news-card-title">Modern Illustration Course</h3>
+                        <p class="news-card-text">Create vibrant digital illustrations and improve your creative workflow...</p>
+                        <div class="news-card-rating">
+                            <span class="rating-value">4.9</span>
+                            <div class="rating-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="rating-count">(6)</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag tag-purple">Nejlepší hodnocení</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Karta 4 -->
+                <a href="detail-kurzu.html" class="news-card">
+                    <img src="img/card4.png" alt="Photography for Beginners" class="news-img" />
+                    <div class="news-card-body">
+                        <h3 class="news-card-title">Photography for Beginners</h3>
+                        <p class="news-card-text">Capture stunning photos and learn the basics of photography...</p>
+                        <div class="news-card-rating">
+                            <span class="rating-value">4.7</span>
+                            <div class="rating-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <span class="rating-count">(3)</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag tag-green">Novinka</span>
+                            <span class="tag tag-turquoise">Trending</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -342,7 +334,6 @@
     <!-- Scripts -->
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
-    <script type="module" src="js/passwordToggle.js"></script>
 </body>
 
 </html>

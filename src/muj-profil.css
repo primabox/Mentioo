@@ -1154,6 +1154,19 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   .footer {
     padding: 50px 60px;
   }
+
+  .course-meta-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 24px;
+    width: 100%;
+    margin-top: -100px;
+  }
+
+  .course-meta-item:not(:last-child)::after {
+    display: none;
+  }
   
   .active-courses-grid {
     display: flex;
@@ -1218,21 +1231,17 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding: 24px;
+    padding: 20px;
     margin-left: 0;
-    margin-top: -100px;
+    margin-top: -80px;
   }
   
   .course-meta-item:not(:last-child)::after {
     display: none;
   }
   
-  .meta-number {
-    font-size: 18px;
-  }
-  
   .meta-description {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .profile-layout {
@@ -1354,258 +1363,13 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   .course-meta-row {
     display: flex;
     flex-direction: column;
-    margin-top: -40px;
+    margin-top: -60px;
     padding: 0;
-    gap: 12px;
-    background: transparent;
-    box-shadow: none;
-  }
-  
-  .course-meta-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(26, 120, 229, 0.08);
-  }
-  
-  .course-meta-item:not(:last-child)::after {
-    display: none;
-  }
-  
-  .meta-icon {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-  }
-  
-  .meta-content {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 6px;
-  }
-  
-  .meta-number {
-    font-size: 18px;
-    font-weight: 600;
-    text-align: left;
-    white-space: nowrap;
-  }
-  
-  .meta-description {
-    font-size: 16px;
-    text-align: left;
-    white-space: nowrap;
-  }
-  
-  .profile-layout {
-    padding: 32px 16px;
-  }
-  
-  .section-heading {
-    font-size: 20px;
-  }
-  
-  .active-courses-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .course-card {
-    width: 361px;
-    max-width: 100%;
-    height: 510px;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-  
-  .course-card-img {
-    width: 100%;
-    height: 200px;
-  }
-  
-  .course-card-content {
-    padding: 20px;
     gap: 16px;
-  }
-  
-  .course-card-title {
-    font-size: 16px;
-  }
-  
-  .course-card-desc {
-    font-size: 14px;
-  }
-  
-  .course-arrow-btn {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .sidebar-profile-avatar {
-    width: 130px;
-    height: 130px;
-    position: static;
-    margin: 0;
-  }
-  
-  .sidebar-profile-badge {
-    margin-top: 35px;
-  }
-  
-  .sidebar-profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-profile-card {
-    padding: 24px;
-    height: auto;
-    padding-top: 24px;
-  }
-  
-  .sidebar-profile-name {
-    font-size: 18px;
-  }
-  
-  .sidebar-menu {
-    padding: 20px 16px;
-  }
-  
-  .sidebar-menu-item {
-    padding: 16px;
-    height: auto;
-    min-height: 56px;
-  }
-  
-  .course-filter-tabs {
-    @apply gap-1.5 mb-6;
-  }
-  
-  .filter-tab {
-    @apply gap-1.5 px-2.5 py-1.5 text-sm;
-  }
-  
-  .filter-tab-check {
-    @apply w-4 h-4;
-  }
-  
-  .filter-tab span:first-of-type {
-    @apply text-sm;
-  }
-  
-  .filter-tab-count {
-    @apply min-w-[20px] h-5 px-1 text-xs;
-  }
-  
-  .streak-card {
-    @apply flex-col items-start gap-4;
-    width: 100%;
-    max-width: 361px;
-    height: auto;
-    padding: 20px;
-  }
-  
-  .streak-header {
-    @apply w-full;
-    order: 1;
-  }
-  
-  .streak-days {
-    @apply w-full gap-8 justify-center;
-    order: 2;
-    position: static;
-    transform: none;
-  }
-  
-  .streak-info-btn {
-    @apply mb-0;
-    order: 1;
-    margin-left: 173px;
-  }
-  
-  .streak-day {
-    @apply gap-2;
-  }
-  
-  .streak-day-icon {
-    @apply w-[25px] h-[25px] mb-2;
-  }
-  
-  .streak-day-label {
-    @apply text-sm;
-  }
-  
-  .streak-number {
-    @apply text-lg mb-1;
-  }
-  
-  .streak-description {
-    @apply text-xs;
-  }
-  
-  .streak-icon img {
-    width: 48px;
-    height: 64px;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    @apply px-5;
-  }
-
-  .footer {
-    padding: 32px 24px;
-  }
-  
-  .footer-columns {
-    @apply grid-cols-1 gap-5;
-  }
-  
-  .footer-logo img {
-    width: 120px;
-    height: 50px;
-  }
-  
-  .hero-section {
-    padding: 100px 0 60px;
-  }
-  
-  .content-layout {
-    max-width: 100%;
-    padding: 0 16px;
-  }
-  
-  .hero-gradient {
-    padding: 20px 16px;
-    border-radius: 24px;
-    width: 100%;
-    height: auto;
-    min-height: 140px;
-  }
-  
-  .hero-title {
-    font-size: 36px;
-    text-align: center;
-  }
-  
-  .course-meta-row {
-    display: flex;
-    flex-direction: column;
-    margin-top: -40px;
-    padding: 0;
-    gap: 12px;
     background: transparent;
     box-shadow: none;
+    min-height: auto;
+    width: 100%;
   }
   
   .course-meta-item {
@@ -1627,6 +1391,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
     width: 48px;
     height: 48px;
     flex-shrink: 0;
+    margin-bottom: 0;
   }
   
   .meta-content {
@@ -1636,17 +1401,9 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
     gap: 6px;
   }
   
-  .meta-number {
-    font-size: 18px;
-    font-weight: 600;
-    text-align: left;
-    white-space: nowrap;
-  }
-  
   .meta-description {
     font-size: 16px;
     text-align: left;
-    white-space: nowrap;
   }
   
   .profile-layout {

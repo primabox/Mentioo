@@ -4,17 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokladna | Mentioo</title>
-    <link rel="stylesheet" href="src/pokladna.css">
+    <title>Děkujeme za váš nákup | Mentioo</title>
+    <link rel="stylesheet" href="src/thankYou.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="font-[Poppins] overflow-x-hidden">
     <div class="bubble-field overflow-x-hidden overflow-y-hidden md:block hidden">
-        <div class="bubble w-[13px] h-[13px] top-[41%] left-[92%]"></div>
-        <div class="bubble w-[13px] h-[13px] top-[44%] left-[2.5%]"></div>
-        <div class="bubble w-[13px] h-[13px] top-[25%] left-[55%]"></div>
+        <div class="bubble w-[14px] h-[14px] top-[47%] left-[5%]"></div>
+        <div class="bubble opacity-20 w-[18px] h-[18px] top-[27%] left-[72%]"></div>
+        <div class="bubble w-[14px] h-[14px] top-[32%] left-[18%]"></div>
+        <div class="bubble w-[13px] h-[13px] top-[40%] left-[88%]"></div>
+        <div class="bubble w-[5px] h-[5px] top-[45%] left-[93%]"></div>
+        <div class="bubble w-[3px] h-[3px] top-[32%] left-[16%]"></div>
+        <div class="bubble w-[13px] h-[13px] top-[60%] left-[76%]"></div>
     </div>
 
     <!-- HEADER -->
@@ -95,143 +99,69 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-wrapper">
-            <div class="content-layout">
-                <div>
-                    <div class="hero-gradient">
-                        <div class="hero-bg"></div>
-                        <h1 class="hero-title">Pokladna</h1>
-                    </div>
-                </div>
+    <!-- THANK YOU SECTION -->
+    <section class="thankyou-section">
+        <div class="thankyou-container">
+            <div class="thankyou-icon">
+                <img src="img/paymentDone.png" alt="Success" class="">
+            </div>
+            
+            <h1 class="thankyou-title">Děkujeme za váš nákup</h1>
+            
+            <p class="thankyou-text">Vaše objednávka byla úspěšně zpracována. Přístup k zakoupeným kurzům naleznete ve svém profilu.</p>
+            
+            <div class="thankyou-buttons">
+                <a href="index.html" class="btn-continue">Pokračovat v nákupu</a>
+                <a href="muj-profil.html" class="btn-profile">Můj profil</a>
             </div>
         </div>
     </section>
 
-    <!-- CHECKOUT SECTION -->
-    <section class="checkout-section">
-        <div class="checkout-container">
-            <!-- Progress Steps -->
-            <div class="progress-steps">
-                <div class="progress-step active">
-                    <div class="step-number">1</div>
-                    <span class="step-label">Přihlášení</span>
-                </div>
-                <div class="step-divider"></div>
-                <div class="progress-step">
-                    <div class="step-number">2</div>
-                    <span class="step-label">Platba</span>
-                </div>
-            </div>
-
-            <!-- Main Content Grid -->
-            <div class="checkout-grid">
-                <!-- Left Side -->
-                <div class="left-side">
-                    <!-- Login Form -->
-                    <div class="login-column">
-                        <div class="login-content">
-                            <div class="login-text">
-                                <h2 class="login-title">Přihlásit se</h2>
-                                <p class="login-subtitle">K tomu, abyste mohli zakoupit kurzy je nutné se přihlásit. Jste už jen krok od úspěchu.</p>
-                                <p class="register-link">Ještě nemáte účet? <a href="#" class="register-link-text">Registrujte se</a>.</p>
-                            </div>
-                            
-                            <form class="login-form">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" id="email" class="form-input" placeholder="Zadejte přihlašovací e-mail">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="password" class="form-label">Heslo</label>
-                                    <div class="password-wrapper">
-                                        <input type="password" id="password" class="form-input" placeholder="Zadejte heslo">
-                                        <button type="button" class="password-toggle">
-                                            <img src="img/visibility.png" alt="Show password">
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <a href="#" class="forgot-password">Zapomenuté heslo?</a>
-
-                                <button type="submit" class="btn-submit">Přihlásit se</button>
-                            </form>
-
-                            <!-- Divider -->
-                            <div class="form-divider"></div>
-
-                            <!-- Social Login -->
-                            <div class="social-column">
-                                <button type="button" class="social-btn google-btn">
-                                    <img src="img/google.png" alt="Google" class="w-[24px] h-[24px]">
-                                </button>
-                                <button type="button" class="social-btn facebook-btn">
-                                    <img src="img/facebook.png" alt="Facebook" class="w-[21px] h-[20px]">
-                                </button>
-                            </div>
-                        </div>
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-1">
+                        <img src="img/calendar_month.png" alt="Přístup">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Přístup po dobu 1 roku</h3>
+                        <p class="feature-text">Získejte plný přístup ke všem lekcím a materiálům po celý rok.</p>
                     </div>
                 </div>
 
-                <!-- Right Column: Order Summary -->
-                <div class="summary-column">
-                    <div class="order-summary">
-                        <h3 class="summary-title">Shrnutí objednávky</h3>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-2">
+                        <img src="img/assignment.png" alt="Online">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Online cvičení a další materiály</h3>
+                        <p class="feature-text">Procvičujte nové znalosti pomocí online cvičení.</p>
+                    </div>
+                </div>
 
-                        <div class="summary-divider"></div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-3">
+                        <img src="img/book_ribbonPurple.png" alt="Poznámky">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Ukládání poznámek z lekcí</h3>
+                        <p class="feature-text">Ukládejte si své poznámky z lekcí a kdykoli se k nim vraťte.</p>
+                    </div>
+                </div>
 
-                        <div class="summary-items">
-                            <!-- Course Item 1 -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
-                                </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-discount-badge">-30 %</span>
-                                    <div class="summary-prices">
-                                        <span class="summary-price-sale">8 500 Kč <span class="summary-price-old">12 000 Kč</span></span>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Course Item 2 (with discount) -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
-                                </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-discount-badge">-30 %</span>
-                                    <div class="summary-prices">
-                                        <span class="summary-price-sale">8 500 Kč <span class="summary-price-old">12 000 Kč</span></span>
-                                  
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Course Item 3 -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
-                                </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-price">8 500 Kč</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="summary-divider"></div>
-
-                        <!-- Total -->
-                        <div class="summary-total">
-                            <span class="total-label">Celkem</span>
-                            <span class="total-price">16 500 Kč</span>
-                        </div>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-4">
+                        <img src="img/person.png" alt="Komunita" class="w-6 h-6">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Komunita a podpora lektorů</h3>
+                        <p class="feature-text">Připojte se k podpůrující komunitě a získejte pomoc přímo od lektorů.</p>
                     </div>
                 </div>
             </div>
@@ -342,7 +272,6 @@
     <!-- Scripts -->
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
-    <script type="module" src="js/passwordToggle.js"></script>
 </body>
 
 </html>
