@@ -279,7 +279,8 @@
 /* ===== CONTENT CARD ===== */
 .content-card {
   @apply bg-white rounded-2xl overflow-hidden;
-  width: 1083px;
+  width: 100%;
+  max-width: 1083px;
   height: auto;
   border: none !important;
 }
@@ -291,11 +292,21 @@
 
 /* Instructor Bio Section (from detail-kurzu.css) */
 .instructor-bio-text {
-    @apply text-base leading-snug text-[#4D4D4D] w-full font-normal;
+    @apply text-base leading-snug text-[#4D4D4D] w-full font-normal text-center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 16px;
+}
+
+.instructor-bio-text:last-of-type {
+    margin-bottom: 0;
 }
 
 .instructor-bio-text p {
-    @apply m-0 mb-4;
+    @apply m-0;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .instructor-bio-text p:last-child {
@@ -629,16 +640,34 @@
         @apply text-xl text-center;
     }
 
+    .tabs-wrapper {
+        @apply px-4;
+    }
+
     .instructor-bio-text {
         @apply text-center;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .instructor-bio-text p {
+        margin-bottom: 12px;
     }
 
     .instructor-link {
         @apply block text-center;
+        font-size: 15px;
     }
 
     .topics-grid {
         @apply justify-center;
+        gap: 12px;
+    }
+
+    .courses-heading {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 16px;
     }
 }
 
@@ -697,17 +726,34 @@
         @apply text-lg;
     }
 
+    .tabs-wrapper {
+        @apply px-3;
+    }
+
     .instructor-bio-text {
-        font-size: 15px;
-        line-height: 18px;
+        @apply text-center;
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .instructor-bio-text p {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .instructor-link {
-        font-size: 15px;
+        @apply block text-center;
+        font-size: 14px;
+    }
+
+    .topics-grid {
+        @apply justify-center;
+        gap: 8px;
+    }
+
+    .courses-heading {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .topic-tag {
@@ -1044,7 +1090,7 @@
     .courses-heading {
         grid-column: 1 / -1;
         font-size: 20px;
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
 
     .instructor-course-card {
@@ -1114,81 +1160,10 @@
     }
 }
 
-/* Tablet/Desktop Grid (1024px) */
-@media (max-width: 1024px) {
-    .instructor-courses-section {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-
-    .courses-heading {
-        grid-column: 1 / -1;
-        font-size: 20px;
-        margin-bottom: 0;
-    }
-
-    .instructor-course-card {
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-        align-items: stretch;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .instructor-course-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .course-card-img {
-        display: block;
-        width: 100%;
-        min-width: 100%;
-        height: 200px;
-        border-radius: 0;
-        @apply rounded-tl-[16px] rounded-tr-[16px];
-    }
-
-    .course-card-content {
-        padding: 16px;
-        gap: 8px;
-    }
-
-    .course-card-title {
-        font-size: 17px;
-    }
-
-    .course-card-desc {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .course-rating-info {
-        flex-wrap: wrap;
-        gap: 6px;
-    }
-
-    .course-card-price {
-        font-size: 18px;
-    }
-}
-
 /* Tablet (768px) */
 @media (max-width: 768px) {
     .instructor-courses-section {
         gap: 20px;
-    }
-
-    .instructor-course-card {
-        padding: 16px;
-        gap: 16px;
-    }
-
-    .course-card-img {
-        width: 200px;
-        min-width: 200px;
-        height: 140px;
     }
 
     .course-card-title {
@@ -1209,11 +1184,6 @@
 
 /* Mobile (480px) */
 @media (max-width: 480px) {
-    .courses-heading {
-        font-size: 18px;
-        margin-bottom: 16px;
-    }
-
     /* make courses single-column on small screens with vertical spacing */
     .instructor-courses-section {
         display: flex;
