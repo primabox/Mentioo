@@ -415,13 +415,15 @@ body {
 
 /* ===== TABS ===== */
 .tabs-wrapper {
-  @apply px-6;
+
   border: none !important;
 }
 
 .tabs {
   @apply flex gap-6 mt-8;
   position: relative;
+  --indicator-left: 0px;
+  --indicator-width: 0px;
 }
 
 .tabs::before {
@@ -435,6 +437,18 @@ body {
   z-index: 1;
 }
 
+.tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--indicator-left);
+  width: var(--indicator-width);
+  height: 2px;
+  background: #0069B2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
 .tab {
   @apply py-3.5 px-0 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all;
   position: relative;
@@ -442,26 +456,8 @@ body {
   white-space: nowrap;
 }
 
-.tab::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 1px;
-  background: transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 2;
-}
-
 .tab.active {
   @apply text-[#0069B2];
-}
-
-.tab.active::after {
-  width: 100%;
-  background: #0069B2;
 }
 
 .tab:hover {

@@ -40,7 +40,9 @@
 }
 
 .hamburger-btn {
-  @apply text-2xl text-gray-700 hover:text-[#2563eb] transition;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  @apply text-gray-700 hover:text-[#2563eb] transition;
 }
 
 .mobile-menu {
@@ -100,12 +102,12 @@
 
 /* ===== MAIN CONTENT ===== */
 .main-wrapper {
-  @apply max-w-full mx-auto pb-12 px-8;
+  @apply max-w-full mx-auto pb-12 pl-8 pr-8;
   overflow-x: hidden;
 }
 
 .content-layout {
-  @apply grid gap-8 justify-center;
+  @apply grid gap-8;
   grid-template-columns: 1fr 320px;
   max-width: 1400px;
   margin: 0 auto;
@@ -154,7 +156,7 @@
 }
 
 .lektor-main-info {
-    @apply flex items-center gap-20 ml-21;
+    @apply flex items-center gap-26 ml-3;
 }
 
 .lektor-avatar {
@@ -283,11 +285,14 @@
   max-width: 1083px;
   height: auto;
   border: none !important;
+  margin-left: -72px;
 }
 
 /* ===== CONTENT SECTIONS ===== */
 .lektor-section-title {
-    @apply text-2xl font-bold text-gray-900 mb-6;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    @apply font-bold text-gray-900 mb-6;
 }
 
 /* Instructor Bio Section (from detail-kurzu.css) */
@@ -596,7 +601,8 @@
     }
 
     .lektor-name {
-        @apply text-2xl;
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
 
     .lektor-title {
@@ -1352,7 +1358,9 @@
 }
 
 .recommendation-icon {
-    @apply text-[#0069B2] text-2xl;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    @apply text-[#0069B2];
 }
 
 .recommendation-text {
