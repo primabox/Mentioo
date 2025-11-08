@@ -115,12 +115,12 @@
         <div class="checkout-container">
             <!-- Progress Steps -->
             <div class="progress-steps">
-                <div class="progress-step active">
+                <div class="progress-step">
                     <div class="step-number">1</div>
                     <span class="step-label">Přihlášení</span>
                 </div>
                 <div class="step-divider"></div>
-                <div class="progress-step">
+                <div class="progress-step active">
                     <div class="step-number">2</div>
                     <span class="step-label">Platba</span>
                 </div>
@@ -128,50 +128,57 @@
 
             <!-- Main Content Grid -->
             <div class="checkout-grid">
-                <!-- Left Side -->
+                <!-- Left Side - Payment Section -->
                 <div class="left-side">
-                    <!-- Login Form -->
-                    <div class="login-column">
-                        <div class="login-content">
-                            <div class="login-text">
-                                <h2 class="login-title">Přihlásit se</h2>
-                                <p class="login-subtitle">K tomu, abyste mohli zakoupit kurzy je nutné se přihlásit. Jste už jen krok od úspěchu.</p>
-                                <p class="register-link">Ještě nemáte účet? <a href="#" class="register-link-text">Registrujte se</a>.</p>
+                    <div class="payment-box">
+                        <h2 class="payment-title">Platba</h2>
+
+                        <!-- Online převod -->
+                        <div class="payment-option">
+                            <input type="radio" id="online-transfer" name="payment" class="payment-radio">
+                            <label for="online-transfer" class="payment-label">
+                                <span class="payment-method-text">Online převod</span>
+                            </label>
+                            <div class="payment-icon">
+                                <img src="img/bank_transfer.png" alt="" class="w-[33px] h-[33px]">
                             </div>
-                            
-                            <form class="login-form">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" id="email" class="form-input" placeholder="Zadejte přihlašovací e-mail">
-                                </div>
+                        </div>
 
-                                <div class="form-group">
-                                    <label for="password" class="form-label">Heslo</label>
-                                    <div class="password-wrapper">
-                                        <input type="password" id="password" class="form-input" placeholder="Zadejte heslo">
-                                        <button type="button" class="password-toggle">
-                                            <img src="img/visibility.png" alt="Show password">
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="payment-divider"></div>
 
-                                <a href="#" class="forgot-password">Zapomenuté heslo?</a>
+                        <!-- Kreditní/debetní karta -->
+                        <div class="payment-option">
+                            <input type="radio" id="card" name="payment" class="payment-radio">
+                            <label for="card" class="payment-label">
+                                <span class="payment-method-text">Kreditní/debetní karta</span>
+                            </label>
+                            <div class="payment-icons-group">
+                                <img src="img/masterCardText.png" alt="Mastercard" class="w-[51px] h-[40px]">
+                                <img src="img/Visa.png" alt="Visa" class="w-[71px] h-[40px]">
+                            </div> 
+                        </div>
 
-                                <button type="submit" class="btn-submit">Přihlásit se</button>
-                            </form>
+                        <div class="payment-divider"></div>
 
-                            <!-- Divider -->
-                            <div class="form-divider"></div>
-
-                            <!-- Social Login -->
-                            <div class="social-column">
-                                <button type="button" class="social-btn google-btn">
-                                    <img src="img/google.png" alt="Google" class="w-[24px] h-[24px]">
-                                </button>
-                                <button type="button" class="social-btn facebook-btn">
-                                    <img src="img/facebook.png" alt="Facebook" class="w-[21px] h-[20px]">
-                                </button>
+                        <!-- PayPal -->
+                        <div class="payment-option">
+                            <input type="radio" id="paypal" name="payment" class="payment-radio">
+                            <label for="paypal" class="payment-label">
+                                <span class="payment-method-text">PayPal</span>
+                            </label>
+                            <div class="payment-icon">
+                                <img src="img/paypal.png" alt="PayPal" class="W-[150px] h-[40px]">
                             </div>
+                        </div>
+
+                        <div class="payment-divider"></div>
+
+                        <!-- Terms Checkbox -->
+                        <div class="payment-terms">
+                            <input type="checkbox" id="terms" class="terms-checkbox">
+                            <label for="terms" class="terms-label">
+                                Souhlasím s Obchodními podmínkami a s Podmínkami zpracování osobních údajů
+                            </label>
                         </div>
                     </div>
                 </div>

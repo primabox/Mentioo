@@ -135,7 +135,9 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero-section {
-  @apply relative flex justify-center pt-36 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 overflow-x-hidden overflow-y-visible;
+  @apply relative flex justify-center pt-36 pb-16 overflow-x-hidden overflow-y-visible;
+  padding-left: 80px;
+  padding-right: 25px;
 }
 
 .hero-wrapper {
@@ -179,11 +181,52 @@ body {
 
 /* ===== CHECKOUT SECTION ===== */
 .checkout-section {
-  @apply max-w-[1750px] mx-auto py-8 px-4 sm:px-6 md:px-10 lg:px-20;
+  @apply max-w-[1520px] mx-auto py-8;
+  padding-left: 8px;
+  padding-right: 80px;
 }
 
 .checkout-container {
   @apply flex flex-col;
+}
+
+/* Progress Steps */
+.progress-steps {
+  @apply flex items-center gap-3 mb-12;
+}
+
+.progress-step {
+  @apply flex items-center gap-3;
+}
+
+.step-divider {
+  width: 386px;
+  height: 2px;
+  background: #E8E8E8;
+}
+
+.progress-step .step-number {
+  @apply w-12 h-12 rounded-full flex items-center justify-center font-medium text-[16px] bg-[#F5F5F5] text-[#999999];
+}
+
+.progress-step.active .step-number {
+  @apply bg-[#D4EDFF] text-[#0069B2];
+}
+
+.progress-step.completed .step-number {
+  @apply bg-[#28A6FF] text-white;
+}
+
+.progress-step .step-label {
+  @apply text-sm font-medium text-[#A4A4A4];
+}
+
+.progress-step.active .step-label {
+  @apply text-[#1C1C1C] text-sm font-medium;
+}
+
+.progress-step.completed .step-label {
+  @apply text-[#1C1C1C] text-sm font-medium;
 }
 
 /* Checkout Grid */
@@ -323,22 +366,22 @@ body {
 /* Divider */
 .form-divider {
   width: 1px;
-  height: 224px;
+  height: 230px;
   background: #D2D2D2;
   flex-shrink: 0;
-  margin: 0 20px;
+  margin: 25px 20px;
 }
 
 /* Social Login */
 .social-column {
-  @apply flex flex-row gap-4 items-center;
+  @apply flex flex-row gap-4 items-center my-auto;
   flex-shrink: 0;
 }
 
 .social-btn {
   @apply rounded-full border-0 flex items-center justify-center cursor-pointer transition-all;
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
   background: #D4EDFF;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -348,10 +391,7 @@ body {
   transform: translateY(-2px);
 }
 
-.social-icon {
-  width: 26px;
-  height: 26px;
-}
+
 
 /* Summary Column */
 .summary-column {
@@ -364,7 +404,7 @@ body {
 }
 
 .summary-title {
-  @apply text-xl font-semibold text-[#1C1C1C] mb-6;
+  @apply text-[22px] font-semibold text-[#0069B2] mb-6 mt-4;
 }
 
 .summary-items {
@@ -380,11 +420,11 @@ body {
 }
 
 .summary-course-title {
-  @apply text-sm font-medium text-[#1C1C1C] leading-tight;
+  @apply text-[16px] font-semibold text-[#1C1C1C] leading-tight;
 }
 
 .summary-instructor {
-  @apply text-xs text-[#717171];
+  @apply text-[14px] text-[#717171];
 }
 
 .summary-price-block {
@@ -392,7 +432,7 @@ body {
 }
 
 .summary-discount-badge {
-  @apply px-2 py-0.5 rounded bg-[#CCFFE7] text-[#006636] font-semibold text-xs;
+  @apply px-1 py-0.5 rounded bg-[#CCFFE7] text-[#006636] font-semibold text-xs;
 }
 
 .summary-price {
@@ -400,7 +440,11 @@ body {
 }
 
 .summary-prices {
-  @apply flex flex-col items-end gap-0.5;
+  @apply flex flex-col items-end gap-0.5 mb-3;
+}
+
+.summary-price-sale {
+  @apply text-base font-semibold text-[#CC163E];
 }
 
 .summary-price-new {
@@ -408,11 +452,11 @@ body {
 }
 
 .summary-price-old {
-  @apply text-xs text-[#717171] line-through;
+  @apply text-xs font-[400] text-[#999999] line-through;
 }
 
 .summary-divider {
-  @apply border-t border-gray-200 my-4;
+  @apply border-t border-gray-200 my-6;
 }
 
 .summary-total {
@@ -420,16 +464,123 @@ body {
 }
 
 .total-label {
-  @apply text-base font-semibold text-[#1C1C1C];
+  @apply text-base font-semibold text-[#0069B2];
 }
 
 .total-price {
-  @apply text-xl font-bold text-[#1C1C1C];
+  @apply text-[22px] font-semibold text-[#1C1C1C];
+}
+
+/* ===== PAYMENT SECTION ===== */
+.payment-box {
+  @apply bg-white rounded-[24px];
+  width: 1078px;
+  max-width: 100%;
+  padding: 60px 72px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.payment-title {
+  @apply text-[32px] font-semibold text-[#1C1C1C] mb-10;
+  letter-spacing: -0.5px;
+}
+
+.payment-option {
+  @apply flex items-center justify-between;
+  padding: 20px 0;
+}
+
+.payment-radio {
+  @apply cursor-pointer;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #D2D2D2;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+.payment-radio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #28A6FF;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+}
+
+.payment-radio:checked {
+  border-color: #28A6FF;
+  box-shadow: 0 0 0 2px rgba(40, 166, 255, 0.1);
+}
+
+.payment-radio:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.payment-radio:hover {
+  border-color: #28A6FF;
+  transform: scale(1.05);
+}
+
+.payment-radio:active {
+  transform: scale(0.95);
+}
+
+.payment-label {
+  @apply flex-1 ml-4 cursor-pointer;
+}
+
+.payment-method-text {
+  @apply text-[20px] font-normal text-[#1C1C1C];
+}
+
+.payment-icon {
+  @apply flex items-center justify-center;
+  flex-shrink: 0;
+}
+
+.payment-icons-group {
+  @apply flex items-center gap-3;
+  flex-shrink: 0;
+}
+
+
+
+
+.payment-divider {
+  @apply border-t border-[#E8E8E8];
+}
+
+.payment-terms {
+  @apply flex items-start gap-3 mt-8;
+}
+
+.terms-checkbox {
+  @apply w-5 h-5 cursor-pointer mt-0.5;
+  accent-color: #28A6FF;
+  flex-shrink: 0;
+}
+
+.terms-label {
+  @apply text-[14px] text-[#4D4D4D] cursor-pointer leading-relaxed;
 }
 
 /* ===== FOOTER ===== */
 .footer {
   padding: 50px 200px;
+  margin-top: 150px;
 }
 
 .footer-container {
@@ -565,8 +716,49 @@ body {
     font-size: 36px;
   }
 
+  .checkout-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .step-divider {
+    width: 200px;
+  }
+
+  .payment-box {
+    width: 100%;
+    padding: 48px 40px;
+  }
+
   .login-column {
     padding: 40px 32px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .login-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .login-text {
+    width: 100%;
+  }
+
+  .form-divider {
+    display: none;
+  }
+
+  .social-column {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-input,
+  .password-wrapper,
+  .forgot-password,
+  .btn-submit {
     width: 100%;
   }
 
@@ -592,6 +784,27 @@ body {
     font-size: 32px;
     margin-left: 0;
     text-align: center;
+  }
+
+  .checkout-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .progress-steps {
+    gap: 12px;
+  }
+
+  .step-divider {
+    width: 150px;
+  }
+
+  .progress-step .step-number {
+    @apply w-10 h-10 text-sm;
+  }
+
+  .progress-step .step-label {
+    @apply text-xs;
   }
 
   .login-column {
@@ -650,10 +863,36 @@ body {
     @apply py-6 px-4;
   }
 
+  .progress-steps {
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+
+  .step-divider {
+    width: 80px;
+  }
+
+  .progress-step .step-number {
+    @apply w-8 h-8 text-xs;
+  }
+
+  .progress-step .step-label {
+    @apply text-[11px];
+  }
+
   .login-column {
     padding: 28px 24px;
     border-radius: 20px;
     width: 100%;
+  }
+
+  .login-content {
+    align-items: center;
+  }
+
+  .login-text {
+    text-align: center;
   }
 
   .order-summary {
@@ -677,10 +916,19 @@ body {
 
   .login-form {
     gap: 14px;
+    width: 100%;
+    max-width: 400px;
   }
 
   .form-group {
     gap: 5px;
+    width: 100%;
+  }
+
+  .form-input,
+  .password-wrapper {
+    width: 100%;
+    max-width: 100%;
   }
 
   .form-input {
@@ -688,19 +936,25 @@ body {
     padding: 0 14px;
   }
 
+  .forgot-password {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .btn-submit {
     height: 44px;
     font-size: 15px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .social-btn {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 
-  .social-icon {
-    width: 20px;
-    height: 20px;
+  .social-column {
+    gap: 12px;
   }
 
   .summary-course-title {
@@ -722,6 +976,39 @@ body {
 
   .total-price {
     @apply text-lg;
+  }
+
+  /* Payment Section Responsive */
+  .payment-box {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .payment-title {
+    @apply text-2xl mb-6;
+  }
+
+  .payment-option {
+    padding: 16px 0;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .payment-method-text {
+    @apply text-base;
+  }
+
+  .payment-card-icon {
+    height: 24px;
+  }
+
+  .payment-paypal-icon {
+    height: 20px;
+  }
+
+  .terms-label {
+    @apply text-xs;
   }
 
   .footer {

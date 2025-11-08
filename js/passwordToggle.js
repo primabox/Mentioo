@@ -1,23 +1,21 @@
 // Password Toggle Functionality
 document.addEventListener('DOMContentLoaded', () => {
-  const passwordToggles = document.querySelectorAll('.password-toggle');
+  const passwordInput = document.getElementById('password');
+  const toggleButton = document.querySelector('.password-toggle');
+  const toggleIcon = toggleButton ? toggleButton.querySelector('img') : null;
 
-  passwordToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const targetId = toggle.getAttribute('data-target');
-      const passwordInput = document.getElementById(targetId);
-      const eyeShow = toggle.querySelector('.eye-show');
-      const eyeHide = toggle.querySelector('.eye-hide');
-
+  if (toggleButton && passwordInput && toggleIcon) {
+    toggleButton.addEventListener('click', () => {
+      // Přepnout typ inputu mezi password a text
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        eyeShow.style.display = 'none';
-        eyeHide.style.display = 'block';
+        toggleIcon.src = 'img/visibility_off.png';
+        toggleIcon.alt = 'Hide password';
       } else {
         passwordInput.type = 'password';
-        eyeShow.style.display = 'block';
-        eyeHide.style.display = 'none';
+        toggleIcon.src = 'img/visibility.png';
+        toggleIcon.alt = 'Show password';
       }
     });
-  });
+  }
 });

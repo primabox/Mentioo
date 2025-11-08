@@ -440,7 +440,15 @@ body {
 }
 
 .promo-code-section {
-  @apply flex gap-3 mt-6;
+  @apply flex flex-col gap-3 mt-6;
+}
+
+.promo-code-label {
+  @apply text-[16px] font-semibold text-[#4D4D4D];
+}
+
+.promo-code-input-group {
+  @apply flex gap-3;
 }
 
 .promo-code-input {
@@ -449,6 +457,27 @@ body {
 
 .promo-code-btn {
   @apply px-6 py-2 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-full hover:bg-[#0069B2] hover:text-white transition-all cursor-pointer border-none text-sm;
+}
+
+.promo-applied-badge {
+  @apply flex items-center gap-3 px-4 py-3 rounded-[8px] mt-3;
+  width: 338px;
+  max-width: 100%;
+  height: 66px;
+  border: 1px solid #00CC6D;
+  background: #E8FFF4;
+}
+
+.promo-check-icon {
+  @apply w-6 h-6 flex-shrink-0;
+}
+
+.promo-applied-text {
+  @apply text-[14px] text-[#4D4D4D] leading-relaxed;
+}
+
+.promo-applied-text strong {
+  @apply font-semibold;
 }
 
 /* ===== RECOMMENDED SECTION ===== */
@@ -1251,6 +1280,16 @@ body {
 
   .order-summary-discount {
     font-size: 18px;
+  }
+
+  .promo-applied-badge {
+    @apply mx-auto;
+    width: 100%;
+    max-width: 338px;
+  }
+
+  .promo-applied-text {
+    font-size: 13px;
   }
 }
 
