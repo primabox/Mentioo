@@ -15,7 +15,7 @@
         <div class="bubble" style="top:200px; left:53%; width:10px; height:10px;"></div>
         <div class="bubble" style="top:240px; left:46%; width:5px; height:5px;"></div>
         <div class="bubble" style="top:475px; left:93%; width:13px; height:13px;"></div>
-        <div class="bubble opacity-[40%]" style="top:340px; left:4%; width:14px; height:14px;"></div>
+        <div class="bubble opacity-[40%]" style="top:480px; left:4%; width:9px; height:9px;"></div>
         <div class="bubble" style="top:385px; left:2%; width:7px; height:7px;"></div>
     </div>
 
@@ -699,21 +699,26 @@
         </div>
     </footer>
 
-    <!-- Test Start Modal -->
-    <div id="test-modal" class="test-modal">
+    <!-- Test Complete Modal -->
+    <div id="test-complete-modal" class="test-modal">
         <div class="test-modal-overlay"></div>
         <div class="test-modal-content">
             <div class="test-modal-header">
-                <h2 class="test-modal-title">Přejete si zahájit test?</h2>
+                <h2 class="test-modal-title">
+                    <img src="img/check_circle.png" alt="Success" class="test-modal-title-icon">
+                    Gratulujeme!
+                </h2>
                 <button class="test-modal-close">&times;</button>
             </div>
             <p class="test-modal-text">
-                Kliknutím na tlačítko zahájit test se spustí <strong>časový odpočet</strong> pro dokončení testu. Během této doby nebudete moct z testu odejít.
+                Úspěšně jste dokončili test <strong>Online test: Auto Layout 2</strong>.
             </p>
-            <p class="test-modal-subtitle">Zavření testu se automaticky počítá jako nesplnění testu.</p>
+            <p class="test-modal-text">
+                Výsledek testu: <span class="test-result-badge">34/35</span>
+            </p>
             <div class="test-modal-buttons">
-                <button class="test-modal-btn-back">Vrátit se zpět</button>
-                <button class="test-modal-btn-start">Pokračovat na test</button>
+                <button class="test-modal-btn-back">Přehled odpovědí</button>
+                <button class="test-modal-btn-start">Další lekce</button>
             </div>
         </div>
     </div>
@@ -721,10 +726,10 @@
     <!-- Scripts -->
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
-    <script type="module" src="js/testModal.js"></script>
     <script type="module" src="js/questionToggle.js"></script>
     <script type="module" src="js/questionsScroll.js"></script>
     <script type="module" src="js/sortableList.js"></script>
+    <script type="module" src="js/testCompleteModal.js"></script>
 </body>
 
 </html>

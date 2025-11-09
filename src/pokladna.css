@@ -683,7 +683,11 @@ body {
 }
 
 .terms-label {
-  @apply text-[14px] text-[#1C1C1C] leading-relaxed;
+  @apply text-[14px] text-[#1C1C1C] leading-relaxed cursor-pointer;
+}
+
+.terms-link {
+  @apply text-[#0069B2] underline hover:text-[#28A6FF] transition-colors;
 }
 
 /* ===== FOOTER ===== */

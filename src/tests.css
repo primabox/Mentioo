@@ -697,7 +697,7 @@ body {
 .profile-sidebar {
   @apply flex flex-col gap-6;
   margin-top: -360px;
-  margin-left: -140px;
+  margin-left: -150px;
   z-index: 101;
   position: relative;
   width: 386px;
@@ -783,6 +783,13 @@ body {
   @apply text-[18px] font-medium rounded-lg;
   background-color: #FFE5DA;
   color: #AC3E0E;
+  padding: 4px 10px;
+}
+
+.test-result-badge {
+  @apply text-[14px] font-medium rounded-[4px] inline-block;
+  background-color: #CCFFE7;
+  color: #006636;
   padding: 4px 10px;
 }
 
@@ -1211,13 +1218,50 @@ body {
 }
 
 .test-modal-content {
-  @apply relative bg-white rounded-2xl flex flex-col;
+  @apply relative bg-white flex flex-col;
   width: 460px;
-  height: 326px;
+  height: 299px;
   padding: 32px;
   box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.3);
   z-index: 10001;
-  gap: 16px;
+  gap: 24px;
+  border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .test-modal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 24px;
+    gap: 24px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .test-modal-content {
+    width: 95%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .test-modal-title {
+    font-size: 18px;
+  }
+
+  .test-modal-text {
+    font-size: 14px;
+  }
+
+  .test-modal-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .test-modal-btn-back,
+  .test-modal-btn-start {
+    width: 100%;
+  }
 }
 
 .test-modal-header {
@@ -1225,7 +1269,14 @@ body {
 }
 
 .test-modal-title {
-  @apply text-[20px] font-semibold text-[#1C1C1C] m-0;
+  @apply text-[20px] font-semibold text-[#1C1C1C] m-0 flex items-center;
+}
+
+.test-modal-title-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .test-modal-close {
