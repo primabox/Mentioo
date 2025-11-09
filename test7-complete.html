@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 7 | Mentioo</title>
+    <link rel="stylesheet" href="src/tests.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="font-[Poppins]">
+    <div class="bubble-field md:block hidden">
+        <div class="bubble" style="top:200px; left:53%; width:10px; height:10px;"></div>
+        <div class="bubble" style="top:240px; left:46%; width:5px; height:5px;"></div>
+        <div class="bubble" style="top:475px; left:93%; width:13px; height:13px;"></div>
+        <div class="bubble opacity-[40%]" style="top:340px; left:4%; width:14px; height:14px;"></div>
+        <div class="bubble" style="top:385px; left:2%; width:7px; height:7px;"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">
+                    <img src="img/Logo.png" alt="Logo" class="w-32" />
+                </a>
+            </div>
+
+            <!-- Searchbar -->
+            <div class="searchbar-container">
+                <form class="search-form" role="search">
+                    <div class="search-wrapper">
+                        <span class="search-icon">
+                            <i class="fas fa-search translate-y-px"></i>
+                        </span>
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Hamburger (mobile) -->
+            <div class="hamburger">
+                <button id="navbar-toggle" class="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="#" class="mobile-link">Nabídka kurzů</a>
+                <a href="#" class="mobile-link">Lektoři</a>
+                <a href="#" class="mobile-link">Blog</a>
+                <a href="#" class="mobile-user-link">
+                    <span>Jana Blahošová</span>
+                    <img src="img/person_gray.png" alt="">
+                </a>
+            </div>
+
+            <!-- Desktop menu -->
+            <div id="navbar-menu" class="navbar-menu">
+                <ul class="nav-links">
+                    <li class="nav-item group">
+                        <a href="#" class="nav-link">
+                            Nabídka kurzů
+                        </a>
+                        <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                        <div class="dropdown">
+                            <div class="py-2">
+                                <a href="#" class="dropdown-link">Programování</a>
+                                <a href="#" class="dropdown-link">Design</a>
+                                <a href="#" class="dropdown-link">Marketing</a>
+                                <a href="#" class="dropdown-link">Business</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Lektoři</a></li>
+                    <li><a href="#" class="hover:text-[#2563eb]">Blog</a></li>
+                </ul>
+
+                <!-- User Profile & Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="user-profile-link">
+                        <img src="img/person_gray.png" alt="">
+                        <span>Jana Blahošová</span>
+                    </a>
+
+                    <a href="#" class="icon-btn">
+                        <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
+                    </a>
+                    <a href="#" class="icon-btn-alt">
+                        <img src="img/network.png" alt="Globe" class="w-5 h-5" />
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <a href="#" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Zpět na přehled kurzu
+    </a>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-wrapper">
+            
+            <div class="content-layout">
+                <div>
+                    <div class="hero-gradient">
+                        <div class="hero-bg"></div>
+                         <!-- Module Text -->
+                        <div class="module-text">povinný test</div>
+                        <h1 class="hero-title">Online test: Auto Layout</h1>
+                    </div>
+
+                    <!-- Course Meta Row -->
+                    <div class="course-meta-row">
+                        <div class="course-meta-item">
+                            <div class="meta-content">
+                                <div class="meta-icon meta-icon-purple">
+                                    <img src="img/assignment_turned_inPurple.png" alt="Aktivní kurzy"">
+                                </div>
+                                <div class="meta-description">35 testových otázek</div>
+                            </div>
+                        </div>
+                        <div class="course-meta-item">
+                            <div class="meta-content">
+                                <div class="meta-icon meta-icon-blue">
+                                    <img src="img/alarmCyan.png" alt="Dokončené lekce" >
+                                </div>
+                                <div class="meta-description">Časový limit 30 minut</div>
+                            </div>
+                        </div>
+                        <div class="course-meta-item">
+                            <div class="meta-content">
+                                <div class="meta-icon meta-icon-green">
+                                    <img src="img/check_circle_darkGreen.png" alt="Studijních hodin">
+                                </div>
+                                <div class="meta-description">Nutné získat 25 bodů z 35</div>
+                            </div>
+                        </div>
+                        <div class="course-meta-item">
+                            <div class="meta-content">
+                                <div class="meta-icon meta-icon-yellow">
+                                    <img src="img/autorenew.png" alt="Denní řady">
+                                </div>
+                                <div class="meta-description">Test je možné opakovat</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="profile-layout">
+        <!-- LEFT COLUMN - Main Content -->
+        <div class="profile-main">
+            <div class="question-container">
+                <div class="question-header">
+                    <h2 class="question-title">Otázka 1</h2>
+                </div>
+
+                <div class="question-text-row">
+                    <p class="question-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="question-time-badge-red">
+                        <img src="img/alarm_red.png" alt="">
+                        <span>00:15</span>
+                    </div>
+                </div>
+
+                <div class="question-divider"></div>
+
+                <div class="sortable-container" id="sortable-list">
+                    <div class="sortable-item" draggable="true" data-id="1">
+                        <span>Option 1</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="2">
+                        <span>Option 2</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="3">
+                        <span>Option 3</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="4">
+                        <span>Option 4</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="5">
+                        <span>Option 5</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="6">
+                        <span>Option 6</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="7">
+                        <span>Option 7</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="8">
+                        <span>Option 8</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="9">
+                        <span>Option 9</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="sortable-item" draggable="true" data-id="10">
+                        <span>Option 10</span>
+                        <div class="drag-handle">
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                            <div class="drag-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-divider-secondary"></div>
+
+                <div class="question-navigation-second">
+                    <button class="question-btn-prev">Předešlá otázka</button>
+                    <button class="question-btn-next">Další otázka</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN - Sidebar -->
+        <aside class="profile-sidebar">
+           
+            
+            <!-- Test Card -->
+            <div class="test-card">
+                <div class="test-card-header">
+                    <img src="img/trophy.png" alt="Trophy" class="test-trophy-icon">
+                    <h3 class="test-card-title">Postup testem</h3>
+                </div>
+                
+                <div class="test-progress-container">
+                    <div class="test-progress-text">35/35 otázek splněno</div>
+                    <div class="test-progress-bar">
+                        <div class="test-progress-fill" style="flex: 100%;"></div>
+                        <div class="test-progress-empty" style="flex: 0%;"></div>
+                        <div class="test-progress-dot"></div>
+                    </div>
+                </div>
+
+                <div class="test-time-limit">
+                    <img src="img/check_circle_darkBlue.png" alt="Clock" >
+                    <span class="test-time-label">Počet bodů</span>
+                    <span class="test-time-value-green">31/35</span>
+                </div>
+                
+                <div class="test-time-limit">
+                    <img src="img/alarmBlue.png" alt="Clock" >
+                    <span class="test-time-label">Časový limit</span>
+                    <span class="test-time-value-red">00:35</span>
+                </div>
+                
+                <button class="test-start-btn">Ukončit test</button>
+
+                <div class="test-info-box">
+                    <img src="img/infoBox.png" alt="">
+                    <span>V případě předčasného zavření testu bude test považován za nesplněný.</span>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="questions-menu">
+                <div class="questions-menu-header">
+                    <img src="img/assignment_turned_inBlue.png" alt="Clipboard" class="questions-menu-icon">
+                    <h3 class="questions-menu-title">Přehled otázek</h3>
+                </div>
+                
+                <div class="questions-list">
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 1</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 2</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 3</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 4</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 5</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 6</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 7</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 8</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 9</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 10</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 11</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 12</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 13</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 14</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 15</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 16</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 17</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 18</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 19</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 20</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 21</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 22</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 23</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 24</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 25</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 26</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 27</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 28</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 29</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 30</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 31</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item correct">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/check_circleDarkerGreen.png" alt="Správně" class="question-check-icon">
+                            <span>Otázka 32</span>
+                        </div>
+                        <span class="question-points">1 bod</span>
+                    </a>
+                    <a href="#" class="question-item incorrect">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="img/cancel.png" alt="Špatně" class="question-cancel-icon">
+                            <span>Otázka 33</span>
+                        </div>
+                        <span class="question-points">0 bodů</span>
+                    </a>
+                    <a href="#" class="question-item active">
+                        <div class="question-circle"></div>
+                        <span>Otázka 34</span>
+                    </a>
+                    <a href="#" class="question-item">
+                        <div class="question-circle"></div>
+                        <span>Otázka 35</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer bg-[#F5F9FF]">
+        <div class="footer-container">
+            <!-- Logo  -->
+            <div class="footer-logo">
+                <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+            </div>
+
+            <!-- Obsah -->
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <!-- INFO -->
+                    <div class="footer-info">
+                        <div class="footer-info-text">
+                            <p class="font-semibold text-lg">Mentio s.r.o</p>
+                            <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
+                            <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
+                            <p class="mt-2 leading-relaxed ">Spisová značka C 987654 vedená u Městského soudu v Praze
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4X4 KATEGORIE-->
+                    <div class="footer-categories">
+                        <div>
+                            <h4 class="footer-heading">Kategorie kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Kategorie 1</a></li>
+                                <li><a class="footer-link" href="#">Kategorie 2</a></li>
+                                <li><a class="footer-link" href="#">Kategorie 3</a></li>
+                                <li><a class="footer-link" href="#">Kategorie 4</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Typy kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Typy kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="footer-heading">Typy kurzů</h4>
+                            <ul class="footer-links">
+                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- O nás -->
+                    <div class="footer-about">
+                        <h4 class="footer-heading">O nás</h4>
+                        <ul class="footer-links">
+                            <li><a class="footer-link" href="#">Lektoři</a></li>
+                            <li><a class="footer-link" href="#">Kariéra</a></li>
+                            <li><a class="footer-link" href="#">Blog</a></li>
+                            <li><a class="footer-link" href="#">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- divider -->
+            <div class="footer-divider"></div>
+
+            <!-- COPYRIGHT + IKONY -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2025 Lorem ipsum</div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
+                    </a>
+
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
+                    </a>
+
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Test Start Modal -->
+    <div id="test-modal" class="test-modal">
+        <div class="test-modal-overlay"></div>
+        <div class="test-modal-content">
+            <div class="test-modal-header">
+                <h2 class="test-modal-title">Přejete si zahájit test?</h2>
+                <button class="test-modal-close">&times;</button>
+            </div>
+            <p class="test-modal-text">
+                Kliknutím na tlačítko zahájit test se spustí <strong>časový odpočet</strong> pro dokončení testu. Během této doby nebudete moct z testu odejít.
+            </p>
+            <p class="test-modal-subtitle">Zavření testu se automaticky počítá jako nesplnění testu.</p>
+            <div class="test-modal-buttons">
+                <button class="test-modal-btn-back">Vrátit se zpět</button>
+                <button class="test-modal-btn-start">Pokračovat na test</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/hamburger.js"></script>
+    <script type="module" src="js/bubbles.js"></script>
+    <script type="module" src="js/testModal.js"></script>
+    <script type="module" src="js/questionToggle.js"></script>
+    <script type="module" src="js/questionsScroll.js"></script>
+    <script type="module" src="js/sortableList.js"></script>
+</body>
+
+</html>
