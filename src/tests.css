@@ -1140,6 +1140,7 @@ body {
   max-height: 615px;
   position: relative;
   scrollbar-width: none;
+  padding-right: 8px;
 }
 
 .questions-list::-webkit-scrollbar {
