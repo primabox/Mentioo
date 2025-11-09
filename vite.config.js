@@ -29,6 +29,7 @@ export default defineConfig({
         test6: resolve(__dirname, "test6.html"),
         test7: resolve(__dirname, "test7.html"),
         test7Complete: resolve(__dirname, "test7-complete.html"),
+        test7Failed: resolve(__dirname, "test7-failed.html"),
       },
     },
   },

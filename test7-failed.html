@@ -15,7 +15,7 @@
         <div class="bubble" style="top:200px; left:53%; width:10px; height:10px;"></div>
         <div class="bubble" style="top:240px; left:46%; width:5px; height:5px;"></div>
         <div class="bubble" style="top:475px; left:93%; width:13px; height:13px;"></div>
-        <div class="bubble opacity-[40%]" style="top:340px; left:4%; width:14px; height:14px;"></div>
+        <div class="bubble opacity-[40%]" style="top:480px; left:4%; width:9px; height:9px;"></div>
         <div class="bubble" style="top:385px; left:2%; width:7px; height:7px;"></div>
     </div>
 
@@ -176,7 +176,7 @@
                 <div class="question-divider"></div>
 
                 <div class="sortable-container" id="sortable-list">
-                    <div class="sortable-item" data-id="1">
+                    <div class="sortable-item" draggable="true" data-id="1">
                         <span>Option 1</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -188,7 +188,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="2">
+                    <div class="sortable-item" draggable="true" data-id="2">
                         <span>Option 2</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="3">
+                    <div class="sortable-item" draggable="true" data-id="3">
                         <span>Option 3</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -212,7 +212,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="4">
+                    <div class="sortable-item" draggable="true" data-id="4">
                         <span>Option 4</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -224,7 +224,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="5">
+                    <div class="sortable-item" draggable="true" data-id="5">
                         <span>Option 5</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -236,7 +236,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="6">
+                    <div class="sortable-item" draggable="true" data-id="6">
                         <span>Option 6</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -248,7 +248,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="7">
+                    <div class="sortable-item" draggable="true" data-id="7">
                         <span>Option 7</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="8">
+                    <div class="sortable-item" draggable="true" data-id="8">
                         <span>Option 8</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -272,7 +272,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="9">
+                    <div class="sortable-item" draggable="true" data-id="9">
                         <span>Option 9</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -284,7 +284,7 @@
                         </div>
                     </div>
                     
-                    <div class="sortable-item" data-id="10">
+                    <div class="sortable-item" draggable="true" data-id="10">
                         <span>Option 10</span>
                         <div class="drag-handle">
                             <div class="drag-dot"></div>
@@ -318,10 +318,10 @@
                 </div>
                 
                 <div class="test-progress-container">
-                    <div class="test-progress-text">33/35 otázek splněno</div>
+                    <div class="test-progress-text">35/35 otázek splněno</div>
                     <div class="test-progress-bar">
-                        <div class="test-progress-fill" style="flex: 94%;"></div>
-                        <div class="test-progress-empty" style="flex: 6%;"></div>
+                        <div class="test-progress-fill" style="flex: 100%;"></div>
+                        <div class="test-progress-empty" style="flex: 0%;"></div>
                         <div class="test-progress-dot"></div>
                     </div>
                 </div>
@@ -338,7 +338,7 @@
                     <span class="test-time-value-red">00:35</span>
                 </div>
                 
-                <button class="test-end-btn">Ukončit test</button>
+                <button class="test-start-btn">Ukončit test</button>
 
                 <div class="test-info-box">
                     <img src="img/infoBox.png" alt="">
@@ -699,12 +699,37 @@
         </div>
     </footer>
 
+    <!-- Test Failed Modal -->
+    <div id="test-failed-modal" class="test-modal">
+        <div class="test-modal-overlay"></div>
+        <div class="test-modal-content">
+            <div class="test-modal-header">
+                <h2 class="test-modal-title">
+                    <img src="img/cancel_orange.png" alt="Failed" class="test-modal-title-icon">
+                    Test nebyl úspěšný
+                </h2>
+                <button class="test-modal-close">&times;</button>
+            </div>
+            <p class="test-modal-text">
+                Získali jste <strong>méně než 50 %</strong> bodů v testu <strong>Online test: Auto Layout 2</strong>. Doporučujeme si látku projít znovu a test si zopakovat.
+            </p>
+            <p class="test-modal-text">
+                Výsledek testu: <span class="test-result-badge-red">2/10</span>
+            </p>
+            <div class="test-modal-buttons">
+                <button class="test-modal-btn-back">Přehled odpovědí</button>
+                <button class="test-modal-btn-start">Zopakovat test</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script type="module" src="js/hamburger.js"></script>
     <script type="module" src="js/bubbles.js"></script>
     <script type="module" src="js/questionToggle.js"></script>
     <script type="module" src="js/questionsScroll.js"></script>
     <script type="module" src="js/sortableList.js"></script>
+    <script type="module" src="js/testFailedModal.js"></script>
 </body>
 
 </html>
