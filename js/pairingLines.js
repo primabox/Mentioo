@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Calculate gap between columns
             const gapSize = rightRect.left - leftRect.right;
-            const gapOffset = gapSize * 0.15; // Start/end 15% into the gap
+            const gapOffset = gapSize * 0.1; // Offset to make lines shorter
 
-            // Calculate positions relative to container - positioned in the gap
+            // Calculate positions relative to container - leave space from box edges
             const x1 = leftRect.right - containerRect.left + gapOffset;
             const y1 = leftRect.top + leftRect.height / 2 - containerRect.top;
             const x2 = rightRect.left - containerRect.left - gapOffset;
@@ -81,30 +81,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let d;
             if (isIncorrect) {
-                // Asymmetric S-curve for incorrect pairs
-                const distance = x2 - x1;
-                const heightDiff = y2 - y1;
-                const midY = (y1 + y2) / 2;
-
-                // Control points create asymmetric S shape
-                // First control point: 40% horizontally, slightly pulled toward middle vertically
-                const cp1x = x1 + distance * 0.4;
-                const cp1y = y1 + heightDiff * 0.3;
-
-                // Second control point: 70% horizontally, slightly pulled toward middle vertically  
-                const cp2x = x1 + distance * 0.7;
-                const cp2y = y2 - heightDiff * 0.2;
-
+                // Každá čára má trochu jinou dráhu díky náhodné odchylce
+                const dx = x2 - x1;
+                const dy = y2 - y1;
+                // Náhodná odchylka podle indexu páru (nebo Math.random pro větší variabilitu)
+                const seed = (pair.left + 1) * (pair.right + 1);
+                function pseudoRandom(seed) {
+                    // jednoduchý deterministický "random" pro konzistenci při překreslení
+                    return Math.abs(Math.sin(seed * 9301 + 49297) * 233280) % 1;
+                }
+                const rand = pseudoRandom(seed);
+                // Výrazný odklon doleva a větší posun dolů, ale trochu posunuto doprava
+                const flatLen = 44 + rand * 16; // 44–60 px
+                // Offset X je méně záporný, aby se oblouk stáčel doleva, ale ne extrémně
+                const curveOffsetX = -28 + rand * 20; // -28 až -8 px (stále vlevo, ale blíže středu)
+                // Y offset je větší, aby spojení šlo více dolů
+                const curveOffsetY = 18 + rand * 24; // 18 až 42 px (více dolů)
+                // První kontrolní bod je na konci rovného úseku
+                const cp1x = x1 + flatLen;
+                const cp1y = y1;
+                // Druhý kontrolní bod je vlevo a více dolů, ale blíže středu
+                const cp2x = x2 - flatLen + curveOffsetX;
+                const cp2y = y2 + curveOffsetY;
                 d = `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
             } else {
-                // Standard curve for correct pairs
                 const midX = (x1 + x2) / 2;
                 d = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
             }
 
             path.setAttribute('d', d);
-            path.setAttribute('stroke', isIncorrect ? '#DF632D' : '#00AC7C');
+            path.setAttribute('stroke', isIncorrect ? '#DF632D' : '#009952');
             path.setAttribute('stroke-width', '2');
+            path.setAttribute('stroke-linecap', 'round');
+            path.setAttribute('stroke-linejoin', 'round');
             path.setAttribute('fill', 'none');
             path.setAttribute('opacity', '0.6');
 

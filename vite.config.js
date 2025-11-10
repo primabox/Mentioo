@@ -7,6 +7,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+  // Přidáno: další podstránky
         main: resolve(__dirname, "index.html"),
         detailKurzu: resolve(__dirname, "detail-kurzu.html"),
         detailKurzuPrihlaseny: resolve(__dirname, "detail-kurzu-prihlaseny.html"),
@@ -33,6 +34,8 @@ export default defineConfig({
         testVyhodnoceni1: resolve(__dirname, "test_vyhodnoceni1.html"),
         testVyhodnoceni2: resolve(__dirname, "test_vyhodnoceni2.html"),
         testVyhodnoceni3: resolve(__dirname, "test_vyhodnoceni3.html"),
+  testVyhodnoceni4: resolve(__dirname, "test_vyhodnoceni4.html"),
+  testVyhodnoceni5: resolve(__dirname, "test_vyhodnoceni5.html"),
       },
     },
   },

@@ -750,7 +750,31 @@ body {
 }
 
 .pairing-container {
-  @apply flex gap-6 justify-center mt-6 mb-6;
+  @apply flex justify-center mt-6 mb-6;
+  gap: 96px !important;
+}
+
+/* Responsive: align pairing tooltip like question-help-tooltip on smaller screens */
+@media (max-width: 768px) {
+  .pairing-help-tooltip {
+    left: 50%;
+    right: auto;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    width: calc(100vw - 80px);
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pairing-help-tooltip {
+    width: calc(100vw - 60px);
+    max-width: 320px;
+    padding: 12px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 }
 
 .pairing-column {
@@ -901,6 +925,29 @@ body {
 
 .sortable-placeholder::before {
   content: "Přetáhněte sem";
+}
+
+/* ===== RESULT BALL STYLES ===== */
+.result-ball {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-[16px] font-semibold flex-shrink-0;
+}
+
+.result-ball.correct {
+  background-color: #CCFFE7;
+  color: #006636;
+}
+
+.result-ball.incorrect {
+  background-color: #FFE5DA;
+  color: #AC3E0E;
+}
+
+.sortable-container-wrapper {
+  @apply flex flex-col items-center gap-4;
+}
+
+.sortable-item-row {
+  @apply flex items-center gap-4;
 }
 
 .question-navigation {
@@ -1762,14 +1809,14 @@ body {
   }
 
   .sortable-item {
-    width: 100%;
-    max-width: 600px;
+    width: calc(100vw - 120px);
+    max-width: 500px;
     padding: 22px 28px;
   }
 
   .sortable-placeholder {
-    width: 100%;
-    max-width: 600px;
+    width: calc(100vw - 120px);
+    max-width: 500px;
   }
 }
 
@@ -1800,7 +1847,6 @@ body {
   }
 
   .hero-section {
-    padding-top: 120px;
     padding-bottom: 60px;
   }
 
@@ -1847,8 +1893,11 @@ body {
 
   .profile-sidebar {
     margin-top: 0;
+    /* center sidebar on small screens */
     margin-left: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    max-width: 500px;
   }
 
   .sidebar-profile-avatar {
@@ -1916,7 +1965,6 @@ body {
   }
 
   .sortable-item {
-    width: 100%;
     max-width: 500px;
     padding: 20px 24px;
     font-size: 14px;
@@ -1987,6 +2035,10 @@ body {
 
   .back-link {
     margin: 24px 0;
+    /* ensure visible on small screens: remove large left padding from desktop */
+    padding-left: 16px;
+    display: block;
+    max-width: 100%;
   }
 
   .hero-section {
@@ -2090,7 +2142,7 @@ body {
   }
 
   .questions-list {
-    max-height: 400px;
+    max-height: 625px;
   }
 
   .questions-list::-webkit-scrollbar {
@@ -2157,14 +2209,16 @@ body {
   }
 
   .sortable-item {
-    width: 100%;
+    width: calc(100vw - 80px);
+    max-width: 300px;
     padding: 16px 20px;
     font-size: 14px;
     height: 60px;
   }
 
   .sortable-placeholder {
-    width: 100%;
+    width: calc(100vw - 80px);
+    max-width: 400px;
     height: 60px;
     font-size: 12px;
   }
