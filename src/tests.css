@@ -1264,7 +1264,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  max-height: 615px;
+  max-height: 625px;
   position: relative;
   scrollbar-width: none;
   padding-right: 8px;
