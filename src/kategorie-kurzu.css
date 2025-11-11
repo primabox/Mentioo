@@ -243,7 +243,7 @@ body {
 
 
 .clear-filters-link {
-    @apply text-[14px] text-[#606060] font-medium no-underline hover:underline ;
+    @apply text-[14px] text-[#606060] font-medium no-underline hover:underline;
 }
 
 .filter-section {
@@ -271,7 +271,7 @@ body {
 }
 
 .filter-collapse-btn {
-    @apply  flex items-center justify-center text-gray-600 transition-all cursor-pointer bg-transparent border-none;
+    @apply flex items-center justify-center text-gray-600 transition-all cursor-pointer bg-transparent border-none;
 }
 
 .filter-collapse-btn:hover {
