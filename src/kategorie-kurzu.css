@@ -1127,9 +1127,6 @@ body {
     }
 }
 
-@apply text-2xl;
-
-
 .instructors-subtitle {
     @apply text-sm;
 }
