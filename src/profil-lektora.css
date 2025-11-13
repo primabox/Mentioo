@@ -187,7 +187,7 @@
     @apply flex-1;
 }
 
-.lektor-badge {
+.lektor-tag {
     @apply inline-block px-3 py-1 bg-[#EFE6FF] text-[#7045C2] text-sm font-medium mb-4;
 }
 
@@ -1274,7 +1274,7 @@
     @apply flex items-center justify-between gap-6 mb-8 p-6  rounded-xl;
 }
 
-/* Reviews adjustments at 1024px: stack rating box and bars, center badges */
+/* Reviews adjustments at 1024px: stack rating box and bars, center tags */
 @media (max-width: 1024px) {
     .reviews-header {
         @apply flex-col items-center text-center gap-6;
@@ -1291,7 +1291,7 @@
         padding: 0 0.5rem;
     }
 
-    .recommendation-badge {
+    .recommendation-tag {
         margin: 16px auto 0 !important;
     }
 
@@ -1352,8 +1352,8 @@
     @apply text-[13px] text-[#4D4D4D] min-w-[45px] text-right;
 }
 
-/* Recommendation Badge */
-.recommendation-badge {
+/* Recommendation tag */
+.recommendation-tag {
     @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
 }
 
@@ -1515,7 +1515,7 @@
         min-width: auto;
     }
 
-    .recommendation-badge {
+    .recommendation-tag {
         min-width: auto;
         align-self: center;
     }

@@ -302,35 +302,35 @@ body {
   @apply text-[24px] font-semibold text-[#1C1C1C] m-0;
 }
 
-.question-time-badge {
+.question-time-tag {
   @apply bg-[#E9F6FF] text-[#104266] text-[16px] font-medium rounded-lg flex items-center gap-2;
   padding: 8px 16px;
   margin-bottom: 10px;
 }
 
-.question-time-badge img {
+.question-time-tag img {
   @apply text-[#0069B2];
   font-size: 18px;
 }
 
-.question-time-badge-yellow {
+.question-time-tag-yellow {
   @apply bg-[#FFF1CC] text-[#785800] text-[16px] font-medium rounded-lg flex items-center gap-2;
   padding: 8px 16px;
   margin-bottom: 10px;
 }
 
-.question-time-badge-yellow img {
+.question-time-tag-yellow img {
   @apply text-[#785800];
   font-size: 18px;
 }
 
-.question-time-badge-red {
+.question-time-tag-red {
   @apply bg-[#FFE5DA] text-[#AC3E0E] text-[16px] font-medium rounded-lg flex items-center gap-2;
   padding: 8px 16px;
   margin-bottom: 10px;
 }
 
-.question-time-badge-red img {
+.question-time-tag-red img {
   @apply text-[#AC3E0E];
   font-size: 18px;
 }
@@ -1118,14 +1118,14 @@ body {
   padding: 4px 10px;
 }
 
-.test-result-badge {
+.test-result-tag {
   @apply text-[14px] font-medium rounded-[4px] inline-block;
   background-color: #CCFFE7;
   color: #006636;
   padding: 4px 10px;
 }
 
-.test-result-badge-red {
+.test-result-tag-red {
   @apply text-[14px] font-medium rounded-[4px] inline-block;
   background-color: #FFE5DA;
   color: #AC3E0E;
@@ -1194,7 +1194,7 @@ body {
   margin-bottom: 8px;
 }
 
-.sidebar-profile-badge {
+.sidebar-profile-tag {
   @apply bg-white flex items-center font-semibold mb-4;
   width: 150px;
   height: 65px;
@@ -1205,18 +1205,18 @@ body {
   min-width: 150px;
 }
 
-.sidebar-profile-badge>span {
+.sidebar-profile-tag>span {
   @apply flex flex-col gap-0;
   line-height: 1.2;
 }
 
-.sidebar-profile-badge span {
+.sidebar-profile-tag span {
   @apply text-[18px] font-medium;
   color: #000;
   line-height: 1.2;
 }
 
-.sidebar-profile-badge .badge-text {
+.sidebar-profile-tag .tag-text {
   @apply text-[12px] font-normal;
   color: #6B7280;
   line-height: 1.2;
@@ -2223,17 +2223,17 @@ body {
     font-size: 12px;
   }
 
-  .question-time-badge {
+  .question-time-tag {
     font-size: 14px;
     padding: 6px 12px;
   }
 
-  .question-time-badge-yellow {
+  .question-time-tag-yellow {
     font-size: 14px;
     padding: 6px 12px;
   }
 
-  .question-time-badge-red {
+  .question-time-tag-red {
     font-size: 14px;
     padding: 6px 12px;
   }

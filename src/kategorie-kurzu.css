@@ -584,7 +584,7 @@ body {
     gap: 26px;
 }
 
-.course-rating-badge {
+.course-rating-tag {
     @apply flex items-center gap-2 rounded-lg;
     padding: 0;
 }
@@ -1131,8 +1131,8 @@ body {
     @apply text-sm;
 }
 
-/* Cart Badge */
-.cart-badge {
+/* Cart tag */
+.cart-tag {
     @apply absolute -top-1 -right-1 bg-[#0069B2] text-white text-[11px] font-semibold rounded-full w-5 h-5 flex items-center justify-center;
     animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -1153,7 +1153,7 @@ body {
     }
 }
 
-.cart-badge.pulse {
+.cart-tag.pulse {
     animation: pulse 0.3s ease-in-out;
 }
 
@@ -1621,7 +1621,7 @@ body {
         flex-wrap: wrap;
     }
 
-    .course-rating-badge {
+    .course-rating-tag {
         font-size: 13px;
     }
 
@@ -1765,7 +1765,7 @@ body {
         gap: 16px;
     }
 
-    .course-rating-badge {
+    .course-rating-tag {
         font-size: 14px;
     }
 
@@ -1853,7 +1853,7 @@ body {
         @apply text-[10px];
     }
 
-    .course-rating-badge {
+    .course-rating-tag {
         @apply gap-1.5;
     }
 

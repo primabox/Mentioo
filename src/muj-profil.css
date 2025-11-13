@@ -535,11 +535,11 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   @apply flex items-center justify-between gap-4;
 }
 
-.course-card-badges {
+.course-card-tags {
   @apply flex items-center gap-2;
 }
 
-.course-badge {
+.course-tag {
   @apply px-3 py-1 font-medium bg-[#E0F2FE] text-[#0369A1] flex items-center gap-1 flex-shrink-0;
   font-size: 14px;
   border-radius: 4px;
@@ -551,17 +551,17 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   flex-shrink: 0;
 }
 
-.badge-bestseller {
+.tag-bestseller {
   @apply bg-[#EFE6FF] text-[#7045C2];
 }
 
-.badge-nezahajeny {
+.tag-nezahajeny {
   background-color: #FFF1CC;
   color: #785800;
   font-size: 14px;
 }
 
-.badge-dokonceno {
+.tag-dokonceno {
   background-color: #CCFFE7;
   color: #006636;
   font-size: 14px;
@@ -857,7 +857,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   margin-bottom: 8px;
 }
 
-.sidebar-profile-badge {
+.sidebar-profile-tag {
   @apply bg-white flex items-center font-semibold  mb-4;
   width: 150px;
   height: 65px;
@@ -868,18 +868,18 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   min-width: 150px;
 }
 
-.sidebar-profile-badge > span {
+.sidebar-profile-tag > span {
   @apply flex flex-col gap-0;
   line-height: 1.2;
 }
 
-.sidebar-profile-badge span {
+.sidebar-profile-tag span {
   @apply text-[18px] font-medium;  
   color: #000;
   line-height: 1.2;
 }
 
-.sidebar-profile-badge .badge-text {
+.sidebar-profile-tag .tag-text {
   @apply text-[12px] font-normal;
   color: #6B7280;
   line-height: 1.2;
@@ -1459,7 +1459,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
     margin: 0;
   }
   
-  .sidebar-profile-badge {
+  .sidebar-profile-tag {
     margin-top: 35px;
   }
   
@@ -2432,7 +2432,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   align-items: center;
 }
 
-.expired-badge {
+.expired-tag {
   @apply px-[10px] py-1 rounded-[4px] bg-[#FFD2DB] text-[#99112E] text-sm font-medium;
   display: inline-block;
   margin-left: 12px;
@@ -2628,7 +2628,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   @apply flex flex-col gap-3;
 }
 
-.payment-badge {
+.payment-tag {
   @apply px-[10px] py-1 rounded-[4px] bg-[#CCFFE7] text-[#006636] text-sm font-medium;
   align-self: flex-start;
 }
@@ -2796,7 +2796,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   background: #0069B2;
 }
 
-.messages-badge {
+.messages-tag {
   @apply inline-flex items-center justify-center text-xs font-medium;
   width: 24px;
   height: 24px;
@@ -2806,7 +2806,7 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
   margin-left: 8px;
 }
 
-.messages-tab.active .messages-badge {
+.messages-tab.active .messages-tag {
   background: white;
   color: #0069B2;
 }
@@ -3116,3 +3116,4 @@ body:has(.profile-tab-content[data-tab="predplatne"].active) .footer {
     max-width: 80%;
   }
 }
+

@@ -207,19 +207,19 @@ body {
   @apply text-base text-[#1C1C1C] underline;
 }
 
-.instructor-badges {
+.instructor-tags {
   @apply flex items-center gap-2 mt-[8px];
 }
 
-.badge {
+.tag {
   @apply px-3 py-1 rounded text-sm font-medium;
 }
 
-.badge-bestseller {
+.tag-bestseller {
   @apply bg-[#CCFFE7] text-[#006636];
 }
 
-.badge-trial {
+.tag-trial {
   @apply bg-[#EFE6FF] text-[#7045C2];
 }
 
@@ -575,7 +575,7 @@ body {
   @apply w-5 h-5;
 }
 
-/* Lesson Status Badges */
+/* Lesson Status tags */
 .lesson-status {
   @apply flex items-center gap-2 py-1 px-[10px] font-[500] text-[14px] rounded-[4px];
 }
@@ -755,12 +755,12 @@ body {
   @apply text-sm;
 }
 
-/* Completion Badge */
-.completion-badge {
+/* Completion tag */
+.completion-tag {
   @apply w-[164px] bg-[#E0F8E7] flex items-center justify-center h-[29px] px-2.5 py-1 rounded mb-2.5 gap-2.5;
 }
 
-.completion-badge-text {
+.completion-tag-text {
   @apply text-sm font-medium text-[#006636];
 }
 
@@ -1031,7 +1031,7 @@ body {
     @apply max-w-[350px];
   }
 
-  .recommendation-badge {
+  .recommendation-tag {
     @apply min-w-[160px];
   }
 
@@ -1129,7 +1129,7 @@ body {
     flex-direction: column;
   }
 
-  .instructor-badges {
+  .instructor-tags {
     justify-content: center;
   }
 
@@ -1361,7 +1361,7 @@ body {
     height: 36px;
   }
 
-  .completion-badge {
+  .completion-tag {
     width: 390px;
     max-width: 100%;
     margin: 0 auto 16px;
@@ -1428,7 +1428,7 @@ body {
     @apply max-w-full ml-0;
   }
 
-  .recommendation-badge {
+  .recommendation-tag {
     @apply w-full justify-center;
   }
 
@@ -1550,8 +1550,8 @@ body {
   @apply text-[13px] text-[#4D4D4D] min-w-[45px] text-right;
 }
 
-/* Recommendation Badge */
-.recommendation-badge {
+/* Recommendation tag */
+.recommendation-tag {
   @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
 }
 
@@ -1662,7 +1662,7 @@ body {
   @apply text-[16px] font-semibold text-[#1C1C1C];
 }
 
-.instructor-badge {
+.instructor-tag {
   @apply text-[16px] font-normal text-[#1C1C1C];
 }
 

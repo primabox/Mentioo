@@ -431,7 +431,7 @@ body {
   @apply flex flex-col items-end gap-1;
 }
 
-.summary-discount-badge {
+.summary-discount-tag {
   @apply px-1 py-0.5 rounded bg-[#CCFFE7] text-[#006636] font-semibold text-xs;
 }
 
@@ -1132,3 +1132,4 @@ body {
     @apply grid-cols-1;
   }
 }
+

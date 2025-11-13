@@ -129,7 +129,7 @@ body {
   @apply w-11 h-11 flex items-center justify-center rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] transition;
 }
 
-.cart-badge {
+.cart-tag {
   @apply absolute -top-1 -right-1 bg-[#0069B2] text-white text-[11px] font-semibold rounded-full w-5 h-5 flex items-center justify-center;
   animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -150,7 +150,7 @@ body {
   }
 }
 
-.cart-badge.pulse {
+.cart-tag.pulse {
   animation: pulse 0.3s ease-in-out;
 }
 
@@ -265,19 +265,19 @@ body {
   @apply text-[16px] text-[#1C1C1C] underline mt-2;
 }
 
-.instructor-badges {
+.instructor-tags {
   @apply flex items-center gap-2 mt-4;
 }
 
-.badge {
+.tag {
   @apply px-3 py-1 rounded-[4px] text-[14px] font-[500];
 }
 
-.badge-bestseller {
+.tag-bestseller {
   @apply bg-[#CCFFE7] text-[#006636];
 }
 
-.badge-trial {
+.tag-trial {
   @apply bg-[#EFE6FF] text-[#7045C2];
 }
 
@@ -1347,8 +1347,8 @@ body {
   @apply text-[13px] text-[#4D4D4D] min-w-[45px] text-right;
 }
 
-/* Recommendation Badge */
-.recommendation-badge {
+/* Recommendation tag */
+.recommendation-tag {
   @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
 }
 
@@ -1797,7 +1797,7 @@ body {
     @apply max-w-[350px];
   }
 
-  .recommendation-badge {
+  .recommendation-tag {
     @apply min-w-[160px];
   }
 
@@ -1969,7 +1969,7 @@ body {
     @apply text-base mx-auto;
   }
 
-  .instructor-badges {
+  .instructor-tags {
     @apply justify-center;
   }
 
@@ -2250,7 +2250,7 @@ body {
     @apply max-w-full;
   }
 
-  .recommendation-badge {
+  .recommendation-tag {
     @apply w-full justify-center;
   }
 
