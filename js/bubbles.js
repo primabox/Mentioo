@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const fields = document.querySelectorAll('.bubble-field');
+  const fields = document.querySelectorAll('.bubble-field, .dc-bubble-field, .de-bubble-field, .pf-bubble-field, .test-bubble-field, .dl-bubble-field, .ip-bubble-field');
   if (!fields.length) return;
 
   fields.forEach(field => {
-    const bubbles = Array.from(field.querySelectorAll('.bubble')).map((el, index) => {
+    const bubbles = Array.from(field.querySelectorAll('.bubble, .dc-bubble, .de-bubble, .pf-bubble, .test-bubble, .dl-bubble, .ip-bubble')).map((el, index) => {
       const amp = parseFloat(el.dataset.amp) || (12 + Math.random() * 18);
       const speed = parseFloat(el.dataset.speed) || (0.4 + Math.random() * 0.8);
       const parallax = parseFloat(el.dataset.parallax) || (5 + Math.random() * 10);

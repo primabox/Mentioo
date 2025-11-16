@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokladna | Mentioo</title>
-    <link rel="stylesheet" href="src/pokladna.css">
+    <link rel="stylesheet" href="src/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -18,23 +18,23 @@
     </div>
 
     <!-- HEADER -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="co-header">
+        <nav class="co-navbar">
             <!-- Logo -->
-            <div class="logo">
+            <div class="co-logo">
                 <a href="index.html">
                     <img src="img/Logo.png" alt="Logo" class="w-32" />
                 </a>
             </div>
 
             <!-- Searchbar -->
-            <div class="searchbar-container">
-                <form class="search-form" role="search">
-                    <div class="search-wrapper">
-                        <span class="search-icon">
+            <div class="co-searchbar-container">
+                <form class="co-search-form" role="search">
+                    <div class="co-search-wrapper">
+                        <span class="co-search-icon">
                             <i class="fas fa-search translate-y-px"></i>
                         </span>
-                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="co-search-input" />
                     </div>
                 </form>
             </div>
@@ -56,19 +56,19 @@
             </div>
 
             <!-- Desktop menu -->
-            <div id="navbar-menu" class="navbar-menu">
-                <ul class="nav-links">
-                    <li class="nav-item group">
-                        <a href="#" class="nav-link">
+            <div id="navbar-menu" class="co-navbar-menu">
+                <ul class="co-nav-links">
+                    <li class="co-nav-item group">
+                        <a href="#" class="co-nav-link">
                             Nabídka kurzů
                         </a>
                         <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
-                        <div class="dropdown">
+                        <div class="co-dropdown">
                             <div class="py-2">
-                                <a href="#" class="dropdown-link">Programování</a>
-                                <a href="#" class="dropdown-link">Design</a>
-                                <a href="#" class="dropdown-link">Marketing</a>
-                                <a href="#" class="dropdown-link">Business</a>
+                                <a href="#" class="co-dropdown-link">Programování</a>
+                                <a href="#" class="co-dropdown-link">Design</a>
+                                <a href="#" class="co-dropdown-link">Marketing</a>
+                                <a href="#" class="co-dropdown-link">Business</a>
                             </div>
                         </div>
                     </li>
@@ -78,16 +78,16 @@
 
                 <!-- Tlačítka -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="btn-outline">Přihlásit se</a>
-                    <a href="#" class="btn-primary">Zaregistrovat se</a>
+                    <a href="#" class="co-btn-outline">Přihlásit se</a>
+                    <a href="#" class="co-btn-primary">Zaregistrovat se</a>
                 </div>
 
                 <!-- Ikony -->
                 <div class="flex items-center gap-3">
-                    <a href="nakupni-kosik.html" class="icon-btn">
+                    <a href="nakupni-kosik.html" class="co-icon-btn">
                         <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
                     </a>
-                    <a href="#" class="icon-btn-alt">
+                    <a href="#" class="co-icon-btn-alt">
                         <img src="img/network.png" alt="Globe" class="w-5 h-5" />
                     </a>
                 </div>
@@ -96,13 +96,13 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-wrapper">
-            <div class="content-layout">
+    <section class="co-hero-section">
+        <div class="co-hero-wrapper">
+            <div class="co-content-layout">
                 <div>
-                    <div class="hero-gradient">
-                        <div class="hero-bg"></div>
-                        <h1 class="hero-title">Pokladna</h1>
+                    <div class="co-hero-gradient">
+                        <div class="co-hero-bg"></div>
+                        <h1 class="co-hero-title">Pokladna</h1>
                     </div>
                 </div>
             </div>
@@ -110,64 +110,64 @@
     </section>
 
     <!-- CHECKOUT SECTION -->
-    <section class="checkout-section">
-        <div class="checkout-container">
+    <section class="co-checkout-section">
+        <div class="co-checkout-container">
             <!-- Progress Steps -->
-            <div class="progress-steps">
-                <div class="progress-step active">
-                    <div class="step-number">1</div>
-                    <span class="step-label">Přihlášení</span>
+            <div class="co-progress-steps">
+                <div class="co-progress-step co-active">
+                    <div class="co-step-number">1</div>
+                    <span class="co-step-label">Přihlášení</span>
                 </div>
-                <div class="step-divider"></div>
-                <div class="progress-step">
-                    <div class="step-number">2</div>
-                    <span class="step-label">Platba</span>
+                <div class="co-step-divider"></div>
+                <div class="co-progress-step">
+                    <div class="co-step-number">2</div>
+                    <span class="co-step-label">Platba</span>
                 </div>
             </div>
 
             <!-- Main Content Grid -->
-            <div class="checkout-grid">
+            <div class="co-checkout-grid">
                 <!-- Left Side -->
-                <div class="left-side">
+                <div class="co-left-side">
                     <!-- Login Form -->
-                    <div class="login-column">
-                        <div class="login-content">
-                            <div class="login-text">
-                                <h2 class="login-title">Přihlásit se</h2>
-                                <p class="login-subtitle">K tomu, abyste mohli zakoupit kurzy je nutné se přihlásit. Jste už jen krok od úspěchu.</p>
-                                <p class="register-link">Ještě nemáte účet? <a href="#" class="register-link-text">Registrujte se</a>.</p>
+                    <div class="co-login-column">
+                        <div class="co-login-content">
+                            <div class="co-login-text">
+                                <h2 class="co-login-title">Přihlásit se</h2>
+                                <p class="co-login-subtitle">K tomu, abyste mohli zakoupit kurzy je nutné se přihlásit. Jste už jen krok od úspěchu.</p>
+                                <p class="co-register-link">Ještě nemáte účet? <a href="#" class="co-register-link-text">Registrujte se</a>.</p>
                             </div>
                             
-                            <form class="login-form">
-                                <div class="form-group">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" id="email" class="form-input" placeholder="Zadejte přihlašovací e-mail">
+                            <form class="co-login-form">
+                                <div class="co-form-group">
+                                    <label for="email" class="co-form-label">E-mail</label>
+                                    <input type="email" id="email" class="co-form-input" placeholder="Zadejte přihlašovací e-mail">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="password" class="form-label">Heslo</label>
-                                    <div class="password-wrapper">
-                                        <input type="password" id="password" class="form-input" placeholder="Zadejte heslo">
-                                        <button type="button" class="password-toggle">
+                                <div class="co-form-group">
+                                    <label for="password" class="co-form-label">Heslo</label>
+                                    <div class="co-password-wrapper">
+                                        <input type="password" id="password" class="co-form-input" placeholder="Zadejte heslo">
+                                        <button type="button" class="co-password-toggle">
                                             <img src="img/visibility.png" alt="Show password">
                                         </button>
                                     </div>
                                 </div>
 
-                                <a href="#" class="forgot-password">Zapomenuté heslo?</a>
+                                <a href="#" class="co-forgot-password">Zapomenuté heslo?</a>
 
-                                <button type="submit" class="btn-submit">Přihlásit se</button>
+                                <button type="submit" class="co-btn-submit">Přihlásit se</button>
                             </form>
 
                             <!-- Divider -->
-                            <div class="form-divider"></div>
+                            <div class="co-form-divider"></div>
 
                             <!-- Social Login -->
-                            <div class="social-column">
-                                <button type="button" class="social-btn google-btn">
+                            <div class="co-social-column">
+                                <button type="button" class="co-social-btn google-btn">
                                     <img src="img/google.png" alt="Google" class="w-[24px] h-[24px]">
                                 </button>
-                                <button type="button" class="social-btn facebook-btn">
+                                <button type="button" class="co-social-btn facebook-btn">
                                     <img src="img/facebook.png" alt="Facebook" class="w-[21px] h-[20px]">
                                 </button>
                             </div>
@@ -176,61 +176,61 @@
                 </div>
 
                 <!-- Right Column: Order Summary -->
-                <div class="summary-column">
-                    <div class="order-summary">
-                        <h3 class="summary-title">Shrnutí objednávky</h3>
+                <div class="co-summary-column">
+                    <div class="co-order-summary">
+                        <h3 class="co-summary-title">Shrnutí objednávky</h3>
 
-                        <div class="summary-divider"></div>
+                        <div class="co-summary-divider"></div>
 
-                        <div class="summary-items">
+                        <div class="co-summary-items">
                             <!-- Course Item 1 -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
+                            <div class="co-summary-item">
+                                <div class="co-summary-info">
+                                    <h4 class="co-summary-course-title">Pokročilý kurz Design Advanced</h4>
+                                    <p class="co-summary-instructor">Kristýna Nováková</p>
                                 </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-discount-tag">-30 %</span>
-                                    <div class="summary-prices">
-                                        <span class="summary-price-sale">8 500 Kč <span class="summary-price-old">12 000 Kč</span></span>
+                                <div class="co-summary-price-block">
+                                    <span class="co-summary-discount-tag">-30 %</span>
+                                    <div class="co-summary-prices">
+                                        <span class="co-summary-price-sale">8 500 Kč <span class="co-summary-price-old">12 000 Kč</span></span>
                                         
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Course Item 2 (with discount) -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
+                            <div class="co-summary-item">
+                                <div class="co-summary-info">
+                                    <h4 class="co-summary-course-title">Pokročilý kurz Design Advanced</h4>
+                                    <p class="co-summary-instructor">Kristýna Nováková</p>
                                 </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-discount-tag">-30 %</span>
-                                    <div class="summary-prices">
-                                        <span class="summary-price-sale">8 500 Kč <span class="summary-price-old">12 000 Kč</span></span>
+                                <div class="co-summary-price-block">
+                                    <span class="co-summary-discount-tag">-30 %</span>
+                                    <div class="co-summary-prices">
+                                        <span class="co-summary-price-sale">8 500 Kč <span class="co-summary-price-old">12 000 Kč</span></span>
                                   
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Course Item 3 -->
-                            <div class="summary-item">
-                                <div class="summary-info">
-                                    <h4 class="summary-course-title">Pokročilý kurz Design Advanced</h4>
-                                    <p class="summary-instructor">Kristýna Nováková</p>
+                            <div class="co-summary-item">
+                                <div class="co-summary-info">
+                                    <h4 class="co-summary-course-title">Pokročilý kurz Design Advanced</h4>
+                                    <p class="co-summary-instructor">Kristýna Nováková</p>
                                 </div>
-                                <div class="summary-price-block">
-                                    <span class="summary-price">8 500 Kč</span>
+                                <div class="co-summary-price-block">
+                                    <span class="co-summary-price">8 500 Kč</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="summary-divider"></div>
+                        <div class="co-summary-divider"></div>
 
                         <!-- Total -->
-                        <div class="summary-total">
-                            <span class="total-label">Celkem</span>
-                            <span class="total-price">16 500 Kč</span>
+                        <div class="co-summary-total">
+                            <span class="co-total-label">Celkem</span>
+                            <span class="co-total-price">16 500 Kč</span>
                         </div>
                     </div>
                 </div>
@@ -323,15 +323,15 @@
             <div class="footer-bottom">
                 <div class="footer-copyright">© 2025 Lorem ipsum</div>
                 <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="Instagram">
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
                         <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
                     </a>
 
-                    <a href="#" class="social-link" aria-label="Facebook">
+                    <a href="#" class="co-social-link" aria-label="Facebook">
                         <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
                     </a>
 
-                    <a href="#" class="social-link" aria-label="LinkedIn">
+                    <a href="#" class="co-social-link" aria-label="LinkedIn">
                         <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
                     </a>
                 </div>
@@ -346,4 +346,5 @@
 </body>
 
 </html>
+
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 
 <head>
@@ -20,57 +20,57 @@
     </div>
 
     <!-- HEADER -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="cart-header">
+        <nav class="cart-navbar">
             <!-- Logo -->
-            <div class="logo">
+            <div class="cart-logo">
                 <a href="index.html">
                     <img src="img/Logo.png" alt="Logo" class="w-32" />
                 </a>
             </div>
 
             <!-- Searchbar -->
-            <div class="searchbar-container">
-                <form class="search-form" role="search">
-                    <div class="search-wrapper">
-                        <span class="search-icon">
+            <div class="cart-searchbar-container">
+                <form class="cart-search-form" role="search">
+                    <div class="cart-search-wrapper">
+                        <span class="cart-search-icon">
                             <i class="fas fa-search translate-y-px"></i>
                         </span>
-                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="cart-search-input" />
                     </div>
                 </form>
             </div>
 
             <!-- Hamburger (mobile) -->
-            <div class="hamburger">
-                <button id="navbar-toggle" class="hamburger-btn">
+            <div class="cart-hamburger">
+                <button id="navbar-toggle" class="cart-hamburger-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
 
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="mobile-menu">
-                <a href="#" class="mobile-link">Nabídka kurzů</a>
-                <a href="#" class="mobile-link">Lektoři</a>
-                <a href="#" class="mobile-link">Blog</a>
-                <a href="#" class="mobile-link">Přihlásit se</a>
-                <a href="#" class="mobile-btn">Zaregistrovat se</a>
+            <div id="mobile-menu" class="cart-mobile-menu">
+                <a href="#" class="cart-mobile-link">Nabídka kurzů</a>
+                <a href="#" class="cart-mobile-link">Lektoři</a>
+                <a href="#" class="cart-mobile-link">Blog</a>
+                <a href="#" class="cart-mobile-link">Přihlásit se</a>
+                <a href="#" class="cart-mobile-btn">Zaregistrovat se</a>
             </div>
 
             <!-- Desktop menu -->
-            <div id="navbar-menu" class="navbar-menu">
-                <ul class="nav-links">
-                    <li class="nav-item group">
-                        <a href="#" class="nav-link">
+            <div id="navbar-menu" class="cart-navbar-menu">
+                <ul class="cart-nav-links">
+                    <li class="cart-nav-item group">
+                        <a href="#" class="cart-nav-link">
                             Nabídka kurzů
                         </a>
                         <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
-                        <div class="dropdown">
+                        <div class="cart-dropdown">
                             <div class="py-2">
-                                <a href="#" class="dropdown-link">Programování</a>
-                                <a href="#" class="dropdown-link">Design</a>
-                                <a href="#" class="dropdown-link">Marketing</a>
-                                <a href="#" class="dropdown-link">Business</a>
+                                <a href="#" class="cart-dropdown-link">Programování</a>
+                                <a href="#" class="cart-dropdown-link">Design</a>
+                                <a href="#" class="cart-dropdown-link">Marketing</a>
+                                <a href="#" class="cart-dropdown-link">Business</a>
                             </div>
                         </div>
                     </li>
@@ -80,16 +80,16 @@
 
                 <!-- Tlačítka -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="btn-outline">Přihlásit se</a>
-                    <a href="#" class="btn-primary">Zaregistrovat se</a>
+                    <a href="#" class="cart-btn-outline">Přihlásit se</a>
+                    <a href="#" class="cart-btn-primary">Zaregistrovat se</a>
                 </div>
 
                 <!-- Ikony -->
                 <div class="flex items-center gap-3">
-                    <a href="nakupni-kosik.html" class="icon-btn">
+                    <a href="nakupni-kosik.html" class="cart-icon-btn">
                         <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
                     </a>
-                    <a href="#" class="icon-btn-alt">
+                    <a href="#" class="cart-icon-btn-alt">
                         <img src="img/network.png" alt="Globe" class="w-5 h-5" />
                     </a>
                 </div>
@@ -98,13 +98,13 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-wrapper">
-            <div class="content-layout">
+    <section class="cart-hero-section">
+        <div class="cart-hero-wrapper">
+            <div class="cart-content-layout">
                 <div>
-                    <div class="hero-gradient">
-                        <div class="hero-bg"></div>
-                        <h1 class="hero-title">Nákupní košík</h1>
+                    <div class="cart-hero-gradient">
+                        <div class="cart-hero-bg"></div>
+                        <h1 class="cart-hero-title">Nákupní košík</h1>
                     </div>
                 </div>
             </div>
@@ -117,112 +117,112 @@
     </div>
 
     <!-- EMPTY CART -->
-    <section class="empty-cart-section">
-        <div class="empty-cart-container">
-            <img src="img/cart.png" alt="Prázdný košík" class="empty-cart-icon">
-            <h2 class="empty-cart-title">Váš košík je prázdný.</h2>
-            <p class="empty-cart-text">Pokračujte v nákupu a najděte si ten pravý kurz pro Vás!</p>
-            <a href="index.html" class="empty-cart-btn">Pokračovat v nákupu</a>
+    <section class="cart-empty-cart-section">
+        <div class="cart-empty-cart-container">
+            <img src="img/cart.png" alt="Prázdný košík" class="cart-empty-cart-icon">
+            <h2 class="cart-empty-cart-title">Váš košík je prázdný.</h2>
+            <p class="cart-empty-cart-text">Pokračujte v nákupu a najděte si ten pravý kurz pro Vás!</p>
+            <a href="index.html" class="cart-empty-cart-btn">Pokračovat v nákupu</a>
         </div>
     </section>
 
     <!-- MOHLO BY SE VÁM LÍBIT SECTION -->
-    <section class="recommended-section">
-        <div class="recommended-wrapper">
-            <h2 class="recommended-title">Mohlo by se vám líbit</h2>
+    <section class="cart-recommended-section">
+        <div class="cart-recommended-wrapper">
+            <h2 class="cart-recommended-title">Mohlo by se vám líbit</h2>
             
-            <div class="recommended-grid">
+            <div class="cart-recommended-grid">
                 <!-- Karta 1 -->
-                <a href="detail-kurzu.html" class="news-card">
-                    <img src="img/card1.png" alt="Data Science Fundamentals" class="news-img" />
-                    <div class="news-card-body">
-                        <h3 class="news-card-title">Data Science Fundamentals</h3>
-                        <p class="news-card-text">Learn to build modern websites from scratch with Erika Simpson...</p>
-                        <div class="news-card-rating">
-                            <span class="rating-value">4.8</span>
-                            <div class="rating-stars">
+                <a href="detail-kurzu.html" class="cart-news-card">
+                    <img src="img/card1.png" alt="Data Science Fundamentals" class="cart-news-img" />
+                    <div class="cart-news-card-body">
+                        <h3 class="cart-news-card-title">Data Science Fundamentals</h3>
+                        <p class="cart-news-card-text">Learn to build modern websites from scratch with Erika Simpson...</p>
+                        <div class="cart-news-card-rating">
+                            <span class="cart-rating-value">4.8</span>
+                            <div class="cart-rating-stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <span class="rating-count">(5)</span>
+                            <span class="cart-rating-count">(5)</span>
                         </div>
-                        <div class="news-tags">
-                            <span class="tag tag-green">Novinka</span>
-                            <span class="tag tag-purple">Free trial</span>
+                        <div class="cart-news-tags">
+                            <span class="cart-tag cart-tag-green">Novinka</span>
+                            <span class="cart-tag cart-tag-purple">Free trial</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Karta 2 -->
-                <a href="detail-kurzu.html" class="news-card">
-                    <img src="img/card2.png" alt="UI/UX Design Masterclass" class="news-img" />
-                    <div class="news-card-body">
-                        <h3 class="news-card-title">UI/UX Design Masterclass</h3>
-                        <p class="news-card-text">Master modern UI/UX principles with practical design exercises...</p>
-                        <div class="news-card-rating">
-                            <span class="rating-value">4.6</span>
-                            <div class="rating-stars">
+                <a href="detail-kurzu.html" class="cart-news-card">
+                    <img src="img/card2.png" alt="UI/UX Design Masterclass" class="cart-news-img" />
+                    <div class="cart-news-card-body">
+                        <h3 class="cart-news-card-title">UI/UX Design Masterclass</h3>
+                        <p class="cart-news-card-text">Master modern UI/UX principles with practical design exercises...</p>
+                        <div class="cart-news-card-rating">
+                            <span class="cart-rating-value">4.6</span>
+                            <div class="cart-rating-stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
                             </div>
-                            <span class="rating-count">(4)</span>
+                            <span class="cart-rating-count">(4)</span>
                         </div>
-                        <div class="news-tags">
-                            <span class="tag tag-green">Novinka</span>
-                            <span class="tag tag-blue">Pro nováčky</span>
+                        <div class="cart-news-tags">
+                            <span class="cart-tag cart-tag-green">Novinka</span>
+                            <span class="cart-tag cart-tag-blue">Pro nováčky</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Karta 3 -->
-                <a href="detail-kurzu.html" class="news-card">
-                    <img src="img/card3.png" alt="Modern Illustration Course" class="news-img" />
-                    <div class="news-card-body">
-                        <h3 class="news-card-title">Modern Illustration Course</h3>
-                        <p class="news-card-text">Create vibrant digital illustrations and improve your creative workflow...</p>
-                        <div class="news-card-rating">
-                            <span class="rating-value">4.9</span>
-                            <div class="rating-stars">
+                <a href="detail-kurzu.html" class="cart-news-card">
+                    <img src="img/card3.png" alt="Modern Illustration Course" class="cart-news-img" />
+                    <div class="cart-news-card-body">
+                        <h3 class="cart-news-card-title">Modern Illustration Course</h3>
+                        <p class="cart-news-card-text">Create vibrant digital illustrations and improve your creative workflow...</p>
+                        <div class="cart-news-card-rating">
+                            <span class="cart-rating-value">4.9</span>
+                            <div class="cart-rating-stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <span class="rating-count">(6)</span>
+                            <span class="cart-rating-count">(6)</span>
                         </div>
-                        <div class="news-tags">
-                            <span class="tag tag-purple">Nejlepší hodnocení</span>
+                        <div class="cart-news-tags">
+                            <span class="cart-tag cart-tag-purple">Nejlepší hodnocení</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Karta 4 -->
-                <a href="detail-kurzu.html" class="news-card">
-                    <img src="img/card4.png" alt="Photography for Beginners" class="news-img" />
-                    <div class="news-card-body">
-                        <h3 class="news-card-title">Photography for Beginners</h3>
-                        <p class="news-card-text">Capture stunning photos and learn the basics of photography...</p>
-                        <div class="news-card-rating">
-                            <span class="rating-value">4.7</span>
-                            <div class="rating-stars">
+                <a href="detail-kurzu.html" class="cart-news-card">
+                    <img src="img/card4.png" alt="Photography for Beginners" class="cart-news-img" />
+                    <div class="cart-news-card-body">
+                        <h3 class="cart-news-card-title">Photography for Beginners</h3>
+                        <p class="cart-news-card-text">Capture stunning photos and learn the basics of photography...</p>
+                        <div class="cart-news-card-rating">
+                            <span class="cart-rating-value">4.7</span>
+                            <div class="cart-rating-stars">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
                             </div>
-                            <span class="rating-count">(3)</span>
+                            <span class="cart-rating-count">(3)</span>
                         </div>
-                        <div class="news-tags">
-                            <span class="tag tag-green">Novinka</span>
-                            <span class="tag tag-turquoise">Trending</span>
+                        <div class="cart-news-tags">
+                            <span class="cart-tag cart-tag-green">Novinka</span>
+                            <span class="cart-tag cart-tag-turquoise">Trending</span>
                         </div>
                     </div>
                 </a>
@@ -231,19 +231,19 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer bg-[#F5F9FF]">
-        <div class="footer-container">
+    <footer class="cart-footer bg-[#F5F9FF]">
+        <div class="cart-footer-container">
             <!-- Logo  -->
-            <div class="footer-logo">
-                <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+            <div class="cart-footer-logo">
+                <img src="img/FooterLogo.png" alt="Mentio_logo" class="cart-footer-logo-img">
             </div>
 
             <!-- Obsah -->
-            <div class="footer-content">
-                <div class="footer-grid">
+            <div class="cart-footer-content">
+                <div class="cart-footer-grid">
                     <!-- INFO -->
-                    <div class="footer-info">
-                        <div class="footer-info-text">
+                    <div class="cart-footer-info">
+                        <div class="cart-footer-info-text">
                             <p class="font-semibold text-lg">Mentio s.r.o</p>
                             <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
                             <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
@@ -253,77 +253,77 @@
                     </div>
 
                     <!-- 4X4 KATEGORIE-->
-                    <div class="footer-categories">
+                    <div class="cart-footer-categories">
                         <div>
-                            <h4 class="footer-heading">Kategorie kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Kategorie 1</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 2</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 3</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 4</a></li>
+                            <h4 class="cart-footer-heading">Kategorie kurzů</h4>
+                            <ul class="cart-footer-links">
+                                <li><a class="cart-footer-link" href="#">Kategorie 1</a></li>
+                                <li><a class="cart-footer-link" href="#">Kategorie 2</a></li>
+                                <li><a class="cart-footer-link" href="#">Kategorie 3</a></li>
+                                <li><a class="cart-footer-link" href="#">Kategorie 4</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            <h4 class="cart-footer-heading">Typy kurzů</h4>
+                            <ul class="cart-footer-links">
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 4</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            <h4 class="cart-footer-heading">Typy kurzů</h4>
+                            <ul class="cart-footer-links">
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 4</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            <h4 class="cart-footer-heading">Typy kurzů</h4>
+                            <ul class="cart-footer-links">
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="cart-footer-link" href="#">Typ kurzů 4</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- O nás -->
-                    <div class="footer-about">
-                        <h4 class="footer-heading">O nás</h4>
-                        <ul class="footer-links">
-                            <li><a class="footer-link" href="#">Lektoři</a></li>
-                            <li><a class="footer-link" href="#">Kariéra</a></li>
-                            <li><a class="footer-link" href="#">Blog</a></li>
-                            <li><a class="footer-link" href="#">Kontakt</a></li>
+                    <div class="cart-footer-about">
+                        <h4 class="cart-footer-heading">O nás</h4>
+                        <ul class="cart-footer-links">
+                            <li><a class="cart-footer-link" href="#">Lektoři</a></li>
+                            <li><a class="cart-footer-link" href="#">Kariéra</a></li>
+                            <li><a class="cart-footer-link" href="#">Blog</a></li>
+                            <li><a class="cart-footer-link" href="#">Kontakt</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- divider -->
-            <div class="footer-divider"></div>
+            <div class="cart-footer-divider"></div>
 
             <!-- COPYRIGHT + IKONY -->
-            <div class="footer-bottom">
-                <div class="footer-copyright">© 2025 Lorem ipsum</div>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="Instagram">
+            <div class="cart-footer-bottom">
+                <div class="cart-footer-copyright">© 2025 Lorem ipsum</div>
+                <div class="cart-footer-social">
+                    <a href="#" class="cart-social-link" aria-label="Instagram">
                         <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
                     </a>
 
-                    <a href="#" class="social-link" aria-label="Facebook">
+                    <a href="#" class="cart-social-link" aria-label="Facebook">
                         <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
                     </a>
 
-                    <a href="#" class="social-link" aria-label="LinkedIn">
+                    <a href="#" class="cart-social-link" aria-label="LinkedIn">
                         <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
                     </a>
                 </div>
@@ -337,4 +337,5 @@
 </body>
 
 </html>
+
 

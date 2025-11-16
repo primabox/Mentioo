@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Layout vs Constraints in Figma | Sentioo</title>
-  <link rel="stylesheet" href="src/detail.css">
+  <link rel="stylesheet" href="src/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -23,23 +23,23 @@
   </div>
 
   <!-- HEADER -->
-  <header class="header">
-    <nav class="navbar">
+  <header class="dl-header">
+    <nav class="dl-navbar">
       <!-- Logo -->
-      <div class="logo">
+      <div class="dl-logo">
         <a href="#">
           <img src="img/Logo.png" alt="Logo" class="w-32" />
         </a>
       </div>
 
       <!-- Searchbar -->
-      <div class="searchbar-container">
-        <form class="search-form" role="search">
-          <div class="search-wrapper">
-            <span class="search-icon">
+      <div class="dl-searchbar-container">
+        <form class="dl-search-form" role="search">
+          <div class="dl-search-wrapper">
+            <span class="dl-search-icon">
               <i class="fas fa-search translate-y-px"></i>
             </span>
-            <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+            <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="dl-search-input" />
           </div>
         </form>
       </div>
@@ -63,19 +63,19 @@
       </div>
 
       <!-- Desktop menu -->
-      <div id="navbar-menu" class="navbar-menu">
-        <ul class="nav-links">
-          <li class="nav-item group">
-            <a href="#" class="nav-link">
+      <div id="navbar-menu" class="dl-navbar-menu">
+        <ul class="dl-nav-links">
+          <li class="dl-nav-item group">
+            <a href="#" class="dl-nav-link">
               Nabídka kurzů
             </a>
             <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
-            <div class="dropdown">
+            <div class="dl-dropdown">
               <div class="py-2">
-                <a href="#" class="dropdown-link">Programování</a>
-                <a href="#" class="dropdown-link">Design</a>
-                <a href="#" class="dropdown-link">Marketing</a>
-                <a href="#" class="dropdown-link">Business</a>
+                <a href="#" class="dl-dropdown-link">Programování</a>
+                <a href="#" class="dl-dropdown-link">Design</a>
+                <a href="#" class="dl-dropdown-link">Marketing</a>
+                <a href="#" class="dl-dropdown-link">Business</a>
               </div>
             </div>
           </li>
@@ -85,14 +85,14 @@
 
         <!-- User Profile & Icons -->
         <div class="flex items-center gap-3">
-          <a href="#" class="user-profile-link">
+          <a href="#" class="dl-user-profile-link">
             <img src="img/person_gray.png" alt="">
             <span>Jana Blahošová</span>
           </a>
-          <a href="#" class="icon-btn">
+          <a href="#" class="dl-icon-btn">
             <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
           </a>
-          <a href="#" class="icon-btn-alt">
+          <a href="#" class="dl-icon-btn-alt">
             <img src="img/network.png" alt="Globe" class="w-5 h-5" />
           </a>
         </div>
@@ -100,86 +100,86 @@
     </nav>
   </header>
 
-  <div class="main-wrapper">
-    <a href="#" class="back-link">
+  <div class="dl-main-wrapper">
+    <a href="#" class="dl-back-link">
       <i class="fas fa-arrow-left"></i>
       Zpět na přehled kurzu
     </a>
 
-    <div class="content-layout">
+    <div class="dl-content-layout">
       <div>
-        <div class="hero-gradient">
-          <div class="hero-bg"></div>
+        <div class="dl-hero-gradient">
+          <div class="dl-hero-bg"></div>
 
-          <div class="module-text">
+          <div class="dl-module-text">
             MODUL: AUTO LAYOUT
           </div>
-          <h1 class="hero-title">Auto Layout vs Constraints in Figma</h1>
-          <p class="hero-description">
+          <h1 class="dl-hero-title">Auto Layout vs Constraints in Figma</h1>
+          <p class="dl-hero-description">
             Become a Figma Pro with our in-depth Advanced Figma tutorial course.
             Discover advanced design strategies & so much more!
           </p>
-          <div class="lesson-status" id="favorite-toggle">
+          <div class="dl-lesson-status" id="favorite-toggle">
             <img src="img/favorite icon.png" alt="" id="favorite-icon">
             <span id="favorite-text">Přidat lekci do oblíbených</span>
           </div>
         </div>
 
-        <div class="content-card">
-          <div class="lesson-header">
-            <div class="lesson-header-title">Obsah lekce</div>
-            <div class="lesson-meta-grid">
-              <div class="meta-item">
-                <span class="meta-value has-check">
-                  <span class="meta-label">Článek k lekci</span>
-                  <img src="img/check_circle.png" alt="Check" class="check-icon">
+        <div class="dl-content-card">
+          <div class="dl-lesson-header">
+            <div class="dl-lesson-header-title">Obsah lekce</div>
+            <div class="dl-lesson-meta-grid">
+              <div class="dl-meta-item">
+                <span class="dl-meta-value dl-has-check">
+                  <span class="dl-meta-label">Článek k lekci</span>
+                  <img src="img/check_circle.png" alt="Check" class="dl-check-icon">
                 </span>
               </div>
-              <div class="meta-item">
-                <span class="meta-value has-check">
-                  <span class="meta-label">Cvičení 1</span>
-                  <img src="img/check_circle.png" alt="Check" class="check-icon">
+              <div class="dl-meta-item">
+                <span class="dl-meta-value dl-has-check">
+                  <span class="dl-meta-label">Cvičení 1</span>
+                  <img src="img/check_circle.png" alt="Check" class="dl-check-icon">
                 </span>
               </div>
-              <div class="meta-item">
-                <span class="meta-value has-check">
-                  <span class="meta-label">Video k lekci</span>
-                  <img src="img/check_circle.png" alt="Check" class="check-icon">
+              <div class="dl-meta-item">
+                <span class="dl-meta-value dl-has-check">
+                  <span class="dl-meta-label">Video k lekci</span>
+                  <img src="img/check_circle.png" alt="Check" class="dl-check-icon">
                 </span>
               </div>
-              <div class="meta-item">
-                <span class="meta-value">
-                  <span class="meta-label">Cvičení 2</span>
+              <div class="dl-meta-item">
+                <span class="dl-meta-value">
+                  <span class="dl-meta-label">Cvičení 2</span>
                 </span>
               </div>
-              <div class="meta-item">
-                <span class="meta-value has-check">
-                  <span class="meta-label">Audio nahrávka</span>
-                  <img src="img/check_circle.png" alt="Check" class="check-icon">
+              <div class="dl-meta-item">
+                <span class="dl-meta-value dl-has-check">
+                  <span class="dl-meta-label">Audio nahrávka</span>
+                  <img src="img/check_circle.png" alt="Check" class="dl-check-icon">
                 </span>
               </div>
-              <div class="meta-item">
-                <span class="meta-value">
-                  <span class="meta-label">Další materiály</span>
+              <div class="dl-meta-item">
+                <span class="dl-meta-value">
+                  <span class="dl-meta-label">Další materiály</span>
                 </span>
               </div>
             </div>
           </div>
 
-          <div class="tabs-wrapper">
-            <div class="tabs">
-              <button class="tab active" data-tab="lekce">Lekce</button>
-              <button class="tab" data-tab="cviceni">Cvičení</button>
-              <button class="tab" data-tab="dalsi">Další materiály</button>
-              <button class="tab" data-tab="poznamky">Moje poznámky</button>
-              <button class="tab" data-tab="diskuze">Diskuze</button>
+          <div class="dl-tabs-wrapper">
+            <div class="dl-tabs">
+              <button class="dl-tab active" data-tab="lekce">Lekce</button>
+              <button class="dl-tab" data-tab="cviceni">Cvičení</button>
+              <button class="dl-tab" data-tab="dalsi">Další materiály</button>
+              <button class="dl-tab" data-tab="poznamky">Moje poznámky</button>
+              <button class="dl-tab" data-tab="diskuze">Diskuze</button>
             </div>
           </div>
 
           <!-- Tab panels -->
-          <div class="tab-content" data-tab="lekce">
-            <h2 class="content-heading-big">Nadpis 2</h2>
-            <p class="content-text-big">
+          <div class="dl-tab-content" data-tab="lekce">
+            <h2 class="dl-content-heading-big">Nadpis 2</h2>
+            <p class="dl-content-text-big">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus. Maecenas eget
@@ -191,79 +191,79 @@
               tellus.
             </p>
 
-            <h2 class="content-heading">Nadpis 3</h2>
-            <p class="content-text">
+            <h2 class="dl-content-heading">Nadpis 3</h2>
+            <p class="dl-content-text">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus. Maecenas eget
               condimentum velit, sit amet feugiat.
             </p>
-            <ul class="content-list">
+            <ul class="dl-content-list">
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
             </ul>
 
-            <img src="img/multimedia.png" alt="Design Preview" class="content-image">
-            <p class="img-desc">Popis obrázku</p>
+            <img src="img/multimedia.png" alt="Design Preview" class="dl-content-image">
+            <p class="dl-img-desc">Popis obrázku</p>
 
-            <h2 class="content-heading">Nadpis 3</h2>
-            <p class="content-text">
+            <h2 class="dl-content-heading">Nadpis 3</h2>
+            <p class="dl-content-text">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus. Maecenas eget
               condimentum velit, sit amet feugiat.
             </p>
 
-            <h2 class="content-heading-middle">Nadpis 4</h2>
-            <p class="content-text-middle">
+            <h2 class="dl-content-heading-middle">Nadpis 4</h2>
+            <p class="dl-content-text-middle">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus.
             </p>
 
 
-            <img src="img/charts.png" alt="Figma Interface" class="content-image">
-            <p class="img-desc">Popis obrázku</p>
+            <img src="img/charts.png" alt="Figma Interface" class="dl-content-image">
+            <p class="dl-img-desc">Popis obrázku</p>
 
-            <h2 class="content-heading">Nadpis 3</h2>
-            <p class="content-text">
+            <h2 class="dl-content-heading">Nadpis 3</h2>
+            <p class="dl-content-text">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus. Maecenas eget
               condimentum velit, sit amet feugiat.
             </p>
 
-            <h2 class="content-heading-middle">Nadpis 4</h2>
-            <p class="content-text-middle">
+            <h2 class="dl-content-heading-middle">Nadpis 4</h2>
+            <p class="dl-content-text-middle">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus.
             </p>
-            <ul class="content-list">
+            <ul class="dl-content-list">
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
               <li>Norem ipsum dolor sit amet, consectetur adipiscing elit</li>
             </ul>
 
-            <h2 class="content-heading-small">Nadpis 5</h2>
-            <p class="content-text-small">
+            <h2 class="dl-content-heading-small">Nadpis 5</h2>
+            <p class="dl-content-text-small">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus.
             </p>
 
-            <h2 class="content-heading-small">Nadpis 5</h2>
-            <p class="content-text-small">
+            <h2 class="dl-content-heading-small">Nadpis 5</h2>
+            <p class="dl-content-text-small">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus.
             </p>
 
-            <h2 class="content-heading-big">Nadpis 2</h2>
-            <p class="content-text-big">
+            <h2 class="dl-content-heading-big">Nadpis 2</h2>
+            <p class="dl-content-text-big">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus. Maecenas eget
@@ -275,10 +275,10 @@
               tellus.
             </p>
 
-            <img src="img/Design.png" alt="Layout Structure" class="smaller-content-image">
-            <p class="img-desc">Popis obrázku</p>
-            <h2 class="content-heading-big">Nadpis 2</h2>
-            <p class="content-text-big">
+            <img src="img/Design.png" alt="Layout Structure" class="dl-smaller-content-image">
+            <p class="dl-img-desc">Popis obrázku</p>
+            <h2 class="dl-content-heading-big">Nadpis 2</h2>
+            <p class="dl-content-text-big">
               Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
               tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit
               sed risus. Maecenas eget
@@ -290,13 +290,13 @@
               tellus.
             </p>
 
-            <img src="img/charts.png" class="brightness-75" alt="Final Design" class="content-image">
-            <p class="img-desc">Popis obrázku</p>
+            <img src="img/charts.png" class="brightness-75" alt="Final Design" class="dl-content-image">
+            <p class="dl-img-desc">Popis obrázku</p>
 
             <!-- Summary Section -->
-            <div class="lesson-summary">
-              <h3 class="summary-title">Shrnutí lekce</h3>
-              <p class="summary-text">
+            <div class="dl-lesson-summary">
+              <h3 class="dl-summary-title">Shrnutí lekce</h3>
+              <p class="dl-summary-text">
                 Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis
                 tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
                 elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu
@@ -308,16 +308,16 @@
             </div>
 
             <!-- Audio Players Section -->
-            <div class="audio-players-section">
-              <div class="audio-player">
-                <h3 class="audio-section-title">Auto Layout a jeho výhody</h3>
+            <div class="dl-audio-players-section">
+              <div class="dl-audio-player">
+                <h3 class="dl-audio-section-title">Auto Layout a jeho výhody</h3>
 
-                <div class="audio-waveform">
-                  <div class="waveform-bars"></div>
+                <div class="dl-audio-waveform">
+                  <div class="dl-waveform-bars"></div>
                 </div>
 
-                <div class="audio-buttons">
-                  <button class="audio-play-btn" id="audio-play-btn">
+                <div class="dl-audio-buttons">
+                  <button class="dl-audio-play-btn" id="audio-play-btn">
                     <!-- Play icon -->
                     <svg class="play-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
                       <circle cx="16" cy="16" r="16" fill="#0EA5E9" />
@@ -332,166 +332,166 @@
                     </svg>
                   </button>
 
-                  <div class="audio-controls">
-                    <button class="audio-rewind">
+                  <div class="dl-audio-controls">
+                    <button class="dl-audio-rewind">
                       <img src="img/Backward.png" alt="Zpět 10s" />
                     </button>
 
-                    <button class="audio-forward">
+                    <button class="dl-audio-forward">
                       <img src="img/Forward.png" alt="Vpřed 10s" />
                     </button>
                   </div>
 
-                  <div class="audio-info">
-                    <button class="audio-speed">1x</button>
-                    <span class="audio-time">12:19</span>
+                  <div class="dl-audio-info">
+                    <button class="dl-audio-speed">1x</button>
+                    <span class="dl-audio-time">12:19</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="tab-content" data-tab="cviceni" style="display: none;">
-            <h3 class="content-heading">Cvičení</h3>
+          <div class="dl-tab-content" data-tab="cviceni" style="display: none;">
+            <h3 class="dl-content-heading">Cvičení</h3>
           </div>
 
-          <div class="tab-content" data-tab="dalsi" style="display: none;">
-            <h3 class="content-heading-file">Odkazy ke stažení</h3>
+          <div class="dl-tab-content" data-tab="dalsi" style="display: none;">
+            <h3 class="dl-content-heading-file">Odkazy ke stažení</h3>
 
-            <div class="links-grid grid grid-cols-2 gap-6 mt-6">
-              <a href="#" class="link-card">
-                <div class="link-text">
-                  <h4 class="link-title">Název odkazu</h4>
-                  <p class="link-desc">Popis odkazu, co v něm může student najít a v čem to může být užitečné.</p>
+            <div class="dl-links-grid grid grid-cols-2 gap-6 mt-6">
+              <a href="#" class="dl-link-card">
+                <div class="dl-link-text">
+                  <h4 class="dl-link-title">Název odkazu</h4>
+                  <p class="dl-link-desc">Popis odkazu, co v něm může student najít a v čem to může být užitečné.</p>
                 </div>
-                <div class="link-icon">
+                <div class="dl-link-icon">
                   <img src="img/chain.png" alt="">
                 </div>
               </a>
 
-              <a href="#" class="link-card">
-                <div class="link-text">
-                  <h4 class="link-title">Název odkazu</h4>
-                  <p class="link-desc">Krátký popis, proč je odkaz důležitý a kdy ho použít.</p>
+              <a href="#" class="dl-link-card">
+                <div class="dl-link-text">
+                  <h4 class="dl-link-title">Název odkazu</h4>
+                  <p class="dl-link-desc">Krátký popis, proč je odkaz důležitý a kdy ho použít.</p>
                 </div>
-                <div class="link-icon">
+                <div class="dl-link-icon">
                   <img src="img/chain.png" alt="">
                 </div>
               </a>
 
-              <a href="#" class="link-card">
-                <div class="link-text">
-                  <h4 class="link-title">Název odkazu</h4>
-                  <p class="link-desc">Ukázka materiálu nebo další čtení k tématu lekce.</p>
+              <a href="#" class="dl-link-card">
+                <div class="dl-link-text">
+                  <h4 class="dl-link-title">Název odkazu</h4>
+                  <p class="dl-link-desc">Ukázka materiálu nebo další čtení k tématu lekce.</p>
                 </div>
-                <div class="link-icon">
+                <div class="dl-link-icon">
                   <img src="img/chain.png" alt="">
                 </div>
               </a>
 
-              <a href="#" class="link-card">
-                <div class="link-text">
-                  <h4 class="link-title">Název odkazu</h4>
-                  <p class="link-desc">Doplňující zdroje a reference pro další studium.</p>
+              <a href="#" class="dl-link-card">
+                <div class="dl-link-text">
+                  <h4 class="dl-link-title">Název odkazu</h4>
+                  <p class="dl-link-desc">Doplňující zdroje a reference pro další studium.</p>
                 </div>
-                <div class="link-icon">
+                <div class="dl-link-icon">
                   <img src="img/chain.png" alt="">
                 </div>
               </a>
             </div>
 
-            <h3 class="content-heading-file">Odkazy ke stažení</h3>
+            <h3 class="dl-content-heading-file">Odkazy ke stažení</h3>
 
-            <div class="downloads-grid grid grid-cols-2 gap-4 mt-6">
-              <div class="download-item">
-                <div class="download-left">
-                  <div class="file-icon file-icon--pdf">
+            <div class="dl-downloads-grid grid grid-cols-2 gap-4 mt-6">
+              <div class="dl-download-item">
+                <div class="dl-download-left">
+                  <div class="dl-file-icon dl-file-icon--pdf">
                     <img src="img/FilePDF.png" alt="">
                   </div>
                   <div>
-                    <div class="download-info-title">Wireframes in Figma.pdf</div>
-                    <div class="download-info-size">23 MB</div>
+                    <div class="dl-download-info-title">Wireframes in Figma.pdf</div>
+                    <div class="dl-download-info-size">23 MB</div>
                   </div>
                 </div>
-                <a href="#" class="download-btn">
+                <a href="#" class="dl-download-btn">
                   <img src="img/download.png" alt="">
                 </a>
               </div>
 
-              <div class="download-item">
-                <div class="download-left">
-                  <div class="file-icon file-icon--ai">
+              <div class="dl-download-item">
+                <div class="dl-download-left">
+                  <div class="dl-file-icon dl-file-icon--ai">
                     <img src="img/FileIMG.png" alt="">
                   </div>
                   <div>
-                    <div class="download-info-title">Color palette.ai</div>
-                    <div class="download-info-size">2.3 MB</div>
+                    <div class="dl-download-info-title">Color palette.ai</div>
+                    <div class="dl-download-info-size">2.3 MB</div>
                   </div>
                 </div>
-                <a href="#" class="download-btn">
+                <a href="#" class="dl-download-btn">
                   <img src="img/download.png" alt="">
                 </a>
               </div>
 
-              <div class="download-item">
-                <div class="download-left">
-                  <div class="file-icon file-icon--zip">
+              <div class="dl-download-item">
+                <div class="dl-download-left">
+                  <div class="dl-file-icon dl-file-icon--zip">
                     <img src="img/FileType.png" alt="">
                   </div>
                   <div>
-                    <div class="download-info-title">Assets.zip</div>
-                    <div class="download-info-size">48 MB</div>
+                    <div class="dl-download-info-title">Assets.zip</div>
+                    <div class="dl-download-info-size">48 MB</div>
                   </div>
                 </div>
-                <a href="#" class="download-btn">
+                <a href="#" class="dl-download-btn">
                   <img src="img/download.png" alt="">
                 </a>
               </div>
 
-              <div class="download-item">
-                <div class="download-left">
-                  <div class="file-icon file-icon--code">
+              <div class="dl-download-item">
+                <div class="dl-download-left">
+                  <div class="dl-file-icon dl-file-icon--code">
                     <img src="img/FilePDF.png" alt="">
                   </div>
                   <div>
-                    <div class="download-info-title">Example project.zip</div>
-                    <div class="download-info-size">12 MB</div>
+                    <div class="dl-download-info-title">Example project.zip</div>
+                    <div class="dl-download-info-size">12 MB</div>
                   </div>
                 </div>
-                <a href="#" class="download-btn">
+                <a href="#" class="dl-download-btn">
                   <img src="img/download.png" alt="">
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="tab-content" data-tab="poznamky" style="display: none;">
-            <h3 class="content-heading">Moje poznámky</h3>
-            <p class="content-text">Můžete sem psát své poznámky k lekci.</p>
+          <div class="dl-tab-content" data-tab="poznamky" style="display: none;">
+            <h3 class="dl-content-heading">Moje poznámky</h3>
+            <p class="dl-content-text">Můžete sem psát své poznámky k lekci.</p>
           </div>
 
-          <div class="tab-content" data-tab="diskuze" style="display: none;">
+          <div class="dl-tab-content" data-tab="diskuze" style="display: none;">
             <!-- Diskuze List View -->
             <div id="diskuze-list-view">
               <!-- Diskuze Header -->
-              <div class="diskuze-header">
-                <h3 class="diskuze-title">Diskuze</h3>
+              <div class="dl-diskuze-header">
+                <h3 class="dl-diskuze-title">Diskuze</h3>
               </div>
 
               <!-- Search & Filter -->
-              <div class="diskuze-search-wrapper">
-                <div class="diskuze-search-bar">
-                  <div class="diskuze-search-box">
+              <div class="dl-diskuze-search-wrapper">
+                <div class="dl-diskuze-search-bar">
+                  <div class="dl-diskuze-search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Hledat v diskuzi" class="diskuze-search-input">
+                    <input type="text" placeholder="Hledat v diskuzi" class="dl-diskuze-search-input">
                   </div>
-                  <button type="button" class="diskuze-new-btn" id="open-discussion-modal-btn">
+                  <button type="button" class="dl-diskuze-new-btn" id="open-discussion-modal-btn">
                     <i class="fas fa-plus"></i>
                     Nové téma
                   </button>
                 </div>
-                <div class="diskuze-filter-wrapper">
-                  <select class="diskuze-filter">
+                <div class="dl-diskuze-filter-wrapper">
+                  <select class="dl-diskuze-filter">
                     <option>Seřadit podle: Nejoblíbenější</option>
                     <option>Nejnovější</option>
                     <option>Nejstarší</option>
@@ -500,145 +500,145 @@
               </div>
 
               <!-- Diskuze Posts -->
-              <div class="diskuze-posts">
+              <div class="dl-diskuze-posts">
                 <!-- Post 1 -->
-                <div class="diskuze-post" onclick="openDiskuzeDetail(1)">
-                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-avatar">
-                  <div class="diskuze-content">
-                    <span class="diskuze-author">Alexandra Václavíková</span>
-                    <span class="diskuze-topic-label">Téma</span>
-                    <h4 class="diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
-                    <p class="diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+                <div class="dl-diskuze-post" onclick="openDiskuzeDetail(1)">
+                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-avatar">
+                  <div class="dl-diskuze-content">
+                    <span class="dl-diskuze-author">Alexandra Václavíková</span>
+                    <span class="dl-diskuze-topic-label">Téma</span>
+                    <h4 class="dl-diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
+                    <p class="dl-diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                       libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet, consectetur
                       adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt...</p>
-                    <div class="diskuze-stats">
-                      <span class="diskuze-stat">
+                    <div class="dl-diskuze-stats">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-thumbs-up"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-eye"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-comment"></i> 126
                       </span>
-                      <span class="diskuze-time">před hodinou</span>
+                      <span class="dl-diskuze-time">před hodinou</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Post 2 -->
-                <div class="diskuze-post" onclick="openDiskuzeDetail(2)">
-                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-avatar">
-                  <div class="diskuze-content">
-                    <span class="diskuze-author">Alexandra Václavíková</span>
-                    <span class="diskuze-topic-label">Téma</span>
-                    <h4 class="diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
-                    <p class="diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+                <div class="dl-diskuze-post" onclick="openDiskuzeDetail(2)">
+                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-avatar">
+                  <div class="dl-diskuze-content">
+                    <span class="dl-diskuze-author">Alexandra Václavíková</span>
+                    <span class="dl-diskuze-topic-label">Téma</span>
+                    <h4 class="dl-diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
+                    <p class="dl-diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                       libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet, consectetur
                       adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt...</p>
-                    <div class="diskuze-stats">
-                      <span class="diskuze-stat">
+                    <div class="dl-diskuze-stats">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-thumbs-up"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-eye"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-comment"></i> 126
                       </span>
-                      <span class="diskuze-time">před hodinou</span>
+                      <span class="dl-diskuze-time">před hodinou</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Post 3 -->
-                <div class="diskuze-post" onclick="openDiskuzeDetail(3)">
-                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-avatar">
-                  <div class="diskuze-content">
-                    <span class="diskuze-author">Alexandra Václavíková</span>
-                    <span class="diskuze-topic-label">Téma</span>
-                    <h4 class="diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
-                    <p class="diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+                <div class="dl-diskuze-post" onclick="openDiskuzeDetail(3)">
+                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-avatar">
+                  <div class="dl-diskuze-content">
+                    <span class="dl-diskuze-author">Alexandra Václavíková</span>
+                    <span class="dl-diskuze-topic-label">Téma</span>
+                    <h4 class="dl-diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
+                    <p class="dl-diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                       libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet, consectetur
                       adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt...</p>
-                    <div class="diskuze-stats">
-                      <span class="diskuze-stat">
+                    <div class="dl-diskuze-stats">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-thumbs-up"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-eye"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-comment"></i> 126
                       </span>
-                      <span class="diskuze-time">před hodinou</span>
+                      <span class="dl-diskuze-time">před hodinou</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Post 4 -->
-                <div class="diskuze-post" onclick="openDiskuzeDetail(4)">
-                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-avatar">
-                  <div class="diskuze-content">
-                    <span class="diskuze-author">Alexandra Václavíková</span>
-                    <span class="diskuze-topic-label">Téma</span>
-                    <h4 class="diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
-                    <p class="diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+                <div class="dl-diskuze-post" onclick="openDiskuzeDetail(4)">
+                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-avatar">
+                  <div class="dl-diskuze-content">
+                    <span class="dl-diskuze-author">Alexandra Václavíková</span>
+                    <span class="dl-diskuze-topic-label">Téma</span>
+                    <h4 class="dl-diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
+                    <p class="dl-diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                       libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet, consectetur
                       adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt...</p>
-                    <div class="diskuze-stats">
-                      <span class="diskuze-stat">
+                    <div class="dl-diskuze-stats">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-thumbs-up"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-eye"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-comment"></i> 126
                       </span>
-                      <span class="diskuze-time">před hodinou</span>
+                      <span class="dl-diskuze-time">před hodinou</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Post 5 -->
-                <div class="diskuze-post" onclick="openDiskuzeDetail(5)">
-                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-avatar">
-                  <div class="diskuze-content">
-                    <span class="diskuze-author">Alexandra Václavíková</span>
-                    <span class="diskuze-topic-label">Téma</span>
-                    <h4 class="diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
-                    <p class="diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
+                <div class="dl-diskuze-post" onclick="openDiskuzeDetail(5)">
+                  <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-avatar">
+                  <div class="dl-diskuze-content">
+                    <span class="dl-diskuze-author">Alexandra Václavíková</span>
+                    <span class="dl-diskuze-topic-label">Téma</span>
+                    <h4 class="dl-diskuze-post-title">Cvičení 1: Jak vyřešit problém s constrainty?</h4>
+                    <p class="dl-diskuze-post-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                       libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet, consectetur
                       adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt...</p>
-                    <div class="diskuze-stats">
-                      <span class="diskuze-stat">
+                    <div class="dl-diskuze-stats">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-thumbs-up"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-eye"></i> 126
                       </span>
-                      <span class="diskuze-stat">
+                      <span class="dl-diskuze-stat">
                         <i class="far fa-comment"></i> 126
                       </span>
-                      <span class="diskuze-time">před hodinou</span>
+                      <span class="dl-diskuze-time">před hodinou</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Pagination -->
-              <div class="diskuze-pagination">
-                <button class="pagination-btn">
+              <div class="dl-diskuze-pagination">
+                <button class="dl-pagination-btn">
                   <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="pagination-num active">1</button>
-                <button class="pagination-num">2</button>
-                <button class="pagination-num">3</button>
-                <button class="pagination-num">4</button>
-                <span class="pagination-dots">...</span>
-                <button class="pagination-num">24</button>
-                <button class="pagination-btn">
+                <button class="dl-pagination-num dl-active">1</button>
+                <button class="dl-pagination-num">2</button>
+                <button class="dl-pagination-num">3</button>
+                <button class="dl-pagination-num">4</button>
+                <span class="dl-pagination-dots">...</span>
+                <button class="dl-pagination-num">24</button>
+                <button class="dl-pagination-btn">
                   <i class="fas fa-chevron-right"></i>
                 </button>
               </div>
@@ -647,38 +647,38 @@
             <!-- Diskuze Detail View -->
             <div id="diskuze-detail-view" style="display: none;">
               <!-- Back Button -->
-              <button class="diskuze-back-btn" onclick="closeDiskuzeDetail()">
+              <button class="dl-diskuze-back-btn" onclick="closeDiskuzeDetail()">
                 <i class="fas fa-arrow-left"></i>
                 Zpět na otázky
               </button>
 
               <!-- Discussion Thread -->
-              <div class="diskuze-thread">
+              <div class="dl-diskuze-thread">
                 <!-- Title Section -->
-                <h3 class="diskuze-op-title">Cvičení 1: Jak vyřešit problém s constrainty?</h3>
+                <h3 class="dl-diskuze-op-title">Cvičení 1: Jak vyřešit problém s constrainty?</h3>
 
-                <span class="diskuze-op-stat">
+                <span class="dl-diskuze-op-stat">
                   <i class="far fa-eye"></i> 126
                   <i class="far fa-comment"></i> 126
                   <span class="text-[#717171]">před hodinou</span>
                 </span>
 
 
-                <div class="diskuze-title-divider"></div>
+                <div class="dl-diskuze-title-divider"></div>
 
 
 
 
                 <!-- Original Post -->
-                <div class="diskuze-original-post">
-                  <div class="diskuze-op-header">
-                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-op-avatar">
-                    <div class="diskuze-op-meta">
-                      <span class="diskuze-op-author">Alexandra Václavíková</span>
+                <div class="dl-diskuze-original-post">
+                  <div class="dl-diskuze-op-header">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-op-avatar">
+                    <div class="dl-diskuze-op-meta">
+                      <span class="dl-diskuze-op-author">Alexandra Václavíková</span>
                     </div>
                   </div>
 
-                  <p class="diskuze-op-text">Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
+                  <p class="dl-diskuze-op-text">Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
                     molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem
                     sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet
                     feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -693,11 +693,11 @@
                     Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum
                     tellus.</p>
 
-                  <div class="diskuze-op-stats">
-                    <button class="diskuze-comment-like">
+                  <div class="dl-diskuze-op-stats">
+                    <button class="dl-diskuze-comment-like">
                       <img src="img/thumb_up.png" alt=""> 126
                     </button>
-                    <button class="diskuze-comment-reply">
+                    <button class="dl-diskuze-comment-reply">
                       <img src="img/reply.png" alt=""> Odpovědět
                     </button>
 
@@ -708,10 +708,10 @@
 
 
                 <!-- Count and Filter Row -->
-                <div class="diskuze-count-filter-row">
-                  <div class="diskuze-count">126 odpovědí</div>
-                  <div class="diskuze-filter-wrapper">
-                    <select class="diskuze-filter">
+                <div class="dl-diskuze-count-filter-row">
+                  <div class="dl-diskuze-count">126 odpovědí</div>
+                  <div class="dl-diskuze-filter-wrapper">
+                    <select class="dl-diskuze-filter">
                       <option>Seřadit podle: Nejoblíbenější</option>
                       <option>Nejnovější</option>
                       <option>Nejstarší</option>
@@ -720,43 +720,43 @@
                 </div>
 
                 <!-- Comments -->
-                <div class="diskuze-comments">
+                <div class="dl-diskuze-comments">
                   <!-- Comment 1 -->
-                  <div class="diskuze-comment">
-                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-comment-avatar">
-                    <div class="diskuze-comment-content">
-                      <span class="diskuze-comment-author">Alexandra Václavíková</span>
-                      <p class="diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  <div class="dl-diskuze-comment">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-comment-avatar">
+                    <div class="dl-diskuze-comment-content">
+                      <span class="dl-diskuze-comment-author">Alexandra Václavíková</span>
+                      <p class="dl-diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                         vulputate libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet,
                         consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt lorem
                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                         aliquet odio mattis. lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                         libero et velit interdum, ac aliquet odio mattis.</p>
-                      <div class="diskuze-comment-actions">
-                        <button class="diskuze-comment-like">
+                      <div class="dl-diskuze-comment-actions">
+                        <button class="dl-diskuze-comment-like">
                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
-                        <button class="diskuze-comment-reply">
+                        <button class="dl-diskuze-comment-reply">
                           <img src="img/reply.png" alt=""> Odpovědět
                         </button>
                       </div>
 
                       <!-- Nested Reply -->
-                      <div class="diskuze-reply">
-                        <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-comment-avatar">
-                        <div class="diskuze-comment-content">
-                          <span class="diskuze-comment-author">Alexandra Václavíková</span>
-                          <p class="diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                      <div class="dl-diskuze-reply">
+                        <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-comment-avatar">
+                        <div class="dl-diskuze-comment-content">
+                          <span class="dl-diskuze-comment-author">Alexandra Václavíková</span>
+                          <p class="dl-diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                             vulputate libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet,
                             consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt
                             lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
                             interdum, ac aliquet odio mattis. lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                          <div class="diskuze-comment-actions">
-                            <button class="diskuze-comment-like">
+                          <div class="dl-diskuze-comment-actions">
+                            <button class="dl-diskuze-comment-like">
                               <img src="img/thumb_up.png" alt=""> 1
                             </button>
-                            <button class="diskuze-comment-reply">
+                            <button class="dl-diskuze-comment-reply">
                               <img src="img/reply.png" alt=""> Odpovědět
                             </button>
                           </div>
@@ -766,21 +766,21 @@
                   </div>
 
                   <!-- Comment 2 -->
-                  <div class="diskuze-comment">
-                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-comment-avatar">
-                    <div class="diskuze-comment-content">
-                      <span class="diskuze-comment-author">Alexandra Václavíková</span>
-                      <p class="diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  <div class="dl-diskuze-comment">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-comment-avatar">
+                    <div class="dl-diskuze-comment-content">
+                      <span class="dl-diskuze-comment-author">Alexandra Václavíková</span>
+                      <p class="dl-diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                         vulputate libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet,
                         consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt lorem
                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                         aliquet odio mattis. lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                         libero et velit interdum, ac aliquet odio mattis.</p>
-                      <div class="diskuze-comment-actions">
-                        <button class="diskuze-comment-like">
+                      <div class="dl-diskuze-comment-actions">
+                        <button class="dl-diskuze-comment-like">
                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
-                        <button class="diskuze-comment-reply">
+                        <button class="dl-diskuze-comment-reply">
                           <img src="img/reply.png" alt=""> Odpovědět
                         </button>
                       </div>
@@ -788,21 +788,21 @@
                   </div>
 
                   <!-- Comment 3 -->
-                  <div class="diskuze-comment">
-                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="diskuze-comment-avatar">
-                    <div class="diskuze-comment-content">
-                      <span class="diskuze-comment-author">Alexandra Václavíková</span>
-                      <p class="diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  <div class="dl-diskuze-comment">
+                    <img src="img/lektorkaDiskuze.jpg" alt="Avatar" class="dl-diskuze-comment-avatar">
+                    <div class="dl-diskuze-comment-content">
+                      <span class="dl-diskuze-comment-author">Alexandra Václavíková</span>
+                      <p class="dl-diskuze-comment-text">Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                         vulputate libero et velit interdum, ac aliquet odio mattis. Horem ipsum dolor sit amet,
                         consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio matt lorem
                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                         aliquet odio mattis. lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
                         libero et velit interdum, ac aliquet odio mattis.</p>
-                      <div class="diskuze-comment-actions">
-                        <button class="diskuze-comment-like">
+                      <div class="dl-diskuze-comment-actions">
+                        <button class="dl-diskuze-comment-like">
                           <img src="img/thumb_up.png" alt=""> 1
                         </button>
-                        <button class="diskuze-comment-reply">
+                        <button class="dl-diskuze-comment-reply">
                           <img src="img/reply.png" alt=""> Odpovědět
                         </button>
                       </div>
@@ -816,95 +816,95 @@
       </div>
 
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="progress-card">
-          <div class="progress-header">
+      <aside class="dl-sidebar">
+        <div class="dl-progress-card">
+          <div class="dl-progress-header">
             <img src="img/trophy.png" alt="">
-            <span class="progress-label">Postup lekcí</span>
+            <span class="dl-progress-label">Postup lekcí</span>
           </div>
-          <p class="progress-text">Dokončili jste <span class="progress-text font-bold">67%</span> lekcí.</p>
-          <div class="progress-bar-container">
-            <div class="progress-bar" style="width: 67%;"></div>
+          <p class="dl-progress-text">Dokončili jste <span class="dl-progress-text font-bold">67%</span> lekcí.</p>
+          <div class="dl-progress-bar-container">
+            <div class="dl-progress-bar" style="width: 67%;"></div>
           </div>
 
-          <div class="info-item">
-            <div class="info-icon">
+          <div class="dl-info-item">
+            <div class="dl-info-icon">
               <img src="img/alarmBlue.png" alt="">
             </div>
-            <span class="info-text">Čas strávený v lekci</span>
+            <span class="dl-info-text">Čas strávený v lekci</span>
           </div>
-          <p class="info-subtitle">2 hodiny a 10 minut</p>
+          <p class="dl-info-subtitle">2 hodiny a 10 minut</p>
 
-          <div class="info-item" style="padding-top: 1.25rem; margin-top: 0.875rem;">
-            <div class="info-icon">
+          <div class="dl-info-item" style="padding-top: 1.25rem; margin-top: 0.875rem;">
+            <div class="dl-info-icon">
               <img src="img/stars.png" alt="">
             </div>
-            <span class="info-text">Testy</span>
+            <span class="dl-info-text">Testy</span>
           </div>
-          <p class="info-subtitle">Po této lekci následuje test</p>
+          <p class="dl-info-subtitle">Po této lekci následuje test</p>
 
-          <button class="lesson-btn">Dokončit lekci</button>
+          <button class="dl-lesson-btn">Dokončit lekci</button>
         </div>
 
-        <div class="other-lessons">
-          <div class="chapter-nav">
+        <div class="dl-other-lessons">
+          <div class="dl-chapter-nav">
             <i class="fas fa-arrow-left"></i>
             Předchozí lekce
           </div>
 
-          <div class="current-chapter">
-            <div class="info-icon">
+          <div class="dl-current-chapter">
+            <div class="dl-info-icon">
               <img src="img/book.png" alt="">
             </div>
-            <span class="current-chapter-text">Další lekce v kapitole</span>
+            <span class="dl-current-chapter-text">Další lekce v kapitole</span>
           </div>
 
-          <div class="relative">
-            <div class="lesson-item disabled">
-              <span class="lesson-name">Online test: Auto Layout 2</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+          <div class="dl-relative">
+            <div class="dl-lesson-item dl-disabled">
+              <span class="dl-lesson-name">Online test: Auto Layout 2</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </div>
-            <div class="lesson-tooltip">Test bude zpřístupněn
+            <div class="dl-lesson-tooltip">Test bude zpřístupněn
               po dokončení lekce.</div>
           </div>
 
-          <div class="lesson-list">
-            <a href="#" class="lesson-item active">
-              <span class="lesson-name">What is good spacing to use in Figma</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+          <div class="dl-lesson-list">
+            <a href="#" class="dl-lesson-item dl-active">
+              <span class="dl-lesson-name">What is good spacing to use in Figma</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </a>
 
-            <a href="#" class="lesson-item">
-              <span class="lesson-name">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+            <a href="#" class="dl-lesson-item">
+              <span class="dl-lesson-name">Autolayout shortcuts: Tips and tricks to work with Auto Layout faster</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </a>
 
-            <a href="#" class="lesson-item">
-              <span class="lesson-name">When and when not to use Components in Figma</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+            <a href="#" class="dl-lesson-item">
+              <span class="dl-lesson-name">When and when not to use Components in Figma</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </a>
 
-            <a href="#" class="lesson-item">
-              <span class="lesson-name">Designing in Figma with Auto Spacing in Auto Layouts: Part 1</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+            <a href="#" class="dl-lesson-item">
+              <span class="dl-lesson-name">Designing in Figma with Auto Spacing in Auto Layouts: Part 1</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </a>
 
-            <a href="#" class="lesson-item ">
-              <span class="lesson-name">Designing in Figma with Auto Spacing in Auto Layouts: Part 2</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+            <a href="#" class="dl-lesson-item ">
+              <span class="dl-lesson-name">Designing in Figma with Auto Spacing in Auto Layouts: Part 2</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </a>
 
-            <a href="#" class="lesson-item">
-              <span class="lesson-name">Auto Layout documentation 2</span>
-              <i class="fas fa-arrow-right lesson-arrow"></i>
+            <a href="#" class="dl-lesson-item">
+              <span class="dl-lesson-name">Auto Layout documentation 2</span>
+              <i class="fas fa-arrow-right dl-lesson-arrow"></i>
             </a>
 
-            <div class="relative">
-              <div class="lesson-item disabled">
-                <span class="lesson-name">Online test: Auto Layout 2</span>
-                <i class="fas fa-arrow-right lesson-arrow"></i>
+            <div class="dl-relative">
+              <div class="dl-lesson-item dl-disabled">
+                <span class="dl-lesson-name">Online test: Auto Layout 2</span>
+                <i class="fas fa-arrow-right dl-lesson-arrow"></i>
               </div>
-              <div class="lesson-tooltip">Test bude zpřístupněn
+              <div class="dl-lesson-tooltip">Test bude zpřístupněn
                 po dokončení lekce.</div>
             </div>
           </div>
@@ -1013,52 +1013,52 @@
   </footer>
 
   <!-- Poznámka Tooltip -->
-  <div id="note-tooltip" class="note-tooltip" style="display: none;">
-    <button id="create-note-btn" class="create-note-btn">
+  <div id="note-tooltip" class="dl-note-tooltip" style="display: none;">
+    <button id="create-note-btn" class="dl-create-note-btn">
       <i class="fas fa-sticky-note"></i>
       Vytvořit poznámku
     </button>
   </div>
 
   <!-- Modal pro vytvoření poznámky -->
-  <div id="note-modal" class="note-modal" style="display: none;">
-    <div class="note-modal-overlay"></div>
-    <div class="note-modal-content">
-      <div class="note-modal-header">
+  <div id="note-modal" class="dl-note-modal" style="display: none;">
+    <div class="dl-note-modal-overlay"></div>
+    <div class="dl-note-modal-content">
+      <div class="dl-note-modal-header">
         <h3>Přidat poznámku</h3>
       </div>
-      <div class="note-modal-body">
-        <div class="note-selected-text">
+      <div class="dl-note-modal-body">
+        <div class="dl-note-selected-text">
           <strong>Označený text:</strong>
           <p id="selected-text-display"></p>
         </div>
         <textarea id="note-textarea" placeholder="Napište svou poznámku..." rows="6"></textarea>
       </div>
-      <div class="note-modal-footer">
-        <button class="note-btn-cancel" onclick="closeNoteModal()">Zrušit</button>
-        <button class="note-btn-save" onclick="saveNote()">Potvrdit</button>
+      <div class="dl-note-modal-footer">
+        <button class="dl-note-btn-cancel" onclick="closeNoteModal()">Zrušit</button>
+        <button class="dl-note-btn-save" onclick="saveNote()">Potvrdit</button>
       </div>
     </div>
   </div>
 
   <!-- Modal pro přidání nového tématu k diskuzi -->
-  <div id="discussion-modal" class="discussion-modal" style="display: none;">
-    <div class="discussion-modal-overlay"></div>
-    <div class="discussion-modal-content">
-      <h3 class="discussion-modal-title">Přidat nové téma k diskuzi</h3>
-      <div class="discussion-modal-body">
-        <div class="discussion-form-group">
-          <label class="discussion-label">Titulek</label>
-          <input type="text" class="discussion-input" placeholder="Kód kupónu">
+  <div id="discussion-modal" class="dl-discussion-modal" style="display: none;">
+    <div class="dl-discussion-modal-overlay"></div>
+    <div class="dl-discussion-modal-content">
+      <h3 class="dl-discussion-modal-title">Přidat nové téma k diskuzi</h3>
+      <div class="dl-discussion-modal-body">
+        <div class="dl-discussion-form-group">
+          <label class="dl-discussion-label">Titulek</label>
+          <input type="text" class="dl-discussion-input" placeholder="Kód kupónu">
         </div>
-        <div class="discussion-form-group">
-          <label class="discussion-label">Popište váš problém/otázky/téma</label>
-          <textarea class="discussion-textarea"></textarea>
+        <div class="dl-discussion-form-group">
+          <label class="dl-discussion-label">Popište váš problém/otázky/téma</label>
+          <textarea class="dl-discussion-textarea"></textarea>
         </div>
       </div>
-      <div class="discussion-modal-footer">
-        <button class="discussion-btn-cancel">Odejít</button>
-        <button class="discussion-btn-submit">Zveřejnit téma</button>
+      <div class="dl-discussion-modal-footer">
+        <button class="dl-discussion-btn-cancel">Odejít</button>
+        <button class="dl-discussion-btn-submit">Zveřejnit téma</button>
       </div>
     </div>
   </div>
@@ -1075,3 +1075,4 @@
 </body>
 
 </html>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 
 <head>
@@ -12,56 +12,56 @@
 
 <body class="font-[Poppins]">
     <!-- HEADER -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="dc-header">
+        <nav class="dc-navbar">
             <!-- Logo -->
-            <div class="logo">
+            <div class="dc-logo">
                 <a href="#">
                     <img src="img/Logo.png" alt="Logo" class="w-32" />
                 </a>
             </div>
 
             <!-- Searchbar -->
-            <div class="searchbar-container">
-                <form class="search-form" role="search">
-                    <div class="search-wrapper">
-                        <span class="search-icon">
+            <div class="dc-searchbar-container">
+                <form class="dc-search-form" role="search">
+                    <div class="dc-search-wrapper">
+                        <span class="dc-search-icon">
                             <i class="fas fa-search translate-y-px"></i>
                         </span>
-                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="search-input" />
+                        <input type="search" name="q" aria-label="Hledat" placeholder="Hledat" class="dc-search-input" />
                     </div>
                 </form>
             </div>
 
             <!-- Hamburger (mobile) -->
-            <div class="hamburger">
-                <button id="navbar-toggle" class="hamburger-btn">
+            <div class="dc-hamburger">
+                <button id="navbar-toggle" class="dc-hamburger-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
 
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="mobile-menu">
-                <a href="#" class="mobile-link">Nabídka kurzů</a>
-                <a href="#" class="mobile-link">Lektoři</a>
-                <a href="#" class="mobile-link">Blog</a>
-                <a href="#" class="mobile-btn">Zaregistrovat se</a>
+            <div id="mobile-menu" class="dc-mobile-menu">
+                <a href="#" class="dc-mobile-link">Nabídka kurzů</a>
+                <a href="#" class="dc-mobile-link">Lektoři</a>
+                <a href="#" class="dc-mobile-link">Blog</a>
+                <a href="#" class="dc-mobile-btn">Zaregistrovat se</a>
             </div>
 
             <!-- Desktop menu -->
-            <div id="navbar-menu" class="navbar-menu">
-                <ul class="nav-links">
-                    <li class="nav-item group">
-                        <a href="#" class="nav-link">
+            <div id="navbar-menu" class="dc-navbar-menu">
+                <ul class="dc-nav-links">
+                    <li class="dc-nav-item group">
+                        <a href="#" class="dc-nav-link">
                             Nabídka kurzů
                         </a>
                         <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
-                        <div class="dropdown">
+                        <div class="dc-dropdown">
                             <div class="py-2">
-                                <a href="#" class="dropdown-link">Programování</a>
-                                <a href="#" class="dropdown-link">Design</a>
-                                <a href="#" class="dropdown-link">Marketing</a>
-                                <a href="#" class="dropdown-link">Business</a>
+                                <a href="#" class="dc-dropdown-link">Programování</a>
+                                <a href="#" class="dc-dropdown-link">Design</a>
+                                <a href="#" class="dc-dropdown-link">Marketing</a>
+                                <a href="#" class="dc-dropdown-link">Business</a>
                             </div>
                         </div>
                     </li>
@@ -71,17 +71,17 @@
 
                 <!-- Tlačítka -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="btn-outline">Přihlásit se</a>
-                    <a href="#" class="btn-primary">Zaregistrovat se</a>
+                    <a href="#" class="dc-btn-outline">Přihlásit se</a>
+                    <a href="#" class="dc-btn-primary">Zaregistrovat se</a>
                 </div>
 
                 <!-- Ikony -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="icon-btn relative">
+                    <a href="#" class="dc-icon-btn relative">
                         <img src="img/Kosik.png" alt="Cart" class="w-6 h-6" />
-                        <span id="cart-tag" class="cart-tag" style="display: none;">0</span>
+                        <span id="cart-tag" class="dc-cart-tag" style="display: none;">0</span>
                     </a>
-                    <a href="#" class="icon-btn-alt">
+                    <a href="#" class="dc-icon-btn-alt">
                         <img src="img/network.png" alt="Globe" class="w-5 h-5" />
                     </a>
                 </div>
@@ -89,65 +89,65 @@
         </nav>
     </header>
 
-    <div class="main-wrapper">
+    <div class="dc-main-wrapper">
         <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb-nav">
-            <a href="#" class="breadcrumb-item">
+        <nav class="dc-breadcrumb-nav">
+            <a href="#" class="dc-breadcrumb-item">
                 <i class="fas fa-home"></i>
             </a>
-            <i class="fas fa-chevron-right breadcrumb-separator"></i>
-            <a href="#" class="breadcrumb-item">Grafický design</a>
-            <i class="fas fa-chevron-right breadcrumb-separator"></i>
-            <a href="#" class="breadcrumb-item">Figma</a>
-            <i class="fas fa-chevron-right breadcrumb-separator"></i>
-            <span class="breadcrumb-item active">Figma UI UX Design Advanced</span>
+            <i class="fas fa-chevron-right dc-breadcrumb-separator"></i>
+            <a href="#" class="dc-breadcrumb-item">Grafický design</a>
+            <i class="fas fa-chevron-right dc-breadcrumb-separator"></i>
+            <a href="#" class="dc-breadcrumb-item">Figma</a>
+            <i class="fas fa-chevron-right dc-breadcrumb-separator"></i>
+            <span class="dc-breadcrumb-item dc-active">Figma UI UX Design Advanced</span>
         </nav>
 
 
         <!-- Bubliny -->
-        <div class="bubble-field md:block hidden">
-            <div class="bubble opacity-[40]" style="top:250px; left:98%; width:13px; height:13px;"></div>
-            <div class="bubble" style="top:350px; left:93%; width:13px; height:13px;"></div>
-            <div class="bubble" style="top:475px; left:10%; width:9px; height:9px;"></div>
-            <div class="bubble" style="top:420px; left:4%; width:7px; height:7px;"></div>
+        <div class="dc-bubble-field md:block hidden">
+            <div class="dc-bubble opacity-[40]" style="top:250px; left:98%; width:13px; height:13px;"></div>
+            <div class="dc-bubble" style="top:350px; left:93%; width:13px; height:13px;"></div>
+            <div class="dc-bubble" style="top:475px; left:10%; width:9px; height:9px;"></div>
+            <div class="dc-bubble" style="top:420px; left:4%; width:7px; height:7px;"></div>
         </div>
 
-        <div class="content-layout">
+        <div class="dc-content-layout">
             <div>
-                <div class="hero-gradient">
-                    <div class="hero-bg"></div>
+                <div class="dc-hero-gradient">
+                    <div class="dc-hero-bg"></div>
 
 
-                    <h1 class="hero-title">Figma UI UX Design Advanced</h1>
-                    <p class="hero-description">
+                    <h1 class="dc-hero-title">Figma UI UX Design Advanced</h1>
+                    <p class="dc-hero-description">
                         Become a Figma Pro with our in-depth Advanced Figma tutorial course.
                         Discover advanced design strategies & so much more!
                     </p>
-                    <div class="instructor-info">
-                        <div class="instructor-profile">
-                            <img src="img/profilLektorkaK.jpg" alt="Kristýna Nováková" class="instructor-avatar">
-                            <div class="instructor-details">
-                                <span class="instructor-label">lektor:</span>
-                                <span class="instructor-name">Kristýna Nováková</span>
+                    <div class="dc-instructor-info">
+                        <div class="dc-instructor-profile">
+                            <img src="img/profilLektorkaK.jpg" alt="Kristýna Nováková" class="dc-instructor-avatar">
+                            <div class="dc-instructor-details">
+                                <span class="dc-instructor-label">lektor:</span>
+                                <span class="dc-instructor-name">Kristýna Nováková</span>
                             </div>
                         </div>
-                        <div class="instructor-tags">
-                            <span class="tag tag-bestseller">Bestseller</span>
-                            <span class="tag tag-trial">Free trial</span>
+                        <div class="dc-instructor-tags">
+                            <span class="dc-tag dc-tag-bestseller">Bestseller</span>
+                            <span class="dc-tag dc-tag-trial">Free trial</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Course Meta Row - mimo content-card -->
-                <div class="course-meta-row">
-                    <div class="course-meta-item">
-                        <div class="meta-number">80 video lekcí</div>
-                        <div class="meta-description">Více než 80 video lekcí ve 25 výukových modulech.</div>
+                <div class="dc-course-meta-row">
+                    <div class="dc-course-meta-item">
+                        <div class="dc-meta-number">80 video lekcí</div>
+                        <div class="dc-meta-description">Více než 80 video lekcí ve 25 výukových modulech.</div>
                     </div>
-                    <div class="course-meta-item">
-                        <div class="meta-rating">
-                            <span class="rating-number">4,8</span>
-                            <div class="rating-stars">
+                    <div class="dc-course-meta-item">
+                        <div class="dc-meta-rating">
+                            <span class="dc-rating-number">4,8</span>
+                            <div class="dc-rating-stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -155,88 +155,88 @@
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="meta-description">125 hodnocení</div>
+                        <div class="dc-meta-description">125 hodnocení</div>
                     </div>
-                    <div class="course-meta-item">
-                        <div class="meta-number">Pro začátečníky</div>
-                        <div class="meta-description">Není vyžadovaná žádná předchozí znalost.</div>
+                    <div class="dc-course-meta-item">
+                        <div class="dc-meta-number">Pro začátečníky</div>
+                        <div class="dc-meta-description">Není vyžadovaná žádná předchozí znalost.</div>
                     </div>
-                    <div class="course-meta-item">
-                        <div class="meta-number">Kurz v rozsahu 24 hodin</div>
-                        <div class="meta-description">Buďte flexibilní a učte se, kdy máte právě čas.</div>
+                    <div class="dc-course-meta-item">
+                        <div class="dc-meta-number">Kurz v rozsahu 24 hodin</div>
+                        <div class="dc-meta-description">Buďte flexibilní a učte se, kdy máte právě čas.</div>
                     </div>
                 </div>
 
-                <div class="content-card">
-                    <div class="tabs-wrapper">
-                        <div class="tabs">
-                            <button class="tab active" data-tab="zakladni-informace">Základní informace</button>
-                            <button class="tab" data-tab="obsah-kurzu">Obsah kurzu</button>
-                            <button class="tab" data-tab="hodnoceni-kurzu">Hodnocení kurzu</button>
-                            <button class="tab" data-tab="o-lektorovi">O lektorovi</button>
+                <div class="dc-content-card">
+                    <div class="dc-tabs-wrapper">
+                        <div class="dc-tabs">
+                            <button class="dc-tab dc-active" data-tab="zakladni-informace">Základní informace</button>
+                            <button class="dc-tab" data-tab="obsah-kurzu">Obsah kurzu</button>
+                            <button class="dc-tab" data-tab="hodnoceni-kurzu">Hodnocení kurzu</button>
+                            <button class="dc-tab" data-tab="o-lektorovi">O lektorovi</button>
                         </div>
                     </div>
 
                     <!-- Tab panels -->
-                    <div class="tab-content" data-tab="zakladni-informace">
+                    <div class="dc-tab-content" data-tab="zakladni-informace">
 
 
 
 
                         <!-- Co se v kurzu naučíte -->
-                        <h3 class="section-subtitle">Co se v kurzu naučíte</h3>
+                        <h3 class="dc-section-subtitle">Co se v kurzu naučíte</h3>
 
-                        <div class="learning-grid">
-                            <div class="learning-column">
-                                <div class="learning-item">
+                        <div class="dc-learning-grid">
+                            <div class="dc-learning-column">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Master Figma's interface and tools to create stunning
+                                    <span class="dc-learning-text">Master Figma's interface and tools to create stunning
                                         UI/UX designs from scratch</span>
                                 </div>
-                                <div class="learning-item">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Design mobile apps, websites, and dashboards using
+                                    <span class="dc-learning-text">Design mobile apps, websites, and dashboards using
                                         modern design principles</span>
                                 </div>
-                                <div class="learning-item">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Create wireframes, mockups, and high-fidelity prototypes
+                                    <span class="dc-learning-text">Create wireframes, mockups, and high-fidelity prototypes
                                         with real interactivity</span>
                                 </div>
-                                <div class="learning-item">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Build responsive designs that adapt to different screen
+                                    <span class="dc-learning-text">Build responsive designs that adapt to different screen
                                         sizes and devices</span>
                                 </div>
                             </div>
-                            <div class="learning-column">
-                                <div class="learning-item">
+                            <div class="dc-learning-column">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Use components, auto layout, and design systems for
+                                    <span class="dc-learning-text">Use components, auto layout, and design systems for
                                         scalable, efficient design</span>
                                 </div>
-                                <div class="learning-item">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Collaborate with teams and developers using Figma's
+                                    <span class="dc-learning-text">Collaborate with teams and developers using Figma's
                                         sharing features</span>
                                 </div>
-                                <div class="learning-item">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Export assets and generate design specs for smooth
+                                    <span class="dc-learning-text">Export assets and generate design specs for smooth
                                         developer handoff</span>
                                 </div>
-                                <div class="learning-item">
+                                <div class="dc-learning-item">
                                     <img src="img/check_circle.png" alt="">
-                                    <span class="learning-text">Export assets and generate design specs for smooth
+                                    <span class="dc-learning-text">Export assets and generate design specs for smooth
                                         developer handoff</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Popis kurzu -->
-                        <h3 class="section-subtitle">Popis kurzu</h3>
+                        <h3 class="dc-section-subtitle">Popis kurzu</h3>
 
-                        <div class="description-text">
+                        <div class="dc-description-text">
                             <p>This course is tailor-made for those who have already mastered the fundamental principles
                                 of UI/UX Design using Figma. If you've triumpled our my Figma Essentials course or have
                                 a resolute yearning for greater proficiency in complex layouts, responsive workflows,
@@ -254,19 +254,19 @@
                         </div>
 
                         <!-- Požadavky a Pro koho je kurz určen -->
-                        <div class="info-grid">
-                            <div class="info-section">
-                                <h3 class="section-subtitle">Požadavky</h3>
-                                <ul class="info-list">
+                        <div class="dc-info-grid">
+                            <div class="dc-info-section">
+                                <h3 class="dc-section-subtitle">Požadavky</h3>
+                                <ul class="dc-info-list">
                                     <li>A copy of Figma (a free plan is available on the Figma website)</li>
                                     <li>Basic knowledge of Figma is required. I recommend completing my Figma Essentials
                                         Course prior to embarking on this epic adventure</li>
                                 </ul>
                             </div>
 
-                            <div class="info-section">
-                                <h3 class="section-subtitle">Pro koho je kurz určen</h3>
-                                <ul class="info-list">
+                            <div class="dc-info-section">
+                                <h3 class="dc-section-subtitle">Pro koho je kurz určen</h3>
+                                <ul class="dc-info-list">
                                     <li>Self-taught Figma enthusiasts yearning for structured guidance</li>
                                     <li>Graduates of my Figma Essentials Course, hungry for more advanced design skills
                                     </li>
@@ -277,86 +277,86 @@
                         </div>
 
                         <!-- Témata -->
-                        <h3 class="section-subtitle">Témata</h3>
+                        <h3 class="dc-section-subtitle">Témata</h3>
 
-                        <div class="course-tags">
-                            <span class="tag-pill">Figma</span>
-                            <span class="tag-pill">UX/UI design</span>
-                            <span class="tag-pill">Web design</span>
-                            <span class="tag-pill">Mobile app design</span>
-                            <span class="tag-pill">Design tools</span>
-                            <span class="tag-pill">User-experience-design</span>
-                            <span class="tag-pill">User research</span>
+                        <div class="dc-course-tags">
+                            <span class="dc-tag-pill">Figma</span>
+                            <span class="dc-tag-pill">UX/UI design</span>
+                            <span class="dc-tag-pill">Web design</span>
+                            <span class="dc-tag-pill">Mobile app design</span>
+                            <span class="dc-tag-pill">Design tools</span>
+                            <span class="dc-tag-pill">User-experience-design</span>
+                            <span class="dc-tag-pill">User research</span>
                         </div>
                     </div>
 
                     <!-- Tab Content: Obsah kurzu -->
-                    <div class="tab-content" data-tab="obsah-kurzu" style="display: none;">
-                        <h2 class="content-heading">Osnova kurzu</h2>
+                    <div class="dc-tab-content" data-tab="obsah-kurzu" style="display: none;">
+                        <h2 class="dc-content-heading">Osnova kurzu</h2>
 
                         <!-- Co je zahrnuto v kurzu -->
-                        <div class="course-includes-section">
-                            <h3 class="section-subtitle">Co je zahrnuto v kurzu</h3>
-                            <div class="includes-container">
-                                <div class="includes-left">
-                                    <div class="include-item">
+                        <div class="dc-course-includes-section">
+                            <h3 class="dc-section-subtitle">Co je zahrnuto v kurzu</h3>
+                            <div class="dc-includes-container">
+                                <div class="dc-includes-left">
+                                    <div class="dc-include-item">
                                         <img src="img/Course icons.png" alt="">
-                                        <span class="include-text">80 výukových videí</span>
+                                        <span class="dc-include-text">80 výukových videí</span>
                                     </div>
-                                    <div class="include-item">
+                                    <div class="dc-include-item">
                                         <img src="img/CourseIconPaper.png" alt="">
-                                        <span class="include-text">20 studijních dokumentů</span>
+                                        <span class="dc-include-text">20 studijních dokumentů</span>
                                     </div>
-                                    <div class="include-item">
+                                    <div class="dc-include-item">
                                         <img src="img/assignment_turned_in.png" alt="">
-                                        <span class="include-text">3 projektové úkoly</span>
+                                        <span class="dc-include-text">3 projektové úkoly</span>
                                     </div>
                                 </div>
-                                <div class="includes-right">
-                                    <div class="include-item">
+                                <div class="dc-includes-right">
+                                    <div class="dc-include-item">
                                         <img src="img/CourseIconsChecks.png" alt="">
-                                        <span class="include-text">10 online testů</span>
+                                        <span class="dc-include-text">10 online testů</span>
                                     </div>
-                                    <div class="include-item">
+                                    <div class="dc-include-item">
                                         <img src="img/file_save.png" alt="">
-                                        <span class="include-text">soubory ke stažení</span>
+                                        <span class="dc-include-text">soubory ke stažení</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Výukové moduly -->
-                        <div class="course-modules-section">
-                            <h3 class="section-subtitle">Výukové moduly</h3>
+                        <div class="dc-course-modules-section">
+                            <h3 class="dc-section-subtitle">Výukové moduly</h3>
 
-                            <div class="course-curriculum">
+                            <div class="dc-course-curriculum">
                                 <!-- Module 1: Introduction -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Introduction</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Introduction</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                    <div class="dc-module-content">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">Intro to the Figma Advanced Course</span>
+                                                <span class="dc-lesson-title">Intro to the Figma Advanced Course</span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <img src="img/alarm.png" alt="">
                                                 <span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">Getting Started in Figma Advanced
+                                                <span class="dc-lesson-title">Getting Started in Figma Advanced
                                                     Course</span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <img src="img/alarm.png" alt="">
                                                 <span>06:55</span>
                                             </div>
@@ -365,260 +365,260 @@
                                 </div>
 
                                 <!-- Module 2: Auto Layout -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Auto Layout</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Auto Layout</span>
                                         </div>
-                                        <span class="module-duration">12 lekcí • 2 hodiny • 2 studijní dokumenty • 1
+                                        <span class="dc-module-duration">12 lekcí • 2 hodiny • 2 studijní dokumenty • 1
                                             online test</span>
                                     </div>
-                                    <div class="module-content">
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                    <div class="dc-module-content">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">Auto Layout & Responsive Design 101: It's use
+                                                <span class="dc-lesson-title">Auto Layout & Responsive Design 101: It's use
                                                     in responsive design</span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <img src="img/alarm.png" alt="">
                                                 <span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">Designing in Figma with Auto Spacing in Auto
+                                                <span class="dc-lesson-title">Designing in Figma with Auto Spacing in Auto
                                                     Layouts</span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <img src="img/alarm.png" alt="">
                                                 <span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">When and when not to use Components in
+                                                <span class="dc-lesson-title">When and when not to use Components in
                                                     Figma</span>
                                             </div>
-                                            <div class="lesson-duration"><span>06:55</span>
+                                            <div class="dc-lesson-duration"><span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">What spacing should I use for web & app
+                                                <span class="dc-lesson-title">What spacing should I use for web & app
                                                     design in Figma
                                                 </span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">What spacing should I use for web & app
+                                                <span class="dc-lesson-title">What spacing should I use for web & app
                                                     design in Figma
                                                 </span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">Auto Layout vs Constraints in Figma</span>
+                                                <span class="dc-lesson-title">Auto Layout vs Constraints in Figma</span>
                                             </div>
-                                            <div class="lesson-duration">
+                                            <div class="dc-lesson-duration">
                                                 <span>06:55</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/Course icons.png" alt="">
-                                                <span class="lesson-title">Autolayout shortcuts: Tips and tricks to work
+                                                <span class="dc-lesson-title">Autolayout shortcuts: Tips and tricks to work
                                                     with Auto Layout faster</span>
                                             </div>
-                                            <span class="lesson-duration">06:55</span>
+                                            <span class="dc-lesson-duration">06:55</span>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/CourseIconPaper.png" alt="">
-                                                <span class="lesson-title">Auto Layout documentation 1</span>
+                                                <span class="dc-lesson-title">Auto Layout documentation 1</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/CourseIconPaper.png" alt="">
-                                                <span class="lesson-title">Auto Layout documentation 2</span>
+                                                <span class="dc-lesson-title">Auto Layout documentation 2</span>
                                             </div>
                                         </div>
-                                        <div class="lesson-row">
-                                            <div class="lesson-info">
+                                        <div class="dc-lesson-row">
+                                            <div class="dc-lesson-info">
                                                 <img src="img/CourseIconsChecks.png" alt="">
-                                                <span class="lesson-title">Online test: Auto Layout</span>
+                                                <span class="dc-lesson-title">Online test: Auto Layout</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Module 3: Design Apps (Branding) -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Grids</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Grids</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 4: Components -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Simple App Brand</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Simple App Brand</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 5: Typography -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Nested & Responsive Auto Layout</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Nested & Responsive Auto Layout</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 6: Styles & Libraries -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Animation</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Animation</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 7: Variables -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Prototyping</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Prototyping</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 8: Accessibility -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Components & Variants</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Components & Variants</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 9: Working with stakeholders -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Typography</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Typography</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 10: Styles & Libraries -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Styles & Libraries</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Styles & Libraries</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 11: Variables -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Variables</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Variables</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 12: Design Tokens -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Design Tokens</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Design Tokens</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 13: Accessibility -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Accessibility</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Accessibility</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
 
                                 <!-- Module 14: Working with Stakeholders -->
-                                <div class="curriculum-module">
-                                    <div class="module-header">
-                                        <div class="module-title-row">
-                                            <i class="fas fa-chevron-up module-toggle"></i>
-                                            <span class="module-title">Working with Stakeholders</span>
+                                <div class="dc-curriculum-module">
+                                    <div class="dc-module-header">
+                                        <div class="dc-module-title-row">
+                                            <i class="fas fa-chevron-up dc-module-toggle"></i>
+                                            <span class="dc-module-title">Working with Stakeholders</span>
                                         </div>
-                                        <span class="module-duration">2 lekce • 10 minut</span>
+                                        <span class="dc-module-duration">2 lekce • 10 minut</span>
                                     </div>
-                                    <div class="module-content">
+                                    <div class="dc-module-content">
                                     </div>
                                 </div>
                             </div>
@@ -626,104 +626,104 @@
                     </div>
 
                     <!-- Tab Content: Hodnocení kurzu -->
-                    <div class="tab-content" data-tab="hodnoceni-kurzu" style="display: none;">
+                    <div class="dc-tab-content" data-tab="hodnoceni-kurzu" style="display: none;">
 
                         <!-- Reviews Header with Filters -->
-                        <div class="reviews-header">
+                        <div class="dc-reviews-header">
                             <!-- Left: Main Rating -->
-                            <div class="reviews-main-rating">
-                                <span class="reviews-big-number">4,9</span>
-                                <div class="reviews-stars-large">
+                            <div class="dc-reviews-main-rating">
+                                <span class="dc-reviews-big-number">4,9</span>
+                                <div class="dc-reviews-stars-large">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="reviews-total-count">125 hodnocení kurzu</span>
+                                <span class="dc-reviews-total-count">125 hodnocení kurzu</span>
                             </div>
 
                             <!-- Center: Rating Bars -->
-                            <div class="rating-bars">
-                                <div class="rating-bar-row">
-                                    <span class="rating-label">5 <i class="fas fa-star rating-star-small"></i></span>
-                                    <div class="rating-bar-bg">
-                                        <div class="rating-bar-fill" style="width: 80%"></div>
+                            <div class="dc-rating-bars">
+                                <div class="dc-rating-bar-row">
+                                    <span class="dc-rating-label">5 <i class="fas fa-star dc-rating-star-small"></i></span>
+                                    <div class="dc-rating-bar-bg">
+                                        <div class="dc-rating-bar-fill" style="width: 80%"></div>
                                     </div>
-                                    <span class="rating-count">100 x</span>
+                                    <span class="dc-rating-count">100 x</span>
                                 </div>
-                                <div class="rating-bar-row">
-                                    <span class="rating-label">4 <i class="fas fa-star rating-star-small"></i></span>
-                                    <div class="rating-bar-bg">
-                                        <div class="rating-bar-fill" style="width: 16%"></div>
+                                <div class="dc-rating-bar-row">
+                                    <span class="dc-rating-label">4 <i class="fas fa-star dc-rating-star-small"></i></span>
+                                    <div class="dc-rating-bar-bg">
+                                        <div class="dc-rating-bar-fill" style="width: 16%"></div>
                                     </div>
-                                    <span class="rating-count">20 x</span>
+                                    <span class="dc-rating-count">20 x</span>
                                 </div>
-                                <div class="rating-bar-row">
-                                    <span class="rating-label">3 <i class="fas fa-star rating-star-small"></i></span>
-                                    <div class="rating-bar-bg">
-                                        <div class="rating-bar-fill" style="width: 4%"></div>
+                                <div class="dc-rating-bar-row">
+                                    <span class="dc-rating-label">3 <i class="fas fa-star dc-rating-star-small"></i></span>
+                                    <div class="dc-rating-bar-bg">
+                                        <div class="dc-rating-bar-fill" style="width: 4%"></div>
                                     </div>
-                                    <span class="rating-count">5 x</span>
+                                    <span class="dc-rating-count">5 x</span>
                                 </div>
-                                <div class="rating-bar-row">
-                                    <span class="rating-label">2 <i class="fas fa-star rating-star-small"></i></span>
-                                    <div class="rating-bar-bg">
-                                        <div class="rating-bar-fill" style="width: 0%"></div>
+                                <div class="dc-rating-bar-row">
+                                    <span class="dc-rating-label">2 <i class="fas fa-star dc-rating-star-small"></i></span>
+                                    <div class="dc-rating-bar-bg">
+                                        <div class="dc-rating-bar-fill" style="width: 0%"></div>
                                     </div>
-                                    <span class="rating-count">0 x</span>
+                                    <span class="dc-rating-count">0 x</span>
                                 </div>
-                                <div class="rating-bar-row">
-                                    <span class="rating-label">1 <i class="fas fa-star rating-star-small"></i></span>
-                                    <div class="rating-bar-bg">
-                                        <div class="rating-bar-fill" style="width: 0%"></div>
+                                <div class="dc-rating-bar-row">
+                                    <span class="dc-rating-label">1 <i class="fas fa-star dc-rating-star-small"></i></span>
+                                    <div class="dc-rating-bar-bg">
+                                        <div class="dc-rating-bar-fill" style="width: 0%"></div>
                                     </div>
-                                    <span class="rating-count">0 x</span>
+                                    <span class="dc-rating-count">0 x</span>
                                 </div>
                             </div>
 
                             <!-- Right: Recommendation tag -->
-                            <div class="recommendation-tag">
+                            <div class="dc-recommendation-tag">
                                 <img src="img/kosikPurple.png" alt="">
-                                <div class="recommendation-text">
-                                    <span class="recommendation-percent">200+</span>
-                                    <span class="recommendation-label">prodaných kurzů</span>
+                                <div class="dc-recommendation-text">
+                                    <span class="dc-recommendation-percent">200+</span>
+                                    <span class="dc-recommendation-label">prodaných kurzů</span>
                                 </div>
                             </div>
 
                             <!-- Right: Students tag -->
-                            <div class="recommendation-tag">
+                            <div class="dc-recommendation-tag">
                                 <img src="img/personGreen.png" alt="">
-                                <div class="recommendation-text">
-                                    <span class="recommendation-percent">96 %</span>
-                                    <span class="recommendation-label">studentů doporučuje</span>
+                                <div class="dc-recommendation-text">
+                                    <span class="dc-recommendation-percent">96 %</span>
+                                    <span class="dc-recommendation-label">studentů doporučuje</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Reviews Grid -->
-                        <div class="reviews-grid">
+                        <div class="dc-reviews-grid">
                             <!-- Review Card 1 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
-                                        class="absolute top-8 right-8  w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                        class="absolute top-8 right-8 w-[40px] h-[33px]">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer3.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 1 týdnem</p>
+                                                <p class="dc-reviews-time">před 1 týdnem</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -732,26 +732,26 @@
                             </div>
 
                             <!-- Review Card 2 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviever2.png" alt="Jane Doe"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">Jane Doe</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 2 týdny</p>
+                                                <p class="dc-reviews-time">před 2 týdny</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -760,26 +760,26 @@
                             </div>
 
                             <!-- Review Card 3 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 3 týdny</p>
+                                                <p class="dc-reviews-time">před 3 týdny</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <div class="course-header mb-3">
 
                                     </div>
@@ -791,26 +791,26 @@
                             </div>
 
                             <!-- Review Card 4 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer3.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 1 týdnem</p>
+                                                <p class="dc-reviews-time">před 1 týdnem</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -819,26 +819,26 @@
                             </div>
 
                             <!-- Review Card 5 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviever2.png" alt="Jane Doe"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">Jane Doe</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 2 týdny</p>
+                                                <p class="dc-reviews-time">před 2 týdny</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate
                                         libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet,
@@ -848,25 +848,25 @@
                             </div>
 
                             <!-- Review Card 6 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 3 týdny</p>
+                                                <p class="dc-reviews-time">před 3 týdny</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate
                                         libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet,
@@ -876,26 +876,26 @@
                             </div>
 
                             <!-- Review Card 7 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
-                                        class="absolute top-8 right-8  w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                        class="absolute top-8 right-8 w-[40px] h-[33px]">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer3.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 1 měsícem</p>
+                                                <p class="dc-reviews-time">před 1 měsícem</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -904,26 +904,26 @@
                             </div>
 
                             <!-- Review Card 8 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviever2.png" alt="Jane Doe"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">Jane Doe</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 1 měsícem</p>
+                                                <p class="dc-reviews-time">před 1 měsícem</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -932,26 +932,26 @@
                             </div>
 
                             <!-- Review Card 9 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 2 měsíci</p>
+                                                <p class="dc-reviews-time">před 2 měsíci</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -960,26 +960,26 @@
                             </div>
 
                             <!-- Review Card 10 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer3.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 2 měsíci</p>
+                                                <p class="dc-reviews-time">před 2 měsíci</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -988,26 +988,26 @@
                             </div>
 
                             <!-- Review Card 11 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviever2.png" alt="Jane Doe"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">Jane Doe</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 3 měsíci</p>
+                                                <p class="dc-reviews-time">před 3 měsíci</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -1016,25 +1016,25 @@
                             </div>
 
                             <!-- Review Card 12 -->
-                            <div class="review-card">
+                            <div class="dc-review-card">
                                 <div class="p-6 bg-white rounded-lg">
                                     <img src="img/quotes.png" alt="quotes"
                                         class="absolute top-8 right-8 w-[40px] h-[33px]">
-                                    <div class="review-header flex items-start mb-4">
+                                    <div class="dc-review-header flex items-start mb-4">
                                         <img src="img/reviewer.png" alt="John Smith"
                                             class="rounded-full mr-4 w-[56px] h-[56px]">
                                         <div>
                                             <h3 class="text-[16px] font-semibold">John Smith</h3>
-                                            <div class="review-rating flex mb-2">
+                                            <div class="dc-review-rating flex mb-2">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
-                                                <p class="reviews-time">před 3 měsíci</p>
+                                                <p class="dc-reviews-time">před 3 měsíci</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider"></div>
+                                    <div class="dc-divider"></div>
                                     <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
                                         elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem
                                         ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
@@ -1044,46 +1044,46 @@
                         </div>
 
                         <!-- Pagination -->
-                        <div class="reviews-pagination">
-                            <button class="pagination-arrow pagination-prev" disabled>
+                        <div class="dc-reviews-pagination">
+                            <button class="dc-pagination-arrow pagination-prev" disabled>
                                 <i class="fas fa-chevron-left text-[#2191DF] text-[16px]"></i>
                             </button>
-                            <button class="pagination-number active">1</button>
-                            <button class="pagination-number">2</button>
-                            <button class="pagination-number">3</button>
-                            <button class="pagination-number">4</button>
-                            <span class="pagination-dots">...</span>
-                            <button class="pagination-number">8</button>
-                            <button class="pagination-arrow pagination-next">
+                            <button class="dc-pagination-number dc-active">1</button>
+                            <button class="dc-pagination-number">2</button>
+                            <button class="dc-pagination-number">3</button>
+                            <button class="dc-pagination-number">4</button>
+                            <span class="dc-pagination-dots">...</span>
+                            <button class="dc-pagination-number">8</button>
+                            <button class="dc-pagination-arrow pagination-next">
                                 <i class="fas fa-chevron-right text-[#2191DF] text-[16px]"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Tab Content: O lektorovi -->
-                    <div class="tab-content" data-tab="o-lektorovi" style="display: none;">
+                    <div class="dc-tab-content" data-tab="o-lektorovi" style="display: none;">
                         <!-- Instructor Profile Header -->
-                        <div class="instructor-profile-header">
-                            <img src="img/profilLektorkaK.jpg" alt="Kristýna Nováková" class="instructor-avatar-large">
+                        <div class="dc-instructor-profile-header">
+                            <img src="img/profilLektorkaK.jpg" alt="Kristýna Nováková" class="dc-instructor-avatar-large">
 
-                            <div class="instructor-info-block">
-                                <h3 class="instructor-name-title">Kristýna Nováková</h3>
-                                <p class="instructor-subtitle">Adobe Certified Instructor & Adobe Certified Expert</p>
+                            <div class="dc-instructor-info-block">
+                                <h3 class="dc-instructor-name-title">Kristýna Nováková</h3>
+                                <p class="dc-instructor-subtitle">Adobe Certified Instructor & Adobe Certified Expert</p>
 
-                                <div class="instructor-stats-list">
-                                    <div class="instructor-stat-row">
+                                <div class="dc-instructor-stats-list">
+                                    <div class="dc-instructor-stat-row">
                                         <i class="fa fa-star"></i>
                                         <span><span class="font-semibold">4,8</span> (1 859 hodnocení)</span>
                                     </div>
-                                    <div class="instructor-stat-row">
+                                    <div class="dc-instructor-stat-row">
                                         <img src="img/school.png" alt="">
                                         <span>2 580 studentů</span>
                                     </div>
-                                    <div class="instructor-stat-row">
+                                    <div class="dc-instructor-stat-row">
                                         <img src="img/calendar_today.png" alt="">
                                         <span>10 let zkušenosti</span>
                                     </div>
-                                    <div class="instructor-stat-row">
+                                    <div class="dc-instructor-stat-row">
                                         <img src="img/play_circle.png" alt="">
                                         <span>15 kurzů</span>
                                     </div>
@@ -1092,7 +1092,7 @@
                         </div>
 
                         <!-- Bio Text Full Width -->
-                        <div class="instructor-bio-text">
+                        <div class="dc-instructor-bio-text">
                             <p>I'm passionate about all things design, including web design, front-end development and
                                 design strategy. The skills that I have developed in my experience have enabled me to
                                 generate concepts, refine direction and produce assets.</p>
@@ -1106,131 +1106,131 @@
                                 and full-stack designer.</p>
                         </div>
 
-                        <a href="#" class="instructor-link">Více o lektorovi</a>
+                        <a href="#" class="dc-instructor-link">Více o lektorovi</a>
 
                         <!-- Course List -->
-                        <div class="instructor-courses-section">
-                            <h3 class="courses-heading">Další kurzy lektora</h3>
+                        <div class="dc-instructor-courses-section">
+                            <h3 class="dc-courses-heading">Další kurzy lektora</h3>
 
                             <!-- Course Card 1 -->
-                            <a href="detail-kurzu.html" class="instructor-course-card">
-                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="course-card-img">
-                                <div class="course-card-content">
-                                    <h4 class="course-card-title">UI/UX Design Masterclass</h4>
-                                    <p class="course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <a href="detail-kurzu.html" class="dc-instructor-course-card">
+                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="dc-course-card-img">
+                                <div class="dc-course-card-content">
+                                    <h4 class="dc-course-card-title">UI/UX Design Masterclass</h4>
+                                    <p class="dc-course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Yorem ipsum
                                         dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="course-card-bottom">
-                                        <div class="course-rating-info">
-                                            <span class="rating-number">4,8</span>
-                                            <div class="rating-stars">
+                                    <div class="dc-course-card-bottom">
+                                        <div class="dc-course-rating-info">
+                                            <span class="dc-rating-number">4,8</span>
+                                            <div class="dc-rating-stars">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <span class="rating-reviews">(5)</span>
-                                            <span class="course-meta-text">45 lekcí</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">6 hodin</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">Základní úroveň</span>
+                                            <span class="dc-rating-reviews">(5)</span>
+                                            <span class="dc-course-meta-text">45 lekcí</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">6 hodin</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">Základní úroveň</span>
                                         </div>
-                                        <div class="course-card-price">4 500 Kč</div>
+                                        <div class="dc-course-card-price">4 500 Kč</div>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- Course Card 2 -->
-                            <a href="detail-kurzu.html" class="instructor-course-card">
-                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="course-card-img">
-                                <div class="course-card-content">
-                                    <h4 class="course-card-title">UI/UX Design Masterclass</h4>
-                                    <p class="course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <a href="detail-kurzu.html" class="dc-instructor-course-card">
+                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="dc-course-card-img">
+                                <div class="dc-course-card-content">
+                                    <h4 class="dc-course-card-title">UI/UX Design Masterclass</h4>
+                                    <p class="dc-course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Yorem ipsum
                                         dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="course-card-bottom">
-                                        <div class="course-rating-info">
-                                            <span class="rating-number">4,8</span>
-                                            <div class="rating-stars">
+                                    <div class="dc-course-card-bottom">
+                                        <div class="dc-course-rating-info">
+                                            <span class="dc-rating-number">4,8</span>
+                                            <div class="dc-rating-stars">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <span class="rating-reviews">(5)</span>
-                                            <span class="course-meta-text">45 lekcí</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">6 hodin</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">Základní úroveň</span>
+                                            <span class="dc-rating-reviews">(5)</span>
+                                            <span class="dc-course-meta-text">45 lekcí</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">6 hodin</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">Základní úroveň</span>
                                         </div>
-                                        <div class="course-card-price-wrapper">
-                                            <span class="course-card-price-sale">8 500 Kč</span>
-                                            <span class="course-card-price-old">15 000 Kč</span>
+                                        <div class="dc-course-card-price-wrapper">
+                                            <span class="dc-course-card-price-sale">8 500 Kč</span>
+                                            <span class="dc-course-card-price-old">15 000 Kč</span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- Course Card 3 -->
-                            <a href="detail-kurzu.html" class="instructor-course-card">
-                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="course-card-img">
-                                <div class="course-card-content">
-                                    <h4 class="course-card-title">UI/UX Design Masterclass</h4>
-                                    <p class="course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <a href="detail-kurzu.html" class="dc-instructor-course-card">
+                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="dc-course-card-img">
+                                <div class="dc-course-card-content">
+                                    <h4 class="dc-course-card-title">UI/UX Design Masterclass</h4>
+                                    <p class="dc-course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Yorem ipsum
                                         dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="course-card-bottom">
-                                        <div class="course-rating-info">
-                                            <span class="rating-number">4,8</span>
-                                            <div class="rating-stars">
+                                    <div class="dc-course-card-bottom">
+                                        <div class="dc-course-rating-info">
+                                            <span class="dc-rating-number">4,8</span>
+                                            <div class="dc-rating-stars">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <span class="rating-reviews">(5)</span>
-                                            <span class="course-meta-text">45 lekcí</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">6 hodin</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">Základní úroveň</span>
+                                            <span class="dc-rating-reviews">(5)</span>
+                                            <span class="dc-course-meta-text">45 lekcí</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">6 hodin</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">Základní úroveň</span>
                                         </div>
-                                        <div class="course-card-price">4 500 Kč</div>
+                                        <div class="dc-course-card-price">4 500 Kč</div>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- Course Card 4 -->
-                            <a href="detail-kurzu.html" class="instructor-course-card">
-                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="course-card-img">
-                                <div class="course-card-content">
-                                    <h4 class="course-card-title">UI/UX Design Masterclass</h4>
-                                    <p class="course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <a href="detail-kurzu.html" class="dc-instructor-course-card">
+                                <img src="img/UiPrice.jpg" alt="UI/UX Design Masterclass" class="dc-course-card-img">
+                                <div class="dc-course-card-content">
+                                    <h4 class="dc-course-card-title">UI/UX Design Masterclass</h4>
+                                    <p class="dc-course-card-desc">Yorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Yorem ipsum
                                         dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="course-card-bottom">
-                                        <div class="course-rating-info">
-                                            <span class="rating-number">4,8</span>
-                                            <div class="rating-stars">
+                                    <div class="dc-course-card-bottom">
+                                        <div class="dc-course-rating-info">
+                                            <span class="dc-rating-number">4,8</span>
+                                            <div class="dc-rating-stars">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <span class="rating-reviews">(5)</span>
-                                            <span class="course-meta-text">45 lekcí</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">6 hodin</span>
-                                            <span class="course-meta-divider">•</span>
-                                            <span class="course-meta-text">Základní úroveň</span>
+                                            <span class="dc-rating-reviews">(5)</span>
+                                            <span class="dc-course-meta-text">45 lekcí</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">6 hodin</span>
+                                            <span class="dc-course-meta-divider">•</span>
+                                            <span class="dc-course-meta-text">Základní úroveň</span>
                                         </div>
-                                        <div class="course-card-price">4 500 Kč</div>
+                                        <div class="dc-course-card-price">4 500 Kč</div>
                                     </div>
                                 </div>
                             </a>
@@ -1239,44 +1239,44 @@
                 </div>
             </div>
 
-            <aside class="sidebar">
+            <aside class="dc-sidebar">
                 <!-- Course Image -->
-                <div class="course-image-wrapper">
-                    <img src="img/UiPrice.jpg" alt="UI/UX Design" class="course-thumbnail">
+                <div class="dc-course-image-wrapper">
+                    <img src="img/UiPrice.jpg" alt="UI/UX Design" class="dc-course-thumbnail">
                 </div>
 
-                <div class="progress-card">
+                <div class="dc-progress-card">
                     <!-- Pricing Section -->
-                    <div class="sidebar-section">
-                        <h3 class="course-buy-title">Koupit kurz</h3>
-                        <div class="course-price-info">
-                            <span class="price-large">8 500 Kč</span>
-                            <span class="price-original">12 000 Kč</span>
+                    <div class="dc-sidebar-section">
+                        <h3 class="dc-course-buy-title">Koupit kurz</h3>
+                        <div class="dc-course-price-info">
+                            <span class="dc-price-large">8 500 Kč</span>
+                            <span class="dc-price-original">12 000 Kč</span>
                         </div>
 
                         <!-- Check Items -->
-                        <div class="check-items-list">
-                            <div class="check-item">
+                        <div class="dc-check-items-list">
+                            <div class="dc-check-item">
                                 <img src="img/check_circle.png" alt="">
                                 <span>Přístup po dobu 1 roku</span>
                             </div>
 
-                            <div class="check-item">
+                            <div class="dc-check-item">
                                 <img src="img/check_circle.png" alt="">
                                 <span>Podklady ke stažení</span>
                             </div>
 
-                            <div class="check-item">
+                            <div class="dc-check-item">
                                 <img src="img/check_circle.png" alt="">
                                 <span>Certifikát po dokončení</span>
                             </div>
                         </div>
 
-                        <button class="btn-primary-sidebar" id="add-to-cart-btn">
+                        <button class="dc-btn-primary-sidebar" id="add-to-cart-btn">
                             Přidat do košíku
                         </button>
 
-                        <button class="btn-secondary-sidebar">
+                        <button class="dc-btn-secondary-sidebar">
                             Koupit hned
                         </button>
 
@@ -1284,90 +1284,90 @@
                     </div>
 
                     <!-- Tab Navigation -->
-                    <div class="sidebar-tabs">
-                        <button class="sidebar-tab active" data-tab="coupon">Slevový kupón</button>
-                        <button class="sidebar-tab" data-tab="gift">Koupit jako dárek</button>
-                        <button class="sidebar-tab" data-tab="share">Sdílet</button>
+                    <div class="dc-sidebar-tabs">
+                        <button class="dc-sidebar-tab dc-active" data-tab="coupon">Slevový kupón</button>
+                        <button class="dc-sidebar-tab" data-tab="gift">Koupit jako dárek</button>
+                        <button class="dc-sidebar-tab" data-tab="share">Sdílet</button>
                     </div>
 
                     <!-- Tab Content -->
-                    <div class="sidebar-tab-content active" data-content="coupon">
-                        <h4 class="coupon-section-title">Uplatnit slevový kód</h4>
-                        <div class="coupon-input-wrapper">
-                            <input type="text" placeholder="Vložit kód" class="coupon-input">
-                            <button class="coupon-apply-btn">Aplikovat</button>
+                    <div class="dc-sidebar-tab-content dc-active" data-content="coupon">
+                        <h4 class="dc-coupon-section-title">Uplatnit slevový kód</h4>
+                        <div class="dc-coupon-input-wrapper">
+                            <input type="text" placeholder="Vložit kód" class="dc-coupon-input">
+                            <button class="dc-coupon-apply-btn">Aplikovat</button>
                         </div>
                     </div>
 
-                    <div class="sidebar-tab-content" data-content="gift">
-                        <form class="gift-form-sidebar">
-                            <div class="form-group-sidebar">
-                                <label class="form-label-sidebar">Jméno příjemce</label>
-                                <input type="text" class="form-input-sidebar" placeholder="John Smith">
+                    <div class="dc-sidebar-tab-content" data-content="gift">
+                        <form class="dc-gift-form-sidebar">
+                            <div class="dc-form-group-sidebar">
+                                <label class="dc-form-label-sidebar">Jméno příjemce</label>
+                                <input type="text" class="dc-form-input-sidebar" placeholder="John Smith">
                             </div>
 
-                            <div class="form-group-sidebar">
-                                <label class="form-label-sidebar">E-mail příjemce</label>
-                                <input type="email" class="form-input-sidebar" placeholder="John Smith">
+                            <div class="dc-form-group-sidebar">
+                                <label class="dc-form-label-sidebar">E-mail příjemce</label>
+                                <input type="email" class="dc-form-input-sidebar" placeholder="John Smith">
                             </div>
 
-                            <div class="form-group-sidebar">
-                                <label class="form-label-sidebar">Kdy chcete kurz darovat</label>
-                                <div class="date-input-wrapper-sidebar">
-                                    <input type="text" class="form-input-sidebar" placeholder="John Smith">
-                                    <img src="img/calendar_todayGray.png" alt="Calendar" class="calendar-icon-sidebar">
+                            <div class="dc-form-group-sidebar">
+                                <label class="dc-form-label-sidebar">Kdy chcete kurz darovat</label>
+                                <div class="dc-date-input-wrapper-sidebar">
+                                    <input type="text" class="dc-form-input-sidebar" placeholder="John Smith">
+                                    <img src="img/calendar_todayGray.png" alt="Calendar" class="dc-calendar-icon-sidebar">
                                 </div>
                             </div>
 
-                            <div class="form-group-sidebar">
-                                <label class="form-label-sidebar">Vaše zpráva</label>
-                                <input type="text" class="form-input-sidebar" placeholder="John Smith">
+                            <div class="dc-form-group-sidebar">
+                                <label class="dc-form-label-sidebar">Vaše zpráva</label>
+                                <input type="text" class="dc-form-input-sidebar" placeholder="John Smith">
                             </div>
 
-                            <button type="submit" class="btn-secondary-sidebar">Pokračovat k platbě</button>
+                            <button type="submit" class="dc-btn-secondary-sidebar">Pokračovat k platbě</button>
                         </form>
                     </div>
 
-                    <div class="sidebar-tab-content" data-content="share">
-                        <h4 class="coupon-section-title">Sdílet tento kurz</h4>
-                        <div class="coupon-input-wrapper">
-                            <input type="text" placeholder="www.mentioo.cz/share/l..." class="coupon-input" readonly>
-                            <button class="coupon-apply-btn">Zkopírovat</button>
+                    <div class="dc-sidebar-tab-content" data-content="share">
+                        <h4 class="dc-coupon-section-title">Sdílet tento kurz</h4>
+                        <div class="dc-coupon-input-wrapper">
+                            <input type="text" placeholder="www.mentioo.cz/share/l..." class="dc-coupon-input" readonly>
+                            <button class="dc-coupon-apply-btn">Zkopírovat</button>
                         </div>
                     </div>
 
                     <!-- Divider -->
-                    <div class="sidebar-divider">
-                        <span class="divider-text">Nebo</span>
+                    <div class="dc-sidebar-divider">
+                        <span class="dc-divider-text">Nebo</span>
                     </div>
 
                     <!-- Premium Section -->
-                    <div class="other-lessons">
-                        <h3 class="premium-title-main">Prémium předplatné</h3>
+                    <div class="dc-other-lessons">
+                        <h3 class="dc-premium-title-main">Prémium předplatné</h3>
 
-                        <div class="premium-price-section">
-                            <span class="premium-price">599 Kč</span>
-                            <span class="premium-period">| měsíc</span>
+                        <div class="dc-premium-price-section">
+                            <span class="dc-premium-price">599 Kč</span>
+                            <span class="dc-premium-period">| měsíc</span>
                         </div>
 
-                        <div class="check-items-list">
-                            <div class="check-item">
+                        <div class="dc-check-items-list">
+                            <div class="dc-check-item">
                                 <img src="img/check_circle.png" alt="">
                                 <span>Lorem ipsum dolor sit amet</span>
                             </div>
 
-                            <div class="check-item">
+                            <div class="dc-check-item">
                                 <img src="img/check_circle.png" alt="">
                                 <span>Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet,</span>
                             </div>
 
-                            <div class="check-item">
+                            <div class="dc-check-item">
                                 <img src="img/check_circle.png" alt="">
                                 <span>Lorem ipsum dolor sit amet</span>
                             </div>
                         </div>
 
-                        <button class="btn-secondary-sidebar premium-btn-style">Vyzkoušet zdarma</button>
+                        <button class="dc-btn-secondary-sidebar dc-premium-btn-style">Vyzkoušet zdarma</button>
                     </div>
 
                 </div>
@@ -1377,19 +1377,19 @@
         </div>
     </div>
 
-    <footer class="footer bg-[#F5F9FF]">
-        <div class="footer-container">
+    <footer class="dc-footer bg-[#F5F9FF]">
+        <div class="dc-footer-container">
             <!-- Logo  -->
-            <div class="footer-logo">
-                <img src="img/FooterLogo.png" alt="Mentio_logo" class="footer-logo-img">
+            <div class="dc-footer-logo">
+                <img src="img/FooterLogo.png" alt="Mentio_logo" class="dc-footer-logo-img">
             </div>
 
             <!-- Obsah -->
-            <div class="footer-content">
-                <div class="footer-grid">
+            <div class="dc-footer-content">
+                <div class="dc-footer-grid">
                     <!-- INFO -->
-                    <div class="footer-info">
-                        <div class="footer-info-text">
+                    <div class="dc-footer-info">
+                        <div class="dc-footer-info-text">
                             <p class="font-semibold text-lg">Mentio s.r.o</p>
                             <p class="mt-2">U Lipek 1234/56, 101 00 Praha 10</p>
                             <p class="mt-1"><span class="font-bold">IČO:</span> 12345678</p>
@@ -1399,77 +1399,77 @@
                     </div>
 
                     <!-- 4X4 KATEGORIE-->
-                    <div class="footer-categories">
+                    <div class="dc-footer-categories">
                         <div>
-                            <h4 class="footer-heading">Kategorie kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Kategorie 1</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 2</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 3</a></li>
-                                <li><a class="footer-link" href="#">Kategorie 4</a></li>
+                            <h4 class="dc-footer-heading">Kategorie kurzů</h4>
+                            <ul class="dc-footer-links">
+                                <li><a class="dc-footer-link" href="#">Kategorie 1</a></li>
+                                <li><a class="dc-footer-link" href="#">Kategorie 2</a></li>
+                                <li><a class="dc-footer-link" href="#">Kategorie 3</a></li>
+                                <li><a class="dc-footer-link" href="#">Kategorie 4</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            <h4 class="dc-footer-heading">Typy kurzů</h4>
+                            <ul class="dc-footer-links">
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 4</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            <h4 class="dc-footer-heading">Typy kurzů</h4>
+                            <ul class="dc-footer-links">
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 4</a></li>
                             </ul>
                         </div>
 
                         <div>
-                            <h4 class="footer-heading">Typy kurzů</h4>
-                            <ul class="footer-links">
-                                <li><a class="footer-link" href="#">Typ kurzů 1</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 2</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 3</a></li>
-                                <li><a class="footer-link" href="#">Typ kurzů 4</a></li>
+                            <h4 class="dc-footer-heading">Typy kurzů</h4>
+                            <ul class="dc-footer-links">
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 1</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 2</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 3</a></li>
+                                <li><a class="dc-footer-link" href="#">Typ kurzů 4</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- O nás -->
-                    <div class="footer-about">
-                        <h4 class="footer-heading">O nás</h4>
-                        <ul class="footer-links">
-                            <li><a class="footer-link" href="#">Lektoři</a></li>
-                            <li><a class="footer-link" href="#">Kariéra</a></li>
-                            <li><a class="footer-link" href="#">Blog</a></li>
-                            <li><a class="footer-link" href="#">Kontakt</a></li>
+                    <div class="dc-footer-about">
+                        <h4 class="dc-footer-heading">O nás</h4>
+                        <ul class="dc-footer-links">
+                            <li><a class="dc-footer-link" href="#">Lektoři</a></li>
+                            <li><a class="dc-footer-link" href="#">Kariéra</a></li>
+                            <li><a class="dc-footer-link" href="#">Blog</a></li>
+                            <li><a class="dc-footer-link" href="#">Kontakt</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- divider -->
-            <div class="footer-divider"></div>
+            <div class="dc-footer-divider"></div>
 
             <!-- COPYRIGHT + IKONY -->
-            <div class="footer-bottom">
-                <div class="footer-copyright">© 2025 Lorem ipsum</div>
-                <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="Instagram">
+            <div class="dc-footer-bottom">
+                <div class="dc-footer-copyright">© 2025 Lorem ipsum</div>
+                <div class="dc-footer-social">
+                    <a href="#" class="dc-social-link" aria-label="Instagram">
                         <img src="img/instagram.svg" alt="Instagram" class="social-icon h-[24px] w-[24px]">
                     </a>
 
-                    <a href="#" class="social-link" aria-label="Facebook">
+                    <a href="#" class="dc-social-link" aria-label="Facebook">
                         <img src="img/facebook.svg" alt="Facebook" class="social-icon h-[24px] w-[24px]">
                     </a>
 
-                    <a href="#" class="social-link" aria-label="LinkedIn">
+                    <a href="#" class="dc-social-link" aria-label="LinkedIn">
                         <img src="img/linkedin.svg" alt="LinkedIn" class="social-icon h-[24px] w-[24px]">
                     </a>
                 </div>
@@ -1478,67 +1478,67 @@
     </footer>
 
     <!-- Cart Modal -->
-    <div id="cart-modal" class="cart-modal" style="display: none;">
-        <div class="cart-modal-overlay"></div>
-        <div class="cart-modal-content">
-            <button class="cart-modal-close" id="cart-modal-close">
+    <div id="cart-modal" class="dc-cart-modal" style="display: none;">
+        <div class="dc-cart-modal-overlay"></div>
+        <div class="dc-cart-modal-content">
+            <button class="dc-cart-modal-close" id="cart-modal-close">
                 <i class="fas fa-times"></i>
             </button>
 
-            <div class="cart-modal-header">
-                <img src="img/check_circle.png" alt="Check" class="cart-modal-check-icon">
+            <div class="dc-cart-modal-header">
+                <img src="img/check_circle.png" alt="Check" class="dc-cart-modal-check-icon">
                 <h3>Přidáno do košíku</h3>
             </div>
 
-            <div class="cart-modal-body">
-                <div class="cart-item">
-                    <img src="img/UIUX.jpg" alt="Course" class="cart-item-image">
-                    <div class="cart-item-info">
-                        <h4 class="cart-item-title">Figma UI UX Design Advanced</h4>
-                        <p class="cart-item-instructor">Kristýna Nováková</p>
-                        <p class="cart-item-price">8 500 Kč <span class="cart-item-original">12 000 Kč</span></p>
+            <div class="dc-cart-modal-body">
+                <div class="dc-cart-item">
+                    <img src="img/UIUX.jpg" alt="Course" class="dc-cart-item-image">
+                    <div class="dc-cart-item-info">
+                        <h4 class="dc-cart-item-title">Figma UI UX Design Advanced</h4>
+                        <p class="dc-cart-item-instructor">Kristýna Nováková</p>
+                        <p class="dc-cart-item-price">8 500 Kč <span class="dc-cart-item-original">12 000 Kč</span></p>
                     </div>
                 </div>
 
-                <div class="cart-upsell-section">
-                    <div class="cart-divider"></div>
-                    <h4 class="cart-upsell-title">Mohlo by vás zajímat</h4>
+                <div class="dc-cart-upsell-section">
+                    <div class="dc-cart-divider"></div>
+                    <h4 class="dc-cart-upsell-title">Mohlo by vás zajímat</h4>
 
-                    <div class="cart-upsell-item">
-                        <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
-                        <div class="cart-upsell-info">
-                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
-                            <p class="cart-upsell-instructor">Kristýna Nováková</p>
-                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">8 000 Kč</span></p>
+                    <div class="dc-cart-upsell-item">
+                        <img src="img/UIUX.jpg" alt="Course" class="dc-cart-upsell-image">
+                        <div class="dc-cart-upsell-info">
+                            <h5 class="dc-cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="dc-cart-upsell-instructor">Kristýna Nováková</p>
+                            <p class="dc-cart-upsell-price">4 500 Kč <span class="dc-cart-upsell-original">8 000 Kč</span></p>
                         </div>
-                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                        <button class="dc-cart-upsell-btn">Přidat do košíku</button>
                     </div>
 
-                    <div class="cart-upsell-item">
-                        <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
-                        <div class="cart-upsell-info">
-                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
-                            <p class="cart-upsell-instructor">Kristýna Nováková</p>
-                            <p class="cart-upsell-price no-discount">4 500 Kč</p>
+                    <div class="dc-cart-upsell-item">
+                        <img src="img/UIUX.jpg" alt="Course" class="dc-cart-upsell-image">
+                        <div class="dc-cart-upsell-info">
+                            <h5 class="dc-cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="dc-cart-upsell-instructor">Kristýna Nováková</p>
+                            <p class="dc-cart-upsell-price dc-no-discount">4 500 Kč</p>
                         </div>
-                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                        <button class="dc-cart-upsell-btn">Přidat do košíku</button>
                     </div>
 
-                    <div class="cart-upsell-item">
-                        <img src="img/UIUX.jpg" alt="Course" class="cart-upsell-image">
-                        <div class="cart-upsell-info">
-                            <h5 class="cart-upsell-name">Figma UI UX Design Advanced</h5>
-                            <p class="cart-upsell-instructor">Kristýna Nováková</p>
-                            <p class="cart-upsell-price">4 500 Kč <span class="cart-upsell-original">8 000 Kč</span></p>
+                    <div class="dc-cart-upsell-item">
+                        <img src="img/UIUX.jpg" alt="Course" class="dc-cart-upsell-image">
+                        <div class="dc-cart-upsell-info">
+                            <h5 class="dc-cart-upsell-name">Figma UI UX Design Advanced</h5>
+                            <p class="dc-cart-upsell-instructor">Kristýna Nováková</p>
+                            <p class="dc-cart-upsell-price">4 500 Kč <span class="dc-cart-upsell-original">8 000 Kč</span></p>
                         </div>
-                        <button class="cart-upsell-btn">Přidat do košíku</button>
+                        <button class="dc-cart-upsell-btn">Přidat do košíku</button>
                     </div>
                 </div>
             </div>
 
-            <div class="cart-modal-footer">
-                <button class="cart-btn-continue" id="cart-btn-continue">Pokračovat v nákupu</button>
-                <button class="cart-btn-checkout" id="cart-btn-checkout">Do košíku</button>
+            <div class="dc-cart-modal-footer">
+                <button class="dc-cart-btn-continue" id="cart-btn-continue">Pokračovat v nákupu</button>
+                <button class="dc-cart-btn-checkout" id="cart-btn-checkout">Do košíku</button>
             </div>
         </div>
     </div>
@@ -1553,3 +1553,4 @@
 </body>
 
 </html>
+

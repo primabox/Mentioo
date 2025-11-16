@@ -1,7 +1,7 @@
 // Course Filter Functionality for Moje Kurzy
 document.addEventListener('DOMContentLoaded', function() {
     // Moje kurzy filters
-    const courseFilterTabs = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .filter-tab, .pf-profile-tab-content[data-tab="moje-kurzy"] .pf-filter-tab');
+    const courseFilterTabs = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .filter-tab');
     let currentCourseFilter = 'aktivni';
     
     courseFilterTabs.forEach(tab => {
@@ -17,14 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 filterType = 'dokonceno';
             }
             
-            if ((this.classList.contains('active') || this.classList.contains('pf-active')) && currentCourseFilter === filterType) {
+            if (this.classList.contains('active') && currentCourseFilter === filterType) {
                 this.classList.remove('active');
-                this.classList.remove('pf-active');
                 currentCourseFilter = null;
                 showAllCourses();
             } else {
-                courseFilterTabs.forEach(t => { t.classList.remove('active'); t.classList.remove('pf-active'); });
-                if (this.classList.contains('pf-filter-tab')) this.classList.add('pf-active'); else this.classList.add('active');
+                courseFilterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
                 currentCourseFilter = filterType;
                 filterCourses(filterType);
             }
@@ -32,50 +31,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     function filterCourses(filterType) {
-        const courseCards = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .course-card, .pf-profile-tab-content[data-tab="moje-kurzy"] .pf-course-card');
+        const courseCards = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .course-card');
         
         courseCards.forEach(card => {
-            // Robust tag/badge detection: look for any descendant class containing tag-*/badge-* (pf- variants included)
-            const descendantEls = Array.from(card.querySelectorAll('[class]'));
-            const allClasses = descendantEls.reduce((acc, el) => acc.concat(Array.from(el.classList || [])), []);
-            const joined = allClasses.join(' ');
-
+            const badge = card.querySelector('.course-badge');
+            if (!badge) {
+                card.style.display = 'none';
+                return;
+            }
+            
             let shouldShow = false;
-            if (filterType === 'aktivni' && (joined.includes('bestseller') || joined.includes('aktivni') || joined.includes('tag-bestseller') || joined.includes('badge-bestseller'))) {
+            if (filterType === 'aktivni' && badge.classList.contains('badge-bestseller')) {
                 shouldShow = true;
-            } else if (filterType === 'nezahajeny' && (joined.includes('nezahajeny') || joined.includes('tag-nezahajeny') || joined.includes('badge-nezahajeny'))) {
+            } else if (filterType === 'nezahajeny' && badge.classList.contains('badge-nezahajeny')) {
                 shouldShow = true;
-            } else if (filterType === 'dokonceno' && (joined.includes('dokonceno') || joined.includes('tag-dokonceno') || joined.includes('badge-dokonceno'))) {
+            } else if (filterType === 'dokonceno' && badge.classList.contains('badge-dokonceno')) {
                 shouldShow = true;
             }
-
+            
             card.style.display = shouldShow ? 'flex' : 'none';
         });
     }
     
     function showAllCourses() {
-        const courseCards = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .course-card, .pf-profile-tab-content[data-tab="moje-kurzy"] .pf-course-card');
+        const courseCards = document.querySelectorAll('.profile-tab-content[data-tab="moje-kurzy"] .course-card');
         courseCards.forEach(card => {
             card.style.display = 'flex';
         });
     }
     
     // Purchase History Filters
-    const purchaseFilterTabs = document.querySelectorAll('.profile-tab-content[data-tab="historie-nakupu"] .filter-tab, .pf-profile-tab-content[data-tab="historie-nakupu"] .pf-filter-tab');
+    const purchaseFilterTabs = document.querySelectorAll('.profile-tab-content[data-tab="historie-nakupu"] .filter-tab');
     let currentPurchaseFilter = 'kurzy';
     
     purchaseFilterTabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const filterType = this.getAttribute('data-filter');
             
-            if ((this.classList.contains('active') || this.classList.contains('pf-active')) && currentPurchaseFilter === filterType) {
+            if (this.classList.contains('active') && currentPurchaseFilter === filterType) {
                 this.classList.remove('active');
-                this.classList.remove('pf-active');
                 currentPurchaseFilter = null;
                 showAllPurchases();
             } else {
-                purchaseFilterTabs.forEach(t => { t.classList.remove('active'); t.classList.remove('pf-active'); });
-                if (this.classList.contains('pf-filter-tab')) this.classList.add('pf-active'); else this.classList.add('active');
+                purchaseFilterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
                 currentPurchaseFilter = filterType;
                 filterPurchases(filterType);
             }
