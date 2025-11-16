@@ -1,112 +1,112 @@
 @import "tailwindcss";
 
 /* ===== HEADER ===== */
-.header {
+.ip-header {
   @apply bg-white shadow fixed top-0 left-0 right-0 z-[9999];
 }
 
-.navbar {
+.ip-navbar {
   @apply flex items-center justify-between py-4 px-10 lg:px-20;
 }
 
-.logo {
+.ip-logo {
   @apply flex-shrink-0;
 }
 
 /* ===== SEARCHBAR ===== */
-.searchbar-container {
+.ip-searchbar-container {
   @apply hidden md:flex flex-1 justify-center mx-6 max-w-[741px];
 }
 
-.search-form {
+.ip-search-form {
   @apply w-full;
 }
 
-.search-wrapper {
+.ip-search-wrapper {
   @apply relative;
 }
 
-.search-icon {
+.ip-search-icon {
   @apply pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 text-[#64748b];
 }
 
-.search-input {
+.ip-search-input {
   @apply w-full h-14 pl-12 pr-5 rounded-full border border-gray-200 placeholder-gray-500 text-slate-700 focus:border-[#2563eb] focus:ring-4 focus:ring-[#e0f2fe] outline-none transition;
 }
 
 /* ===== MOBILE MENU ===== */
-.hamburger {
+.ip-hamburger {
   @apply xl:hidden flex items-center relative;
 }
 
-.hamburger-btn {
+.ip-hamburger-btn {
   font-size: 1.5rem;
   line-height: 2rem;
   @apply text-gray-700 hover:text-[#2563eb] transition;
 }
 
-.mobile-menu {
+.ip-mobile-menu {
   @apply flex flex-col items-center bg-white shadow-md py-5 space-y-4 xl:hidden fixed top-[72px] left-0 w-full max-w-[100vw] overflow-x-hidden z-[9998];
   max-height: 0;
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 
-.mobile-menu.active {
+.ip-mobile-menu.ip-active {
   max-height: 300px;
   opacity: 1;
 }
 
-.mobile-link {
+.ip-mobile-link {
   @apply text-gray-700 font-medium hover:text-[#2563eb];
 }
 
-.mobile-btn {
+.ip-mobile-btn {
   @apply px-5 py-2.5 rounded-full bg-[#0069B2] text-white hover:bg-[#1d4ed8] transition;
 }
 
 /* ===== DESKTOP MENU ===== */
-.navbar-menu {
+.ip-navbar-menu {
   @apply hidden xl:flex items-center gap-8;
 }
 
-.nav-links {
+.ip-nav-links {
   @apply flex items-center gap-6 text-base font-medium text-gray-900;
 }
 
-.nav-item {
+.ip-nav-item {
   @apply relative flex items-center gap-3;
 }
 
-.nav-link {
+.ip-nav-link {
   @apply hover:text-[#2563eb];
 }
 
-.dropdown {
+.ip-dropdown {
   @apply absolute top-full left-0 mt-4 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
   border: none !important;
 }
 
-.dropdown-link {
+.ip-dropdown-link {
   @apply block px-4 py-2 text-sm text-gray-700 hover:bg-[#e0f2fe] hover:text-[#2563eb];
 }
 
 /* ===== BUTTONS ===== */
-.icon-btn {
+.ip-icon-btn {
   @apply w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-100 transition;
 }
 
-.icon-btn-alt {
+.ip-icon-btn-alt {
   @apply w-11 h-11 flex items-center justify-center rounded-full bg-[#dbeafe] hover:bg-[#bfdbfe] transition;
 }
 
 /* ===== MAIN CONTENT ===== */
-.main-wrapper {
+.ip-main-wrapper {
   @apply max-w-full mx-auto pb-12 pl-8 pr-8;
   overflow-x: hidden;
 }
 
-.content-layout {
+.ip-content-layout {
   @apply grid gap-8;
   grid-template-columns: 1fr 320px;
   max-width: 1400px;
@@ -115,13 +115,13 @@
   align-items: start;
 }
 
-.content-layout>div:first-child {
+.ip-content-layout>div:first-child {
   position: relative;
   z-index: 1;
 }
 
 /* ===== HERO SECTION ===== */
-.hero-gradient {
+.ip-hero-gradient {
     @apply relative rounded-[48px] overflow-visible;
     padding: 60px 3rem 60px 3rem;
     z-index: 1;
@@ -134,7 +134,7 @@
     margin-bottom: 80px;
 }
 
-.hero-bg {
+.ip-hero-bg {
     @apply absolute rounded-[48px] bg-gradient-to-r from-[#28A6FF] to-[#00E8E8];
     width: 1744px;
     height: 100%;
@@ -144,26 +144,26 @@
     opacity: 0.08;
 }
 
-.lektor-hero-content {
+.ip-lektor-hero-content {
     @apply relative z-10 flex items-center gap-16;
 }
 
-.hero-divider {
+.ip-hero-divider {
     width: 1px;
     height: 252px;
     background-color: #A9DBFF;
     flex-shrink: 0;
 }
 
-.lektor-main-info {
+.ip-lektor-main-info {
     @apply flex items-center gap-26 ml-3;
 }
 
-.lektor-avatar {
+.ip-lektor-avatar {
     @apply flex-shrink-0 relative;
 }
 
-.lektor-avatar::before {
+.ip-lektor-avatar::before {
     content: '';
     position: absolute;
     width: 360px;
@@ -177,78 +177,78 @@
     z-index: -1;
 }
 
-.lektor-avatar-img {
+.ip-lektor-avatar-img {
     width: 320px;
     height: 320px;
     @apply rounded-full object-cover shadow-lg;
 }
 
-.lektor-info {
+.ip-lektor-info {
     @apply flex-1;
 }
 
-.lektor-tag {
+.ip-lektor-tag {
     @apply inline-block px-3 py-1 bg-[#EFE6FF] text-[#7045C2] text-sm font-medium mb-4;
 }
 
-.lektor-name {
+.ip-lektor-name {
     @apply text-[56px] font-semibold text-gray-900 mb-3;
 }
 
-.lektor-title {
+.ip-lektor-title {
     @apply text-[20px] text-[#1C1C1C] mb-8;
 }
 
-.lektor-actions {
+.ip-lektor-actions {
     @apply flex gap-3;
 }
 
-.lektor-btn-primary {
+.ip-lektor-btn-primary {
     @apply px-5 py-3 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lektor-btn-primary:hover {
+.ip-lektor-btn-primary:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 105, 178, 0.2);
 }
 
-.lektor-btn-secondary {
+.ip-lektor-btn-secondary {
     @apply px-5 py-3 border border-[#0069B2] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lektor-btn-secondary:hover {
+.ip-lektor-btn-secondary:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 105, 178, 0.15);
 }
 
-.lektor-stats {
+.ip-lektor-stats {
     @apply  flex-shrink-0 pr-32;
 }
 
-.lektor-stat {
+.ip-lektor-stat {
     @apply flex items-center;
 }
 
-.stat-icon {
+.ip-stat-icon {
     @apply w-10 h-10 rounded-full flex items-center justify-center text-[#FFBE0A];
 }
 
-.stat-content {
+.ip-stat-content {
     @apply flex flex-col;
 }
 
-.stat-value {
+.ip-stat-value {
     @apply text-sm text-[16px] text-[#333333];
 }
 
-.lektor-social {
+.ip-lektor-social {
     @apply flex justify-start ml-[5px] mt-[50px];
     gap: 20px;
 }
 
-.lektor-social .social-link {
+.ip-lektor-social .ip-social-link {
     @apply flex items-center justify-center text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-colors text-xs;
     width: 44px;
     height: 44px;
@@ -257,29 +257,29 @@
     padding: 10px;
 }
 
-/* Button styles copied from src/style.css (header buttons) */
-.btn-outline {
+/* Button styles copied from src/style.ip-css (header buttons) */
+.ip-btn-outline {
     @apply px-5 py-2.5 rounded-full bg-[#D4EDFF] text-[#2563eb] hover:bg-[#bfdbfe] transition;
 }
 
-.btn-primary {
+.ip-btn-primary {
     @apply px-5 py-2.5 rounded-full bg-[#0069B2] text-white hover:bg-[#1d4ed8] transition;
 }
 
-.mobile-btn {
+.ip-mobile-btn {
     @apply px-5 py-2.5 rounded-full bg-[#0069B2] text-white hover:bg-[#1d4ed8] transition;
 }
 
-.bubble-field {
+.ip-bubble-field {
     @apply absolute inset-0 pointer-events-none z-10;
 }
 
-.bubble {
+.ip-bubble {
     @apply absolute rounded-full bg-[#00E8E8];
 }
 
 /* ===== CONTENT CARD ===== */
-.content-card {
+.ip-content-card {
   @apply bg-white rounded-2xl overflow-hidden;
   width: 100%;
   max-width: 1083px;
@@ -288,45 +288,169 @@
   margin-left: -72px;
 }
 
+/* Responsive adjustments for content card */
+@media (max-width: 1400px) {
+    .ip-content-card {
+        margin-left: 0;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ip-content-card {
+        margin-left: 0;
+        max-width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ip-content-card {
+        margin-left: 0;
+        width: calc(100% - 32px);
+        max-width: 100%;
+        margin: 0 auto 16px;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ip-content-card {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 12px;
+        border-radius: 12px;
+    }
+}
+
+/* Mobile helper class for main wrapper + responsive overrides */
+.ip-main-wrapper-mobile {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .ip-main-wrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .ip-main-wrapper-mobile {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ip-main-wrapper {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .ip-main-wrapper-mobile {
+        max-width: 377px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Center the main wrapper block on small screens */
+@media (max-width: 768px) {
+    .ip-center-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /* Ensure main children adapt to smaller viewports */
+    .ip-center-mobile > .ip-hero-gradient,
+    .ip-center-mobile > .ip-content-card {
+        width: 100%;
+        max-width: 720px;
+        box-sizing: border-box;
+        margin-left: 0;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ip-center-mobile > .ip-hero-gradient,
+    .ip-center-mobile > .ip-content-card {
+        max-width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* Fixed width for very small screens */
+@media (max-width: 480px) {
+    .ip-center-mobile {
+        width: 400px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ip-center-mobile > .ip-hero-gradient,
+    .ip-center-mobile > .ip-content-card {
+        width: 100%;
+        max-width: 377px;
+    }
+}
+
 /* ===== CONTENT SECTIONS ===== */
-.lektor-section-title {
+.ip-lektor-section-title {
     font-size: 1.5rem;
     line-height: 2rem;
     @apply font-bold text-gray-900 mb-6;
 }
 
-/* Instructor Bio Section (from detail-kurzu.css) */
-.instructor-bio-text {
+/* Instructor Bio Section (from detail-kurzu.ip-css) */
+.ip-instructor-bio-text {
     @apply text-base leading-snug text-[#4D4D4D] w-full font-normal text-left;
     word-wrap: break-word;
     overflow-wrap: break-word;
     margin-bottom: 16px;
 }
 
-.instructor-bio-text:last-of-type {
+.ip-instructor-bio-text:last-of-type {
     margin-bottom: 0;
 }
 
 
-.instructor-link {
+.ip-instructor-link {
     @apply text-sm font-medium text-[#0069B2] no-underline inline-block mt-6 mb-[42px];
 }
 
-.instructor-link:hover {
+.ip-instructor-link:hover {
     @apply underline;
 }
 
 /* ===== TÉMATA SECTION ===== */
-.lektor-topics {
+.ip-lektor-topics {
     @apply mb-12;
 }
 
-.topics-grid {
+.ip-topics-grid {
     @apply flex flex-wrap gap-3;
     max-width: 830px;
 }
 
-.topic-tag {
+.ip-topic-tag {
     @apply px-4 py-2 rounded-full transition-colors cursor-pointer;
     border: 1px solid #0069B2;
     color: #0069B2;
@@ -336,22 +460,22 @@
     white-space: nowrap;
 }
 
-.topic-tag:hover {
+.ip-topic-tag:hover {
     background: #0069B2;
     color: white;
 }
 
 /* ===== TABS ===== */
-.tabs-wrapper {
+.ip-tabs-wrapper {
   @apply pl-6;
 }
 
-.tabs {
+.ip-tabs {
   @apply flex gap-6;
   position: relative;
 }
 
-.tabs::before {
+.ip-tabs::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -362,7 +486,7 @@
   z-index: 1;
 }
 
-.tabs::after {
+.ip-tabs::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -375,29 +499,29 @@
   z-index: 2;
 }
 
-.tab {
+.ip-tab {
   @apply py-3.5 px-0 border-0 bg-transparent text-[#717171] text-[14px] font-medium cursor-pointer transition-all;
   position: relative;
   display: inline-block;
   white-space: nowrap;
 }
 
-.tab.active {
+.ip-tab.ip-active {
   @apply text-[#0069B2];
 }
 
-.tab:hover {
+.ip-tab:hover {
   @apply text-[#0069B2];
 }
 
 /* ===== TAB CONTENT ===== */
-.tab-content {
+.ip-tab-content {
   @apply py-6 pl-6 ;
 }
 
 /* Skrýt tooltip když je tab-content skrytý */
-.tab-content[style*="display: none"] .note-hover-tooltip,
-.tab-content[style*="display:none"] .note-hover-tooltip {
+.ip-tab-content[style*="display: none"] .ip-note-hover-tooltip,
+.ip-tab-content[style*="display:none"] .ip-note-hover-tooltip {
   display: none !important;
 }
 
@@ -405,99 +529,99 @@
 
 /* Large Desktop (max-width: 1400px) */
 @media (max-width: 1400px) {
-    .hero-gradient {
+    .ip-hero-gradient {
         padding: 50px 2rem;
     }
 
-    .lektor-stats {
+    .ip-lektor-stats {
         padding-right: 16px;
     }
 }
 
 /* Medium Desktop (max-width: 1280px) */
 @media (max-width: 1280px) {
-    .hero-bg {
+    .ip-hero-bg {
         width: 1400px;
     }
 
-    .hero-gradient {
+    .ip-hero-gradient {
         padding: 50px 2rem;
     }
 
-    .lektor-hero-content {
+    .ip-lektor-hero-content {
         gap: 10px;
         justify-content: center;
     }
 
-    .lektor-main-info {
+    .ip-lektor-main-info {
         margin-left: 0;
         gap: 10px;
     }
 
-    .lektor-avatar-img {
+    .ip-lektor-avatar-img {
         width: 260px;
         height: 260px;
     }
 
-    .lektor-avatar::before {
+    .ip-lektor-avatar::before {
         width: 300px;
         height: 300px;
     }
 
-    .lektor-name {
+    .ip-lektor-name {
         font-size: 44px;
     }
 
-    .lektor-title {
+    .ip-lektor-title {
         font-size: 18px;
     }
 
-    .lektor-stats {
+    .ip-lektor-stats {
         padding-right: 12px;
     }
 
-    .stat-value {
+    .ip-stat-value {
         font-size: 14px;
     }
 
-    .hero-divider {
+    .ip-hero-divider {
         height: 200px;
     }
 
     /* Footer */
-    .footer-categories {
+    .ip-footer-categories {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px !important;
     }
 
     /* Course Cards */
-    .instructor-course-card {
+    .ip-instructor-course-card {
         gap: 20px;
     }
 
-    .course-card-img {
+    .ip-course-card-img {
         width: 240px;
         min-width: 240px;
         height: 160px;
     }
 
-    .course-card-title {
+    .ip-course-card-title {
         font-size: 17px;
     }
 
-    .course-card-desc {
+    .ip-course-card-desc {
         font-size: 15px;
     }
 }
 
 /* Tablet (max-width: 1024px) - Vertical hero layout */
 @media (max-width: 1024px) {
-    .hero-bg {
+    .ip-hero-bg {
         width: 100%;
         max-width: 1200px;
     }
 
-    .hero-gradient {
+    .ip-hero-gradient {
         /* make padding symmetric and remove large negative margins from desktop styles */
         padding: 40px 2rem !important;
         margin-right: 0 !important;
@@ -507,63 +631,62 @@
     }
 
     /* Ensure the page layout becomes single-column so hero sits centered */
-    .content-layout {
+    .ip-content-layout {
         grid-template-columns: 1fr !important;
-        justify-items: center;
-        padding: 0 1.5rem !important;
+        justify-items: center;  
     }
 
-    .lektor-hero-content {
+    .ip-lektor-hero-content {
         @apply flex-col items-center text-center;
         gap: 32px;
     }
 
-    .lektor-main-info {
+    .ip-lektor-main-info {
         @apply flex-col items-center text-center;
         margin-left: 0;
         gap: 24px;
     }
 
-    .lektor-avatar-img {
+    .ip-lektor-avatar-img {
         width: 240px;
         height: 240px;
     }
 
-    .lektor-avatar::before {
+    .ip-lektor-avatar::before {
         width: 280px;
         height: 280px;
     }
 
-    .lektor-name {
+    .ip-lektor-name {
         font-size: 42px;
     }
 
-    .lektor-title {
+    .ip-lektor-title {
         font-size: 18px;
     }
 
-    .lektor-actions {
+    .ip-lektor-actions {
         @apply justify-center;
     }
 
-    .hero-divider {
+    .ip-hero-divider {
         display: none;
     }
 
-    .lektor-stats {
+    .ip-lektor-stats {
         @apply flex-row justify-center;
         padding-right: 0;
         gap: 24px;
     }
 
     /* Center social icons under hero on tablet */
-    .lektor-social {
+    .ip-lektor-social {
         @apply justify-center;
         margin: 0 auto;
         gap: 12px;
     }
 
-    .lektor-social .social-link {
+    .ip-lektor-social .ip-social-link {
         width: 40px;
         height: 40px;
         padding: 8px;
@@ -572,130 +695,150 @@
 }
 
 @media (max-width: 768px) {
-    .navbar {
+    .ip-navbar {
         @apply px-5;
     }
 
-    .hero-gradient {
+    .ip-hero-gradient {
         padding: 32px 2rem;
         margin-top: 20px;
     }
 
-    .lektor-hero-content {
+    .ip-lektor-hero-content {
         @apply flex-col text-center gap-6;
     }
 
-    .lektor-main-info {
+    .ip-lektor-main-info {
         @apply flex-col items-center text-center gap-4;
         margin-left: 0;
     }
 
-    .lektor-avatar-img {
+    .ip-lektor-avatar-img {
         width: 180px;
         height: 180px;
     }
 
-    .lektor-avatar::before {
+    .ip-lektor-avatar::before {
         width: 220px;
         height: 220px;
     }
 
-    .lektor-name {
+    .ip-lektor-name {
         font-size: 1.5rem;
         line-height: 2rem;
     }
 
-    .lektor-title {
+    .ip-lektor-title {
         @apply text-base mb-4;
     }
 
-    .lektor-actions {
+    .ip-lektor-actions {
         @apply flex-col gap-2;
     }
 
-    .lektor-stats {
+    .ip-lektor-stats {
         @apply grid grid-cols-2 gap-4 w-full;
         padding-right: 0;
     }
 
-    .lektor-stat {
+    .ip-lektor-stat {
         @apply justify-center text-center;
     }
 
-    .stat-icon {
+    .ip-stat-icon {
         @apply w-8 h-8;
     }
 
-    .stat-value {
+    .ip-stat-value {
         @apply text-xs;
     }
 
-    .lektor-social {
+    .ip-lektor-social {
         @apply justify-center;
     }
 
-    .lektor-social .social-link {
+    .ip-lektor-social .ip-social-link {
         width: 36px;
         height: 36px;
         border-radius: 24px;
         padding: 8px;
     }
 
-    .lektor-section-title {
+    .ip-lektor-section-title {
         @apply text-xl text-center;
     }
 
-    .tabs-wrapper {
+    .ip-tabs-wrapper {
         @apply px-4;
     }
 
-    .instructor-bio-text {
+    .ip-instructor-bio-text {
         @apply text-center;
         font-size: 15px;
         line-height: 22px;
     }
 
-    .instructor-bio-text p {
+    .ip-instructor-bio-text p {
         margin-bottom: 12px;
     }
 
-    .instructor-link {
+    .ip-instructor-link {
         @apply block text-center;
         font-size: 15px;
     }
 
-    .topics-grid {
+    .ip-topics-grid {
         @apply justify-center;
         gap: 12px;
     }
 
-    .courses-heading {
+    .ip-courses-heading {
         font-size: 20px;
         text-align: center;
         margin-bottom: 16px;
     }
 }
 
+/* Center tabs on mobile devices */
+@media (max-width: 768px) {
+    .ip-tabs-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .ip-tabs {
+        justify-content: center;
+    }
+
+    /* Ensure the tabs indicator spans correctly when centered */
+    .ip-tabs::before {
+        left: 0;
+        right: 0;
+    }
+}
+
 @media (max-width: 480px) {
-    .hero-bg {
+    .ip-hero-bg {
         width: 100%;
         max-width: 640px;
     }
 
-    .navbar {
+    .ip-navbar {
         @apply px-5;
     }
 
-    .hero-gradient {
+    .ip-hero-gradient {
         padding: 24px 1.5rem;
-        margin-top: 16px;
+        margin-top: 120px;
     }
 
-    .lektor-hero-content {
+    .ip-lektor-hero-content {
         @apply gap-4;
     }
 
-    .lektor-main-info {
+    .ip-lektor-main-info {
         @apply gap-3;
         flex-direction: column;
         align-items: center;
@@ -703,76 +846,76 @@
         margin-left: 0;
     }
 
-    .lektor-avatar-img {
+    .ip-lektor-avatar-img {
         width: 120px;
         height: 120px;
     }
 
-    .lektor-avatar::before {
+    .ip-lektor-avatar::before {
         width: 160px;
         height: 160px;
     }
 
-    .lektor-name {
+    .ip-lektor-name {
         @apply text-xl;
     }
 
-    .lektor-actions {
+    .ip-lektor-actions {
         @apply gap-2;
     }
 
-    .lektor-btn-primary,
-    .lektor-btn-secondary {
+    .ip-lektor-btn-primary,
+    .ip-lektor-btn-secondary {
         @apply px-4 py-2 text-sm;
     }
 
-    .lektor-stats {
+    .ip-lektor-stats {
         @apply grid-cols-1 gap-2;
         padding-right: 0;
         width: 100%;
     }
 
-    .lektor-section-title {
+    .ip-lektor-section-title {
         @apply text-lg;
     }
 
-    .tabs-wrapper {
+    .ip-tabs-wrapper {
         @apply px-3;
     }
 
-    .instructor-bio-text {
+    .ip-instructor-bio-text {
         @apply text-center;
         font-size: 14px;
         line-height: 20px;
     }
 
-    .instructor-bio-text p {
+    .ip-instructor-bio-text p {
         margin-bottom: 10px;
     }
 
-    .instructor-link {
+    .ip-instructor-link {
         @apply block text-center;
         font-size: 14px;
     }
 
-    .topics-grid {
+    .ip-topics-grid {
         @apply justify-center;
         gap: 8px;
     }
 
-    .courses-heading {
+    .ip-courses-heading {
         font-size: 18px;
         text-align: center;
         margin-bottom: 20px;
     }
 
-    .topic-tag {
+    .ip-topic-tag {
         @apply px-3 py-1;
         font-size: 12px;
         font-weight: 400;
     }
 
-    .lektor-social .social-link {
+    .ip-lektor-social .ip-social-link {
         width: 32px;
         height: 32px;
         border-radius: 20px;
@@ -782,308 +925,308 @@
 }
 
 /* ===== FOOTER ===== */
-.footer {
+.ip-footer {
     padding: 50px 200px;
 }
 
 @media (max-width: 1400px) {
-    .footer {
+    .ip-footer {
         padding: 50px 100px;
     }
 }
 
 @media (max-width: 1200px) {
-    .footer {
+    .ip-footer {
         padding: 50px 60px;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar {
+    .ip-navbar {
         @apply px-5;
     }
 
-    .footer {
+    .ip-footer {
         padding: 40px 40px;
     }
 
-    .footer-categories {
+    .ip-footer-categories {
         @apply grid-cols-2;
     }
 }
 
 @media (max-width: 480px) {
-    .navbar {
+    .ip-navbar {
         @apply px-5;
     }
 
-    .footer {
+    .ip-footer {
         padding: 32px 24px;
     }
 
-    .footer-categories {
+    .ip-footer-categories {
         @apply grid-cols-2;
     }
 }
 
-.footer-container {
+.ip-footer-container {
     @apply container mx-auto;
     padding-left: 0;
     padding-right: 0;
 }
 
-.footer-logo {
+.ip-footer-logo {
     @apply pb-6;
 }
 
-.footer-logo-img {
+.ip-footer-logo-img {
     width: 146px;
     height: 60px;
 }
 
 @media (max-width: 768px) {
-    .footer-logo-img {
+    .ip-footer-logo-img {
         width: 130px;
         height: 54px;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-logo-img {
+    .ip-footer-logo-img {
         width: 120px;
         height: 50px;
     }
 }
 
-.footer-content {
+.ip-footer-content {
     @apply pb-6;
 }
 
-.footer-grid {
+.ip-footer-grid {
     @apply flex flex-col md:flex-row md:items-start gap-8;
 }
 
 @media (max-width: 768px) {
-    .footer-grid {
+    .ip-footer-grid {
         @apply flex-col gap-6;
     }
 }
 
-.footer-info {
+.ip-footer-info {
     @apply sm:w-1/4 min-w-0;
 }
 
 @media (max-width: 768px) {
-    .footer-info {
+    .ip-footer-info {
         @apply w-full;
     }
 }
 
-.footer-info-text {
+.ip-footer-info-text {
     @apply text-base font-light text-[#1C1C1C] max-w-xs;
 }
 
 @media (max-width: 768px) {
-    .footer-info-text {
+    .ip-footer-info-text {
         @apply text-sm;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-info-text {
+    .ip-footer-info-text {
         @apply text-[14px];
     }
 }
 
-.footer-categories {
+.ip-footer-categories {
     @apply flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8;
 }
 
 @media (max-width: 768px) {
-    .footer-categories {
+    .ip-footer-categories {
         @apply grid-cols-2 gap-6;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-categories {
+    .ip-footer-categories {
         @apply grid-cols-1 gap-5;
     }
 }
 
-.footer-heading {
+.ip-footer-heading {
     @apply text-gray-900 font-medium mb-3 text-lg;
 }
 
 @media (max-width: 768px) {
-    .footer-heading {
+    .ip-footer-heading {
         @apply text-base mb-2;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-heading {
+    .ip-footer-heading {
         @apply text-[15px] mb-2;
     }
 }
 
-.footer-links {
+.ip-footer-links {
     @apply space-y-2 text-sm text-[#4D4D4D] font-[500];
 }
 
 @media (max-width: 768px) {
-    .footer-links {
+    .ip-footer-links {
         @apply text-sm;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-links {
+    .ip-footer-links {
         @apply text-[13px];
     }
 }
 
-.footer-link {
+.ip-footer-link {
     @apply hover:underline hover:text-blue-600 transition-colors;
 }
 
-.footer-about {
+.ip-footer-about {
     @apply md:w-48;
 }
 
 @media (max-width: 768px) {
-    .footer-about {
+    .ip-footer-about {
         @apply w-full;
     }
 }
 
-.footer-divider {
+.ip-footer-divider {
     @apply border-t border-gray-200 mt-4;
 }
 
-.footer-bottom {
+.ip-footer-bottom {
     @apply py-4 flex flex-col md:flex-row items-center justify-between gap-4;
 }
 
 @media (max-width: 768px) {
-    .footer-bottom {
+    .ip-footer-bottom {
         @apply flex-col gap-3 py-3;
     }
 }
 
-.footer-copyright {
+.ip-footer-copyright {
     @apply text-sm text-gray-600;
 }
 
 @media (max-width: 768px) {
-    .footer-copyright {
+    .ip-footer-copyright {
         @apply text-sm text-center;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-copyright {
+    .ip-footer-copyright {
         @apply text-[12px] text-center;
     }
 }
 
-.footer-social {
+.ip-footer-social {
     @apply flex items-center gap-4;
 }
 
 @media (max-width: 768px) {
-    .footer-social {
+    .ip-footer-social {
         @apply gap-3;
     }
 }
 
-.social-link {
+.ip-social-link {
     @apply rounded-full border border-transparent hover:scale-110 transition-all;
 }
 
 /* ===== INSTRUCTOR COURSES SECTION ===== */
-.instructor-courses-section {
+.ip-instructor-courses-section {
     @apply flex flex-col gap-5;
 }
 
-.courses-heading {
+.ip-courses-heading {
     @apply text-[22px] font-semibold text-[#1C1C1C] m-0 mb-2;
 }
 
 /* Course Card */
-.instructor-course-card {
+.ip-instructor-course-card {
     @apply flex gap-6 bg-white rounded-2xl items-center w-full max-w-full cursor-pointer;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.instructor-course-card:hover {
+.ip-instructor-course-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.course-card-img {
+.ip-course-card-img {
     @apply rounded-tl-2xl rounded-bl-2xl w-72 min-w-[288px] h-[181px] object-cover flex-shrink-0;
 }
 
-.course-card-content {
+.ip-course-card-content {
     @apply flex-1 flex flex-col gap-3;
 }
 
-.course-card-title {
+.ip-course-card-title {
     @apply text-lg font-semibold text-[#1C1C1C] m-0;
 }
 
-.course-card-desc {
+.ip-course-card-desc {
     @apply text-base leading-tight text-[#4D4D4D] m-0;
 }
 
-.course-card-bottom {
+.ip-course-card-bottom {
     @apply flex justify-between items-center mt-1;
 }
 
-.course-rating-info {
+.ip-course-rating-info {
     @apply flex items-center gap-2 text-sm;
 }
 
-.rating-number {
+.ip-rating-number {
     @apply font-semibold text-[#1C1C1C] text-base;
 }
 
-.rating-stars {
+.ip-rating-stars {
     @apply flex gap-0.5;
 }
 
-.rating-stars i {
+.ip-rating-stars i {
     @apply text-[#FFBE0A];
     font-size: 12px;
 }
 
-.rating-reviews {
+.ip-rating-reviews {
     @apply text-[#717171] text-sm;
 }
 
-.course-meta-text {
+.ip-course-meta-text {
     @apply text-[#333333] text-sm font-normal whitespace-nowrap;
 }
 
-.course-meta-divider {
+.ip-course-meta-divider {
     @apply text-[#4D4D4D] text-sm mx-2;
 }
 
-.course-card-price-wrapper {
+.ip-course-card-price-wrapper {
     @apply flex items-center gap-2;
 }
 
-.course-card-price {
+.ip-course-card-price {
     @apply text-xl font-semibold text-[#1C1C1C] whitespace-nowrap mr-5;
 }
 
-.course-card-price-sale {
+.ip-course-card-price-sale {
     @apply text-xl font-semibold text-[#E53E3E] whitespace-nowrap;
 }
 
-.course-card-price-old {
+.ip-course-card-price-old {
     @apply text-base font-normal text-[#999999] line-through whitespace-nowrap mr-5;
 }
 
@@ -1091,19 +1234,19 @@
 
 /* Tablet (1024px) - 2-column grid with mobile card design */
 @media (max-width: 1024px) {
-    .instructor-courses-section {
+    .ip-instructor-courses-section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
 
-    .courses-heading {
+    .ip-courses-heading {
         grid-column: 1 / -1;
         font-size: 20px;
         margin-bottom: 20px;
     }
 
-    .instructor-course-card {
+    .ip-instructor-course-card {
         flex-direction: column;
         gap: 0;
         padding: 0;
@@ -1112,11 +1255,11 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    .instructor-course-card:hover {
+    .ip-instructor-course-card:hover {
         transform: translateY(-4px);
     }
 
-    .course-card-img {
+    .ip-course-card-img {
         width: 100%;
         min-width: 100%;
         height: 200px;
@@ -1124,68 +1267,68 @@
         @apply rounded-tl-2xl rounded-tr-2xl;
     }
 
-    .course-card-content {
+    .ip-course-card-content {
         padding: 16px;
         gap: 8px;
     }
 
-    .course-card-title {
+    .ip-course-card-title {
         font-size: 17px;
         font-weight: 600;
         margin-bottom: 4px;
     }
 
-    .course-card-desc {
+    .ip-course-card-desc {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 12px;
     }
 
-    .course-card-bottom {
+    .ip-course-card-bottom {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
 
-    .course-rating-info {
+    .ip-course-rating-info {
         width: 100%;
         flex-wrap: wrap;
         gap: 6px;
         font-size: 13px;
     }
 
-    .course-card-price-wrapper {
+    .ip-course-card-price-wrapper {
         width: 100%;
         justify-content: flex-start;
     }
 
-    .course-card-price,
-    .course-card-price-sale {
+    .ip-course-card-price,
+    .ip-course-card-price-sale {
         font-size: 20px;
         margin-right: 8px;
     }
 
-    .course-card-price-old {
+    .ip-course-card-price-old {
         font-size: 15px;
     }
 }
 
 /* Tablet (768px) */
 @media (max-width: 768px) {
-    .instructor-courses-section {
+    .ip-instructor-courses-section {
         gap: 20px;
     }
 
-    .course-card-title {
+    .ip-course-card-title {
         font-size: 17px;
     }
 
-    .course-card-desc {
+    .ip-course-card-desc {
         font-size: 13px;
         line-height: 19px;
     }
 
-    .course-rating-info {
+    .ip-course-rating-info {
         flex-wrap: wrap;
         gap: 6px;
         font-size: 13px;
@@ -1195,29 +1338,29 @@
 /* Mobile (480px) */
 @media (max-width: 480px) {
     /* make courses single-column on small screens with vertical spacing */
-    .instructor-courses-section {
+    .ip-instructor-courses-section {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .instructor-course-card {
+    .ip-instructor-course-card {
         flex-direction: column;
         padding: 0;
         gap: 0;
         align-items: stretch;
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 361px;
+        width: 371px;
         max-width: 100%;
         height: 510px;
     }
 
-    .instructor-course-card:hover {
+    .ip-instructor-course-card:hover {
         transform: translateY(-4px);
     }
 
-    .course-card-img {
+    .ip-course-card-img {
         width: 100%;
         min-width: 100%;
         height: 220px;
@@ -1225,24 +1368,24 @@
         @apply rounded-tl-[16px] rounded-tr-[16px];
     }
 
-    .course-card-content {
+    .ip-course-card-content {
         padding: 20px;
         gap: 8px;
     }
 
-    .course-card-title {
+    .ip-course-card-title {
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 8px;
     }
 
-    .course-card-desc {
+    .ip-course-card-desc {
         font-size: 14px;
         line-height: 21px;
         margin-bottom: 16px;
     }
 
-    .course-card-bottom {
+    .ip-course-card-bottom {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -1250,19 +1393,19 @@
         margin-top: 0;
     }
 
-    .course-rating-info {
+    .ip-course-rating-info {
         flex-wrap: wrap;
         gap: 4px;
         font-size: 12px;
     }
 
-    .course-card-price,
-    .course-card-price-sale {
+    .ip-course-card-price,
+    .ip-course-card-price-sale {
         font-size: 18px;
         margin-right: 0;
     }
 
-    .course-card-price-old {
+    .ip-course-card-price-old {
         font-size: 14px;
         margin-right: 0;
     }
@@ -1270,135 +1413,135 @@
 
 /* ===== REVIEWS SECTION ===== */
 /* Reviews Header */
-.reviews-header {
+.ip-reviews-header {
     @apply flex items-center justify-between gap-6 mb-8 p-6  rounded-xl;
 }
 
 /* Reviews adjustments at 1024px: stack rating box and bars, center tags */
 @media (max-width: 1024px) {
-    .reviews-header {
+    .ip-reviews-header {
         @apply flex-col items-center text-center gap-6;
         padding: 24px !important;
     }
 
-    .reviews-main-rating {
+    .ip-reviews-main-rating {
         margin-bottom: 6px;
     }
 
-    .rating-bars {
+    .ip-rating-bars {
         max-width: 100% !important;
         width: 100% !important;
         padding: 0 0.5rem;
     }
 
-    .recommendation-tag {
+    .ip-recommendation-tag {
         margin: 16px auto 0 !important;
     }
 
-    .reviews-grid {
+    .ip-reviews-grid {
         grid-template-columns: 1fr !important;
     }
 }
 
-.reviews-main-rating {
+.ip-reviews-main-rating {
     @apply flex flex-col items-center gap-2 min-w-[120px];
 }
 
-.reviews-big-number {
+.ip-reviews-big-number {
     @apply text-[22px] font-bold text-[#1C1C1C] leading-none;
 }
 
-.reviews-stars-large {
+.ip-reviews-stars-large {
     @apply flex gap-1 text-[#28A6FF];
     font-size: 12px;
 }
 
-.reviews-stars-large i {
+.ip-reviews-stars-large i {
     color: #FFBE0A;
     font-size: 12px;
 }
 
-.reviews-total-count {
+.ip-reviews-total-count {
     @apply text-[13px] text-[#717171] text-center;
 }
 
 /* Rating Bars */
-.rating-bars {
+.ip-rating-bars {
     @apply flex flex-col gap-2 flex-1 max-w-[400px];
 }
 
-.rating-bar-row {
+.ip-rating-bar-row {
     @apply flex items-center gap-3;
 }
 
-.rating-label {
+.ip-rating-label {
     @apply text-[13px] text-[#4D4D4D] min-w-[32px] flex items-center gap-1;
 }
 
-.rating-star-small {
+.ip-rating-star-small {
     @apply text-[#FFBE0A];
     font-size: 12px;
 }
 
-.rating-bar-bg {
+.ip-rating-bar-bg {
     @apply flex-1 h-2 bg-[#E5E5E5] rounded-full overflow-hidden;
 }
 
-.rating-bar-fill {
+.ip-rating-bar-fill {
     @apply h-full bg-[#28A6FF] transition-all;
 }
 
-.rating-count {
+.ip-rating-count {
     @apply text-[13px] text-[#4D4D4D] min-w-[45px] text-right;
 }
 
 /* Recommendation tag */
-.recommendation-tag {
+.ip-recommendation-tag {
     @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
 }
 
-.recommendation-icon {
+.ip-recommendation-icon {
     font-size: 1.5rem;
     line-height: 2rem;
     @apply text-[#0069B2];
 }
 
-.recommendation-text {
+.ip-recommendation-text {
     @apply flex flex-col;
 }
 
-.recommendation-percent {
+.ip-recommendation-percent {
     @apply text-[22px] font-semibold text-[#1C1C1C] leading-none;
 }
 
-.recommendation-label {
+.ip-recommendation-label {
     @apply text-[14px] text-[#4D4D4D] mt-1;
 }
 
 /* Divider */
-.divider {
+.ip-divider {
     @apply w-full h-[1px] bg-gray-100 my-4;
 }
 
 /* Course Header in Reviews */
-.course-header {
+.ip-course-header {
     @apply flex flex-col mb-2;
 }
 
-.course-header h3 {
+.ip-course-header h3 {
     @apply mb-0;
 }
 
-.course-header a {
+.ip-course-header a {
     @apply mb-1;
 }
 
 /* Reviews Grid */
-.reviews-grid {
+.ip-reviews-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6 mb-8;
 }
 
-.review-card {
+.ip-review-card {
     @apply bg-white relative;
     width: 527px;
     max-width: 100%;
@@ -1411,48 +1554,48 @@
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
 }
 
-.review-card-header {
+.ip-review-card-header {
     @apply flex items-start gap-3 mb-4;
 }
 
-.review-card-avatar {
+.ip-review-card-avatar {
     @apply w-12 h-12 rounded-full object-cover flex-shrink-0;
 }
 
-.review-card-meta {
+.ip-review-card-meta {
     @apply flex flex-col gap-1;
 }
 
-.review-card-author {
+.ip-review-card-author {
     @apply text-[15px] font-semibold text-[#1C1C1C];
 }
 
-.review-rating {
+.ip-review-rating {
     @apply flex gap-0.5 text-[#28A6FF];
     font-size: 12px;
 }
 
-.review-rating i {
+.ip-review-rating i {
     color: #28A6FF;
     font-size: 12px;
 }
 
-.review-card-date {
+.ip-review-card-date {
     @apply text-[12px] text-[#A0AEC0];
 }
 
-.review-card-text {
+.ip-review-card-text {
     @apply text-[14px] text-[#4D4D4D] leading-relaxed;
 }
 
 /* Pagination */
-.reviews-pagination {
+.ip-reviews-pagination {
     @apply flex items-center justify-center;
     gap: 10px;
     margin-top: 80px;
 }
 
-.pagination-arrow {
+.ip-pagination-arrow {
     @apply flex items-center justify-center bg-white border-[#E9F6FF] border-[1px] cursor-pointer transition-all;
     width: 48px;
     height: 48px;
@@ -1461,15 +1604,15 @@
     color: #2191DF;
 }
 
-.pagination-arrow:hover:not(:disabled) {
+.ip-pagination-arrow:hover:not(:disabled) {
     @apply bg-[#E9F6FF] border-[#2191DF];
 }
 
-.pagination-arrow:disabled {
+.ip-pagination-arrow:disabled {
     @apply opacity-40 cursor-not-allowed;
 }
 
-.pagination-number {
+.ip-pagination-number {
     @apply flex items-center justify-center bg-white cursor-pointer transition-all;
     width: 48px;
     height: 48px;
@@ -1480,15 +1623,15 @@
     font-weight: 500;
 }
 
-.pagination-number:hover {
+.ip-pagination-number:hover {
     @apply bg-[#F5F9FF] border-[#0069B2];
 }
 
-.pagination-number.active {
+.ip-pagination-number.ip-active {
     @apply bg-[#E9F6FF] text-[#0069B2] border-[#0069B2] border-[1px];
 }
 
-.pagination-dots {
+.ip-pagination-dots {
     @apply px-2 flex items-center justify-center -translate-y-1;
     height: 48px;
     color: #4D4D4D;
@@ -1498,65 +1641,65 @@
     line-height: 1;
 }
 
-.reviews-time {
+.ip-reviews-time {
     @apply text-[12px] text-[#717171] ml-2;
 }
 
 /* Responsive Styles for Reviews */
 @media (max-width: 1024px) {
-    .reviews-header {
+    .ip-reviews-header {
         flex-direction: column;
         align-items: stretch;
         gap: 24px;
     }
 
-    .reviews-main-rating {
+    .ip-reviews-main-rating {
         align-self: center;
         min-width: auto;
     }
 
-    .recommendation-tag {
+    .ip-recommendation-tag {
         min-width: auto;
         align-self: center;
     }
 
-    .review-card {
+    .ip-review-card {
         width: 100%;
         padding: 24px;
     }
 }
 
 @media (max-width: 768px) {
-    .reviews-header {
+    .ip-reviews-header {
         padding: 20px;
         gap: 20px;
     }
 
-    .rating-bars {
+    .ip-rating-bars {
         max-width: none;
     }
 
-    .reviews-grid {
+    .ip-reviews-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .review-card {
+    .ip-review-card {
         padding: 20px;
         gap: 16px;
     }
 
-    .review-card-header {
+    .ip-review-card-header {
         margin-bottom: 12px;
     }
 
-    .reviews-pagination {
+    .ip-reviews-pagination {
         margin-top: 40px;
         margin-bottom: 100px;
     }
 
-    .pagination-arrow,
-    .pagination-number {
+    .ip-pagination-arrow,
+    .ip-pagination-number {
         width: 40px;
         height: 40px;
         border-radius: 20px;
@@ -1565,45 +1708,46 @@
 }
 
 @media (max-width: 480px) {
-    .reviews-header {
+    .ip-reviews-header {
         padding: 16px;
         gap: 16px;
     }
 
-    .reviews-big-number {
+    .ip-reviews-big-number {
         font-size: 20px;
     }
 
-    .reviews-stars-large {
+    .ip-reviews-stars-large {
         font-size: 12px;
     }
 
-    .recommendation-percent {
+    .ip-recommendation-percent {
         font-size: 20px;
     }
 
-    .review-card {
+    .ip-review-card {
         padding: 16px;
         gap: 14px;
         border-radius: 12px;
     }
 
-    .review-card-avatar {
+    .ip-review-card-avatar {
         width: 40px;
         height: 40px;
     }
 
-    .reviews-pagination {
+    .ip-reviews-pagination {
         gap: 6px;
         margin-top: 32px;
         margin-bottom: 80px;
     }
 
-    .pagination-arrow,
-    .pagination-number {
+    .ip-pagination-arrow,
+    .ip-pagination-number {
         width: 36px;
         height: 36px;
         border-radius: 18px;
         font-size: 13px;
     }
 }
+

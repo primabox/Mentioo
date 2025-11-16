@@ -1,6 +1,6 @@
 // Questions List Scroll Fade Effect with Drag Functionality
 document.addEventListener('DOMContentLoaded', () => {
-  const questionsList = document.querySelector('.questions-list');
+  const questionsList = document.querySelector('.test-questions-list, .questions-list');
   
   if (!questionsList) return;
   
@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateOpacity = () => {
     const listRect = questionsList.getBoundingClientRect();
     const listCenter = listRect.top + listRect.height / 2;
-    const questionItems = questionsList.querySelectorAll('.question-item');
+    const prefix = questionsList.classList.contains('test-questions-list') ? 'test-' : '';
+    const questionItems = questionsList.querySelectorAll(`.${prefix}question-item`);
     
     questionItems.forEach((item, index) => {
       // Skip first 5 items (index 0-4)

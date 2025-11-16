@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const sortableList = document.getElementById('sortable-list');
   
   if (!sortableList) return;
+
+  // Detect whether CSS classes are prefixed with 'test-'
+  const prefix = document.querySelector('.test-sortable-item') ? 'test-' : '';
   
   let selectedItems = [];
   
@@ -10,23 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleItemClick = (e) => {
     const item = e.currentTarget;
     
+    const selectedClass = `${prefix}selected`;
+    const swappingClass = `${prefix}swapping`;
+
     // If item is already selected, deselect it
     if (selectedItems.includes(item)) {
       selectedItems = selectedItems.filter(i => i !== item);
-      item.classList.remove('selected');
+      item.classList.remove(selectedClass);
       return;
     }
-    
+
     // Add to selection
     selectedItems.push(item);
-    item.classList.add('selected');
+    item.classList.add(selectedClass);
     
     // If 2 items selected, swap them
     if (selectedItems.length === 2) {
       swapItems(selectedItems[0], selectedItems[1]);
       
       // Clear selection
-      selectedItems.forEach(i => i.classList.remove('selected'));
+      selectedItems.forEach(i => i.classList.remove(selectedClass));
       selectedItems = [];
     }
   };
@@ -34,8 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Swap two items
   const swapItems = (item1, item2) => {
     // Add swapping animation class
-    item1.classList.add('swapping');
-    item2.classList.add('swapping');
+    const swappingClass = `${prefix}swapping`;
+    item1.classList.add(swappingClass);
+    item2.classList.add(swappingClass);
     
     setTimeout(() => {
       // Create a temporary placeholder
@@ -57,15 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Remove swapping class after animation
       setTimeout(() => {
-        item1.classList.remove('swapping');
-        item2.classList.remove('swapping');
+        item1.classList.remove(swappingClass);
+        item2.classList.remove(swappingClass);
       }, 50);
     }, 200);
   };
 
   // Add event listeners
   const attachEventListeners = () => {
-    const items = sortableList.querySelectorAll('.sortable-item');
+    const items = sortableList.querySelectorAll(`.${prefix}sortable-item`);
     
     items.forEach(item => {
       item.addEventListener('click', handleItemClick);

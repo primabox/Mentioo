@@ -1,9 +1,11 @@
 // Pairing Lines - Drawing connections between paired options
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.pairing-container');
+    const container = document.querySelector('.test-pairing-container, .pairing-container');
     if (!container) return;
 
-    const columns = container.querySelectorAll('.pairing-column');
+    const prefix = container.classList.contains('test-pairing-container') ? 'test-' : '';
+
+    const columns = container.querySelectorAll(`.${prefix}pairing-column`);
     if (columns.length !== 2) return;
 
     const leftColumn = columns[0];
@@ -23,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     container.insertBefore(svg, container.firstChild);
 
     // Get pairing boxes
-    const leftBoxes = Array.from(leftColumn.querySelectorAll('.pairing-box'));
-    const rightBoxes = Array.from(rightColumn.querySelectorAll('.pairing-box'));
+    const leftBoxes = Array.from(leftColumn.querySelectorAll(`.${prefix}pairing-box`));
+    const rightBoxes = Array.from(rightColumn.querySelectorAll(`.${prefix}pairing-box`));
 
     // Define pairings based on data-pair attribute
     const pairings = [];
