@@ -5795,6 +5795,8 @@ body {
 .ip-lektor-btn-primary {
     @apply px-5 py-3 bg-[#D4EDFF] text-[#0069B2] font-medium rounded-[32px] cursor-pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Nudge primary action slightly to the left on desktop */
+  margin-left: -8px;
 }
 
 .ip-lektor-btn-primary:hover {
@@ -6557,6 +6559,7 @@ body {
     .ip-lektor-btn-primary,
     .ip-lektor-btn-secondary {
         @apply px-4 py-2 text-sm;
+      margin-left: 0 !important;
     }
 
     .ip-lektor-stats {
@@ -14008,7 +14011,10 @@ body {
 }
 
 .dc-premium-btn-style {
-  @apply mt-4 mx-auto block;
+  @apply mt-4  block bg-[#E6F4FF] text-[#0069B2] cursor-pointer w-[335px] h-[45px] rounded-[32px] px-5 py-3 gap-2.5 text-[13px] font-medium border-none text-center flex items-center justify-center mt-3 hover:bg-[#D1EBFF] transition-colors;
+  /* shift slightly to the left using left */
+  position: relative;
+  left: -12px;
 }
 
 /* Small mobile tweaks (max-width: 375px) */

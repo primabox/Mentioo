@@ -1556,6 +1556,9 @@ body {
 
 .dc-premium-btn-style {
   @apply mt-4 mx-auto block;
+  /* shift left on wider screens; reset in small mobile media below */
+  position: relative;
+  left: -12px;
 }
 
 /* ===== INSTRUCTOR TAB - O LEKTOROVI ===== */
