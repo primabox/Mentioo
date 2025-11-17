@@ -215,6 +215,68 @@ body {
       .why-section p {
         @apply text-center;
       }
+      /* Ensure the WHY section has side padding on narrow phones */
+      .why-section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .why-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    /* Tighter side padding for very small screens */
+    @media (max-width: 375px) {
+      .why-section,
+      .why-section .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+    }
+
+    /* LECTOR SECTION: responsive side padding and image sizing */
+    @media (max-width: 480px) {
+      .lector-section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .lector-section .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .lector-content {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: center !important;
+      }
+
+      .lector-image img {
+        width: 100% !important;
+        max-width: 520px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .lector-section,
+      .lector-section .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+
+      .lector-image img {
+        max-width: 420px !important;
+      }
     }
 
     .hero-image {
@@ -1564,6 +1626,19 @@ body {
       @apply flex flex-col md:flex-row justify-center gap-8 lg:flex-nowrap;
     }
 
+    /* Adjust spacing between cards on different breakpoints */
+    @media (max-width: 480px) {
+      .why-cards {
+        gap: 1.5rem !important; /* slightly smaller vertical gap for stacked cards */
+      }
+    }
+
+    @media (min-width: 768px) {
+      .why-cards {
+        gap: 2.5rem !important; /* a bit more horizontal breathing on tablets and up */
+      }
+    }
+
     .why-card {
       @apply flex flex-col items-start gap-4 p-8 min-h-[215px] bg-white rounded-[16px] shadow-md hover:shadow-lg transition-all duration-300 ease-out text-left;
       @apply w-full sm:w-[320px] md:w-[45%] lg:w-[490px];
@@ -1577,6 +1652,17 @@ body {
       @apply flex items-center justify-center w-[56px] h-[56px] p-2 gap-[10px] rounded-[16px];
     }
 
+    /* Ensure lector section container has consistent gap */
+    .lector-section .container {
+      gap: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .lector-section .container {
+        gap: 1.25rem !important;
+      }
+    }
+
     .why-icon img {
       @apply w-[28px] h-[28px] object-contain;
     }
@@ -1587,8 +1673,25 @@ body {
       @apply relative bg-white;
     }
 
+    /* LECTOR CONTENT: vertical spacing between child elements */
+    .lector-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem; /* default vertical gap between heading, list and button */
+    }
+
+    @media (min-width: 768px) {
+      .lector-content {
+        gap: 1.75rem; /* more breathing room on tablet/desktop */
+        align-items: flex-start;
+        text-align: left !important;
+      }
+    }
+
     .lector-btn {
       @apply text-[#28A6FF] border border-[#D4EDFF] bg-[#D4EDFF] font-medium rounded-full px-6 py-3 text-sm transition-all duration-500 ease-out self-center mt-auto cursor-pointer;
+      /* Increase spacing above the button so it's visually separated from content */
+      margin-top: 1.25rem !important;
     }
 
     /* Hover efekt */
@@ -1598,6 +1701,13 @@ body {
 
     .lector-image img {
       @apply rounded-[24px] shadow-lg;
+    }
+
+    /* Larger top spacing on wider screens */
+    @media (min-width: 768px) {
+      .lector-btn {
+        margin-top: 2rem !important;
+      }
     }
 
     html,
@@ -13808,6 +13918,11 @@ body {
   @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
 }
 
+/* Cart variant: identical styling to recommendation tag */
+.dc-recommendation-tag-cart {
+  @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px] ml-[20px];
+}
+
 .dc-recommendation-icon {
   @apply text-[#0069B2] text-2xl;
 }
@@ -14055,6 +14170,38 @@ body {
   /* Sidebar tabs underline width on small mobiles */
   .dc-sidebar-tabs::before {
     width: 296px;
+  }
+
+  /* Ensure premium button is not shifted and is smaller on very small screens */
+  .dc-premium-btn-style {
+    width: 100% !important;
+    max-width: 275px !important;
+    height: 44px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    font-size: 14px !important;
+    border-radius: 28px !important;
+    position: static !important;
+    left: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Also apply same adjustments for slightly larger phones (<=480px) */
+@media (max-width: 480px) {
+  .dc-premium-btn-style {
+    width: 100% !important;
+    max-width: 335px !important;
+    height: 44px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    font-size: 14px !important;
+    border-radius: 28px !important;
+    position: static !important;
+    left: 0px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -14740,7 +14887,7 @@ body {
     bottom: 0;
     left: 30%;
     transform: translateX(-27%);
-    width: 350px;
+    width: 340px;
     height: 2px;
     background: #E5E5E5;
     z-index: 1;
@@ -20642,6 +20789,92 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
   margin-left: 8px;
 }
 
+/* Message tabs: balanced sizing on mobile (not too small) */
+@media (max-width: 768px) {
+  .pf-messages-tabs {
+    gap: 10px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .pf-messages-tab {
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+    border-radius: 26px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-messages-tabs {
+    gap: 8px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* On small phones switch tabs to a vertical, taller layout so items
+     are easier to tap/read. This replaces the horizontal scroll layout
+     when there is enough vertical space. */
+  .pf-messages-tabs.pf-vertical,
+  body .pf-messages-tabs.pf-vertical {
+    flex-direction: column !important;
+    overflow-x: visible !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  /* Apply vertical style by default on very small screens */
+  .pf-messages-tabs {
+    /* keep both behaviors available; column layout below will override */
+  }
+
+  .pf-messages-tab {
+    padding: 8px 8px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Vertical, taller tab appearance for better tap targets */
+  @media (max-width: 480px) {
+    .pf-messages-tabs {
+      flex-direction: column !important;
+      gap: 10px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      overflow-x: visible !important;
+      -webkit-overflow-scrolling: auto !important;
+      align-items: stretch !important;
+    }
+
+    .pf-messages-tab {
+      width: 100% !important;
+      padding: 12px 14px !important;
+      font-size: 16px !important;
+      border-radius: 12px !important;
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .pf-messages-tabs {
+    gap: 8px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .pf-messages-tab {
+    padding: 10px 12px !important;
+    font-size: 15px !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+}
+
 .pf-messages-tab.pf-active .pf-messages-tag {
   background: white;
   color: #0069B2;
@@ -20808,6 +21041,88 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
 
 .pf-chat-user-title {
   @apply text-sm text-[#666666];
+}
+
+/* Make chat header larger and more readable on mobile */
+@media (max-width: 768px) {
+  .pf-chat-header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .pf-chat-header-user {
+    padding: 10px !important;
+    gap: 12px !important;
+  }
+
+  .pf-chat-avatar {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .pf-chat-user-name {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-chat-header {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  .pf-chat-header-user {
+    padding: 12px !important;
+    gap: 14px !important;
+    border-radius: 12px !important;
+  }
+
+  .pf-chat-avatar {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .pf-chat-user-name {
+    font-size: 20px !important;
+  }
+
+  .pf-chat-user-status,
+  .pf-chat-user-title {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .pf-chat-header {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .pf-chat-header-user {
+    padding: 14px !important;
+    gap: 14px !important;
+  }
+
+  .pf-chat-avatar {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .pf-chat-user-name {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+  }
+
+  .pf-chat-user-status,
+  .pf-chat-user-title {
+    font-size: 14px !important;
+  }
 }
 
 /* Chat Messages */
@@ -21093,6 +21408,13 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
       display: inline-block !important;
       visibility: visible !important;
       opacity: 1 !important;
+      /* Ensure button centers on narrow phones */
+      /* On very small screens force block + auto margins */
+      display: block !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      max-width: 280px !important;
+      width: auto !important;
     }
   }
 
@@ -21245,11 +21567,9 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
 /* PF PROFILE: ensure .pf-profile-main is responsive on small phones (375px) */
 @media (max-width: 375px) {
   .pf-profile-main {
-    width: 340px !important;
-    max-width: calc(100% - 14px) !important;
+    width: 366px !important;
+    max-width: calc(100% - 0px) !important;
     margin: 14px auto !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
     box-sizing: border-box !important;
   }
 
@@ -21259,7 +21579,6 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
     padding-right: 0 !important;
   }
 
-  .pf-profile-main img,
   .pf-profile-main .pf-hero-gradient,
   .pf-profile-main .pf-content-card,
   .pf-profile-main * {
@@ -21281,6 +21600,229 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
   .pf-profile-main .pf-module-progress-fill,
   .pf-profile-main .pf-module-progress-empty {
     height: 100% !important;
+  }
+}
+
+/* Cart: ensure cart layout stacks and fits on very small phones (<=375px) */
+@media (max-width: 375px) {
+  .cart-layout {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding: 0px !important;
+  }
+
+  .cart-main {
+    margin-left: 0 !important;
+    width: 355px !important;
+    max-width: 355px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cart-section-header {
+    width: 100% !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  .cart-course-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  .cart-course-card-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .cart-course-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 12px 12px 0 0 !important;
+  }
+
+  .cart-course-info {
+    padding: 12px !important;
+  }
+
+  .cart-course-main {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .cart-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 16px !important;
+  }
+
+  .cart-order-summary {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .cart-order-summary-row {
+    padding: 8px 0 !important;
+  }
+}
+
+/* Small-mobile (<=375px): increase side padding for main wrapper and sidebar
+   to avoid edge-to-edge content on very small phones. Kept minimal to
+   avoid layout shifts elsewhere. */
+@media (max-width: 375px) {
+  .de-main-wrapper,
+  .de-sidebar {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Chat avatars: responsive scaling to avoid overflow on small screens */
+@media (max-width: 768px) {
+  .pf-chat-message-avatar,
+  .pf-message-avatar,
+  .pf-chat-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    margin-top: 6px !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .pf-chat-message-avatar img,
+  .pf-message-avatar img,
+  .pf-chat-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 50% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-chat-message-avatar,
+  .pf-message-avatar,
+  .pf-chat-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    margin-top: 4px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .pf-chat-message-avatar,
+  .pf-message-avatar,
+  .pf-chat-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    margin-top: 3px !important;
+  }
+}
+
+/* Ensure profile main is centered on phones and doesn't overflow */
+@media (max-width: 768px) {
+  .pf-profile-main {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 680px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-profile-main {
+    max-width: 371px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .pf-profile-main {
+    max-width: 340px !important;
+    margin: 14px auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Test pages: ensure .test-profile-main centers and fits on very small phones */
+@media (max-width: 375px) {
+  .test-profile-layout {
+    grid-template-columns: 1fr !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .test-profile-main {
+    width: 360px !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .test-profile-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 16px !important;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .test-profile-layout {
+    grid-template-columns: 1fr !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .test-profile-main {
+    width: 360px !important;
+    max-width: calc(100% - 24px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .test-profile-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 16px !important;
+  }
+
+  .test-question-container {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
