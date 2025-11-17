@@ -1,5 +1,48 @@
     @import "tailwindcss";
 
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Quick layout enforcers: restore centering and horizontal padding for main wrappers
+   These are conservative, last-resort overrides placed at EOF so they win over accidental earlier rules.
+*/
+.container,
+.hero-wrapper,
+.category-wrapper,
+.news-wrapper,
+.container.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure hero content doesn't overflow and stays centered */
+.hero-gradient {
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Slight max-width to keep content comfortable on large screens */
+.container.mx-auto,
+.hero-wrapper {
+  max-width: 1280px !important;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
     /* ===== HEADER ===== */
     .header {
       @apply bg-white shadow fixed top-0 left-0 right-0 z-[9999];
@@ -784,8 +827,9 @@
     }
 
     .reviews-time {
-      @apply text-[12px] text-[#717171] font-[400]
+      @apply text-[12px] text-[#717171] font-[400];
     }
+    
 
     /* Review Rating (Stars) */
     .review-rating {
@@ -1955,7 +1999,7 @@
 }
 
 .course-author {
-    @apply font-medium underline
+  @apply font-medium underline;
 }
 
 .course-dot {
@@ -7837,7 +7881,7 @@
 }
 
 .dl-diskuze-search-box {
-  @apply relative w-[438px] flex-none;
+  @apply relative w-[438px] max-w-full flex-none;
 }
 
 .dl-diskuze-search-box i {
@@ -7854,6 +7898,46 @@
 
 .dl-diskuze-new-btn i {
   @apply text-xs text-[#0069B2];
+}
+
+/* Make the discussion search area responsive on smaller screens */
+@media (max-width: 768px) {
+  .dl-diskuze-search-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .dl-diskuze-search-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
+  .dl-diskuze-new-btn {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    flex: 0 0 auto !important;
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dl-diskuze-search-box {
+    width: 100% !important;
+    max-width: calc(100% - 24px) !important;
+    padding-right: 0 !important;
+  }
+
+  .dl-diskuze-new-btn {
+    width: 100% !important;
+    max-width: calc(100% - 24px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    align-self: center !important;
+  }
 }
 
 .dl-diskuze-count-filter-row {
@@ -13347,7 +13431,7 @@
 }
 
 .dc-info-section {
-  @apply flex flex-col
+  @apply flex flex-col;
 }
 
 .dc-info-list {
@@ -13793,6 +13877,47 @@
   @apply mt-4 mx-auto block;
 }
 
+/* Small mobile tweaks (max-width: 375px) */
+@media (max-width: 375px) {
+  .dc-btn-primary-sidebar,
+  .dc-btn-secondary-sidebar {
+    width: 100%;
+    max-width: 275px;
+    height: 44px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 14px;
+    border-radius: 28px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dc-btn-secondary-sidebar {
+    margin-top: 10px;
+  }
+
+  /* Breadcrumb adjustments for small mobiles */
+  .dc-breadcrumb-nav {
+    gap: 6px;
+    font-size: 10px;
+    padding-left: 8px;
+    padding-right: 12px;
+  }
+
+  .dc-breadcrumb-item {
+    font-size: 10px;
+    white-space: no-wrap;
+    overflow-wrap: anywhere;
+  }
+  
+  /* Sidebar tabs underline width on small mobiles */
+  .dc-sidebar-tabs::before {
+    width: 296px;
+  }
+}
+
 /* ===== INSTRUCTOR TAB - O LEKTOROVI ===== */
 
 /* Instructor Profile Header (Horizontal) */
@@ -13838,6 +13963,74 @@
 
 .dc-instructor-stat-row:nth-child(3) i {
   @apply text-[#28A6FF];
+}
+
+/* Ensure 375px rules override broader 768px rules: place at file end */
+@media (max-width: 375px) {
+  .dc-sidebar-tabs::before {
+    width: 286px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Reviews header adjustments for very small mobiles */
+  .de-reviews-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .de-reviews-main-rating,
+  .de-rating-bars,
+  .recommendation-badge {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .recommendation-badge {
+    gap: 8px;
+    padding: 6px 8px;
+  }
+
+  .de-reviews-main-rating {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .de-rating-bars {
+    max-width: 100%;
+    padding: 0 6px;
+    margin-left: 12px !important;
+  }
+
+  .de-reviews-total-count,
+  .de-reviews-big-number {
+    display: block;
+  }
+
+  /* Center small back link on very small phones */
+  .de-back-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0px 24px 0px;
+    text-align: center;
+  }
+  /* Stronger, more specific override to ensure centering inside the mobile helper */
+  .de-center-mobile .de-back-link {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 20px 0px 24px 0px !important;
+    text-align: center !important;
+  }
 }
 
 .dc-instructor-stat-row:nth-child(4) i {
@@ -14182,7 +14375,7 @@
 /* Tablet / mobil (max-width: 768px) */
 @media (max-width: 768px) {
   .dc-breadcrumb-nav {
-    @apply text-[14px] my-[20px] gap-1.5 whitespace-nowrap
+    @apply text-[14px] my-[20px] gap-1.5 whitespace-nowrap;
   }
 
   .dc-breadcrumb-separator {
@@ -16208,7 +16401,7 @@
 
   .de-rating-bars {
     order: 2;
-    margin-left: 0;
+    margin-left: 16px !important;
     width: 100%;
     max-width: 100%;
   }
@@ -19468,7 +19661,7 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
 }
 
 .pf-upload-avatar-footer {
-  @apply flex items-center justify-end gap-4 px-8 py-6
+  @apply flex items-center justify-end gap-4 px-8 py-6;
 }
 
 .pf-upload-avatar-cancel-btn {
@@ -20605,6 +20798,127 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
     max-width: 80%;
   }
 }
+
+
+
+
+
+/* Final override: ensure small-mobile (<=375px) uses 286px underline */
+@media (max-width: 375px) {
+  .dc-sidebar-tabs::before {
+    width: 286px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Final enforcer for very small mobiles: ensure centering and spacing
+   This block is intentionally placed at EOF and uses very specific selectors
+   plus !important to override any broader 768px rules that appear earlier.
+*/
+@media (max-width: 375px) {
+  body .de-center-mobile .de-back-link,
+  body .de-back-link {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 20px 0 24px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Ensure rating bars have the desired left margin on tiny screens */
+  body .de-rating-bars {
+    margin-left: 16px !important;
+    padding: 0 6px !important;
+    max-width: 100% !important;
+  }
+
+  /* Make recommendation badge image sit inline beside text */
+  body .recommendation-badge img {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-left: 8px !important;
+    max-width: 48px !important;
+    height: auto !important;
+  }
+
+  /* Reduce diskuse search box width on very small phones (only width change) */
+  body .dl-diskuze-search-box {
+    width: 335px !important;
+    max-width: calc(100% - 24px) !important;
+    flex: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+  /* Mobile: add bottom spacing for plan tabs wrapper so it has breathing room */
+  @media (max-width: 768px) {
+    .plan-tabs-wrapper {
+      margin-bottom: 32px !important;
+    }
+  }
+
+  /* Mobile: add top margin for the first pricing card so it sits below tabs */
+  @media (max-width: 768px) {
+    .pricing-section .pricing-card:first-child {
+      margin-top: 32px !important;
+    }
+  }
+
+  /* Mobile: spacing between pricing heading and paragraph + small gap before tabs */
+  @media (max-width: 768px) {
+    .pricing-section h2 {
+      margin-bottom: 16px !important;
+    }
+
+    .pricing-section p {
+      margin-bottom: 24px !important;
+    }
+
+    .pricing-section .plan-tabs-wrapper {
+      margin-top: 12px !important;
+    }
+  }
+
+  /* Mobile: center pricing cards and constrain width so they appear centered on phones */
+  @media (max-width: 768px) {
+    /* Ensure the grid centers its items */
+    .pricing-section .grid {
+      justify-items: center !important;
+      justify-content: center !important;
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+
+    /* Make each card narrower and centered inside the grid */
+    .pricing-section .pricing-card {
+      width: 100% !important;
+      max-width: 360px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Slightly reduce padding on very small screens to avoid horizontal overflow */
+    @media (max-width: 420px) {
+      .pricing-section .pricing-card {
+        max-width: 340px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+  }
 
 
 
