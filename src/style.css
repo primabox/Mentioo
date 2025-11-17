@@ -14014,7 +14014,7 @@ body {
   @apply mt-4  block bg-[#E6F4FF] text-[#0069B2] cursor-pointer w-[335px] h-[45px] rounded-[32px] px-5 py-3 gap-2.5 text-[13px] font-medium border-none text-center flex items-center justify-center mt-3 hover:bg-[#D1EBFF] transition-colors;
   /* shift slightly to the left using left */
   position: relative;
-  left: -12px;
+  left: -15px;
 }
 
 /* Small mobile tweaks (max-width: 375px) */
@@ -17005,6 +17005,11 @@ body {
   @apply text-[16px] text-[#4D4D4D] min-w-[32px] flex items-center gap-1;
 }
 
+/* Variant for the last rating label with slightly larger gap */
+.de-rating-label-last {
+  @apply text-[16px] text-[#4D4D4D] min-w-[32px] flex items-center gap-2;
+}
+
 .de-rating-star-small {
   @apply text-[#FFB800] text-xs;
 }
@@ -17039,6 +17044,15 @@ body {
   height: auto;
   display: block;
 }
+
+/* Ensure the literal utility class `mr-3.5` applies when present in markup
+   (escaped because `.` is a valid character in the class name). This
+   covers cases where Tailwind utilities are not available or not compiled. */
+.recommendation-badge.mr-3\.5 {
+  margin-right: 25px; /* 14px (Tailwind mr-3.5) */
+}
+
+
 
 .de-recommendation-icon {
   @apply text-[#0069B2] text-2xl;

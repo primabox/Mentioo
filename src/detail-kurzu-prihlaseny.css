@@ -1532,6 +1532,11 @@ body {
   @apply text-[16px] text-[#4D4D4D] min-w-[32px] flex items-center gap-1;
 }
 
+/* Variant for the last rating label with slightly larger gap */
+.de-rating-label-last {
+  @apply text-[16px] text-[#4D4D4D] min-w-[32px] flex items-center gap-2;
+}
+
 .de-rating-star-small {
   @apply text-[#FFB800] text-xs;
 }
