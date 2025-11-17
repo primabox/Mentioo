@@ -1,42 +1,124 @@
 const toggleBtn = document.getElementById('navbar-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
+function toggleStateForPrefix(el, basePrefix, stateSuffix = 'active') {
+  if (!el) return false;
+  if (basePrefix) {
+    const baseClass = `${basePrefix}-mobile-menu`;
+    const stateClass = `${basePrefix}-${stateSuffix}`;
+    if (el.classList.contains(baseClass)) {
+      el.classList.toggle(stateClass);
+      return true;
+    }
+  }
+  return false;
+}
+
 if (toggleBtn && mobileMenu) {
   toggleBtn.addEventListener('click', () => {
-    // Toggle common variants so pages using different CSS conventions work:
-    // - generic pages: `.mobile-menu.active`
-    // - alternate naming: `.mobile-menu.mobile-active`
-    // - checkout-prefixed pages: `.co-mobile-menu.co-active`
-    // - cart-prefixed pages: `.cart-mobile-menu.cart-active`
-    mobileMenu.classList.toggle('active');
-    mobileMenu.classList.toggle('mobile-active');
-    mobileMenu.classList.toggle('co-active');
-    mobileMenu.classList.toggle('co-mobile-active');
-    mobileMenu.classList.toggle('cart-active');
-    mobileMenu.classList.toggle('cart-mobile-active');
-    // Profile-prefixed mobile menu - only toggle the active state (do NOT remove base pf-mobile-menu)
-    mobileMenu.classList.toggle('pf-active');
+    // Prefer toggling the state class that matches the element's base class.
+    // Check known prefixes in priority order and fall back to generic `.mobile-menu.active`.
+    const prefixes = ['pf', 'cart', 'co', 'test', 'dc', 'de'];
+    let handled = false;
+    for (const p of prefixes) {
+      if (toggleStateForPrefix(mobileMenu, p)) {
+        handled = true;
+        break;
+      }
+    }
 
-    // Toggle a visual state on the button itself (some pages use button active classes)
-    toggleBtn.classList.toggle('active');
-    toggleBtn.classList.toggle('co-active');
-    toggleBtn.classList.toggle('cart-active');
+    if (!handled) {
+      // Generic case: toggle `.active` on elements using `.mobile-menu`
+      if (mobileMenu.classList.contains('mobile-menu')) {
+        mobileMenu.classList.toggle('active');
+      } else {
+        // Try some common alternative class names if present
+        if (mobileMenu.classList.contains('cart-mobile-menu')) mobileMenu.classList.toggle('cart-active');
+        if (mobileMenu.classList.contains('co-mobile-menu')) mobileMenu.classList.toggle('co-active');
+        if (mobileMenu.classList.contains('dc-mobile-menu')) mobileMenu.classList.toggle('dc-active');
+      }
+    }
 
-    // Profile-prefixed variant: toggle active state only (do NOT remove base pf-hamburger-btn)
-    toggleBtn.classList.toggle('pf-active');
+    // Toggle button visual state matching its prefix
+    const btnPrefixes = ['pf', 'cart', 'co', 'test', 'dc', 'de'];
+    let btnHandled = false;
+    for (const p of btnPrefixes) {
+      const baseBtn = `${p}-hamburger-btn`;
+      const stateBtn = `${p}-active`;
+      if (toggleBtn.classList.contains(baseBtn)) {
+        toggleBtn.classList.toggle(stateBtn);
+        btnHandled = true;
+        break;
+      }
+    }
+    if (!btnHandled) toggleBtn.classList.toggle('active');
 
-    document.body.classList.toggle('mobile-menu-open');
-    // Profile-prefixed body state (some pages use this)
-    document.body.classList.toggle('pf-mobile-menu-open');
+    // Body state: prefer a prefixed variant if used, otherwise generic
+    let bodyToggled = false;
+    for (const p of prefixes) {
+      const bodyClass = `${p}-mobile-menu-open`;
+      if (document.body.classList.contains(bodyClass)) {
+        document.body.classList.toggle(bodyClass);
+        bodyToggled = true;
+        break;
+      }
+    }
+    if (!bodyToggled) document.body.classList.toggle('mobile-menu-open');
 
-    // Also toggle profile navbar menu active state if present
+    // Also toggle navbar menu state if present
     const navbarMenu = document.getElementById('navbar-menu');
     if (navbarMenu) {
-      navbarMenu.classList.toggle('pf-active');
-      navbarMenu.classList.toggle('active');
+      // Toggle a prefixed active class if the navbar uses a prefixed base class
+      let navToggled = false;
+      for (const p of prefixes) {
+        const navBase = `${p}-navbar-menu`;
+        const navActive = `${p}-active`;
+        if (navbarMenu.classList.contains(navBase)) {
+          navbarMenu.classList.toggle(navActive);
+          navToggled = true;
+          break;
+        }
+      }
+      if (!navToggled) navbarMenu.classList.toggle('active');
     }
   });
 }
 
 export {};
+
+// Mobile submenu toggles (e.g. 'Nabídka kurzů' -> Programování / Design...)
+function initMobileSublinks() {
+  const toggles = document.querySelectorAll('.de-mobile-toggle, .dc-mobile-toggle, .mobile-toggle');
+  toggles.forEach(btn => {
+    // find sibling sublinks container
+    const parent = btn.closest('.de-mobile-item') || btn.closest('.dc-mobile-item') || btn.parentElement;
+    const sublinks = parent ? parent.querySelector('.de-mobile-sublinks, .dc-mobile-sublinks, .mobile-sublinks') : null;
+    if (!sublinks) return;
+
+    // ensure initial aria state
+    if (!btn.hasAttribute('aria-expanded')) btn.setAttribute('aria-expanded', 'false');
+    if (!sublinks.hasAttribute('aria-hidden')) sublinks.setAttribute('aria-hidden', 'true');
+
+    btn.addEventListener('click', (e) => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        sublinks.setAttribute('aria-hidden', 'true');
+        sublinks.style.maxHeight = null;
+        sublinks.classList.remove('open');
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        sublinks.setAttribute('aria-hidden', 'false');
+        sublinks.classList.add('open');
+        try { sublinks.style.maxHeight = sublinks.scrollHeight + 'px'; } catch (err) {}
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileSublinks);
+} else {
+  initMobileSublinks();
+}
 
