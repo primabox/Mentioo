@@ -28,7 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 16,
         allowTouchMove: true,
         touchRatio: 1,
-        centeredSlides: false,
+        /* On very small phones center the single slide so it appears visually centered */
+        centeredSlides: true,
+      },
+      375: {
+        /* At 375px use auto sizing and centered slides so card width (max-width) determines layout */
+        slidesPerView: 'auto',
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+        allowTouchMove: true,
+        touchRatio: 1,
+        centeredSlides: true,
       },
       640: {
         slidesPerView: 1,
@@ -36,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 16,
         allowTouchMove: true,
         touchRatio: 1,
-        centeredSlides: false,
+        centeredSlides: true,
       },
       768: {
         slidesPerView: 2,
@@ -79,10 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Funkce pro aktualizaci tlačítek
   function updateNavigationButtons(swiper) {
     const totalSlides = swiper.slides.length;
-    const perView = swiper.params.slidesPerView;
+    // Convert slidesPerView to a numeric value when possible. If it's 'auto' or invalid, assume 1.
+    const perViewRaw = swiper.params.slidesPerView;
+    const perView = typeof perViewRaw === 'number' ? perViewRaw : Number(perViewRaw);
+    const perViewNum = Number.isFinite(perView) && perView > 0 ? perView : 1;
 
-    // Pokud je slidů méně nebo stejně jako perView, není co slideovat
-    if (totalSlides <= perView) {
+    // If there are fewer slides than visible per view, disable navigation
+    if (totalSlides <= perViewNum) {
       swiper.allowSlideNext = false;
       swiper.allowSlidePrev = false;
       swiper.navigation.nextEl?.classList.add('swiper-button-disabled');
@@ -90,13 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Počítej poslední možný index
-    const lastPossibleIndex = totalSlides - perView;
+    // Compute last possible index (use integer math)
+    const lastPossibleIndex = Math.max(0, totalSlides - Math.ceil(perViewNum));
 
-    // Kontrola, jestli můžeme slideovat doprava
+    // Can slide next if active index is before the last possible index
     swiper.allowSlideNext = swiper.activeIndex < lastPossibleIndex;
-
-    // Kontrola, jestli můžeme slideovat doleva
+    // Can slide prev if active index is after the first
     swiper.allowSlidePrev = swiper.activeIndex > 0;
 
     const nextBtn = swiper.navigation.nextEl;

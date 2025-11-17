@@ -7,32 +7,6 @@
   box-sizing: border-box;
 }
 
-/* Quick layout enforcers: restore centering and horizontal padding for main wrappers
-   These are conservative, last-resort overrides placed at EOF so they win over accidental earlier rules.
-*/
-.container,
-.hero-wrapper,
-.category-wrapper,
-.news-wrapper,
-.container.mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-  box-sizing: border-box !important;
-}
-
-/* Ensure hero content doesn't overflow and stays centered */
-.hero-gradient {
-  max-width: 100% !important;
-  overflow: visible !important;
-}
-
-/* Slight max-width to keep content comfortable on large screens */
-.container.mx-auto,
-.hero-wrapper {
-  max-width: 1280px !important;
-}
 
 html {
   overflow-x: hidden;
@@ -397,6 +371,65 @@ body {
 
     .tag {
       @apply text-[13px] px-2.5 py-1 rounded font-medium;
+    }
+
+    /* Very small phones: make news/category cards responsive and centered */
+    @media (max-width: 375px) {
+      .news-card,
+      .category-card {
+        /* Let the card size itself so Swiper slidesPerView:'auto' works */
+        width: auto !important;
+        max-width: 335px !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .news-img,
+      .category-img {
+        height: 180px !important;
+      }
+
+      .news-card-body,
+      .category-card-body {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        padding-top: 12px !important;
+        padding-bottom: 16px !important;
+      }
+
+      .news-card-text,
+      .category-card-text {
+        font-size: 14px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .news-card-rating,
+      .category-card-rating {
+        margin-bottom: 8px !important;
+      }
+
+      .news-tags,
+      .category-tags {
+        margin-top: 8px !important;
+      }
+    }
+
+    /* Ensure Swiper slide centers its content on very small phones */
+    @media (max-width: 375px) {
+      .mySwiper .swiper-slide {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        /* Allow Swiper to measure slide width from its content */
+        width: auto !important;
+      }
+
+      /* Add a little horizontal padding so centered slides don't touch edges */
+      .mySwiper {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
     }
 
     .tag-green {
@@ -5841,7 +5874,10 @@ body {
   max-width: 1083px;
   height: auto;
   border: none !important;
-  margin-left: -72px;
+  margin: 24px auto; /* center the card horizontally on wide screens */
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* Responsive adjustments for content card */
@@ -5967,6 +6003,104 @@ body {
         max-width: 377px;
     }
 }
+
+  /* Extremely small phones: force stacking and narrower max-width so center-mobile fits (<=375px) */
+  @media (max-width: 375px) {
+    .ip-center-mobile {
+      width: 100% !important;
+      max-width: 360px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+      box-sizing: border-box !important;
+    }
+
+    .ip-center-mobile > .ip-hero-gradient,
+    .ip-center-mobile > .ip-content-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      box-sizing: border-box !important;
+      margin: 0 auto !important;
+    }
+
+    /* Stack hero content vertically and center text/images */
+    .ip-lektor-hero-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 12px !important;
+    }
+
+    .ip-hero-gradient {
+      padding: 18px 8px !important;
+    }
+
+    .ip-lektor-main-info {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 10px !important;
+      margin-left: 0 !important;
+    }
+
+    .ip-lektor-avatar-img {
+      width: 110px !important;
+      height: 110px !important;
+    }
+
+    .ip-lektor-avatar::before {
+      width: 140px !important;
+      height: 140px !important;
+    }
+
+    .ip-lektor-name {
+      font-size: 20px !important;
+      line-height: 1.1 !important;
+    }
+
+    .ip-lektor-title {
+      font-size: 13px !important;
+      color: #555 !important;
+    }
+
+    /* Buttons: allow wrap and center them */
+    .ip-lektor-actions {
+      display: flex !important;
+      gap: 8px !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+
+    .ip-lektor-btn-primary,
+    .ip-lektor-btn-secondary {
+      width: auto !important;
+      min-width: 140px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    .ip-hero-divider {
+      display: none !important;
+    }
+
+    /* Make stats wrap under hero content */
+    .ip-lektor-stats {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      padding-top: 8px !important;
+    }
+
+    .ip-lektor-stat {
+      flex: 0 0 auto !important;
+      min-width: 120px !important;
+    }
+  }
 
 /* ===== CONTENT SECTIONS ===== */
 .ip-lektor-section-title {
@@ -20919,6 +21053,216 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
       }
     }
   }
+
+  /* Ensure category 'Další kurzy' button is visible on small screens */
+  @media (max-width: 768px) {
+    .category-button-wrapper {
+      position: static !important;
+      bottom: auto !important;
+      left: auto !important;
+      transform: none !important;
+      display: flex !important;
+      justify-content: center !important;
+      margin-top: 20px !important;
+      z-index: 60 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .category-btn-outline {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+
+
+
+
+
+
+
+
+
+/* Mobile: remove left padding for tab content on phones */
+@media (max-width: 768px) {
+  .ip-tab-content {
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ip-tab-content {
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .ip-tab-content {
+    padding-left: 0 !important;
+  }
+}
+
+/* Also target actual tab markup used in HTML: .tab-content
+   Some pages use `.tab-content` rather than `.ip-tab-content`, so include
+   broader selectors inside the instructor layout to ensure mobile padding
+   is removed where needed. */
+@media (max-width: 768px) {
+  .tab-content,
+  .ip-content-card .tab-content,
+  .ip-center-mobile .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-content,
+  .ip-content-card .tab-content,
+  .ip-center-mobile .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .tab-content,
+  .ip-content-card .tab-content,
+  .ip-center-mobile .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Ensure the center column truly centers on small screens by
+   overriding wide negative margins and oversized background widths. */
+@media (max-width: 768px) {
+  .ip-center-mobile {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 640px !important;
+  }
+
+  .ip-center-mobile > .ip-hero-gradient,
+  .ip-center-mobile > .ip-content-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 640px !important;
+  }
+
+  /* make hero background scale down on small screens */
+  .ip-center-mobile .ip-hero-bg {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ip-center-mobile {
+    max-width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 18px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .ip-center-mobile > .ip-hero-gradient,
+  .ip-center-mobile > .ip-content-card {
+    max-width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .ip-center-mobile {
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 100px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .ip-center-mobile > .ip-hero-gradient,
+  .ip-center-mobile > .ip-content-card {
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* PF PROFILE: ensure .pf-profile-main is responsive on small phones (375px) */
+@media (max-width: 375px) {
+  .pf-profile-main {
+    width: 340px !important;
+    max-width: calc(100% - 14px) !important;
+    margin: 14px auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .pf-profile-main .pf-profile-tab-content,
+  .pf-profile-main .tab-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .pf-profile-main img,
+  .pf-profile-main .pf-hero-gradient,
+  .pf-profile-main .pf-content-card,
+  .pf-profile-main * {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Keep course progress bar visible on very small screens */
+  .pf-profile-main .pf-course-progress-bar {
+    display: flex !important;
+    width: 100% !important;
+    height: 12px !important;
+    min-height: 12px !important;
+    box-sizing: border-box !important;
+    gap: 4px !important;
+  }
+
+  .pf-profile-main .pf-module-progress-fill,
+  .pf-profile-main .pf-module-progress-empty {
+    height: 100% !important;
+  }
+}
 
 
 
