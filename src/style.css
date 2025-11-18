@@ -398,6 +398,32 @@
       @apply flex items-center text-sm mb-11;
     }
 
+    /* Review rating: keep stars inline, move the time under them on small screens */
+    .review-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .reviews-time {
+      margin: 0;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 480px) {
+      .review-rating {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      /* Force the time to occupy full width below the stars without affecting the star layout */
+      .review-rating .reviews-time {
+        flex-basis: 100%;
+        margin-top: 0.25rem;
+      }
+    }
+
     .rating-value {
       @apply font-semibold mr-1;
     }
@@ -7288,6 +7314,13 @@
     @apply text-[22px] font-semibold text-[#1C1C1C] leading-none;
 }
 
+/* Shift recommendation tag slightly left on large screens (>=1024px) */
+@media (min-width: 1024px) {
+  .ip-recommendation-tag {
+    transform: translateX(-24px);
+  }
+}
+
 .ip-recommendation-label {
     @apply text-[14px] text-[#4D4D4D] mt-1;
 }
@@ -12642,7 +12675,7 @@
     align-items: center;
     justify-content: center;
     width: 400px;
-    height: 196pxpx;
+    height: 196px;
     max-width: 100%;
   }
 
@@ -19173,7 +19206,7 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
 }
 
 .pf-sidebar-profile-avatar {
-  @apply w-[130px] h-[130px] rounded-full overflow-hidden border-10 border-[#D4EDFF] shadow-md;
+  @apply w-[130px] h-[130px] rounded-full overflow-hidden border-[#D4EDFF] shadow-md;
   position: absolute;
   top: -80px;
   right: -20px;
@@ -19450,7 +19483,7 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
     height: 130px;
     position: static;
     margin-right: 25px;
-    margin-top: 25px
+    margin-top: 25px;
   }
   
   .pf-sidebar-profile-card {
@@ -22265,6 +22298,64 @@ body:has(.pf-profile-tab-content[data-tab="predplatne"].pf-active) .pf-footer {
   .news-card,
   .category-card {
     height: 456px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === Duplicate styles for cart-specific recommendation tag === */
+/* Base styles (match .ip-recommendation-tag) */
+.ip-recommendation-tag-cart {
+    @apply flex items-center gap-3 px-5 py-3 bg-white rounded-xl min-w-[180px];
+}
+
+/* Match large-screen translation */
+@media (min-width: 1024px) {
+  .ip-recommendation-tag-cart {
+    transform: translateX(-24px);
+  }
+}
+
+/* Match responsive stacking/margin used for the original tag */
+@media (max-width: 1024px) {
+  .ip-recommendation-tag-cart {
+    margin: 16px 20px 0 0 !important;
+  }
+}
+
+/* Match mid/low-width adjustments (min-width/align-self) */
+@media (max-width: 768px) {
+  .ip-recommendation-tag-cart {
+    min-width: auto;
+    align-self: center;
+  }
+}
+
+/* Mobile: shift only the first cart recommendation tag a bit more left (targeted) */
+@media (max-width: 480px) {
+  .ip-reviews-header .ip-recommendation-tag-cart:first-of-type {
+    transform: translateX(-12px);
+  }
+}
+
+/* Mobile: left-align recommendation percent/text */
+@media (max-width: 480px) {
+  .ip-recommendation-text {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .ip-recommendation-percent {
+    align-self: flex-start !important;
+    text-align: left !important;
   }
 }
 
