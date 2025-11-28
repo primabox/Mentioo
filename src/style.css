@@ -86,12 +86,259 @@
     }
 
     .dropdown {
-      @apply absolute top-full left-0 mt-4 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
+      /* moved down slightly so it sits further under the header */
+      @apply fixed left-0 right-0 top-[82px] bg-white h-[421px] w-full rounded-none shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
       border: none !important;
+      box-sizing: border-box;
+      overflow: auto;
     }
 
     .dropdown-link {
-      @apply block px-4 py-2 text-sm text-gray-700 hover:bg-[#e0f2fe] hover:text-[#2563eb];
+      display: inline-flex;
+      align-items: center;
+      @apply px-4 py-2 text-sm;
+      color: #374151;
+      transition: background-color .18s ease, color .18s ease;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .dropdown-link:hover {
+      background: #F5F9FF;
+      color: #0069B2;
+    }
+
+    /* Apply same hover behaviour for links/titles when inside dropdown columns */
+    .dropdown-column .dropdown-link,
+    .dropdown-column .dropdown-link-title {
+      transition: background-color .18s ease, color .18s ease;
+      border-radius: 8px;
+    }
+
+    .dropdown-column .dropdown-link:hover,
+    .dropdown-column .dropdown-link-title:hover {
+      background: #F5F9FF;
+      color: #0069B2;
+    }
+
+    /* Title used inside dropdown columns (matches screenshot style) */
+    .dropdown-link-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px; /* tighten gap so icon/text align consistently */
+      font-size: 16px;
+      font-weight: 600;
+      color: #1f2937;
+      padding: 10px 14px;
+      line-height: 1.1;
+      border-radius: 8px;
+      background: transparent;
+      box-sizing: border-box;
+      transition: background-color .18s ease, color .18s ease;
+      vertical-align: middle;
+    }
+
+    .dropdown-link-title:hover {
+      background: #F5F9FF;
+      color: #0069B2;
+      border-radius: 8px;
+    }
+
+    .dropdown-link-title--active {
+      color: #0069B2;
+      background: #F5F9FF; /* light blue pill */
+      border-radius: 8px;
+      transition: background-color .18s ease, color .18s ease;
+    }
+
+    /* Dropdown grid layout */
+    .dropdown-grid {
+      display: grid;
+      grid-template-columns: 320px 1px 1fr;
+      gap: 24px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100%;
+      /* configurable horizontal shift for the divider (use positive to move right) */
+      --dropdown-divider-shift: -80px;
+    }
+
+    .dropdown-column {
+      padding: 8px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    /* Left/right column title inside a column (non-pill, bold heading with icon) */
+    .dropdown-column-title {
+      display: inline-flex; /* match pill titles alignment */
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827; /* dark gray */
+      padding: 0 4px;
+      margin-bottom: 8px;
+      background: transparent;
+      border-radius: 0;
+      line-height: 1.1;
+      vertical-align: middle;
+    }
+
+    .dropdown-column-title img,
+    .dropdown-column-title svg {
+      display: inline-block;
+      margin-right: 10px; /* consistent spacing with .dropdown-link-title */
+      vertical-align: middle;
+    }
+
+    /* small left padding for right-side column groups so their titles align visually */
+    .dropdown-right-grid > div {
+      padding-left: 4px;
+    }
+
+    /* Nudge the first right-column group slightly down to match visual baseline */
+    .dropdown-right-grid > div:first-child {
+      margin-top: 22px; /* updated per request */
+    }
+
+    /* Move the next two right-column groups slightly up to better align
+       with the first group. These target the 2nd and 3rd div children
+       inside `.dropdown-right-grid` (accounting for the heading element). */
+    .dropdown-right-grid > div:nth-child(3),
+    .dropdown-right-grid > div:nth-child(4) {
+      margin-top: -24px; /* adjust to taste (move up) */
+    }
+
+    .dropdown-column--left {
+      padding-left: 12px;
+    }
+
+    .dropdown-divider {
+      width: 1px;
+      background: #E5E7EB; /* slightly stronger contrast */
+      border-radius: 1px;
+      /* center the divider vertically between left and right column groups */
+      align-self: center;
+      height: calc(100% - 32px);
+      margin: 0 12px; /* horizontal gutter, vertical centering via align-self */
+      /* move divider horizontally using translate for pixel-perfect tuning */
+      transform: translateX(var(--dropdown-divider-shift));
+      transition: transform .18s ease;
+    }
+
+    .dropdown-right-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    /* Right-side heading that spans the three right columns */
+    .dropdown-right-title {
+      grid-column: 1 / -1;
+      align-self: start;
+      margin-left: -12px; /* moved left to align with left column */
+    }
+
+    /* Ensure each right-column group stacks vertically and its children size to content */
+    .dropdown-right-grid > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Ensure inner .mt-3 blocks inside columns also stack their links vertically */
+    .dropdown-right-grid > div .mt-3,
+    .dropdown-column .mt-3 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    /* Left-align all dropdown links and titles so they start at the same X position */
+    .dropdown-column .dropdown-link,
+    .dropdown-column .dropdown-link-title,
+    .dropdown-right-grid > div .dropdown-link,
+    .dropdown-right-grid > div .dropdown-link-title,
+    .dropdown-right-grid > div .dropdown-column-title {
+      justify-content: flex-start;
+      align-self: flex-start;
+      text-align: left;
+      width: auto;
+      padding-left: 0; /* remove any accidental extra left padding */
+    }
+
+    /* Support both modifier and plain .active on title */
+    .dropdown-link-title.active,
+    .dropdown-link-title--active {
+      color: #0069B2;
+      background: #F5F9FF;
+      border-radius: 8px;
+      transition: background-color .18s ease, color .18s ease;
+    }
+
+    /* Refine visuals to match screenshots */
+    .dropdown-link-title img,
+    .dropdown-link-title svg {
+      margin-right: 8px;
+      display: inline-block;
+    }
+
+    /* Force dropdown icons to 20x20 (override utility classes) */
+    .dropdown img,
+    .dropdown-link img,
+    .dropdown-column-title img,
+    .dropdown-link-title img,
+    .dropdown img svg,
+    .dropdown-link svg,
+    .dropdown-column-title svg,
+    .dropdown-link-title svg {
+      width: 20px !important;
+      height: 20px !important;
+      display: inline-block;
+      object-fit: contain;
+    }
+
+    /* Colorize icons in active dropdown items to brand blue (#0069B2) */
+    .dropdown-link-title.active img,
+    .dropdown-link-title--active img,
+    .dropdown-column-title.active img,
+    .dropdown-column-title--active img,
+    .dropdown-link.active img,
+    .dropdown-link--active img,
+    .dropdown-link-title.active svg,
+    .dropdown-link-title--active svg,
+    .dropdown-column-title.active svg,
+    .dropdown-column-title--active svg,
+    .dropdown-link.active svg,
+    .dropdown-link--active svg {
+      -webkit-filter: brightness(0) saturate(100%) invert(27%) sepia(75%) saturate(500%) hue-rotate(170deg) brightness(95%) contrast(90%);
+      filter: brightness(0) saturate(100%) invert(27%) sepia(75%) saturate(500%) hue-rotate(170deg) brightness(95%) contrast(90%);
+      transition: filter .18s ease, -webkit-filter .18s ease;
+      opacity: 1;
+    }
+
+    /* Left column: stacked list with slightly smaller text and softer color */
+    .dropdown-column--left .dropdown-link {
+      @apply text-sm text-[#374151] block px-4 py-2;
+    }
+
+    /* Right columns: make top titles sit above lists and have small bottom gap */
+    .dropdown-right-grid > div .dropdown-link-title {
+      margin-bottom: 8px;
+    }
+
+    /* Active pill visual lift */
+    .dropdown-link-title--active,
+    .dropdown-link-title.active {
+      box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+      padding-left: 14px;
+      padding-right: 18px;
+      border-radius: 8px;
     }
 
     /* ===== BUTTONS ===== */
