@@ -88,8 +88,8 @@
     .dropdown {
       /* moved down slightly so it sits further under the header */
       @apply fixed left-0 right-0 top-[82px] bg-white h-[421px] w-full rounded-none shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
-      border: none !important;
       box-sizing: border-box;
+      border-top: 2px solid #F5F5F5;
       overflow: auto;
     }
 
@@ -101,31 +101,57 @@
       transition: background-color .18s ease, color .18s ease;
       border-radius: 8px;
       white-space: nowrap;
+      padding-left: 12px !important;
     }
 
-    .dropdown-link:hover {
+    .dropdown-column-link {
+      display: inline-flex;
+      align-items: center;
+      @apply px-4 py-2 text-sm;
+      color: #374151;
+      transition: background-color .18s ease, color .18s ease;
+      border-radius: 8px;
+      white-space: nowrap;
+      padding-left: 12px !important;
+      margin-left: 12px;
+    }
+
+    .dropdown-link:hover,
+    .dropdown-column-link:hover {
       background: #F5F9FF;
       color: #0069B2;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .dropdown-column-link:hover {
+      background: #F5F9FF;
+      color: #0069B2;
+      width: fit-content;
+      max-width: 100%;
     }
 
     /* Apply same hover behaviour for links/titles when inside dropdown columns */
     .dropdown-column .dropdown-link,
+    .dropdown-column .dropdown-column-link,
     .dropdown-column .dropdown-link-title {
       transition: background-color .18s ease, color .18s ease;
       border-radius: 8px;
     }
 
     .dropdown-column .dropdown-link:hover,
+    .dropdown-column .dropdown-column-link:hover,
     .dropdown-column .dropdown-link-title:hover {
       background: #F5F9FF;
       color: #0069B2;
+      width: fit-content;
+      max-width: 100%;
     }
 
     /* Title used inside dropdown columns (matches screenshot style) */
     .dropdown-link-title {
       display: inline-flex;
       align-items: center;
-      gap: 8px; /* tighten gap so icon/text align consistently */
       font-size: 16px;
       font-weight: 600;
       color: #1f2937;
@@ -135,13 +161,15 @@
       background: transparent;
       box-sizing: border-box;
       transition: background-color .18s ease, color .18s ease;
-      vertical-align: middle;
+      vertical-align: middle; 
     }
 
     .dropdown-link-title:hover {
       background: #F5F9FF;
       color: #0069B2;
       border-radius: 8px;
+      width: fit-content;
+      max-width: 100%;
     }
 
     .dropdown-link-title--active {
@@ -191,14 +219,11 @@
     .dropdown-column-title img,
     .dropdown-column-title svg {
       display: inline-block;
-      margin-right: 10px; /* consistent spacing with .dropdown-link-title */
+      margin-left: 8px; /* consistent spacing with .dropdown-link-title */
       vertical-align: middle;
     }
 
-    /* small left padding for right-side column groups so their titles align visually */
-    .dropdown-right-grid > div {
-      padding-left: 4px;
-    }
+    
 
     /* Nudge the first right-column group slightly down to match visual baseline */
     .dropdown-right-grid > div:first-child {
@@ -233,7 +258,7 @@
     .dropdown-right-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 12px;
     }
 
     /* Right-side heading that spans the three right columns */
@@ -265,11 +290,10 @@
     .dropdown-right-grid > div .dropdown-link,
     .dropdown-right-grid > div .dropdown-link-title,
     .dropdown-right-grid > div .dropdown-column-title {
-      justify-content: flex-start;
-      align-self: flex-start;
+      justify-content: center;
       text-align: left;
       width: auto;
-      padding-left: 0; /* remove any accidental extra left padding */
+      padding-left: 0px;
     }
 
     /* Support both modifier and plain .active on title */
@@ -278,13 +302,17 @@
       color: #0069B2;
       background: #F5F9FF;
       border-radius: 8px;
+      padding-left: 14px;
+      padding-right: 14px;
+      width: fit-content;
+      max-width: 100%;
       transition: background-color .18s ease, color .18s ease;
     }
 
     /* Refine visuals to match screenshots */
     .dropdown-link-title img,
     .dropdown-link-title svg {
-      margin-right: 8px;
+      margin-left: 8px;
       display: inline-block;
     }
 
@@ -332,14 +360,7 @@
       margin-bottom: 8px;
     }
 
-    /* Active pill visual lift */
-    .dropdown-link-title--active,
-    .dropdown-link-title.active {
-      box-shadow: 0 6px 18px rgba(37,99,235,0.08);
-      padding-left: 14px;
-      padding-right: 18px;
-      border-radius: 8px;
-    }
+    
 
     /* ===== BUTTONS ===== */
     .btn-outline {
